@@ -1,51 +1,47 @@
-# apgo.ink — Tannenhof Mayer website rehaul
+# Tannenhof Mayer Investments — apgo.ink
 
-A static, GitHub Pages-ready website for **apgo.ink**, the public surface of **Tannenhof Mayer**.
+Static GitHub Pages website for the main apgo.ink landing page.
 
-## Design direction
+## What changed
 
-- Monochromatic editorial base: black, warm white, fine borders, serif headlines.
-- Minimalist UI with neo-brutalist cards: hard outlines, visible structure, tactile shadows.
-- Organic shapes: irregular blobs/orbits used as capital-system motifs.
-- Tiny color accents only: lime, violet, amber, coral, cyan used for status dots, labels, metrics, and interactions.
-- No backend, no build step, no server requirement.
+The main page has been redesigned for **Tannenhof Mayer Investments** with a stronger institutional direction:
 
-## Files
+- Serif-led typography and a formal editorial layout
+- Crest-like house mark and ledger-style language
+- Monochrome foundation with tiny accent colors for authority, intelligence, compounding, and risk
+- Power / design / trust positioning
+- Responsive navigation and animated reveal effects
+- No backend, no build step, no server-side requirements
 
-```txt
-.
-├── index.html
-├── 404.html
-├── CNAME
-├── robots.txt
-├── sitemap.xml
-├── manifest.webmanifest
-└── assets
-    ├── css/styles.css
-    ├── js/main.js
-    └── img
-        ├── favicon.svg
-        ├── mark.svg
-        ├── og-image.png
-        └── organic-blob.svg
-```
+## Files updated for the main page
 
-## Deploy to GitHub Pages
+- `index.html`
+- `assets/css/styles.css`
+- `assets/js/main.js`
+- `assets/img/mark.svg`
+- `assets/img/favicon.svg`
+- `assets/img/organic-blob.svg`
+- `assets/img/og-image.png`
+- `manifest.webmanifest`
+- `404.html`
+- `README.md`
+- `sitemap.xml`
 
-1. Unzip this package.
-2. Copy every file into the root of your GitHub Pages repository.
-3. Commit and push to the branch used by Pages, usually `main`.
-4. In GitHub: **Settings → Pages → Build and deployment → Deploy from branch → main / root**.
-5. Point your domain DNS to GitHub Pages. The included `CNAME` already contains `apgo.ink`.
+## Deploy on GitHub Pages
 
-## Customize quickly
+1. Upload the contents of this folder to the GitHub repository connected to GitHub Pages.
+2. Keep `CNAME` if your custom domain is `apgo.ink`.
+3. Make sure GitHub Pages is serving from the root of the repository.
+4. Visit `https://apgo.ink/` after the deployment finishes.
 
-- Contact email: search for `hello@apgo.ink` in `index.html`.
-- Site copy: edit the content sections in `index.html`.
-- Accent colors: edit CSS variables at the top of `assets/css/styles.css`.
-- Social preview image: replace `assets/img/og-image.png`.
-- Domain: edit `CNAME`, `sitemap.xml`, and the canonical/Open Graph URLs in `index.html`.
+The `/art/` page is included in the full ZIP and left unchanged.
 
-## Important note
+## Customization
 
-The footer includes a finance disclaimer because the organisation is described as investment-related. Keep it unless legal counsel gives you replacement wording. 
+Edit `index.html` for copy, sections, and email address.
+Edit `assets/css/styles.css` for visual changes.
+The accent button cycles between the four institutional accent systems and stores the selected accent in local storage.
+
+## Note
+
+The footer includes a general-information disclaimer. Replace it with formal legal language when the organization has counsel or regulatory requirements.

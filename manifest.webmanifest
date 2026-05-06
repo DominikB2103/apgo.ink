@@ -1,12 +1,16 @@
 {
-  "name": "apgo.ink — Tannenhof Mayer",
-  "short_name": "apgo.ink",
-  "description": "Tannenhof Mayer is a future investment company building permanent capital, operating systems, and companies from zero.",
+  "name": "Tannenhof Mayer Investments",
+  "short_name": "Tannenhof Mayer",
+  "description": "Power, design, and trust for Tannenhof Mayer Investments.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f7f5ef",
-  "theme_color": "#060606",
+  "background_color": "#f4f1ea",
+  "theme_color": "#050505",
   "icons": [
-    { "src": "assets/img/favicon.svg", "sizes": "64x64", "type": "image/svg+xml" }
+    {
+      "src": "assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
   ]
 }
