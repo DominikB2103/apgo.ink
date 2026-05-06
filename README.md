@@ -1,21 +1,39 @@
-# Tannenhof Mayer — Institutional House
+# Tannenhof Mayer — Static Website
 
-A complete static website for `apgo.ink`, designed as a serious institutional house rather than an art-forward page.
+This is a finished static website for **Tannenhof Mayer**. It is designed to be uploaded directly to GitHub Pages or any static web host.
 
 ## Files
 
-- `index.html` — main landing page
-- `assets/css/styles.css` — full visual system
-- `assets/js/main.js` — small interaction layer
-- `assets/img/` — custom mark, favicon, and Open Graph image
-- `CNAME` — GitHub Pages custom domain for `apgo.ink`
-- `.nojekyll` — disables Jekyll processing
-- `robots.txt`, `sitemap.xml`, `404.html`
+- `index.html` — the full landing page
+- `styles.css` — all visual design, layout, animation, and responsive styling
+- `script.js` — animated graphs, counters, navigation, interactions, and Discord placeholder logic
+- `assets/` — favicon, logo mark, and social preview card
+- `.nojekyll` — keeps GitHub Pages from processing the site with Jekyll
 
-## Deploy on GitHub Pages
+## How to publish on GitHub Pages
 
-Upload these files to the root of the GitHub Pages repository. The site requires no build step and no server.
+1. Create a new GitHub repository.
+2. Upload the contents of this folder, not the folder itself.
+3. Go to **Settings → Pages**.
+4. Set the source to your main branch and `/root`.
+5. Save. GitHub will provide the live Pages URL.
+
+## How to add the Discord link
+
+Open `script.js` and replace:
+
+```js
+const DISCORD_URL = "#";
+```
+
+with your real invite link, for example:
+
+```js
+const DISCORD_URL = "https://discord.gg/your-invite";
+```
 
 ## Notes
 
-The public copy is careful around banking and financial services. It presents future banking architecture and institutional formation without claiming regulated activity.
+- All graph data is illustrative sample data and can be replaced inside `script.js`.
+- The legal disclaimer in the footer is intentionally conservative because the site discusses investment activity and future community ownership.
+- No build step is required.
