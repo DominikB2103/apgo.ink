@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="en" data-theme="noir">
+<html lang="en" data-accent="lime">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>apgo.ink/art — Tannenhof Mayer Art</title>
-  <meta name="description" content="Tannenhof Mayer Art is a black-and-white editorial art room for studies, images, objects, notes, and visual experiments." />
+  <meta name="description" content="Tannenhof Mayer Art is an open room for total expressivity: image, sound, body, object, code, text, ritual, performance, and the work that refuses categories." />
   <meta name="theme-color" content="#050505" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://apgo.ink/art/" />
-  <meta property="og:title" content="apgo.ink/art — Tannenhof Mayer Art" />
-  <meta property="og:description" content="An evolving art room: monochrome, editorial, neo-brutalist, organic, and quietly colored." />
+  <meta property="og:title" content="Tannenhof Mayer Art — apgo.ink/art" />
+  <meta property="og:description" content="All art. Total expressivity. A monochrome editorial room with sharp borders, organic shapes, and tiny color signals." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://apgo.ink/art/" />
   <meta property="og:image" content="https://apgo.ink/art/assets/img/og-image.png" />
@@ -17,27 +17,26 @@
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
-
-  <div class="grain" aria-hidden="true"></div>
-  <div class="cursor-orb" aria-hidden="true"></div>
+  <div class="paper-grain" aria-hidden="true"></div>
+  <div class="wandering-ink" aria-hidden="true"></div>
 
   <header class="site-header" data-elevate>
-    <a class="brand" href="#top" aria-label="apgo.ink art home">
+    <a class="brand" href="#top" aria-label="Tannenhof Mayer Art home">
       <span class="brand__mark" aria-hidden="true">
-        <svg viewBox="0 0 48 48" role="img">
-          <path d="M9 12h26l4 7v20H13L9 32V12Z" fill="currentColor" />
-          <path d="M17 19c5-5 13-2 14 3 1 6-8 6-9 11-4-1-7-6-5-14Z" fill="var(--paper)" />
-          <circle cx="31" cy="18" r="3" fill="var(--accent)" />
+        <svg viewBox="0 0 56 56" role="img">
+          <path d="M8 13h25l15 13v21H16L8 39V13Z" fill="currentColor" />
+          <path d="M18 21c7-6 17-4 18 3 1 8-10 7-12 15-5-2-9-8-6-18Z" fill="var(--paper)" />
+          <path d="M38 14c4 2 7 6 6 10-5-1-10-5-6-10Z" fill="var(--accent)" />
         </svg>
       </span>
       <span class="brand__copy">
-        <strong>apgo.ink/art</strong>
-        <small>Tannenhof Mayer</small>
+        <strong>Tannenhof Mayer Art</strong>
+        <small>apgo.ink/art</small>
       </span>
     </a>
 
@@ -47,18 +46,19 @@
     </button>
 
     <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-      <a href="#rooms">Rooms</a>
-      <a href="#method">Method</a>
-      <a href="#notes">Notes</a>
-      <a href="#contact">Contact</a>
+      <a href="#all-art">All art</a>
+      <a href="#wall">Wall</a>
+      <a href="#machine">Machine</a>
+      <a href="#atlas">Atlas</a>
+      <a href="#open">Open call</a>
     </nav>
 
     <div class="header-actions">
       <button class="ink-button ink-button--quiet" type="button" data-accent-cycle aria-label="Cycle accent color">
         <span class="accent-dot" aria-hidden="true"></span>
-        Accent
+        Signal
       </button>
-      <a class="ink-button" href="mailto:hello@apgo.ink?subject=apgo.ink%2Fart">Send work</a>
+      <a class="ink-button" href="mailto:hello@apgo.ink?subject=Tannenhof%20Mayer%20Art">Submit</a>
     </div>
   </header>
 
@@ -66,71 +66,60 @@
     <section class="hero section" id="top" aria-labelledby="hero-title">
       <div class="hero__grid">
         <div class="hero__copy" data-reveal>
-          <p class="eyebrow"><span></span> art room / visual archive</p>
-          <h1 id="hero-title">A room for work that refuses polish.</h1>
-          <p class="hero__lede">Tannenhof Mayer Art is an evolving editorial space for images, studies, objects, fragments, and visual systems. Monochrome first. Tiny color only where the work starts breathing.</p>
+          <p class="eyebrow"><span></span> total expressive archive</p>
+          <h1 id="hero-title">All art is allowed here.</h1>
+          <p class="hero__lede">Tannenhof Mayer Art is a live room for absolute expressivity: painting, sound, bodies, objects, code, text, ritual, performance, games, fashion, architecture, and forms that have no clean name yet.</p>
           <div class="hero__actions" aria-label="Hero actions">
-            <a class="neo-button" href="#rooms">Enter the rooms</a>
-            <a class="neo-button neo-button--ghost" href="#method">Read the method</a>
+            <a class="neo-button" href="#all-art">Open the room</a>
+            <a class="neo-button neo-button--ghost" href="#machine">Generate a prompt</a>
+          </div>
+          <div class="hero-stamps" aria-label="Site values">
+            <span>no style police</span>
+            <span>tiny color, loud feeling</span>
+            <span>category-free</span>
           </div>
         </div>
 
         <div class="hero__panel" data-reveal>
           <div class="panel-topline">
-            <span>apgo art index</span>
-            <span class="status-pill"><i></i>open studio</span>
-          </div>
-          <div class="metric-grid">
-            <article class="metric-card accent-lime">
-              <small>Room</small>
-              <strong>01</strong>
-              <span>studies & sketches</span>
-            </article>
-            <article class="metric-card accent-violet">
-              <small>Archive</small>
-              <strong>∞</strong>
-              <span>never finished</span>
-            </article>
-            <article class="metric-card accent-amber">
-              <small>Format</small>
-              <strong>A4</strong>
-              <span>notes · plates · prints</span>
-            </article>
-            <article class="metric-card accent-ink">
-              <small>Signal</small>
-              <strong>TM</strong>
-              <span>Tannenhof Mayer Art</span>
-            </article>
+            <span>apgo art console</span>
+            <span class="status-pill"><i></i>open to everything</span>
           </div>
 
-          <div class="signal-card" aria-label="Illustrative art rhythm line drawing">
-            <div class="signal-card__header">
-              <span>gesture line</span>
-              <strong>small color, large silence</strong>
+          <div class="art-console" aria-label="Interactive art expression console">
+            <canvas id="gesture-canvas" width="680" height="420" aria-label="Generative monochrome and accent gesture field"></canvas>
+            <div class="console-card console-card--one">
+              <small>current permission</small>
+              <strong data-permission-title>Make the impossible object.</strong>
+              <span data-permission-copy>Let the work be ugly, tender, sharp, empty, theatrical, private, public, technical, spiritual, or all of it at once.</span>
             </div>
-            <svg class="signal-chart" viewBox="0 0 720 280" preserveAspectRatio="none" aria-hidden="true">
-              <defs>
-                <linearGradient id="signalGradient" x1="0" x2="1" y1="0" y2="0">
-                  <stop offset="0" stop-color="var(--ink)" />
-                  <stop offset=".52" stop-color="var(--accent)" />
-                  <stop offset="1" stop-color="var(--ink)" />
-                </linearGradient>
-              </defs>
-              <path class="chart-grid" d="M20 230H700M20 175H700M20 120H700M20 65H700" />
-              <path class="chart-line" d="M20 202 C82 76, 148 232, 210 114 S316 56, 355 174 S430 250, 500 106 S604 28, 700 86" />
-              <path class="chart-fill" d="M20 202 C82 76, 148 232, 210 114 S316 56, 355 174 S430 250, 500 106 S604 28, 700 86 L700 260 L20 260Z" />
-              <circle cx="210" cy="114" r="8" />
-              <circle cx="500" cy="106" r="8" />
-              <circle cx="636" cy="48" r="8" />
-            </svg>
+            <button class="console-regenerate" type="button" data-regenerate>redraw field</button>
+          </div>
+
+          <div class="metric-grid">
+            <article class="metric-card accent-lime">
+              <small>Mediums</small>
+              <strong>ALL</strong>
+              <span>image · sound · body · code</span>
+            </article>
+            <article class="metric-card accent-violet">
+              <small>Rule</small>
+              <strong>0</strong>
+              <span>permission beats format</span>
+            </article>
+            <article class="metric-card accent-amber">
+              <small>Status</small>
+              <strong>LIVE</strong>
+              <span>rooms keep changing</span>
+            </article>
           </div>
         </div>
       </div>
 
-      <div class="ticker" aria-label="Art focus ticker" data-reveal>
+      <div class="ticker" aria-label="Art ticker" data-reveal>
         <div class="ticker__track">
-          <span>ink studies</span><span>object memory</span><span>editorial rooms</span><span>raw scans</span><span>visual notes</span><span>tiny colors</span><span>archive not gallery</span>
-          <span>ink studies</span><span>object memory</span><span>editorial rooms</span><span>raw scans</span><span>visual notes</span><span>tiny colors</span><span>archive not gallery</span>
+          <span>painting</span><span>sound</span><span>movement</span><span>film</span><span>objects</span><span>games</span><span>ritual</span><span>fashion</span><span>code</span><span>food</span><span>rooms</span><span>text</span><span>the unknown</span>
+          <span>painting</span><span>sound</span><span>movement</span><span>film</span><span>objects</span><span>games</span><span>ritual</span><span>fashion</span><span>code</span><span>food</span><span>rooms</span><span>text</span><span>the unknown</span>
         </div>
       </div>
     </section>
@@ -138,176 +127,200 @@
     <section class="manifesto section section--tight" aria-labelledby="manifesto-title">
       <div class="section-label" data-reveal>manifesto</div>
       <h2 id="manifesto-title" class="split-heading" data-reveal>
-        <span>Not a portfolio.</span>
-        <span>Not a shop.</span>
-        <span>An unfinished room.</span>
+        <span>No gate.</span>
+        <span>No approved genre.</span>
+        <span>No single taste.</span>
       </h2>
-      <p class="wide-copy" data-reveal>apgo.ink/art keeps the design language spare and physical: paper, ink, borders, rough edges, absurd scale, and tiny color marks that behave like pins in a white room.</p>
+      <p class="wide-copy" data-reveal>We keep the page monochrome, editorial, physical, and sharp so the art does not get trapped inside a trend. The design is the room. The work can be anything.</p>
     </section>
 
-    <section class="section" id="rooms" aria-labelledby="rooms-title">
+    <section class="section" id="all-art" aria-labelledby="all-art-title">
       <div class="section-head" data-reveal>
         <div>
-          <p class="eyebrow"><span></span> rooms</p>
-          <h2 id="rooms-title">A house for images before they become explained.</h2>
+          <p class="eyebrow"><span></span> all art</p>
+          <h2 id="all-art-title">Total expressivity, not a department.</h2>
         </div>
-        <p>The page is structured like an art institution without pretending to be one: rooms, plates, fragments, and notes can be added over time without changing the system.</p>
+        <p>Tannenhof Mayer Art is for the full spectrum: refined, chaotic, technical, handmade, performative, commercial, anti-commercial, sincere, absurd, silent, loud.</p>
       </div>
 
-      <div class="bento bento--thesis">
+      <div class="permission-grid" data-reveal>
+        <button class="permission-chip is-active" type="button" data-permission="impossible">Impossible object</button>
+        <button class="permission-chip" type="button" data-permission="body">Body / movement</button>
+        <button class="permission-chip" type="button" data-permission="sound">Sound / noise</button>
+        <button class="permission-chip" type="button" data-permission="code">Code / systems</button>
+        <button class="permission-chip" type="button" data-permission="ritual">Ritual / symbol</button>
+        <button class="permission-chip" type="button" data-permission="domestic">Domestic / food</button>
+        <button class="permission-chip" type="button" data-permission="cinema">Cinema / scene</button>
+        <button class="permission-chip" type="button" data-permission="wildcard">Unknown form</button>
+      </div>
+
+      <div class="bento bento--total">
         <article class="bento-card bento-card--large" data-reveal>
           <span class="card-index">01</span>
-          <h3>Studies in black</h3>
-          <p>Drawings, scans, texture tests, typography accidents, and incomplete compositions that deserve to stay visible.</p>
-        </article>
-        <article class="bento-card" data-reveal>
-          <span class="card-index accent-lime-bg">02</span>
-          <h3>Color as punctuation</h3>
-          <p>Small marks, labels, pins, warnings, temperature, and rhythm.</p>
+          <h3>Image is welcome.</h3>
+          <p>Painting, drawing, photography, scans, posters, collage, diagrams, typography, raw screenshots, printed mistakes, and one-page visual worlds.</p>
+          <div class="micro-line" aria-hidden="true"><i></i><i></i><i></i></div>
         </article>
         <article class="bento-card bento-card--dark" data-reveal>
-          <span class="card-index accent-violet-bg">03</span>
-          <h3>Objects with memory</h3>
-          <p>Found things, photographed corners, physical surfaces, and pieces that feel like they were already alive.</p>
+          <span class="card-index accent-violet-bg">02</span>
+          <h3>Performance is welcome.</h3>
+          <p>The body can be the medium. Gesture, theater, dance, endurance, speech, silence, rituals, characters, social actions.</p>
+        </article>
+        <article class="bento-card bento-card--tall" data-reveal>
+          <span class="card-index accent-amber-bg">03</span>
+          <h3>Systems are welcome.</h3>
+          <p>Code, generative work, game loops, interfaces, strange tools, archives, maps, rules, machines, spreadsheets that start behaving like poems.</p>
         </article>
         <article class="bento-card" data-reveal>
-          <span class="card-index accent-amber-bg">04</span>
-          <h3>Editorial fragments</h3>
-          <p>Captions, essays, lists, manifestos, catalog cards, and printed-page thinking.</p>
+          <span class="card-index accent-coral-bg">04</span>
+          <h3>Object is welcome.</h3>
+          <p>Furniture, fashion, sculpture, ceramics, found things, rooms, packaging, weapons of tenderness, props for impossible lives.</p>
+        </article>
+        <article class="bento-card" data-reveal>
+          <span class="card-index accent-cyan-bg">05</span>
+          <h3>Text is welcome.</h3>
+          <p>Poetry, criticism, captions, scripts, manifestos, lists, margins, receipts, inventories, letters, titles that do half the work.</p>
         </article>
       </div>
     </section>
 
-    <section class="section section--inverted" id="method" aria-labelledby="method-title">
+    <section class="section section--inverted" id="wall" aria-labelledby="wall-title">
       <div class="organic-shape organic-shape--one" aria-hidden="true"></div>
       <div class="section-head" data-reveal>
         <div>
-          <p class="eyebrow eyebrow--light"><span></span> method</p>
-          <h2 id="method-title">Make it feel archived before it feels finished.</h2>
+          <p class="eyebrow eyebrow--light"><span></span> live wall</p>
+          <h2 id="wall-title">A wall that keeps changing before there is a collection.</h2>
         </div>
-        <p>Everything here should feel like a scan found in a drawer: deliberate, imperfect, useful, and alive enough to keep changing.</p>
+        <p>These are placeholder plates for the future archive. Replace them with work later, or keep the system as a rotating mood wall.</p>
       </div>
 
-      <div class="process" data-reveal>
-        <article>
-          <span>Collect</span>
-          <h3>Keep the rough thing.</h3>
-          <p>Gather marks, screenshots, scans, fragments, photos, discarded layouts, and accidental compositions.</p>
-        </article>
-        <article>
-          <span>Frame</span>
-          <h3>Give it a room.</h3>
-          <p>Do not over-explain. Use borders, scale, white space, and a small color signal to locate the piece.</p>
-        </article>
-        <article>
-          <span>Sequence</span>
-          <h3>Let pieces speak sideways.</h3>
-          <p>Place unrelated works close enough that they start producing tension, rhythm, and new meanings.</p>
-        </article>
-        <article>
-          <span>Return</span>
-          <h3>Keep reopening it.</h3>
-          <p>The archive can change. Titles can shift. Notes can appear later. The page should age like a studio wall.</p>
-        </article>
+      <div class="wall-controls" data-reveal>
+        <button class="neo-button neo-button--light" type="button" data-shuffle-wall>Shuffle the wall</button>
+        <button class="neo-button neo-button--light neo-button--ghost-light" type="button" data-print-page>Print as catalog sheet</button>
+      </div>
+
+      <div class="living-wall" data-wall data-reveal aria-label="Generative art wall">
+        <article class="plate plate--a"><span>001</span><strong>Soft violence / paper test</strong><i></i></article>
+        <article class="plate plate--b"><span>002</span><strong>Room for a sentence</strong><i></i></article>
+        <article class="plate plate--c"><span>003</span><strong>Body as architecture</strong><i></i></article>
+        <article class="plate plate--d"><span>004</span><strong>Machine trying to pray</strong><i></i></article>
+        <article class="plate plate--e"><span>005</span><strong>Food performance notes</strong><i></i></article>
+        <article class="plate plate--f"><span>006</span><strong>Noise with a small door</strong><i></i></article>
+        <article class="plate plate--g"><span>007</span><strong>Poster for no event</strong><i></i></article>
+        <article class="plate plate--h"><span>008</span><strong>Unknown form study</strong><i></i></article>
       </div>
     </section>
 
-    <section class="section" id="notes" aria-labelledby="notes-title">
-      <div class="focus-grid">
-        <div data-reveal>
-          <p class="eyebrow"><span></span> notation system</p>
-          <h2 id="notes-title">Small labels. Big blankness. No decorative noise.</h2>
-          <p class="wide-copy wide-copy--narrow">The interaction keeps the page playful without turning it into a toy. Each category has its own tone, but the system remains monochrome and editorial.</p>
-        </div>
-        <div class="focus-list" data-reveal>
-          <button class="focus-item is-active" type="button" data-focus="markets">
-            <span>Studies</span><small>drawings, scans, tests, surfaces</small>
-          </button>
-          <button class="focus-item" type="button" data-focus="builders">
-            <span>Rooms</span><small>curated groups, sequences, walls</small>
-          </button>
-          <button class="focus-item" type="button" data-focus="systems">
-            <span>Notes</span><small>captions, cards, marginalia, essays</small>
-          </button>
-          <button class="focus-item" type="button" data-focus="future">
-            <span>Objects</span><small>physical pieces, artifacts, editions</small>
-          </button>
-        </div>
-      </div>
-
-      <div class="focus-stage" data-reveal>
-        <div class="focus-stage__copy">
-          <p class="eyebrow"><span></span> current lens</p>
-          <h3 data-focus-title>Studies as evidence</h3>
-          <p data-focus-copy>The rough study is not a lesser version of the final work. It is proof of contact: hand, eye, error, material, and time in the same place.</p>
-        </div>
-        <div class="focus-stage__visual" aria-hidden="true">
-          <div class="orbit"><span></span><span></span><span></span><span></span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="principles-title">
+    <section class="section" id="machine" aria-labelledby="machine-title">
       <div class="section-head" data-reveal>
         <div>
-          <p class="eyebrow"><span></span> house rules</p>
-          <h2 id="principles-title">The art direction stays strict.</h2>
+          <p class="eyebrow"><span></span> expression machine</p>
+          <h2 id="machine-title">A small generator for getting unstuck.</h2>
         </div>
-        <p>This page exists to preserve the visual style exactly because it fits art better than finance.</p>
+        <p>Every click creates a new art command. No account, no server, no database — just a static page that behaves alive.</p>
       </div>
 
-      <div class="principle-stack">
-        <article data-reveal>
-          <span>01</span>
-          <h3>Black and white carries the room.</h3>
-          <p>Color appears only as a signal: a dot, a chip, a line, a tab, an object tag, never a background mood.</p>
-        </article>
-        <article data-reveal>
-          <span>02</span>
-          <h3>Scale should feel slightly wrong.</h3>
-          <p>Big serif headlines, tight tracking, strange negative space, heavy borders, and forms that feel more printed than digital.</p>
-        </article>
-        <article data-reveal>
-          <span>03</span>
-          <h3>Organic shapes stay physical.</h3>
-          <p>They should feel like cut paper, stains, blobs, stickers, shadows, and torn room markers.</p>
-        </article>
-        <article data-reveal>
-          <span>04</span>
-          <h3>The archive is allowed to be unfinished.</h3>
-          <p>No fake completeness. This page is made to grow slowly: one room, one note, one plate, one weird object at a time.</p>
-        </article>
+      <div class="machine-grid" data-reveal>
+        <div class="prompt-machine">
+          <div class="machine-topline">
+            <span>prompt output</span>
+            <span data-prompt-count>001</span>
+          </div>
+          <p data-prompt-text>Build an object that looks like it was designed for a ceremony that never existed.</p>
+          <div class="machine-actions">
+            <button class="neo-button" type="button" data-new-prompt>New prompt</button>
+            <button class="neo-button neo-button--ghost" type="button" data-copy-prompt>Copy</button>
+          </div>
+        </div>
+
+        <div class="weather-board" aria-label="Art weather board">
+          <article>
+            <small>temperature</small>
+            <strong data-weather-one>tender brutal</strong>
+          </article>
+          <article>
+            <small>pressure</small>
+            <strong data-weather-two>too much air</strong>
+          </article>
+          <article>
+            <small>material</small>
+            <strong data-weather-three>ink / fabric / error</strong>
+          </article>
+          <article>
+            <small>permission</small>
+            <strong data-weather-four>leave the scar</strong>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section section--inverted lab" aria-labelledby="lab-title">
+    <section class="section section--split" id="atlas" aria-labelledby="atlas-title">
+      <div class="atlas-copy" data-reveal>
+        <p class="eyebrow"><span></span> atlas</p>
+        <h2 id="atlas-title">The archive can expand in every direction.</h2>
+        <p>Use these as future routes: each one can become a subsection, a series, a zine, a show, a video, a release, or a living page inside the same visual system.</p>
+      </div>
+
+      <div class="atlas-grid" data-reveal>
+        <article><span>01</span><strong>Image room</strong><p>Drawings, paintings, scans, posters, photography.</p></article>
+        <article><span>02</span><strong>Sound room</strong><p>Noise, voice, field recordings, sonic diaries.</p></article>
+        <article><span>03</span><strong>Body room</strong><p>Performance, dance, costume, gesture, ritual.</p></article>
+        <article><span>04</span><strong>Code room</strong><p>Interfaces, games, systems, generative pieces.</p></article>
+        <article><span>05</span><strong>Object room</strong><p>Sculpture, furniture, props, editions, found materials.</p></article>
+        <article><span>06</span><strong>Text room</strong><p>Poems, captions, scripts, lists, essays, fragments.</p></article>
+        <article><span>07</span><strong>Public room</strong><p>Events, actions, posters, pop-ups, shared experiments.</p></article>
+        <article><span>08</span><strong>Unknown room</strong><p>For everything that breaks the map.</p></article>
+      </div>
+    </section>
+
+    <section class="section section--inverted section--focus" aria-labelledby="principles-title">
       <div class="organic-shape organic-shape--two" aria-hidden="true"></div>
-      <div class="lab__copy" data-reveal>
-        <p class="eyebrow eyebrow--light"><span></span> archive map</p>
-        <h2 id="lab-title">A static art archive that can keep expanding on GitHub Pages.</h2>
-        <p>No server is needed. Add new works as sections, duplicate room cards, link images locally, and keep the same monochrome editorial shell.</p>
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow eyebrow--light"><span></span> principles</p>
+          <h2 id="principles-title">The room protects expression. It does not tame it.</h2>
+        </div>
       </div>
-      <div class="terminal-card" data-reveal>
-        <div class="terminal-card__bar"><span></span><span></span><span></span></div>
-        <pre><code>apgo.ink/art
-├── rooms: studies / objects / notes
-├── plates: image groups + captions
-├── marks: tiny color signals
-├── archive: unfinished by design
-└── rule: monochrome first, color last</code></pre>
+
+      <div class="principle-board" data-reveal>
+        <article>
+          <span>01</span>
+          <h3>No forced elegance.</h3>
+          <p>Beautiful can be broken, ridiculous, rough, obsessive, technical, soft, or too loud.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>No medium hierarchy.</h3>
+          <p>A chair, a sound, a game, a photograph, a costume, and a sentence can sit at the same table.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>No premature explanation.</h3>
+          <p>Let the work arrive before the label. Let the category be late.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Small color, real signal.</h3>
+          <p>Color is used like a pin, alarm, bruise, temperature, or door handle — never wallpaper.</p>
+        </article>
       </div>
     </section>
 
-    <section class="section contact" id="contact" aria-labelledby="contact-title">
-      <div class="contact-card" data-reveal>
+    <section class="section" id="open" aria-labelledby="open-title">
+      <div class="open-call" data-reveal>
         <div>
-          <p class="eyebrow"><span></span> contact</p>
-          <h2 id="contact-title">Send work, notes, objects, or strange references.</h2>
-          <p>Use this page as the first art room for Tannenhof Mayer. Add images later, or keep it text-first until the archive is ready.</p>
+          <p class="eyebrow"><span></span> open call</p>
+          <h2 id="open-title">Send anything that feels alive.</h2>
+          <p>Work, sketches, photos, object studies, performance ideas, sound notes, code experiments, text fragments, impossible proposals, ugly first versions, finished pieces, or something in between.</p>
         </div>
-        <div class="contact-actions">
-          <a class="neo-button" href="mailto:hello@apgo.ink?subject=apgo.ink%2Fart&body=Hello%2C%0A%0AI%27d%20like%20to%20send%20something%20for%20the%20art%20room%3A%0A%0A">hello@apgo.ink</a>
-          <a class="neo-button neo-button--ghost" href="#top">Back to top</a>
+        <div class="open-card">
+          <span>contact route</span>
+          <strong>hello@apgo.ink</strong>
+          <div class="open-actions">
+            <a class="neo-button" href="mailto:hello@apgo.ink?subject=Tannenhof%20Mayer%20Art%20submission">Send work</a>
+            <button class="neo-button neo-button--ghost" type="button" data-copy-email>Copy email</button>
+          </div>
+          <small data-copy-status aria-live="polite">Attach images, links, text, sound, or a weird explanation.</small>
         </div>
       </div>
     </section>
@@ -315,12 +328,12 @@
 
   <footer class="site-footer">
     <div>
-      <strong>apgo.ink/art</strong>
-      <span>© <span data-year></span> Tannenhof Mayer</span>
+      <strong>Tannenhof Mayer Art</strong>
+      <span>© <span data-year></span> apgo.ink/art</span>
     </div>
-    <p>A static art room built for GitHub Pages. The style is intentionally monochrome, editorial, neo-brutalist, and unfinished.</p>
+    <a href="#top">Back to top</a>
   </footer>
 
-  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
