@@ -1,0 +1,12 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Tannenhof Mayer seal</title>
+  <desc id="desc">A black and ivory institutional shield mark with a monogram.</desc>
+  <rect width="160" height="160" fill="#11110F"/>
+  <rect x="14" y="14" width="132" height="132" fill="#11110F" stroke="#F4EFE5" stroke-width="2"/>
+  <path d="M80 32L120 48V79C120 103.5 103.1 122.8 80 131C56.9 122.8 40 103.5 40 79V48L80 32Z" fill="#F4EFE5"/>
+  <path d="M80 43L109 55V79C109 97 97.2 112.1 80 119C62.8 112.1 51 97 51 79V55L80 43Z" fill="#11110F"/>
+  <path d="M57 66H103" stroke="#F4EFE5" stroke-width="7" stroke-linecap="square"/>
+  <path d="M80 62V105" stroke="#F4EFE5" stroke-width="7" stroke-linecap="square"/>
+  <path d="M66 82H94" stroke="#B88A2A" stroke-width="5" stroke-linecap="square"/>
+  <path d="M66 95L80 103L94 95" stroke="#F4EFE5" stroke-width="5" stroke-linejoin="miter"/>
+</svg>

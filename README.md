@@ -1,53 +1,36 @@
-# Tannenhof Mayer — apgo.ink
+# Tannenhof Mayer — Frontier Institutional Rehaul
 
-Static GitHub Pages website for the main apgo.ink landing page.
+A fully static GitHub Pages-ready site for `apgo.ink`.
 
-## Direction
+## Included
 
-The main page now treats **Tannenhof Mayer** as the parent institutional house, not only an investment company.
+- New main institutional page at `/`
+- Existing art page preserved at `/art/`
+- Static assets, styles, scripts, favicon, Open Graph image, 404 page, sitemap, robots file, `.nojekyll`, and `CNAME`
 
-It is positioned to hold multiple future engines:
+## Main page direction
 
-- Investment firm / capital allocation
-- Future banking architecture
-- Operating companies
-- Research office
-- Culture and art via `/art/`
+This is a fundamental rehaul of the root page:
 
-## Design changes
-
-- Reduced oversized typography and section spacing so the page feels controlled instead of gigantic
-- More traditional serif system using Libre Baskerville
-- Stronger institutional framing around power, design, and trust
-- More cautious language around banking: architectural/future-oriented until licenses and regulatory approvals exist
-- Monochrome foundation with small color signals for authority, intelligence, compounding, and risk
-- `/art/` remains unchanged in the full ZIP
-
-## Files updated for this pass
-
-- `index.html`
-- `assets/css/styles.css`
-- `assets/img/mark.svg`
-- `assets/img/favicon.svg`
-- `assets/img/og-image.png`
-- `manifest.webmanifest`
-- `404.html`
-- `README.md`
-- `sitemap.xml`
+- Traditional institutional serif identity
+- Compact but powerful hero scale
+- Black / ivory / gold base with tiny encoded accent colors
+- Seal, ledger, charter card, domain architecture, and frontier board components
+- More serious and powerful than the previous version
+- Built to position Tannenhof Mayer as a parent institutional house, not only an investment company
 
 ## Deploy on GitHub Pages
 
-1. Upload the contents of this folder to the GitHub repository connected to GitHub Pages.
-2. Keep `CNAME` if your custom domain is `apgo.ink`.
-3. Make sure GitHub Pages is serving from the root of the repository.
-4. Visit `https://apgo.ink/` after the deployment finishes.
+1. Unzip this package.
+2. Copy the files into the root of your GitHub Pages repository.
+3. Commit and push.
+4. Make sure GitHub Pages is enabled for the branch you use.
+5. Keep `CNAME` if your domain is `apgo.ink`.
 
-## Customization
+## Edit quickly
 
-Edit `index.html` for copy, sections, and email address.
-Edit `assets/css/styles.css` for visual changes.
-The accent button cycles between the four institutional accent systems and stores the selected accent in local storage.
-
-## Legal note
-
-The footer includes basic cautionary language. Replace it with formal legal and regulatory language before presenting regulated financial, investment, or banking services.
+- Main page: `index.html`
+- Main styles: `styles/base.css` and `styles/frontier.css`
+- Main interaction: `scripts/main.js`
+- Seal/favicon/social preview: `assets/`
+- Art page: `art/index.html`
