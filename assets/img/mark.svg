@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
-  <title id="title">Tannenhof Mayer Investments mark</title>
+  <title id="title">Tannenhof Mayer mark</title>
   <desc id="desc">A shield-like institutional monogram for Tannenhof Mayer.</desc>
   <rect width="256" height="256" fill="#050505"/>
-  <path d="M128 21 211 58v62c0 58-33 96-83 115-50-19-83-57-83-115V58l83-37Z" fill="none" stroke="#f4f1ea" stroke-width="9"/>
-  <path d="M75 80h106v15h-45v79h-17V95H75V80Zm18 36h70v15H93v-15Z" fill="#f4f1ea"/>
-  <path d="M68 189h120" stroke="#b58a36" stroke-width="8" stroke-linecap="square"/>
-  <circle cx="128" cy="52" r="7" fill="#b58a36"/>
+  <path d="M128 21 211 58v62c0 58-33 96-83 115-50-19-83-57-83-115V58l83-37Z" fill="none" stroke="#f3efe6" stroke-width="9"/>
+  <path d="M74 78h108v15h-45v82h-18V93H74V78Zm18 37h72v15H92v-15Z" fill="#f3efe6"/>
+  <path d="M68 190h120" stroke="#b68a35" stroke-width="8" stroke-linecap="square"/>
+  <circle cx="128" cy="52" r="7" fill="#b68a35"/>
 </svg>
