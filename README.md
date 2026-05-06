@@ -1,46 +1,35 @@
-# Tannenhof Mayer — GitHub Pages Static Website
+# Tannenhof Mayer Website
 
-A finished static website for **Tannenhof Mayer** with institutional typography, serious editorial copy, interactive canvas charts, strategy tabs, scenario controls, and an allocation slider. No build step or server is required.
+A finished static website package for **Tannenhof Mayer**.
 
-## Files
+## Upload to GitHub Pages
 
-- `index.html` — complete page markup
-- `styles.css` — all design, layout, responsiveness, and animation
-- `script.js` — chart drawing, tabs, sliders, navigation, and Discord placeholder logic
-- `assets/` — SVG brand mark, favicon, social preview, and media illustration
-- `.nojekyll` — keeps GitHub Pages from processing the site
+1. Unzip this package.
+2. Put all files in the root of your GitHub Pages repository.
+3. Commit and push.
+4. In GitHub, go to **Settings → Pages** and publish from the root branch/folder you use.
 
-## Publish
+## Change the Discord link
 
-1. Create or open your GitHub repository.
-2. Upload the contents of this folder to the root of the repository.
-3. Go to **Settings → Pages**.
-4. Set the source to your main branch and `/root`.
-5. Save and open the Pages URL once GitHub finishes publishing.
+Search for this placeholder in `index.html`:
 
-## Add the Discord link
-
-Open `script.js` and replace:
-
-```js
-const DISCORD_URL = "#";
+```html
+https://discord.gg/REPLACE-ME
 ```
 
-with your real invite:
+Replace it with your real invite link.
 
-```js
-const DISCORD_URL = "https://discord.gg/your-invite";
-```
+## Replace placeholder data
 
-## Edit the sample data
+- `assets/js/data/performanceData.js`
+- `assets/js/data/allocationData.js`
+- `assets/js/data/scenarioData.js`
+- `assets/js/data/velocityData.js`
 
-The charts use illustrative arrays in `script.js`:
+The charts are client-side and require no backend.
 
-- `heroData`
-- `scenarios`
+## Notes
 
-Replace those values with your preferred sample series or manually updated data.
-
-## Important
-
-The footer includes a conservative investment disclaimer. Keep it unless you replace it with professional legal wording.
+- The website includes legal/disclosure copy because investment-related websites should be careful with claims.
+- All performance metrics are illustrative placeholders.
+- No font files are included. Typography loads from Google Fonts with strong local fallbacks.
