@@ -48,4 +48,4 @@ A static, GitHub Pages-ready website for **apgo.ink**, the public surface of **T
 
 ## Important note
 
-The footer includes a finance disclaimer because the organisation is described as investment-related. Keep it unless legal counsel gives you replacement wording.
+The footer includes a finance disclaimer because the organisation is described as investment-related. Keep it unless legal counsel gives you replacement wording. 
