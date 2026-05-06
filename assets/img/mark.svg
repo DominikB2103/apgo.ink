@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
   <title id="title">Tannenhof Mayer mark</title>
-  <desc id="desc">A shield-like institutional monogram for Tannenhof Mayer.</desc>
-  <rect width="256" height="256" fill="#050505"/>
-  <path d="M128 21 211 58v62c0 58-33 96-83 115-50-19-83-57-83-115V58l83-37Z" fill="none" stroke="#f3efe6" stroke-width="9"/>
-  <path d="M74 78h108v15h-45v82h-18V93H74V78Zm18 37h72v15H92v-15Z" fill="#f3efe6"/>
-  <path d="M68 190h120" stroke="#b68a35" stroke-width="8" stroke-linecap="square"/>
-  <circle cx="128" cy="52" r="7" fill="#b68a35"/>
+  <desc id="desc">A shield with Tannenhof Mayer initials.</desc>
+  <rect width="96" height="96" fill="#0b1118"/>
+  <path d="M48 11 78 22v23c0 18.5-10.4 31.5-30 40C28.4 76.5 18 63.5 18 45V22l30-11Z" fill="#f5f0e6"/>
+  <path d="M48 18.5 70.5 27v18c0 14-7.6 24.4-22.5 31.4C33.1 69.4 25.5 59 25.5 45V27L48 18.5Z" fill="#0b1118"/>
+  <path d="M31 33.5h34v6.2H51.6v28.8h-7.2V39.7H31v-6.2Z" fill="#f5f0e6"/>
+  <path d="M35 50h26v5.6H51.6v12.9h-7.2V55.6H35V50Z" fill="#b98b25"/>
 </svg>

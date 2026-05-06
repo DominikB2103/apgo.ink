@@ -1,36 +1,21 @@
-# Tannenhof Mayer — Frontier Institutional Rehaul
+# Tannenhof Mayer — Institutional House
 
-A fully static GitHub Pages-ready site for `apgo.ink`.
+A complete static website for `apgo.ink`, designed as a serious institutional house rather than an art-forward page.
 
-## Included
+## Files
 
-- New main institutional page at `/`
-- Existing art page preserved at `/art/`
-- Static assets, styles, scripts, favicon, Open Graph image, 404 page, sitemap, robots file, `.nojekyll`, and `CNAME`
-
-## Main page direction
-
-This is a fundamental rehaul of the root page:
-
-- Traditional institutional serif identity
-- Compact but powerful hero scale
-- Black / ivory / gold base with tiny encoded accent colors
-- Seal, ledger, charter card, domain architecture, and frontier board components
-- More serious and powerful than the previous version
-- Built to position Tannenhof Mayer as a parent institutional house, not only an investment company
+- `index.html` — main landing page
+- `assets/css/styles.css` — full visual system
+- `assets/js/main.js` — small interaction layer
+- `assets/img/` — custom mark, favicon, and Open Graph image
+- `CNAME` — GitHub Pages custom domain for `apgo.ink`
+- `.nojekyll` — disables Jekyll processing
+- `robots.txt`, `sitemap.xml`, `404.html`
 
 ## Deploy on GitHub Pages
 
-1. Unzip this package.
-2. Copy the files into the root of your GitHub Pages repository.
-3. Commit and push.
-4. Make sure GitHub Pages is enabled for the branch you use.
-5. Keep `CNAME` if your domain is `apgo.ink`.
+Upload these files to the root of the GitHub Pages repository. The site requires no build step and no server.
 
-## Edit quickly
+## Notes
 
-- Main page: `index.html`
-- Main styles: `styles/base.css` and `styles/frontier.css`
-- Main interaction: `scripts/main.js`
-- Seal/favicon/social preview: `assets/`
-- Art page: `art/index.html`
+The public copy is careful around banking and financial services. It presents future banking architecture and institutional formation without claiming regulated activity.
