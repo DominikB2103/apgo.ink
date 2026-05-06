@@ -1,31 +1,43 @@
 /*
-  Tannenhof Mayer static site
-  Edit this value when your Discord invite is ready.
+  Tannenhof Mayer static site.
+  Replace DISCORD_URL with your invite when ready.
 */
 const DISCORD_URL = "#";
 
 const $ = (selector, scope = document) => scope.querySelector(selector);
 const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
-
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+const palette = {
+  ink: "#F4EFE5",
+  muted: "rgba(244,239,229,0.58)",
+  grid: "rgba(244,239,229,0.10)",
+  gold: "#B2A16F",
+  green: "#9AB58F",
+  red: "#BF746B",
+  bg: "#0B0B0A"
+};
+
 function setDiscordLinks() {
-  $$(".discord-link, a[href='#discord']").forEach((link) => {
-    if (link.classList.contains("discord-link") && DISCORD_URL !== "#") {
+  $$(".discord-link").forEach((link) => {
+    if (DISCORD_URL !== "#") {
       link.href = DISCORD_URL;
       link.target = "_blank";
       link.rel = "noopener noreferrer";
+      link.textContent = link.classList.contains("large") ? "Enter Discord" : link.textContent;
+    } else if (link.getAttribute("href") === "#") {
+      link.href = "#join";
     }
   });
 }
 
 function initHeader() {
-  const header = $("[data-elevate]");
+  const header = $("[data-header]");
   const toggle = $(".nav-toggle");
   const nav = $("#site-nav");
-  const setScrolled = () => header.classList.toggle("is-scrolled", window.scrollY > 18);
-  setScrolled();
-  window.addEventListener("scroll", setScrolled, { passive: true });
+  const update = () => header?.classList.toggle("is-scrolled", window.scrollY > 8);
+  update();
+  window.addEventListener("scroll", update, { passive: true });
 
   toggle?.addEventListener("click", () => {
     const isOpen = document.body.classList.toggle("nav-open");
@@ -33,483 +45,351 @@ function initHeader() {
   });
 
   nav?.addEventListener("click", (event) => {
-    if (event.target.matches("a")) {
+    if (event.target instanceof HTMLAnchorElement) {
       document.body.classList.remove("nav-open");
       toggle?.setAttribute("aria-expanded", "false");
     }
   });
 }
 
-function initCursorGlow() {
-  const glow = $(".cursor-glow");
-  if (!glow || window.matchMedia("(pointer: coarse)").matches) return;
+function initReveal() {
+  const items = $$(".reveal");
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    items.forEach((item) => item.classList.add("is-visible"));
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  items.forEach((item) => observer.observe(item));
+}
 
-  window.addEventListener("pointermove", (event) => {
-    glow.style.opacity = "1";
-    glow.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0) translate(-50%, -50%)`;
-  }, { passive: true });
+function resizeCanvas(canvas) {
+  const rect = canvas.getBoundingClientRect();
+  const ratio = Math.min(window.devicePixelRatio || 1, 2);
+  const width = Math.max(320, Math.floor(rect.width));
+  const height = Math.max(220, Math.floor(rect.height));
+  canvas.width = Math.floor(width * ratio);
+  canvas.height = Math.floor(height * ratio);
+  const ctx = canvas.getContext("2d");
+  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+  return { ctx, width, height };
+}
 
-  window.addEventListener("pointerleave", () => {
-    glow.style.opacity = "0";
+function makeSeries(length, seed, drift = 0.22, noise = 1.4) {
+  const points = [];
+  let value = seed;
+  for (let i = 0; i < length; i += 1) {
+    const cycle = Math.sin(i / 5.8) * noise + Math.cos(i / 10.3) * noise * 0.58;
+    const shock = i % 17 === 0 ? -noise * 1.15 : 0;
+    value += drift + cycle * 0.12 + shock;
+    points.push(Number(value.toFixed(2)));
+  }
+  return points;
+}
+
+const heroData = {
+  "1Y": makeSeries(42, 100, 0.52, 2.1),
+  "3Y": makeSeries(72, 92, 0.34, 2.5),
+  "5Y": makeSeries(96, 84, 0.29, 2.8)
+};
+
+const scenarios = {
+  balanced: {
+    title: "Balanced frontier",
+    range: "8–14%",
+    vol: "Moderate",
+    cash: "18%",
+    up: [100, 104, 107, 111, 109, 113, 118, 122, 121, 126, 130, 134],
+    down: [100, 99, 101, 98, 96, 98, 97, 100, 102, 101, 104, 105]
+  },
+  riskon: {
+    title: "Risk-on expansion",
+    range: "14–24%",
+    vol: "Elevated",
+    cash: "10%",
+    up: [100, 106, 112, 118, 116, 124, 132, 139, 143, 151, 160, 171],
+    down: [100, 101, 98, 95, 92, 97, 102, 100, 106, 104, 111, 118]
+  },
+  stress: {
+    title: "Stress review",
+    range: "−9–6%",
+    vol: "Controlled",
+    cash: "32%",
+    up: [100, 101, 99, 97, 96, 98, 100, 102, 101, 103, 105, 106],
+    down: [100, 96, 93, 91, 88, 86, 89, 87, 90, 92, 91, 94]
+  }
+};
+
+function linePath(ctx, points, mapX, mapY) {
+  ctx.beginPath();
+  points.forEach((point, index) => {
+    const x = mapX(index);
+    const y = mapY(point);
+    if (index === 0) ctx.moveTo(x, y);
+    else ctx.lineTo(x, y);
   });
 }
 
-function initReveal() {
-  const reveals = $$(".reveal");
-  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
-    reveals.forEach((el) => el.classList.add("visible"));
-    return;
+function drawGrid(ctx, width, height, pad) {
+  ctx.clearRect(0, 0, width, height);
+  ctx.fillStyle = "rgba(11,11,10,0.16)";
+  ctx.fillRect(0, 0, width, height);
+  ctx.strokeStyle = palette.grid;
+  ctx.lineWidth = 1;
+  for (let i = 0; i <= 5; i += 1) {
+    const y = pad.top + ((height - pad.top - pad.bottom) / 5) * i;
+    ctx.beginPath();
+    ctx.moveTo(pad.left, y);
+    ctx.lineTo(width - pad.right, y);
+    ctx.stroke();
   }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.14 });
-
-  reveals.forEach((el) => observer.observe(el));
+  for (let i = 0; i <= 6; i += 1) {
+    const x = pad.left + ((width - pad.left - pad.right) / 6) * i;
+    ctx.beginPath();
+    ctx.moveTo(x, pad.top);
+    ctx.lineTo(x, height - pad.bottom);
+    ctx.stroke();
+  }
 }
 
-function initCounters() {
-  const counters = $$('[data-counter]');
-  if (!counters.length) return;
+function drawLineChart(canvas, series, options = {}) {
+  const { ctx, width, height } = resizeCanvas(canvas);
+  const pad = { top: 26, right: 24, bottom: 34, left: 42 };
+  const all = Array.isArray(series[0]) ? series.flat() : series;
+  const min = Math.min(...all) * 0.985;
+  const max = Math.max(...all) * 1.015;
+  const innerW = width - pad.left - pad.right;
+  const innerH = height - pad.top - pad.bottom;
+  const longest = Array.isArray(series[0]) ? Math.max(...series.map((s) => s.length)) : series.length;
+  const mapX = (i, length = longest) => pad.left + (i / Math.max(length - 1, 1)) * innerW;
+  const mapY = (value) => pad.top + (1 - (value - min) / (max - min || 1)) * innerH;
 
-  const runCounter = (counter) => {
-    const target = Number(counter.dataset.counter || 0);
-    const duration = prefersReducedMotion ? 0 : 1300;
-    const startTime = performance.now();
+  drawGrid(ctx, width, height, pad);
 
-    function tick(now) {
-      const elapsed = Math.min(1, (now - startTime) / duration || 1);
-      const eased = 1 - Math.pow(1 - elapsed, 3);
-      counter.textContent = Math.round(target * eased).toString();
-      if (elapsed < 1) requestAnimationFrame(tick);
-    }
+  ctx.fillStyle = palette.muted;
+  ctx.font = "11px Inter, system-ui, sans-serif";
+  ctx.textAlign = "right";
+  ctx.textBaseline = "middle";
+  for (let i = 0; i <= 4; i += 1) {
+    const value = min + ((max - min) / 4) * (4 - i);
+    const y = pad.top + (innerH / 4) * i;
+    ctx.fillText(value.toFixed(0), pad.left - 10, y);
+  }
 
-    requestAnimationFrame(tick);
+  const collections = Array.isArray(series[0]) ? series : [series];
+  const colors = options.colors || [palette.green, palette.red];
+
+  collections.forEach((points, idx) => {
+    const color = colors[idx % colors.length];
+    linePath(ctx, points, (i) => mapX(i, points.length), mapY);
+    const gradient = ctx.createLinearGradient(0, pad.top, 0, height - pad.bottom);
+    gradient.addColorStop(0, color + "55");
+    gradient.addColorStop(1, color + "00");
+    ctx.lineTo(mapX(points.length - 1, points.length), height - pad.bottom);
+    ctx.lineTo(mapX(0, points.length), height - pad.bottom);
+    ctx.closePath();
+    ctx.fillStyle = gradient;
+    ctx.fill();
+
+    linePath(ctx, points, (i) => mapX(i, points.length), mapY);
+    ctx.strokeStyle = color;
+    ctx.lineWidth = idx === 0 ? 2.4 : 2;
+    ctx.stroke();
+
+    const lastX = mapX(points.length - 1, points.length);
+    const lastY = mapY(points[points.length - 1]);
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.arc(lastX, lastY, 4, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
+  canvas._chartMeta = { series: collections, min, max, pad, width, height, mapX, mapY };
+}
+
+function initTooltips() {
+  const tooltip = $("#chartTooltip");
+  [$("#heroChart"), $("#scenarioChart")].filter(Boolean).forEach((canvas) => {
+    canvas.addEventListener("mousemove", (event) => {
+      const meta = canvas._chartMeta;
+      if (!meta || !tooltip) return;
+      const rect = canvas.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const innerW = meta.width - meta.pad.left - meta.pad.right;
+      const ratio = Math.min(Math.max((x - meta.pad.left) / innerW, 0), 1);
+      const primary = meta.series[0];
+      const index = Math.round(ratio * (primary.length - 1));
+      const values = meta.series.map((s) => s[Math.min(index, s.length - 1)]);
+      tooltip.style.left = `${event.clientX}px`;
+      tooltip.style.top = `${event.clientY}px`;
+      tooltip.style.opacity = "1";
+      tooltip.innerHTML = values.length > 1
+        ? `Upside ${values[0].toFixed(1)} · Downside ${values[1].toFixed(1)}`
+        : `Index ${values[0].toFixed(1)}`;
+    });
+    canvas.addEventListener("mouseleave", () => {
+      if (tooltip) tooltip.style.opacity = "0";
+    });
+  });
+}
+
+function initHeroChart() {
+  const canvas = $("#heroChart");
+  if (!canvas) return;
+  let active = "1Y";
+  const render = () => drawLineChart(canvas, heroData[active], { colors: [palette.green] });
+  render();
+  $$(".period-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      active = button.dataset.period || "1Y";
+      $$(".period-btn").forEach((btn) => btn.classList.toggle("is-active", btn === button));
+      render();
+    });
+  });
+  window.addEventListener("resize", render);
+}
+
+function initScenarioChart() {
+  const canvas = $("#scenarioChart");
+  if (!canvas) return;
+  let active = "balanced";
+  const name = $("#scenarioName");
+  const range = $("#rangeMetric");
+  const vol = $("#volMetric");
+  const cash = $("#cashMetric");
+  const render = () => {
+    const scenario = scenarios[active];
+    if (name) name.textContent = scenario.title;
+    if (range) range.textContent = scenario.range;
+    if (vol) vol.textContent = scenario.vol;
+    if (cash) cash.textContent = scenario.cash;
+    drawLineChart(canvas, [scenario.up, scenario.down], { colors: [palette.green, palette.red] });
   };
-
-  if (!("IntersectionObserver" in window)) {
-    counters.forEach(runCounter);
-    return;
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        runCounter(entry.target);
-        observer.unobserve(entry.target);
-      }
+  render();
+  $$(".scenario-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      active = button.dataset.scenario || "balanced";
+      $$(".scenario-btn").forEach((btn) => btn.classList.toggle("is-active", btn === button));
+      render();
     });
-  }, { threshold: 0.5 });
-
-  counters.forEach((counter) => observer.observe(counter));
+  });
+  window.addEventListener("resize", render);
 }
 
-const strategyCopy = {
-  sourcing: {
+const strategyContent = {
+  discovery: {
     label: "Layer 01",
-    title: "Sourcing",
-    body: "Build a high-signal Discord community where members bring asymmetric ideas from markets, private companies, technology shifts, and local knowledge.",
+    title: "Community signal intake",
+    text: "We build watchlists from people who are close to markets, products, code, culture, and consumer behavior. The purpose is not to chase every trend. It is to identify the few signals that deserve professional research.",
     bullets: [
-      "Member reputation and contribution trails",
-      "Opportunity intake boards and theme rooms",
-      "Founder/operator interviews and open memos"
+      "Structured thesis submissions with falsifiable claims.",
+      "Signal scoring by novelty, evidence quality, and market relevance.",
+      "Public debate that rewards precision over volume."
     ]
   },
-  diligence: {
+  verification: {
     label: "Layer 02",
-    title: "Diligence",
-    body: "Turn raw ideas into institutional-grade research through memo templates, opposing views, catalyst mapping, downside cases, and contributor scoring.",
+    title: "Evidence, debate, and decision records",
+    text: "Promising ideas move into a verification process. The best research states what would disprove it, where the downside lives, and why the timing matters now rather than eventually.",
     bullets: [
-      "Red-team reviews before conviction forms",
-      "Quantitative and qualitative evidence boards",
-      "Decision logs that preserve the original thesis"
+      "Bull and bear case drafted before capital is discussed.",
+      "Catalyst map, liquidity review, and key risk register.",
+      "Decision memos archived so the firm can learn from outcomes."
     ]
   },
   allocation: {
     label: "Layer 03",
-    title: "Allocation",
-    body: "Treat capital deployment as a consequence of demonstrated conviction, not hype. Exposure follows risk limits, liquidity, concentration, and time horizon.",
+    title: "Sizing through risk budget, not excitement",
+    text: "Allocation should express conviction while respecting uncertainty. Tannenhof Mayer’s process favors reserves, position limits, review points, and explicit exit logic.",
     bullets: [
-      "Position sizing tied to confidence and volatility",
-      "Drawdown rules and kill criteria before entry",
-      "Portfolio construction across themes and cycles"
-    ]
-  },
-  governance: {
-    label: "Layer 04",
-    title: "Governance",
-    body: "Design a future structure where contributors can participate through transparent rules, conflict controls, and legally reviewed ownership pathways.",
-    bullets: [
-      "Contribution-based trust and access layers",
-      "Compliance-reviewed participation models",
-      "Community reporting and decision transparency"
+      "Position size tied to evidence quality and downside tolerance.",
+      "Cash reserve maintained for volatility and new opportunity.",
+      "Ongoing review cadence after the initial thesis is approved."
     ]
   }
 };
 
-function initStrategyPanel() {
-  const panel = $("#strategyPanel");
-  const nodes = $$("[data-strategy]");
-  if (!panel || !nodes.length) return;
-
-  nodes.forEach((node) => {
-    node.addEventListener("click", () => {
-      nodes.forEach((item) => item.classList.remove("active"));
-      node.classList.add("active");
-      const data = strategyCopy[node.dataset.strategy] || strategyCopy.sourcing;
-      panel.animate([
-        { opacity: 0.7, transform: "translateY(8px)" },
-        { opacity: 1, transform: "translateY(0)" }
-      ], { duration: 260, easing: "ease-out" });
-      panel.innerHTML = `
-        <span class="panel-label">${data.label}</span>
-        <h3>${data.title}</h3>
-        <p>${data.body}</p>
-        <ul>${data.bullets.map((item) => `<li>${item}</li>`).join("")}</ul>
-      `;
+function initStrategyTabs() {
+  const label = $("#strategyLabel");
+  const title = $("#strategyTitle");
+  const text = $("#strategyText");
+  const bullets = $("#strategyBullets");
+  $$(".strategy-tab").forEach((button) => {
+    button.addEventListener("click", () => {
+      const key = button.dataset.strategy || "discovery";
+      const content = strategyContent[key];
+      $$(".strategy-tab").forEach((tab) => {
+        const active = tab === button;
+        tab.classList.toggle("is-active", active);
+        tab.setAttribute("aria-selected", String(active));
+      });
+      if (label) label.textContent = content.label;
+      if (title) title.textContent = content.title;
+      if (text) text.textContent = content.text;
+      if (bullets) {
+        bullets.innerHTML = content.bullets.map((item) => `<li>${item}</li>`).join("");
+      }
     });
   });
 }
 
-function setupCanvas(canvas, cssHeight) {
-  const dpr = Math.min(window.devicePixelRatio || 1, 2);
-  const width = Math.max(320, Math.floor(canvas.getBoundingClientRect().width || canvas.parentElement.clientWidth));
-  const height = cssHeight || Number(canvas.getAttribute("height")) || 260;
-  canvas.style.height = `${height}px`;
-  canvas.width = Math.floor(width * dpr);
-  canvas.height = Math.floor(height * dpr);
-  const ctx = canvas.getContext("2d");
-  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  return { ctx, width, height };
-}
+function initAllocation() {
+  const range = $("#convictionRange");
+  const output = $("#convictionOutput");
+  const bars = $("#allocationBars");
+  if (!range || !bars) return;
 
-function drawGrid(ctx, width, height, options = {}) {
-  const { dense = false, labels = false } = options;
-  ctx.save();
-  ctx.strokeStyle = "rgba(255,255,255,0.075)";
-  ctx.lineWidth = 1;
-  const stepX = dense ? 38 : 58;
-  const stepY = dense ? 34 : 46;
-  for (let x = 0; x <= width; x += stepX) {
-    ctx.beginPath();
-    ctx.moveTo(x + 0.5, 0);
-    ctx.lineTo(x + 0.5, height);
-    ctx.stroke();
-  }
-  for (let y = 0; y <= height; y += stepY) {
-    ctx.beginPath();
-    ctx.moveTo(0, y + 0.5);
-    ctx.lineTo(width, y + 0.5);
-    ctx.stroke();
-  }
-  if (labels) {
-    ctx.fillStyle = "rgba(247,247,242,0.36)";
-    ctx.font = "11px ui-monospace, SFMono-Regular, Menlo, monospace";
-    ctx.fillText("LOW RISK", 14, height - 14);
-    ctx.fillText("HIGH RETURN", 14, 18);
-  }
-  ctx.restore();
-}
-
-function normalizePoints(data, width, height, padding = 22) {
-  const min = Math.min(...data);
-  const max = Math.max(...data);
-  const range = max - min || 1;
-  return data.map((value, index) => {
-    const x = padding + (index / (data.length - 1)) * (width - padding * 2);
-    const y = padding + (1 - (value - min) / range) * (height - padding * 2);
-    return { x, y, value };
-  });
-}
-
-function drawLineChart(canvas, data, options = {}) {
-  const {
-    cssHeight = 250,
-    color = "#2cff88",
-    secondaryColor = "rgba(44,255,136,0.16)",
-    progress = 1,
-    showTerminalReadout = false,
-    fill = true
-  } = options;
-  const { ctx, width, height } = setupCanvas(canvas, cssHeight);
-  ctx.clearRect(0, 0, width, height);
-  drawGrid(ctx, width, height, { dense: showTerminalReadout });
-
-  const points = normalizePoints(data, width, height, 26);
-  const count = Math.max(2, Math.floor(points.length * progress));
-  const visible = points.slice(0, count);
-
-  ctx.save();
-  ctx.beginPath();
-  visible.forEach((point, index) => {
-    if (index === 0) ctx.moveTo(point.x, point.y);
-    else ctx.lineTo(point.x, point.y);
-  });
-
-  if (fill && visible.length > 1) {
-    const last = visible[visible.length - 1];
-    const first = visible[0];
-    const fillGradient = ctx.createLinearGradient(0, 0, 0, height);
-    fillGradient.addColorStop(0, secondaryColor);
-    fillGradient.addColorStop(0.75, "rgba(255,255,255,0.012)");
-    ctx.lineTo(last.x, height - 20);
-    ctx.lineTo(first.x, height - 20);
-    ctx.closePath();
-    ctx.fillStyle = fillGradient;
-    ctx.fill();
-  }
-
-  ctx.beginPath();
-  visible.forEach((point, index) => {
-    if (index === 0) ctx.moveTo(point.x, point.y);
-    else {
-      const prev = visible[index - 1];
-      const cx = (prev.x + point.x) / 2;
-      ctx.bezierCurveTo(cx, prev.y, cx, point.y, point.x, point.y);
-    }
-  });
-  ctx.shadowColor = color;
-  ctx.shadowBlur = 22;
-  ctx.strokeStyle = color;
-  ctx.lineWidth = 3;
-  ctx.lineCap = "round";
-  ctx.lineJoin = "round";
-  ctx.stroke();
-
-  ctx.shadowBlur = 0;
-  ctx.strokeStyle = "rgba(255,255,255,0.7)";
-  ctx.lineWidth = 1;
-  ctx.stroke();
-
-  const last = visible[visible.length - 1];
-  if (last) {
-    ctx.beginPath();
-    ctx.arc(last.x, last.y, 5, 0, Math.PI * 2);
-    ctx.fillStyle = color;
-    ctx.shadowColor = color;
-    ctx.shadowBlur = 22;
-    ctx.fill();
-  }
-
-  if (showTerminalReadout) {
-    ctx.shadowBlur = 0;
-    ctx.fillStyle = "rgba(247,247,242,0.52)";
-    ctx.font = "11px ui-monospace, SFMono-Regular, Menlo, monospace";
-    ctx.fillText("VOL ADJ", 18, height - 18);
-    ctx.fillStyle = color;
-    ctx.fillText("LIVE SIGNAL", width - 102, 22);
-  }
-  ctx.restore();
-}
-
-const heroData = [
-  48, 52, 50, 58, 62, 56, 66, 72, 68, 75, 82, 78, 88, 94, 91, 97, 106, 102, 114, 121, 118, 130,
-  138, 132, 146, 152, 149, 160, 170, 164, 178, 188, 184, 198, 207, 204, 219, 226, 221, 238
-];
-const upData = [14, 17, 19, 18, 22, 27, 31, 28, 35, 42, 39, 48, 56, 52, 64, 74, 70, 83, 96, 91, 108, 122, 118, 136, 152, 148, 168, 188];
-const downData = [136, 132, 130, 124, 128, 118, 110, 114, 102, 96, 91, 86, 82, 76, 69, 72, 64, 60, 58, 62, 55, 50, 48, 45, 42, 39, 37, 36];
-
-function drawRiskMap(canvas, progress = 1) {
-  const { ctx, width, height } = setupCanvas(canvas, 320);
-  ctx.clearRect(0, 0, width, height);
-  drawGrid(ctx, width, height, { dense: true, labels: true });
-
-  const left = 44;
-  const right = width - 24;
-  const top = 24;
-  const bottom = height - 44;
-
-  ctx.save();
-  ctx.strokeStyle = "rgba(255,255,255,0.18)";
-  ctx.lineWidth = 1;
-  ctx.beginPath();
-  ctx.moveTo(left, bottom);
-  ctx.lineTo(right, bottom);
-  ctx.moveTo(left, bottom);
-  ctx.lineTo(left, top);
-  ctx.stroke();
-
-  const points = [
-    { x: 0.18, y: 0.38, r: 11, label: "Cashflow", c: "#f7f7f2" },
-    { x: 0.34, y: 0.63, r: 15, label: "Quality", c: "#2cff88" },
-    { x: 0.58, y: 0.72, r: 19, label: "Frontier", c: "#2cff88" },
-    { x: 0.78, y: 0.46, r: 14, label: "Cyclic", c: "#ff3b3b" },
-    { x: 0.68, y: 0.84, r: 10, label: "Venture", c: "#2cff88" },
-    { x: 0.47, y: 0.29, r: 9, label: "Hedge", c: "#f7f7f2" }
+  const categories = [
+    { name: "Core quality", base: 32, sensitivity: 0.08 },
+    { name: "Frontier themes", base: 22, sensitivity: 0.32 },
+    { name: "Special situations", base: 14, sensitivity: 0.16 },
+    { name: "Hedges", base: 12, sensitivity: -0.08 },
+    { name: "Reserve", base: 20, sensitivity: -0.48 }
   ];
 
-  points.forEach((point, index) => {
-    const localProgress = Math.max(0, Math.min(1, progress * 1.25 - index * 0.08));
-    if (!localProgress) return;
-    const x = left + point.x * (right - left);
-    const y = bottom - point.y * (bottom - top);
-    ctx.globalAlpha = localProgress;
-    ctx.beginPath();
-    ctx.arc(x, y, point.r * localProgress, 0, Math.PI * 2);
-    ctx.fillStyle = point.c === "#ff3b3b" ? "rgba(255,59,59,0.22)" : point.c === "#2cff88" ? "rgba(44,255,136,0.22)" : "rgba(255,255,255,0.16)";
-    ctx.shadowColor = point.c;
-    ctx.shadowBlur = 28;
-    ctx.fill();
-    ctx.shadowBlur = 0;
-    ctx.strokeStyle = point.c;
-    ctx.lineWidth = 1.4;
-    ctx.stroke();
-    ctx.fillStyle = "rgba(247,247,242,0.72)";
-    ctx.font = "12px Inter, system-ui, sans-serif";
-    ctx.fillText(point.label, x + point.r + 8, y + 4);
-  });
-
-  ctx.restore();
-}
-
-function drawOwnershipDonut(canvas, progress = 1) {
-  const { ctx, width, height } = setupCanvas(canvas, 320);
-  ctx.clearRect(0, 0, width, height);
-  drawGrid(ctx, width, height, { dense: true });
-  const cx = width / 2;
-  const cy = height / 2;
-  const radius = Math.min(width, height) * 0.31;
-  const thickness = Math.max(18, radius * 0.28);
-  const segments = [
-    { label: "Research", value: 34, color: "#2cff88" },
-    { label: "Governance", value: 24, color: "#f7f7f2" },
-    { label: "Capital", value: 22, color: "#8affbd" },
-    { label: "Risk", value: 20, color: "#ff3b3b" }
-  ];
-  const total = segments.reduce((sum, segment) => sum + segment.value, 0);
-  let start = -Math.PI / 2;
-
-  ctx.save();
-  ctx.lineWidth = thickness;
-  ctx.lineCap = "round";
-  segments.forEach((segment, index) => {
-    const angle = (segment.value / total) * Math.PI * 2 * progress;
-    if (angle <= 0) return;
-    ctx.beginPath();
-    ctx.arc(cx, cy, radius, start + 0.05, start + angle - 0.05);
-    ctx.strokeStyle = segment.color;
-    ctx.shadowColor = segment.color;
-    ctx.shadowBlur = segment.color === "#ff3b3b" ? 18 : 26;
-    ctx.globalAlpha = segment.color === "#f7f7f2" ? 0.72 : 0.96;
-    ctx.stroke();
-    start += (segment.value / total) * Math.PI * 2;
-  });
-
-  ctx.globalAlpha = 1;
-  ctx.shadowBlur = 0;
-  ctx.fillStyle = "rgba(247,247,242,0.94)";
-  ctx.textAlign = "center";
-  ctx.font = "700 42px Inter, system-ui, sans-serif";
-  ctx.fillText("100", cx, cy + 8);
-  ctx.font = "12px Inter, system-ui, sans-serif";
-  ctx.fillStyle = "rgba(247,247,242,0.54)";
-  ctx.fillText("CONTRIBUTION FLYWHEEL", cx, cy + 32);
-
-  ctx.textAlign = "left";
-  segments.forEach((segment, index) => {
-    const x = width - 142;
-    const y = 44 + index * 28;
-    ctx.fillStyle = segment.color;
-    ctx.shadowColor = segment.color;
-    ctx.shadowBlur = 12;
-    ctx.beginPath();
-    ctx.arc(x, y - 4, 4, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.shadowBlur = 0;
-    ctx.fillStyle = "rgba(247,247,242,0.7)";
-    ctx.font = "12px Inter, system-ui, sans-serif";
-    ctx.fillText(`${segment.label} ${segment.value}%`, x + 14, y);
-  });
-  ctx.restore();
-}
-
-function initCharts() {
-  const hero = $("#heroChart");
-  const up = $("#upChart");
-  const down = $("#downChart");
-  const risk = $("#riskMap");
-  const ownership = $("#ownershipDonut");
-  const all = [hero, up, down, risk, ownership].filter(Boolean);
-  let progress = prefersReducedMotion ? 1 : 0;
+  function values(level) {
+    const delta = level - 55;
+    const raw = categories.map((cat) => Math.max(4, cat.base + delta * cat.sensitivity));
+    const total = raw.reduce((sum, value) => sum + value, 0);
+    return raw.map((value) => Math.round((value / total) * 100));
+  }
 
   function render() {
-    const p = prefersReducedMotion ? 1 : progress;
-    if (hero) drawLineChart(hero, heroData, {
-      cssHeight: 220,
-      color: "#2cff88",
-      secondaryColor: "rgba(44,255,136,0.2)",
-      progress: Math.min(1, p * 1.08),
-      showTerminalReadout: true
-    });
-    if (up) drawLineChart(up, upData, {
-      cssHeight: 250,
-      color: "#2cff88",
-      secondaryColor: "rgba(44,255,136,0.18)",
-      progress: Math.min(1, p * 1.1)
-    });
-    if (down) drawLineChart(down, downData, {
-      cssHeight: 250,
-      color: "#ff3b3b",
-      secondaryColor: "rgba(255,59,59,0.16)",
-      progress: Math.min(1, p * 1.1)
-    });
-    if (risk) drawRiskMap(risk, Math.min(1, p * 1.16));
-    if (ownership) drawOwnershipDonut(ownership, Math.min(1, p * 1.08));
+    const level = Number(range.value);
+    if (output) output.textContent = String(level);
+    const allocation = values(level);
+    bars.innerHTML = categories.map((cat, index) => `
+      <div class="allocation-row">
+        <span>${cat.name}</span>
+        <div class="allocation-track"><div class="allocation-fill" style="width:${allocation[index]}%"></div></div>
+        <strong>${allocation[index]}%</strong>
+      </div>
+    `).join("");
   }
 
-  function animate() {
-    progress += 0.018;
-    render();
-    if (progress < 1) requestAnimationFrame(animate);
-  }
-
-  if (prefersReducedMotion) render();
-  else requestAnimationFrame(animate);
-
-  let resizeTimer;
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(render, 110);
-  });
-
-  // Redraw when chart sections first come into view to keep the canvases crisp after layout changes.
-  if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver((entries) => {
-      if (entries.some((entry) => entry.isIntersecting)) render();
-    }, { threshold: 0.1 });
-    all.forEach((canvas) => observer.observe(canvas));
-  }
+  render();
+  range.addEventListener("input", render);
 }
 
-function initTilt() {
-  const cards = $$(".hero-terminal, .chart-shell, .glass-card, .cta-card");
-  if (prefersReducedMotion || window.matchMedia("(pointer: coarse)").matches) return;
-
-  cards.forEach((card) => {
-    card.addEventListener("pointermove", (event) => {
-      const rect = card.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width - 0.5;
-      const y = (event.clientY - rect.top) / rect.height - 0.5;
-      card.style.transform = `perspective(1100px) rotateX(${-y * 3.5}deg) rotateY(${x * 3.5}deg) translateY(-2px)`;
-    });
-    card.addEventListener("pointerleave", () => {
-      card.style.transform = "";
-    });
-  });
-}
-
-window.addEventListener("DOMContentLoaded", () => {
+function init() {
   setDiscordLinks();
   initHeader();
-  initCursorGlow();
   initReveal();
-  initCounters();
-  initStrategyPanel();
-  initCharts();
-  initTilt();
-});
+  initHeroChart();
+  initScenarioChart();
+  initTooltips();
+  initStrategyTabs();
+  initAllocation();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", init);
+} else {
+  init();
+}

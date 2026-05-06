@@ -1,7 +1,8 @@
-<svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="72" height="72" rx="20" fill="#050505"/>
-  <rect x="1" y="1" width="70" height="70" rx="19" stroke="white" stroke-opacity="0.16"/>
-  <path d="M18 50V22H25.8L36 38.4L46.2 22H54V50H46.8V34.8L38.7 47H33.3L25.2 34.8V50H18Z" fill="white"/>
-  <path d="M18 22H54" stroke="#2CFF88" stroke-width="2" stroke-linecap="round"/>
-  <path d="M20 54C28.5 49.5 39.5 49.5 52 54" stroke="#FF3B3B" stroke-opacity="0.78" stroke-width="2" stroke-linecap="round"/>
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="128" height="128" rx="10" fill="#0B0B0A"/>
+  <rect x="10" y="10" width="108" height="108" rx="4" stroke="#F2EFE6" stroke-opacity="0.72" stroke-width="2"/>
+  <path d="M31 39H57" stroke="#F2EFE6" stroke-width="4" stroke-linecap="square"/>
+  <path d="M44 39V92" stroke="#F2EFE6" stroke-width="4" stroke-linecap="square"/>
+  <path d="M68 92V39H73.6L88 72.4L102.4 39H108V92H102V55.4L90.4 82H85.6L74 55.4V92H68Z" fill="#F2EFE6"/>
+  <path d="M24 103H104" stroke="#8A7A4F" stroke-width="2"/>
 </svg>

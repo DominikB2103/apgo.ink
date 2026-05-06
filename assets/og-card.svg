@@ -1,17 +1,15 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="630" fill="#050505"/>
-  <g opacity="0.32">
-    <path d="M0 430C170 350 220 520 380 420C520 332 610 318 720 360C870 418 936 272 1200 214" stroke="#2CFF88" stroke-width="4"/>
-    <path d="M0 500C150 460 290 540 408 492C552 434 612 450 748 492C912 543 992 408 1200 372" stroke="#FF3B3B" stroke-width="3" opacity="0.7"/>
+  <rect width="1200" height="630" fill="#0B0B0A"/>
+  <path d="M0 510C148 450 252 455 388 410C532 362 628 280 772 308C908 334 988 245 1200 207" stroke="#B8C8B0" stroke-width="3" opacity="0.82"/>
+  <path d="M0 548C138 520 250 544 384 498C525 450 628 485 756 462C912 434 995 498 1200 430" stroke="#C2756B" stroke-width="2" opacity="0.72"/>
+  <g opacity="0.12">
+    <path d="M100 90H1100M100 180H1100M100 270H1100M100 360H1100M100 450H1100M100 540H1100" stroke="#F2EFE6"/>
+    <path d="M200 70V560M300 70V560M400 70V560M500 70V560M600 70V560M700 70V560M800 70V560M900 70V560M1000 70V560" stroke="#F2EFE6"/>
   </g>
-  <g opacity="0.14">
-    <path d="M0 90H1200M0 180H1200M0 270H1200M0 360H1200M0 450H1200M0 540H1200" stroke="white"/>
-    <path d="M120 0V630M240 0V630M360 0V630M480 0V630M600 0V630M720 0V630M840 0V630M960 0V630M1080 0V630" stroke="white"/>
-  </g>
-  <rect x="72" y="74" width="90" height="90" rx="24" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.18"/>
-  <path d="M96 135V103H105L117 123L129 103H138V135H129.8V117.4L120.2 132H113.8L104.2 117.4V135H96Z" fill="white"/>
-  <path d="M96 103H138" stroke="#2CFF88" stroke-width="3" stroke-linecap="round"/>
-  <text x="72" y="245" fill="white" font-family="Inter, Arial, sans-serif" font-size="74" font-weight="700" letter-spacing="-3">Tannenhof Mayer</text>
-  <text x="76" y="306" fill="white" fill-opacity="0.7" font-family="Inter, Arial, sans-serif" font-size="30" letter-spacing="1.8">FRONTIER INVESTMENT COLLECTIVE</text>
-  <text x="76" y="386" fill="white" fill-opacity="0.84" font-family="Inter, Arial, sans-serif" font-size="36" letter-spacing="-1">Research. Alignment. Community-owned ambition.</text>
+  <rect x="78" y="82" width="96" height="96" rx="8" fill="#F2EFE6" fill-opacity="0.05" stroke="#F2EFE6" stroke-opacity="0.48"/>
+  <path d="M101 114H130M115.5 114V155M143 155V114H149L160 141L171 114H177V155H171V128.5L162 150H158L149 128.5V155H143Z" stroke="#F2EFE6" stroke-width="4" stroke-linecap="square"/>
+  <path d="M97 165H181" stroke="#8A7A4F" stroke-width="3"/>
+  <text x="78" y="274" fill="#F2EFE6" font-family="Georgia, serif" font-size="82" letter-spacing="-3">Tannenhof Mayer</text>
+  <text x="82" y="334" fill="#BFB9A7" font-family="Arial, sans-serif" font-size="28" letter-spacing="5">FRONTIER INVESTMENT COLLECTIVE</text>
+  <text x="82" y="420" fill="#F2EFE6" fill-opacity="0.82" font-family="Georgia, serif" font-size="42" letter-spacing="-1.2">Disciplined capital, publicly built conviction.</text>
 </svg>

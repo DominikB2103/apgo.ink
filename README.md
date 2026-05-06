@@ -1,24 +1,24 @@
-# Tannenhof Mayer — Static Website
+# Tannenhof Mayer — GitHub Pages Static Website
 
-This is a finished static website for **Tannenhof Mayer**. It is designed to be uploaded directly to GitHub Pages or any static web host.
+A finished static website for **Tannenhof Mayer** with institutional typography, serious editorial copy, interactive canvas charts, strategy tabs, scenario controls, and an allocation slider. No build step or server is required.
 
 ## Files
 
-- `index.html` — the full landing page
-- `styles.css` — all visual design, layout, animation, and responsive styling
-- `script.js` — animated graphs, counters, navigation, interactions, and Discord placeholder logic
-- `assets/` — favicon, logo mark, and social preview card
-- `.nojekyll` — keeps GitHub Pages from processing the site with Jekyll
+- `index.html` — complete page markup
+- `styles.css` — all design, layout, responsiveness, and animation
+- `script.js` — chart drawing, tabs, sliders, navigation, and Discord placeholder logic
+- `assets/` — SVG brand mark, favicon, social preview, and media illustration
+- `.nojekyll` — keeps GitHub Pages from processing the site
 
-## How to publish on GitHub Pages
+## Publish
 
-1. Create a new GitHub repository.
-2. Upload the contents of this folder, not the folder itself.
+1. Create or open your GitHub repository.
+2. Upload the contents of this folder to the root of the repository.
 3. Go to **Settings → Pages**.
 4. Set the source to your main branch and `/root`.
-5. Save. GitHub will provide the live Pages URL.
+5. Save and open the Pages URL once GitHub finishes publishing.
 
-## How to add the Discord link
+## Add the Discord link
 
 Open `script.js` and replace:
 
@@ -26,14 +26,21 @@ Open `script.js` and replace:
 const DISCORD_URL = "#";
 ```
 
-with your real invite link, for example:
+with your real invite:
 
 ```js
 const DISCORD_URL = "https://discord.gg/your-invite";
 ```
 
-## Notes
+## Edit the sample data
 
-- All graph data is illustrative sample data and can be replaced inside `script.js`.
-- The legal disclaimer in the footer is intentionally conservative because the site discusses investment activity and future community ownership.
-- No build step is required.
+The charts use illustrative arrays in `script.js`:
+
+- `heroData`
+- `scenarios`
+
+Replace those values with your preferred sample series or manually updated data.
+
+## Important
+
+The footer includes a conservative investment disclaimer. Keep it unless you replace it with professional legal wording.
