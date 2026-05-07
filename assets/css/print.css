@@ -1,1 +1,4 @@
-body{background:#fff;color:#111}.site-header,.hero-tape,.ambient,.marquee,.btn,.market-cursor{display:none!important}.section-pad{padding:32px 0}.chart-card,.metric-card,.process-card,.legal-card{box-shadow:none;border:1px solid #ccc;background:#fff;color:#111}p,small,.chart-label{color:#333}.shell{width:100%}
+body{background:#fff;color:#000}
+.page-grid,.page-glow,.site-header,.site-footer,.btn,.nav-toggle{display:none !important}
+.hero-panel,.metric-card,.chart-card,.process-card,.prose-card,.cta-card{box-shadow:none;border:1px solid #ccc;background:#fff;color:#000}
+a{color:#000}

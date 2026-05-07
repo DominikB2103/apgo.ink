@@ -1,1 +1,4 @@
-export const velocityData=[12,18,22,29,36,31,44,52,57,63,71,86,94,111,122,139,148,164,181,205];
+export const velocityData = {
+  labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'],
+  values: [6, 9, 8, 11, 13, 10, 14, 12]
+};

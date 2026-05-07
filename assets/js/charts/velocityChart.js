@@ -1,28 +1,59 @@
 import { velocityData } from '../data/velocityData.js';
-import { map } from '../utils/math.js';
+
 export function initVelocityChart(){
-  const canvas=document.getElementById('velocityChart');
-  if(!canvas) return;
-  const ctx=canvas.getContext('2d');
-  const dpr=Math.min(2,window.devicePixelRatio||1);
-  let w,h;
-  const resize=()=>{
-    w=canvas.clientWidth;h=canvas.clientHeight;
-    canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
-    draw();
-  };
-  const draw=()=>{
-    ctx.clearRect(0,0,w,h);
-    const pad=28;
-    const max=Math.max(...velocityData)*1.1;
-    const min=0;
-    ctx.strokeStyle='rgba(244,241,235,.08)';ctx.lineWidth=1;
-    for(let i=0;i<5;i++){const y=pad+(h-pad*2)/4*i;ctx.beginPath();ctx.moveTo(pad,y);ctx.lineTo(w-pad,y);ctx.stroke();}
-    const pts=velocityData.map((value,i)=>[pad+(w-pad*2)/(velocityData.length-1)*i,map(value,min,max,h-pad,pad)]);
-    const gradient=ctx.createLinearGradient(0,pad,0,h-pad);gradient.addColorStop(0,'rgba(132,217,155,.28)');gradient.addColorStop(1,'rgba(132,217,155,0)');
-    ctx.beginPath();pts.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.lineTo(w-pad,h-pad);ctx.lineTo(pad,h-pad);ctx.closePath();ctx.fillStyle=gradient;ctx.fill();
-    ctx.beginPath();pts.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.strokeStyle='#84d99b';ctx.lineWidth=2.4;ctx.shadowBlur=16;ctx.shadowColor='rgba(132,217,155,.48)';ctx.stroke();ctx.shadowBlur=0;
-    pts.slice(-1).forEach(([x,y])=>{ctx.fillStyle='#f5f1e8';ctx.beginPath();ctx.arc(x,y,4,0,Math.PI*2);ctx.fill();});
-  };
-  resize();window.addEventListener('resize',resize,{passive:true});
+  const canvas = document.getElementById('velocityChart');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const width = canvas.width;
+  const height = canvas.height;
+  canvas.width = width * dpr;
+  canvas.height = height * dpr;
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, width, height);
+
+  const pad = { top: 18, right: 12, bottom: 36, left: 36 };
+  const innerW = width - pad.left - pad.right;
+  const innerH = height - pad.top - pad.bottom;
+  const max = Math.max(...velocityData.values) + 2;
+
+  ctx.strokeStyle = 'rgba(243,241,235,.10)';
+  ctx.lineWidth = 1;
+  for (let i = 0; i <= 4; i += 1) {
+    const y = pad.top + (innerH / 4) * i;
+    ctx.beginPath();
+    ctx.moveTo(pad.left, y);
+    ctx.lineTo(width - pad.right, y);
+    ctx.stroke();
+  }
+
+  ctx.fillStyle = 'rgba(243,241,235,.45)';
+  ctx.font = '11px Inter';
+  for (let i = 0; i <= 4; i += 1) {
+    const value = Math.round(max - (max / 4) * i);
+    const y = pad.top + (innerH / 4) * i;
+    ctx.fillText(String(value), 6, y + 4);
+  }
+
+  const slot = innerW / velocityData.values.length;
+  velocityData.values.forEach((value, index) => {
+    const x = pad.left + slot * index + slot * 0.15;
+    const barW = slot * 0.7;
+    const barH = (value / max) * innerH;
+    const y = pad.top + innerH - barH;
+    ctx.fillStyle = 'rgba(130,199,146,.88)';
+    ctx.beginPath();
+    const r = 10;
+    ctx.moveTo(x, y + r);
+    ctx.arcTo(x, y, x + r, y, r);
+    ctx.lineTo(x + barW - r, y);
+    ctx.arcTo(x + barW, y, x + barW, y + r, r);
+    ctx.lineTo(x + barW, pad.top + innerH);
+    ctx.lineTo(x, pad.top + innerH);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.fillStyle = 'rgba(243,241,235,.55)';
+    ctx.fillText(velocityData.labels[index], x + barW / 2 - 10, height - 12);
+  });
 }

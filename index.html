@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tannenhof Mayer — Community-Owned Investment Architecture</title>
-  <meta name="description" content="Tannenhof Mayer is a pre-launch investment community built around rigorous research, transparent strategy, and shared ownership.">
-  <meta name="theme-color" content="#090909">
+  <title>Tannenhof Mayer — Community-Built Investment Firm</title>
+  <meta name="description" content="Tannenhof Mayer is a community-built investment firm in formation: research-led, risk-disciplined, and designed around long-term aligned ownership.">
+  <meta name="theme-color" content="#080808">
   <meta property="og:title" content="Tannenhof Mayer">
-  <meta property="og:description" content="A serious investment community designed to compound intelligence, discipline, and ownership.">
+  <meta property="og:description" content="Research-led. Risk-disciplined. Community-built.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/img/og-card.svg">
   <link rel="icon" href="assets/svg/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
@@ -27,81 +27,96 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
-  <div class="ambient ambient-a" aria-hidden="true"></div>
-  <div class="ambient ambient-b" aria-hidden="true"></div>
-  <div class="market-cursor" aria-hidden="true"></div>
+  <div class="page-grid" aria-hidden="true"></div>
+  <div class="page-glow page-glow-a" aria-hidden="true"></div>
+  <div class="page-glow page-glow-b" aria-hidden="true"></div>
 
   <header class="site-header" data-header>
     <nav class="nav shell" aria-label="Primary navigation">
       <a class="brand" href="index.html" aria-label="Tannenhof Mayer home">
-        <img src="assets/svg/monogram.svg" alt="" width="36" height="36">
+        <img src="assets/svg/monogram.svg" alt="" width="38" height="38">
         <span>
           <strong>Tannenhof Mayer</strong>
           <small>Investment Architecture</small>
         </span>
       </a>
+
       <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-menu">
         <span>Menu</span>
-        <i></i><i></i>
       </button>
+
       <div class="nav-menu" id="nav-menu" data-nav-menu>
         <a href="#thesis">Thesis</a>
-        <a href="#strategy">Strategy</a>
+        <a href="#process">Process</a>
         <a href="#models">Models</a>
         <a href="#community">Community</a>
         <a href="pages/legal.html">Disclosure</a>
       </div>
-      <a class="nav-cta magnetic" href="#discord" data-discord-link>Join Discord</a>
+
+      <a class="nav-cta" href="https://discord.gg/HPDEQh9Pgc" data-discord-link>Join Discord</a>
     </nav>
   </header>
 
   <main id="main">
     <section class="hero section-pad">
-      <canvas class="hero-tape" id="heroTape" width="1600" height="900" aria-hidden="true"></canvas>
       <div class="shell hero-grid">
         <div class="hero-copy reveal">
-          <div class="eyebrow"><span></span> Frontier capital community</div>
-          <h1>Build the investment firm owned by the people who make it intelligent.</h1>
-          <p class="hero-lede">Tannenhof Mayer is a serious pre-launch investment house: research-led, community-built, disciplined by risk, and designed for long-term shared ownership.</p>
+          <div class="eyebrow"><span></span> Research-led / community-built</div>
+          <h1>A community-built investment firm.</h1>
+          <p class="hero-lede">Tannenhof Mayer is building an investment firm around research quality, disciplined risk management, and a long-term ownership path for the people who raise the standard.</p>
           <div class="hero-actions">
-            <a href="#strategy" class="btn btn-primary magnetic">Explore the strategy</a>
-            <a href="#discord" class="btn btn-ghost magnetic" data-discord-link>Founder Discord</a>
+            <a href="#thesis" class="btn btn-primary">Read the thesis</a>
+            <a href="https://discord.gg/HPDEQh9Pgc" class="btn btn-ghost" data-discord-link>Enter the Discord</a>
           </div>
-          <div class="hero-proof" aria-label="Operating principles">
-            <span>Research first</span>
-            <span>Risk before return</span>
-            <span>Community ownership</span>
-          </div>
+          <ul class="hero-points">
+            <li>Research first</li>
+            <li>Risk before return</li>
+            <li>Ownership is earned</li>
+          </ul>
         </div>
-        <aside class="hero-panel reveal delay-1" aria-label="Portfolio signal overview">
+
+        <aside class="hero-panel reveal delay-1" aria-label="Operating snapshot">
           <div class="panel-topline">
-            <span>TM / Composite Signal</span>
-            <strong data-counter data-target="27.8" data-decimals="1">0.0</strong>
+            <span>Operating snapshot</span>
+            <strong>Prototype</strong>
           </div>
-          <div class="live-line" data-mini-line="up" aria-hidden="true"></div>
+          <svg id="heroSparkline" class="hero-sparkline" viewBox="0 0 520 220" role="img" aria-label="Illustrative composite signal chart"></svg>
           <div class="signal-stack">
             <div>
-              <small>Research breadth</small>
-              <strong data-counter data-target="144" data-decimals="0">0</strong>
+              <small>Research cadence</small>
+              <strong>Weekly</strong>
             </div>
             <div>
-              <small>Risk guardrails</small>
-              <strong>9 layers</strong>
+              <small>Decision log</small>
+              <strong>Documented</strong>
             </div>
             <div>
-              <small>Community seats</small>
-              <strong>Opening</strong>
+              <small>Discord access</small>
+              <strong>Open</strong>
             </div>
           </div>
-          <div class="panel-note">Illustrative prototype metrics for community design and front-end demonstration.</div>
+          <p class="panel-note">Sample visuals below are illustrative interface components, not live performance results.</p>
         </aside>
       </div>
     </section>
 
-    <section class="marquee" aria-label="Tannenhof Mayer principles">
-      <div class="marquee-track">
-        <span>Capital discipline</span><span>Transparent research</span><span>Owner mentality</span><span>Risk engine</span><span>Community intelligence</span><span>Frontier opportunity</span>
-        <span>Capital discipline</span><span>Transparent research</span><span>Owner mentality</span><span>Risk engine</span><span>Community intelligence</span><span>Frontier opportunity</span>
+    <section class="section-pad intro-strip">
+      <div class="shell intro-grid reveal">
+        <article>
+          <span>01</span>
+          <h2>Find signal.</h2>
+          <p>Turn community research into structured, reviewable investment work.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h2>Protect downside.</h2>
+          <p>Design sizing, exposure limits, and review rituals before risk arrives.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h2>Earn alignment.</h2>
+          <p>Build a long-term ownership path for contributors who compound trust and judgment.</p>
+        </article>
       </div>
     </section>
 
@@ -112,23 +127,23 @@
           <p>Thesis</p>
         </div>
         <div class="split-main reveal">
-          <h2>A firm is no longer only an office. It is a coordinated network of people, judgment, incentives, and time.</h2>
-          <p>Tannenhof Mayer starts with one question: what happens when serious investors, builders, analysts, and curious operators gather before the firm is fully formed—and help shape it?</p>
+          <h2>Serious firms are built from process, not presentation.</h2>
+          <p>Tannenhof Mayer starts with a simple belief: intelligent capital requires intelligent rooms. The first step is to gather people who can write clearly, challenge assumptions, and stay disciplined when markets become noisy.</p>
           <div class="metric-row">
-            <article class="metric-card" data-tilt>
-              <span>01</span>
-              <h3>Find signal</h3>
-              <p>Turn community research into structured, reviewable investment intelligence.</p>
+            <article class="metric-card">
+              <span>Research</span>
+              <h3>Evidence before narrative</h3>
+              <p>Every idea should be written, challenged, and measured against explicit assumptions.</p>
             </article>
-            <article class="metric-card" data-tilt>
-              <span>02</span>
-              <h3>Build trust</h3>
-              <p>Make decisions visible, documented, and open to challenge.</p>
+            <article class="metric-card">
+              <span>Risk</span>
+              <h3>Discipline before conviction</h3>
+              <p>Position sizing, concentration, and downside planning are part of the thesis from day one.</p>
             </article>
-            <article class="metric-card" data-tilt>
-              <span>03</span>
-              <h3>Compound together</h3>
-              <p>Create a path toward shared ownership for the people who raise the standard.</p>
+            <article class="metric-card">
+              <span>Ownership</span>
+              <h3>Contribution before entitlement</h3>
+              <p>Community ownership should follow demonstrated judgment, trust, and consistency.</p>
             </article>
           </div>
         </div>
@@ -139,18 +154,18 @@
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <div class="eyebrow"><span></span> Interactive strategy board</div>
-            <h2>Institutional charts, client-side intelligence.</h2>
+            <div class="eyebrow"><span></span> Model dashboards</div>
+            <h2>Coherent, readable charts.</h2>
           </div>
-          <p>All graph data below is illustrative and runs directly in the browser. Replace it with live firm data when ready.</p>
+          <p>Static-site friendly charts rendered directly in the browser. Values are sample data designed to demonstrate layout and interaction.</p>
         </div>
 
         <div class="dashboard-grid">
-          <article class="chart-card chart-card-large reveal" data-chart-shell>
+          <article class="chart-card chart-card-large reveal">
             <div class="chart-head">
               <div>
-                <span class="chart-label">Performance architecture</span>
-                <h3>Composite momentum vs. protected drawdown</h3>
+                <span class="chart-label">Performance framework</span>
+                <h3>Illustrative model path and drawdown</h3>
               </div>
               <div class="range-switch" role="group" aria-label="Chart range">
                 <button class="is-active" data-range="1Y">1Y</button>
@@ -159,13 +174,12 @@
               </div>
             </div>
             <div class="chart-stage">
-              <svg id="performanceChart" role="img" aria-label="Line chart showing performance and drawdown signals"></svg>
+              <svg id="performanceChart" role="img" aria-label="Line and bar chart showing illustrative model performance and drawdown"></svg>
               <div class="chart-tooltip" data-tooltip></div>
             </div>
             <div class="chart-legend">
-              <span><i class="legend-up"></i> Capital curve</span>
-              <span><i class="legend-down"></i> Drawdown line</span>
-              <span><i></i> Benchmark reference</span>
+              <span><i class="legend-up"></i> Model path (growth of 100)</span>
+              <span><i class="legend-down"></i> Drawdown %</span>
             </div>
           </article>
 
@@ -173,12 +187,12 @@
             <div class="chart-head compact">
               <div>
                 <span class="chart-label">Allocation discipline</span>
-                <h3>Model portfolio weights</h3>
+                <h3>Illustrative portfolio mix</h3>
               </div>
             </div>
             <div class="donut-wrap">
-              <svg id="allocationChart" role="img" aria-label="Donut chart showing portfolio allocations"></svg>
-              <div class="donut-center"><strong>Balanced</strong><span>risk posture</span></div>
+              <svg id="allocationChart" role="img" aria-label="Donut chart showing illustrative portfolio allocations"></svg>
+              <div class="donut-center"><strong>100%</strong><span>target mix</span></div>
             </div>
             <ul class="allocation-list" id="allocationList"></ul>
           </article>
@@ -187,99 +201,54 @@
             <div class="chart-head compact">
               <div>
                 <span class="chart-label">Downside protocol</span>
-                <h3>Scenario risk map</h3>
+                <h3>Scenario risk matrix</h3>
               </div>
             </div>
-            <div id="scenarioBars" class="scenario-bars" aria-label="Scenario bar chart"></div>
+            <div id="scenarioBars" class="scenario-bars" aria-label="Scenario risk matrix"></div>
           </article>
 
           <article class="chart-card reveal delay-1">
             <div class="chart-head compact">
               <div>
-                <span class="chart-label">Community signal</span>
-                <h3>Research velocity</h3>
+                <span class="chart-label">Research cadence</span>
+                <h3>Monthly output</h3>
               </div>
             </div>
-            <canvas id="velocityChart" class="velocity-chart" width="640" height="360" aria-label="Area chart showing research velocity"></canvas>
+            <canvas id="velocityChart" class="velocity-chart" width="640" height="320" aria-label="Bar chart showing illustrative monthly research output"></canvas>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="strategy" class="section-pad strategy-section">
-      <div class="shell split-layout">
-        <div class="section-kicker reveal">
-          <span>02</span>
-          <p>Strategy</p>
-        </div>
-        <div class="split-main">
-          <div class="strategy-intro reveal">
-            <h2>Strategy is a system: what we buy, why we buy it, when we are wrong, and who gets to challenge the view.</h2>
-            <p>The first version of the firm is not a fund. It is an operating discipline: a research room, a risk room, and a community ownership roadmap.</p>
-          </div>
-          <div class="strategy-tabs reveal" data-tabs>
-            <div class="tab-list" role="tablist" aria-label="Strategy pillars">
-              <button role="tab" aria-selected="true" aria-controls="tab-quality" id="quality">Quality compounders</button>
-              <button role="tab" aria-selected="false" aria-controls="tab-dislocation" id="dislocation">Dislocation</button>
-              <button role="tab" aria-selected="false" aria-controls="tab-frontier" id="frontier">Frontier bets</button>
-              <button role="tab" aria-selected="false" aria-controls="tab-treasury" id="treasury">Treasury</button>
-            </div>
-            <div class="tab-panels">
-              <article role="tabpanel" id="tab-quality" aria-labelledby="quality" class="is-active">
-                <h3>Quality compounders</h3>
-                <p>Durable businesses with high returns on invested capital, resilient balance sheets, and credible reinvestment runways.</p>
-                <ul><li>Owner-led or founder-like incentives</li><li>Pricing power and margin resilience</li><li>Long-term cash flow visibility</li></ul>
-              </article>
-              <article role="tabpanel" id="tab-dislocation" aria-labelledby="dislocation">
-                <h3>Dislocation</h3>
-                <p>Moments where forced selling, misunderstanding, or short-term fear creates a spread between price and intrinsic value.</p>
-                <ul><li>Event-driven research sprints</li><li>Contrarian but evidence-led entry rules</li><li>Pre-mortems before position sizing</li></ul>
-              </article>
-              <article role="tabpanel" id="tab-frontier" aria-labelledby="frontier">
-                <h3>Frontier bets</h3>
-                <p>Small, asymmetric positions in technologies, protocols, and markets where informed communities can see change earlier.</p>
-                <ul><li>Strict sizing limits</li><li>Milestone-based thesis updates</li><li>Fast kill-switches when evidence breaks</li></ul>
-              </article>
-              <article role="tabpanel" id="tab-treasury" aria-labelledby="treasury">
-                <h3>Treasury</h3>
-                <p>A defensive reserve designed to preserve optionality and keep the firm rational when markets punish emotion.</p>
-                <ul><li>Liquidity ladders</li><li>Counterparty discipline</li><li>Stress-tested cash commitments</li></ul>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-pad operating-section">
+    <section id="process" class="section-pad operating-section">
       <div class="shell">
         <div class="section-head reveal">
           <div>
             <div class="eyebrow"><span></span> Operating model</div>
-            <h2>How the community becomes an institution.</h2>
+            <h2>How the room becomes a firm.</h2>
           </div>
-          <p>Every member enters through contribution, not noise. The aim is to make the smartest path also the most disciplined path.</p>
+          <p>The first version of the firm is not a fund product. It is an operating discipline: idea generation, challenge, risk review, and accountability.</p>
         </div>
         <div class="process-grid">
           <article class="process-card reveal" data-step="01">
             <img src="assets/svg/icons/research.svg" alt="">
             <h3>Research rooms</h3>
-            <p>Deep-dive channels for sectors, companies, macro regimes, and special situations.</p>
+            <p>Sector, company, macro, and special-situations rooms with written work as the default language.</p>
           </article>
           <article class="process-card reveal delay-1" data-step="02">
             <img src="assets/svg/icons/committee.svg" alt="">
-            <h3>Challenge committee</h3>
-            <p>Thesis reviews, red-team sessions, and documented objections before conviction grows.</p>
+            <h3>Challenge review</h3>
+            <p>Ideas are improved by critique, counter-arguments, and documented pressure-testing.</p>
           </article>
           <article class="process-card reveal delay-2" data-step="03">
             <img src="assets/svg/icons/risk.svg" alt="">
-            <h3>Risk engine</h3>
-            <p>Position sizing, exposure limits, drawdown response, and asymmetric downside protection.</p>
+            <h3>Risk committee</h3>
+            <p>Sizing, concentration, liquidity, and downside scenarios are reviewed before conviction scales.</p>
           </article>
           <article class="process-card reveal delay-3" data-step="04">
             <img src="assets/svg/icons/ownership.svg" alt="">
             <h3>Ownership path</h3>
-            <p>A future framework where outstanding contributors can become true aligned stakeholders.</p>
+            <p>Contributors who repeatedly improve the room earn deeper trust, responsibility, and long-term alignment.</p>
           </article>
         </div>
       </div>
@@ -288,18 +257,18 @@
     <section id="community" class="section-pad community-section">
       <div class="shell community-grid">
         <div class="community-copy reveal">
-          <div class="eyebrow"><span></span> Discord-born, institution-built</div>
+          <div class="eyebrow"><span></span> Community standard</div>
           <h2>The first asset is the room.</h2>
-          <p>We are looking for people who can think, write, challenge, build, and stay calm. Analysts, operators, engineers, allocators, founders, students—anyone with exceptional curiosity and discipline.</p>
+          <p>We are looking for people who can think clearly, write clearly, challenge assumptions, and stay calm. Analysts, operators, engineers, founders, students, and disciplined generalists are all welcome if they raise the bar.</p>
           <div class="community-stats">
-            <div><strong data-counter data-target="40" data-decimals="0">0</strong><span>founding seats</span></div>
-            <div><strong data-counter data-target="12" data-decimals="0">0</strong><span>research rooms</span></div>
-            <div><strong data-counter data-target="100" data-decimals="0">0</strong><span>% standards-led</span></div>
+            <div><strong>40</strong><span>founding seats</span></div>
+            <div><strong>12</strong><span>research rooms</span></div>
+            <div><strong>4</strong><span>operating stages</span></div>
           </div>
-          <a class="btn btn-primary magnetic" href="#discord" data-discord-link>Request founder access</a>
+          <a class="btn btn-primary" href="https://discord.gg/HPDEQh9Pgc" data-discord-link>Request founder access</a>
         </div>
         <div class="community-panel reveal delay-1">
-          <img src="assets/img/portfolio-architecture.svg" alt="Abstract portfolio architecture with layered serif and market lines">
+          <img src="assets/img/operating-map.svg" alt="Operating map showing the path from research room to ownership path">
         </div>
       </div>
     </section>
@@ -308,10 +277,10 @@
       <div class="shell cta-card reveal">
         <div>
           <span class="chart-label">Founding channel</span>
-          <h2>Enter early. Help define the standard.</h2>
-          <p>The Discord is where the community begins: research rooms, introductions, thesis reviews, and the first operating rituals of Tannenhof Mayer.</p>
+          <h2>Join the room.</h2>
+          <p>The Discord is the first operating layer of Tannenhof Mayer: research, introductions, review, and the early standards of the firm.</p>
         </div>
-        <a class="btn btn-light magnetic" href="https://discord.gg/REPLACE-ME" data-discord-link>Discord link placeholder</a>
+        <a class="btn btn-light" href="https://discord.gg/HPDEQh9Pgc" data-discord-link>Open Discord</a>
       </div>
     </section>
   </main>
@@ -323,23 +292,23 @@
           <img src="assets/svg/monogram.svg" alt="" width="34" height="34">
           <span><strong>Tannenhof Mayer</strong><small>Investment Architecture</small></span>
         </a>
-        <p>Community-built research and investment discipline. Pre-launch concept site.</p>
+        <p>Research-led, risk-disciplined, community-built.</p>
       </div>
       <div>
         <h3>Explore</h3>
         <a href="#thesis">Thesis</a>
-        <a href="#strategy">Strategy</a>
+        <a href="#process">Process</a>
         <a href="#models">Models</a>
       </div>
       <div>
-        <h3>Legal</h3>
-        <a href="pages/legal.html">Important disclosure</a>
+        <h3>Pages</h3>
         <a href="pages/thesis.html">Founder thesis</a>
         <a href="pages/community.html">Community standard</a>
+        <a href="pages/legal.html">Disclosure</a>
       </div>
       <div>
         <h3>Note</h3>
-        <p>This website is a design prototype. Nothing here is investment advice, a solicitation, or an offer to buy or sell securities.</p>
+        <p>This is a prototype website and design system for a firm in formation. Nothing here is investment advice or a solicitation.</p>
       </div>
     </div>
     <div class="shell footer-bottom">

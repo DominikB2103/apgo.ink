@@ -1,11 +1,37 @@
-export function drawMiniLines(){
-  document.querySelectorAll('[data-mini-line]').forEach((el)=>{
-    const isUp=el.dataset.miniLine==='up';
-    const points=Array.from({length:26},(_,i)=>{
-      const x=(i/25)*100;
-      const y=isUp?72-i*1.85+Math.sin(i*.9)*9:30+i*1.6+Math.sin(i*.8)*10;
-      return `${x.toFixed(2)},${Math.max(10,Math.min(90,y)).toFixed(2)}`;
-    }).join(' ');
-    el.innerHTML=`<svg viewBox="0 0 100 100" preserveAspectRatio="none"><defs><linearGradient id="miniGrad" x1="0" x2="0" y1="0" y2="1"><stop stop-color="rgba(132,217,155,.24)"/><stop offset="1" stop-color="rgba(132,217,155,0)"/></linearGradient></defs><polyline points="0,100 ${points} 100,100" fill="url(#miniGrad)" opacity=".9"></polyline><polyline points="${points}" fill="none" stroke="var(--green)" stroke-width="2.1" vector-effect="non-scaling-stroke"></polyline></svg>`;
-  });
+function createPath(points){
+  return points.map((point, index) => `${index === 0 ? 'M' : 'L'} ${point[0]} ${point[1]}`).join(' ');
+}
+
+export function renderHeroSparkline(){
+  const svg = document.getElementById('heroSparkline');
+  if (!svg) return;
+  const width = 520;
+  const height = 220;
+  const padding = { top: 18, right: 18, bottom: 20, left: 18 };
+  const series = [52, 50, 56, 61, 59, 64, 68, 66, 72, 78, 81, 86];
+  const benchmark = [58, 57, 59, 58, 60, 61, 63, 62, 65, 67, 68, 69];
+  const x = (i) => padding.left + (i * (width - padding.left - padding.right) / (series.length - 1));
+  const y = (v) => height - padding.bottom - ((v - 48) / 40) * (height - padding.top - padding.bottom);
+  const gridLines = Array.from({ length: 4 }, (_, i) => {
+    const gy = padding.top + i * ((height - padding.top - padding.bottom) / 3);
+    return `<line x1="${padding.left}" y1="${gy}" x2="${width - padding.right}" y2="${gy}" stroke="rgba(243,241,235,.1)" />`;
+  }).join('');
+  const pointsA = series.map((v, i) => [x(i), y(v)]);
+  const pointsB = benchmark.map((v, i) => [x(i), y(v)]);
+  const areaPath = `${createPath(pointsA)} L ${x(series.length - 1)} ${height - padding.bottom} L ${x(0)} ${height - padding.bottom} Z`;
+  svg.innerHTML = `
+    <defs>
+      <linearGradient id="heroArea" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0%" stop-color="rgba(130,199,146,.30)" />
+        <stop offset="100%" stop-color="rgba(130,199,146,0)" />
+      </linearGradient>
+      <filter id="heroGlow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect x="1" y="1" width="518" height="218" rx="24" fill="rgba(255,255,255,.02)" stroke="rgba(243,241,235,.1)" />
+    ${gridLines}
+    <path d="${createPath(pointsB)}" fill="none" stroke="rgba(185,100,93,.70)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="${areaPath}" fill="url(#heroArea)" />
+    <path d="${createPath(pointsA)}" fill="none" stroke="#82c792" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#heroGlow)" />
+    ${pointsA.map(([px, py], i) => i === pointsA.length - 1 ? `<circle cx="${px}" cy="${py}" r="4.5" fill="#f3f1eb" />` : '').join('')}
+  `;
 }

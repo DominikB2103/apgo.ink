@@ -1,11 +1,7 @@
 {
-  "name": "Tannenhof Mayer",
   "principles": [
-    "Research before conviction",
+    "Research first",
     "Risk before return",
-    "Community before hierarchy",
-    "Documentation before memory",
-    "Ownership through contribution"
-  ],
-  "discordPlaceholder": "https://discord.gg/REPLACE-ME"
+    "Ownership is earned"
+  ]
 }

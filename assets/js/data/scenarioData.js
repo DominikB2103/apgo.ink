@@ -1,7 +1,6 @@
-export const scenarioData=[
-  {name:'Base case',value:68,change:14.2,type:'positive'},
-  {name:'Volatility shock',value:42,change:-7.6,type:'negative'},
-  {name:'Liquidity freeze',value:31,change:-12.4,type:'negative'},
-  {name:'Multiple expansion',value:76,change:21.8,type:'positive'},
-  {name:'Rate relief',value:58,change:9.5,type:'positive'}
+export const scenarioData = [
+  { label: 'Base case', probability: 70, impact: 22, color: '#82c792' },
+  { label: 'Growth slowdown', probability: 52, impact: 44, color: '#d0bb93' },
+  { label: 'Credit shock', probability: 28, impact: 78, color: '#b9645d' },
+  { label: 'Liquidity event', probability: 18, impact: 92, color: '#8aa0b3' }
 ];

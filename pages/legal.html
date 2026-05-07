@@ -1,41 +1,108 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <title>Tannenhof Mayer — Important Disclosure</title>
+  <meta name="description" content="Important disclosure for the Tannenhof Mayer website.">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Disclosure — Tannenhof Mayer</title>
-  <meta name="description" content="Important disclosure for Tannenhof Mayer.">
+  <meta name="theme-color" content="#080808">
   <link rel="icon" href="../assets/svg/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/reset.css">
   <link rel="stylesheet" href="../assets/css/tokens.css">
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/layout.css">
   <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/charts.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
   <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/print.css" media="print">
 </head>
-<body class="subpage">
-  <header class="site-header is-solid">
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="page-grid" aria-hidden="true"></div>
+    <header class="site-header" data-header>
     <nav class="nav shell" aria-label="Primary navigation">
-      <a class="brand" href="../index.html"><img src="../assets/svg/monogram.svg" alt="" width="36" height="36"><span><strong>Tannenhof Mayer</strong><small>Investment Architecture</small></span></a>
-      <div class="nav-menu is-open"><a href="../index.html#strategy">Strategy</a><a href="../index.html#community">Community</a><a href="legal.html">Disclosure</a></div>
+      <a class="brand" href="../index.html" aria-label="Tannenhof Mayer home">
+        <img src="../assets/svg/monogram.svg" alt="" width="38" height="38">
+        <span>
+          <strong>Tannenhof Mayer</strong>
+          <small>Investment Architecture</small>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-menu">
+        <span>Menu</span>
+      </button>
+      <div class="nav-menu" id="nav-menu" data-nav-menu>
+        <a href="../index.html#thesis">Thesis</a>
+        <a href="../index.html#process">Process</a>
+        <a href="../index.html#models">Models</a>
+        <a href="community.html">Community</a>
+        <a href="legal.html">Disclosure</a>
+      </div>
+      <a class="nav-cta" href="https://discord.gg/HPDEQh9Pgc" data-discord-link>Join Discord</a>
     </nav>
   </header>
-  <main class="legal-main section-pad">
-    <article class="shell legal-card">
-      <span class="chart-label">Important disclosure</span>
-      <h1>Clarity before capital.</h1>
-      <p>Tannenhof Mayer is presented here as a pre-launch community and design prototype. Content on this website is for general informational and branding purposes only.</p>
-      <h2>No investment advice</h2>
-      <p>Nothing on this website is investment advice, legal advice, tax advice, a recommendation, or an offer to buy or sell securities or other financial instruments.</p>
-      <h2>Illustrative data</h2>
-      <p>Charts, numbers, scenarios, and strategy modules are illustrative placeholders created for the website experience. They do not represent actual performance, audited results, or managed assets.</p>
-      <h2>Risk</h2>
-      <p>Investing involves risk, including the possible loss of principal. Any future activity should be reviewed with qualified legal, regulatory, tax, and investment professionals.</p>
-      <a class="btn btn-ghost" href="../index.html">Return home</a>
-    </article>
+  <main id="main" class="inner-page">
+    <section class="page-hero section-pad">
+      <div class="shell narrow reveal">
+        <div class="eyebrow"><span></span> Important disclosure</div>
+        <h1>Website information and risk notice.</h1>
+        <p class="hero-lede">The content on this website is informational and illustrative only.</p>
+      </div>
+    </section>
+    <section class="section-pad">
+      <div class="shell prose-grid single-column">
+        <article class="prose-card reveal">
+          <h2>No investment advice</h2>
+          <p>This website does not provide investment, legal, tax, or other professional advice. Nothing on this website should be interpreted as a recommendation to buy, sell, or hold any security, asset, or investment strategy.</p>
+          <h2>No offer or solicitation</h2>
+          <p>The material on this website does not constitute an offer to sell or a solicitation of an offer to buy any security or investment product.</p>
+          <h2>Illustrative data</h2>
+          <p>Charts, model allocations, and operating metrics on this site are sample data for interface and design demonstration only unless explicitly stated otherwise.</p>
+          <h2>Forward-looking statements</h2>
+          <p>Descriptions of vision, structure, strategy, and community ownership are aspirational and may change over time.</p>
+          <h2>Third-party platforms</h2>
+          <p>Tannenhof Mayer may use third-party services such as Discord for community access. Your use of those services is subject to their respective terms and privacy practices.</p>
+          <h2>Contact</h2>
+          <p>For updates, community access, or general inquiries, use the founding Discord: <a href="https://discord.gg/HPDEQh9Pgc" data-discord-link>https://discord.gg/HPDEQh9Pgc</a>.</p>
+        </article>
+      </div>
+    </section>
   </main>
+    <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <a class="brand footer-brand" href="../index.html">
+          <img src="../assets/svg/monogram.svg" alt="" width="34" height="34">
+          <span><strong>Tannenhof Mayer</strong><small>Investment Architecture</small></span>
+        </a>
+        <p>Research-led, risk-disciplined, community-built.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <a href="../index.html#thesis">Thesis</a>
+        <a href="../index.html#process">Process</a>
+        <a href="../index.html#models">Models</a>
+      </div>
+      <div>
+        <h3>Pages</h3>
+        <a href="thesis.html">Founder thesis</a>
+        <a href="community.html">Community standard</a>
+        <a href="legal.html">Disclosure</a>
+      </div>
+      <div>
+        <h3>Discord</h3>
+        <a href="https://discord.gg/HPDEQh9Pgc" data-discord-link>Founding server</a>
+      </div>
+    </div>
+    <div class="shell footer-bottom">
+      <span>© <span id="year"></span> Tannenhof Mayer. All rights reserved.</span>
+      <button class="back-to-top" data-back-to-top>Back to top ↑</button>
+    </div>
+  </footer>
+  <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

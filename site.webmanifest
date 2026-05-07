@@ -1,15 +1,9 @@
 {
   "name": "Tannenhof Mayer",
-  "short_name": "TM",
-  "start_url": "./index.html",
+  "short_name": "Tannenhof Mayer",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#070707",
-  "theme_color": "#070707",
-  "icons": [
-    {
-      "src": "assets/svg/favicon.svg",
-      "sizes": "64x64",
-      "type": "image/svg+xml"
-    }
-  ]
+  "background_color": "#080808",
+  "theme_color": "#080808",
+  "icons": []
 }

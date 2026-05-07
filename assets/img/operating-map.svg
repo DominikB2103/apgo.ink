@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" role="img" aria-label="Operating map">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0%" stop-color="#82c792" stop-opacity=".18"/>
+      <stop offset="100%" stop-color="#82c792" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="680" rx="34" fill="#101010" stroke="rgba(243,241,235,.12)"/>
+  <g opacity=".08" stroke="#f3f1eb">
+    <path d="M80 80H880"/><path d="M80 180H880"/><path d="M80 280H880"/><path d="M80 380H880"/><path d="M80 480H880"/><path d="M80 580H880"/>
+    <path d="M80 80V600"/><path d="M240 80V600"/><path d="M400 80V600"/><path d="M560 80V600"/><path d="M720 80V600"/><path d="M880 80V600"/>
+  </g>
+  <text x="86" y="62" fill="#8e887f" font-family="Inter, sans-serif" font-size="22" letter-spacing="4">OPERATING MAP</text>
+  <text x="86" y="116" fill="#f3f1eb" font-family="Source Serif 4, serif" font-size="58">From research room to aligned ownership</text>
+  <g>
+    <rect x="110" y="200" width="200" height="120" rx="22" fill="#151515" stroke="rgba(243,241,235,.14)"/>
+    <text x="136" y="244" fill="#f3f1eb" font-family="Inter, sans-serif" font-size="15" letter-spacing="3">STAGE 01</text>
+    <text x="136" y="280" fill="#f3f1eb" font-family="Source Serif 4, serif" font-size="34">Research room</text>
+    <text x="136" y="308" fill="#b8b3ab" font-family="Inter, sans-serif" font-size="18">Idea sourcing, memos, coverage</text>
+  </g>
+  <g>
+    <rect x="370" y="200" width="200" height="120" rx="22" fill="#151515" stroke="rgba(243,241,235,.14)"/>
+    <text x="396" y="244" fill="#f3f1eb" font-family="Inter, sans-serif" font-size="15" letter-spacing="3">STAGE 02</text>
+    <text x="396" y="280" fill="#f3f1eb" font-family="Source Serif 4, serif" font-size="34">Challenge review</text>
+    <text x="396" y="308" fill="#b8b3ab" font-family="Inter, sans-serif" font-size="18">Counter-thesis, debate, revision</text>
+  </g>
+  <g>
+    <rect x="630" y="200" width="200" height="120" rx="22" fill="#151515" stroke="rgba(243,241,235,.14)"/>
+    <text x="656" y="244" fill="#f3f1eb" font-family="Inter, sans-serif" font-size="15" letter-spacing="3">STAGE 03</text>
+    <text x="656" y="280" fill="#f3f1eb" font-family="Source Serif 4, serif" font-size="34">Risk review</text>
+    <text x="656" y="308" fill="#b8b3ab" font-family="Inter, sans-serif" font-size="18">Sizing, liquidity, scenarios</text>
+  </g>
+  <g>
+    <rect x="370" y="430" width="200" height="120" rx="22" fill="#141915" stroke="rgba(130,199,146,.34)"/>
+    <text x="396" y="474" fill="#f3f1eb" font-family="Inter, sans-serif" font-size="15" letter-spacing="3">STAGE 04</text>
+    <text x="396" y="510" fill="#f3f1eb" font-family="Source Serif 4, serif" font-size="34">Ownership path</text>
+    <text x="396" y="538" fill="#b8b3ab" font-family="Inter, sans-serif" font-size="18">Contribution → trust → alignment</text>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M310 260H370" stroke="#f3f1eb" stroke-opacity=".25" stroke-width="8"/>
+    <path d="M570 260H630" stroke="#f3f1eb" stroke-opacity=".25" stroke-width="8"/>
+    <path d="M730 320V380H570" stroke="#82c792" stroke-opacity=".48" stroke-width="8"/>
+    <path d="M470 320V430" stroke="#82c792" stroke-opacity=".48" stroke-width="8"/>
+    <circle cx="470" cy="260" r="10" fill="#f3f1eb"/>
+    <circle cx="730" cy="260" r="10" fill="#f3f1eb"/>
+    <circle cx="470" cy="430" r="10" fill="#82c792"/>
+  </g>
+  <path d="M130 590 C 260 520, 340 560, 470 500 C 610 430, 710 460, 850 400" fill="none" stroke="#82c792" stroke-opacity=".28" stroke-width="10"/>
+  <path d="M130 592 C 250 610, 340 600, 470 560 C 610 510, 700 530, 820 550" fill="url(#g1)" stroke="none"/>
+</svg>

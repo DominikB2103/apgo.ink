@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="#070707"/><circle cx="990" cy="110" r="210" fill="#84D99B" opacity=".12"/><text x="80" y="160" fill="#F5F1E8" font-family="Georgia,serif" font-size="84" font-weight="700">Tannenhof Mayer</text><text x="84" y="220" fill="#9C9489" font-family="Arial,sans-serif" font-size="24" letter-spacing="7">INVESTMENT ARCHITECTURE</text><path d="M80 470 C 220 390,300 490,420 360 S 640 260,760 300 930 130,1110 170" fill="none" stroke="#84D99B" stroke-width="10" stroke-linecap="round"/><path d="M80 380 C 210 320,310 420,430 340 S 640 440,760 310 930 330,1110 260" fill="none" stroke="#E06A5F" stroke-width="4" stroke-linecap="round" opacity=".55"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#090909"/>
+  <g opacity=".08" stroke="#f3f1eb">
+    <path d="M0 90H1200"/><path d="M0 180H1200"/><path d="M0 270H1200"/><path d="M0 360H1200"/><path d="M0 450H1200"/><path d="M0 540H1200"/>
+    <path d="M90 0V630"/><path d="M180 0V630"/><path d="M270 0V630"/><path d="M360 0V630"/><path d="M450 0V630"/><path d="M540 0V630"/><path d="M630 0V630"/><path d="M720 0V630"/><path d="M810 0V630"/><path d="M900 0V630"/><path d="M990 0V630"/><path d="M1080 0V630"/>
+  </g>
+  <text x="92" y="140" fill="#b8b3ab" font-family="Inter, sans-serif" font-size="28" letter-spacing="5">TANNENHOF MAYER</text>
+  <text x="92" y="265" fill="#f3f1eb" font-family="Source Serif 4, serif" font-size="84">A community-built</text>
+  <text x="92" y="350" fill="#f3f1eb" font-family="Source Serif 4, serif" font-size="84">investment firm.</text>
+  <text x="92" y="430" fill="#b8b3ab" font-family="Inter, sans-serif" font-size="32">Research-led / risk-disciplined / ownership earned</text>
+  <path d="M640 420 C 760 360, 860 420, 980 310 C 1040 250, 1100 250, 1150 210" fill="none" stroke="#82c792" stroke-width="16" stroke-linecap="round" opacity=".82"/>
+  <path d="M640 450 C 740 460, 840 400, 950 440 C 1040 470, 1100 420, 1150 390" fill="none" stroke="#b9645d" stroke-width="8" stroke-linecap="round" opacity=".72"/>
+</svg>
