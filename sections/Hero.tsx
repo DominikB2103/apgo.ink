@@ -15,10 +15,17 @@ export function Hero() {
           <div className="hero-actions"><Link className="btn btn-primary" href="#examples">View example websites</Link><Link className="btn btn-ghost" href="#pricing">See pricing</Link></div>
         </Reveal>
         <Reveal className="hero-stage" delay={0.12}>
-          <div className="stage-card stage-main floaty" style={{ ['--image' as string]: "linear-gradient(135deg,rgba(122,247,213,.22),rgba(181,140,255,.18)),url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=85')" }}>
-            <div className="stage-badge"><span className="pill">Live impression</span><strong>92%</strong><p>of judgment happens before a customer reads your offer.</p></div>
-          </div>
-          <aside className="stage-card stage-pricing"><small>Main package</small><strong>CHF 1’850</strong><p>Complete local business website: strategy, design, pages, contact flow.</p></aside>
+          <Link className="stage-card stage-main stage-preview stage-bakery floaty" href="/demos/bakery/">
+            <div className="preview-toolbar"><span className="preview-dots"><i></i><i></i><i></i></span><strong>Bakery example</strong></div>
+            <div className="preview-hero"><span className="preview-chip">Golden Crust Atelier</span><h3>Morning bread, designed to sell before 8am.</h3><p>Warm product photography, counter highlights, opening hours and a preorder path.</p></div>
+            <div className="preview-menu"><span>Daily counter</span><span>Seasonal cakes</span><span>Pre-order</span></div>
+          </Link>
+          <Link className="stage-card stage-mini stage-preview stage-garage" href="/demos/garage/">
+            <div className="preview-toolbar"><span className="preview-dots"><i></i><i></i><i></i></span><strong>Garage</strong></div>
+            <div className="preview-hero"><span className="preview-chip">Nordwerk</span><h3>Diagnostics, proof and booking.</h3></div>
+            <div className="preview-menu"><span>Service cards</span><span>24h request</span></div>
+          </Link>
+          <aside className="stage-card stage-pricing"><small>Main package</small><strong>CHF 1’850</strong><p>Complete local business website: strategy, design, pages, contact flow.</p><ul><li>✓ 4–6 tailored pages</li><li>✓ Mobile-first design</li><li>✓ Launch support</li></ul></aside>
         </Reveal>
       </div>
     </section>

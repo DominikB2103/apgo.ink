@@ -27,23 +27,6 @@
     : null;
   $$('.reveal').forEach((el) => revealObserver ? revealObserver.observe(el) : el.classList.add('is-visible'));
 
-  const glow = document.createElement('div');
-  glow.className = 'cursor-glow';
-  document.body.appendChild(glow);
-  let gx = 0, gy = 0, tx = 0, ty = 0;
-  const moveGlow = () => {
-    gx += (tx - gx) * 0.14;
-    gy += (ty - gy) * 0.14;
-    glow.style.transform = `translate(${gx - 14}px, ${gy - 14}px)`;
-    requestAnimationFrame(moveGlow);
-  };
-  if (matchMedia('(pointer:fine)').matches) {
-    window.addEventListener('pointermove', (e) => { tx = e.clientX; ty = e.clientY; }, { passive: true });
-    moveGlow();
-  } else {
-    glow.remove();
-  }
-
   $$('[data-tilt]').forEach((card) => {
     card.addEventListener('pointermove', (e) => {
       const rect = card.getBoundingClientRect();
