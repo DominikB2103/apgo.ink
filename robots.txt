@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://apgo.ink/sitemap.xml

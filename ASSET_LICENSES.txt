@@ -1,2 +1,0 @@
-Remote imagery is loaded from images.unsplash.com URLs. Unsplash allows free commercial and non-commercial use under its license. Replace images if you want full local control.
-Framework/runtime libraries are loaded from public CDNs: React, ReactDOM, GSAP.
