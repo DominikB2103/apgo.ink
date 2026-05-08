@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#fff4d7"/><stop offset=".45" stop-color="#f8e2ff"/><stop offset="1" stop-color="#d7efff"/></linearGradient>
+    <radialGradient id="r" cx="70%" cy="25%" r="55%"><stop stop-color="#ff5c35" stop-opacity=".65"/><stop offset="1" stop-color="#ff5c35" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#0b0d12"/>
+  <rect x="40" y="40" width="1120" height="550" rx="42" fill="url(#g)"/>
+  <rect x="40" y="40" width="1120" height="550" rx="42" fill="url(#r)"/>
+  <text x="95" y="165" font-family="Arial, sans-serif" font-size="34" font-weight="800" letter-spacing="8" fill="#101018">APTO.INK</text>
+  <text x="95" y="305" font-family="Georgia, serif" font-size="84" font-weight="700" fill="#101018">Premium websites</text>
+  <text x="95" y="392" font-family="Georgia, serif" font-size="84" font-weight="700" fill="#101018">for Swiss businesses.</text>
+  <text x="100" y="498" font-family="Arial, sans-serif" font-size="28" fill="#35323b">Design that makes local companies look trusted before the first call.</text>
+</svg>

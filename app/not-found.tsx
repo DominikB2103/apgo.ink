@@ -1,15 +1,12 @@
-import { Navigation } from '@/components/Navigation';
-import { MagneticButton } from '@/components/AnimatedShell';
+import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <>
-      <Navigation />
-      <main className="legal-page">
-        <h1>Page not found.</h1>
-        <p>The page moved or does not exist. Go back to APTO.INK and choose one of the demo websites.</p>
-        <MagneticButton href="/">Back home</MagneticButton>
-      </main>
-    </>
+    <main className="notFound">
+      <div className="brandPill">APTO.INK</div>
+      <h1>This page stepped out for espresso.</h1>
+      <p>The page is not here, but the studio is.</p>
+      <Link href="/" className="button dark">Back to the studio</Link>
+    </main>
   );
 }

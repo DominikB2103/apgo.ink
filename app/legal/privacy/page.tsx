@@ -1,21 +1,23 @@
-import { Navigation } from '@/components/Navigation';
-import { Footer } from '@/components/Footer';
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 
-export default function Privacy() {
+export default function PrivacyPage() {
   return (
-    <>
-      <Navigation />
-      <main className="legal-page">
-        <h1>Privacy policy</h1>
-        <p><strong>Important:</strong> This is a starter placeholder, not legal advice. Replace it with a policy matching the tools you actually use.</p>
-        <h2>Contact</h2>
-        <p>When visitors contact APTO.INK by email or phone, the information they provide is used only to answer the request and prepare a possible offer.</p>
-        <h2>Analytics</h2>
-        <p>No analytics are configured in this template by default. If you add analytics, disclose the provider and data usage here.</p>
-        <h2>External media</h2>
-        <p>This template references external stock-image URLs. Replace them with locally hosted assets or disclose the providers before production if required.</p>
-      </main>
-      <Footer />
-    </>
+    <main className="legalPage">
+      <div className="legalShell">
+        <Link href="/" className="backLink"><ArrowLeft size={17} /> APTO.INK</Link>
+        <span className="kicker">legal placeholder</span>
+        <h1>Privacy Policy</h1>
+        <p>Replace this template with a real privacy policy that matches your analytics, contact tools, fonts, and hosting setup.</p>
+        <div className="legalCard">
+          <h2>Data collection</h2>
+          <p>This website may process technical access data such as browser type, pages visited, and timestamps. Add your real provider details here.</p>
+          <h2>Contact</h2>
+          <p>If visitors contact APTO.INK by email, the submitted information is used to respond to the request.</p>
+          <h2>Third-party assets</h2>
+          <p>If you use external fonts, images, analytics, maps, booking tools, or forms, list them here before launch.</p>
+        </div>
+      </div>
+    </main>
   );
 }

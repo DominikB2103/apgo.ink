@@ -5,12 +5,7 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  eslint: {
-    ignoreDuringBuilds: true
-  },
-  typescript: {
-    ignoreBuildErrors: false
-  }
+  reactStrictMode: true
 };
 
 export default nextConfig;

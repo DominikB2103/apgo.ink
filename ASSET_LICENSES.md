@@ -1,11 +1,7 @@
-# Asset and image notes
+# Asset notes
 
-This build intentionally avoids bundled copyrighted photos. It uses:
+The site uses a mix of original SVG/CSS visuals and remote stock photography URLs from Unsplash. The current Unsplash license permits free commercial and non-commercial use without asking permission, though attribution is appreciated.
 
-- Original SVG backgrounds in `public/brand/`
-- Remote stock-image URLs from Unsplash image CDN
-- Icons from `lucide-react`, which is open-source
+Important: stock-photo licenses do not automatically solve every possible personality, trademark, or model-release issue. For real client work, replace hero/gallery imagery with the client’s own photos whenever possible, or verify that the chosen photo is suitable for the exact commercial context.
 
-Unsplash images are generally free to use for commercial and non-commercial projects under the Unsplash License. Attribution is not required by the license, but is appreciated. For client delivery, the safest workflow is to replace demo images with client-owned photos or locally saved stock images with documented license records.
-
-No Safari pinned icon bundle, favicons package, or default Vite assets are included.
+No paid, pirated, or copied brand assets are included.

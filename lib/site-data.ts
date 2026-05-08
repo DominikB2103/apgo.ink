@@ -1,112 +1,179 @@
-import { ArrowRight, BadgeCheck, Building2, CalendarDays, CarFront, Clock3, Coffee, Cross, Gauge, Globe2, Landmark, Layers3, MapPin, MessageCircle, ShieldCheck, Sparkles, Store, WandSparkles, Workflow, Zap } from 'lucide-react';
-
-export const brand = {
+export const studio = {
   name: 'APTO.INK',
   email: 'hello@apto.ink',
   phone: '+41 00 000 00 00',
+  cityLine: 'Websites for Swiss local businesses',
   domain: 'apto.ink'
 };
 
-export const demoCards = [
+export const packages = [
   {
-    slug: 'bakery',
-    href: '/demos/bakery/',
-    title: 'Bakery / Café',
-    eyebrow: 'Warm, premium, local',
-    description: 'A high-conversion food business site with menu cards, opening hours, reviews and catering CTA.',
-    metric: '+34% more calls',
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=82',
-    tags: ['Menu', 'Local SEO', 'Reservations']
-  },
-  {
-    slug: 'garage',
-    href: '/demos/garage/',
-    title: 'Garage / Mechanic',
-    eyebrow: 'Trust-first service',
-    description: 'A clean automotive site with service booking, tire season offers, proof points and emergency CTA.',
-    metric: '24h booking flow',
-    image: 'https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=1200&q=82',
-    tags: ['Booking', 'Services', 'Trust']
-  },
-  {
-    slug: 'municipality',
-    href: '/demos/municipality/',
-    title: 'Municipality',
-    eyebrow: 'Civic clarity',
-    description: 'A modern public-sector information hub with alerts, departments, forms and community updates.',
-    metric: 'A11y-first UX',
-    image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=82',
-    tags: ['Accessibility', 'Forms', 'News']
-  },
-  {
-    slug: 'clinic',
-    href: '/demos/clinic/',
-    title: 'Clinic / Practice',
-    eyebrow: 'Calm and credible',
-    description: 'A refined healthcare site with appointment CTA, doctor profiles, insurance info and service pages.',
-    metric: 'Patient-ready',
-    image: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=82',
-    tags: ['Appointments', 'Profiles', 'FAQ']
-  }
-];
-
-export const pricing = [
-  {
-    name: 'Starter',
-    price: 'CHF 890',
-    period: 'one-time',
-    tagline: 'For businesses that need to stop looking invisible.',
-    features: ['One-page premium website', 'Mobile-first design', 'Copy cleanup', 'Contact buttons', 'GitHub Pages deployment guide'],
-    bestFor: 'New local businesses',
-    cta: 'Start lean'
+    name: 'Presence',
+    price: "CHF 890",
+    anchor: 'A premium one-page site for businesses that need to look real fast.',
+    features: ['One cinematic landing page', 'Mobile-first layout', 'Copy polish', 'Contact CTA + map block', 'Launch checklist'],
+    note: 'Best for cafés, trades, pop-up services, consultants'
   },
   {
     name: 'Local Signature',
-    price: 'CHF 1’850',
-    period: 'one-time',
-    tagline: 'The serious package for most Swiss SMEs.',
-    features: ['4–6 custom sections/pages', 'Offer/pricing/service layout', 'Swiss-style trust blocks', 'Basic SEO structure', 'Analytics-ready setup', 'One revision sprint'],
-    bestFor: 'Restaurants, garages, salons, trades',
-    cta: 'Most popular',
-    featured: true
+    price: "CHF 1’850",
+    anchor: 'The serious small-business website: elegant, trustworthy, and conversion-focused.',
+    features: ['3–5 crafted pages', 'Service or menu structure', 'Image direction', 'Basic local SEO', 'One revision round'],
+    note: 'Best first offer for cold calls'
   },
   {
-    name: 'Premium System',
-    price: 'CHF 3’900+',
-    period: 'project',
-    tagline: 'A website that looks like a real brand, not a template.',
-    features: ['Advanced visual direction', 'Multilingual-ready architecture', 'Multiple page templates', 'Motion design', 'Launch checklist', 'Conversion review'],
-    bestFor: 'Established businesses',
-    cta: 'Build premium'
+    name: 'Authority',
+    price: "CHF 3’900+",
+    anchor: 'For businesses that need to feel like the best option in their canton.',
+    features: ['Custom visual system', 'Multilingual structure', 'Deep content sections', 'Advanced motion', 'Analytics-ready handoff'],
+    note: 'For clinics, municipalities, garages, premium hospitality'
   }
 ];
 
-export const retainers = [
-  { name: 'Care Lite', price: 'CHF 95/mo', detail: 'Small edits, uptime checks, analytics glance.' },
-  { name: 'Care Growth', price: 'CHF 190/mo', detail: 'Monthly improvements, SEO tweaks, performance review.' },
-  { name: 'Care Partner', price: 'CHF 290/mo', detail: 'Priority support, content sections, seasonal campaigns.' }
-];
-
-export const process = [
-  { icon: MessageCircle, title: '1. Business call', text: 'We learn the offer, customers, area and what currently blocks calls or bookings.' },
-  { icon: WandSparkles, title: '2. Direction board', text: 'We create the visual angle: premium, practical, local, trustworthy, fast.' },
-  { icon: Layers3, title: '3. Static build', text: 'Next.js export, no server bill, fast load times and clean pages for GitHub Pages.' },
-  { icon: BadgeCheck, title: '4. Launch handover', text: 'You get the live site, update notes, SEO basics and care-plan options.' }
-];
-
 export const proof = [
-  { icon: Gauge, label: 'Static-speed architecture', value: 'Next export' },
-  { icon: ShieldCheck, label: 'No monthly server needed', value: 'GitHub Pages' },
-  { icon: Globe2, label: 'Built for Swiss SMEs', value: 'DE/FR/IT-ready' },
-  { icon: Sparkles, label: 'Premium visual system', value: 'Not a template' }
+  { value: '7 days', label: 'for a focused first version' },
+  { value: 'CHF 0', label: 'hosting lock-in from us' },
+  { value: '4x', label: 'example industries already designed' },
+  { value: 'DE/FR/IT/EN', label: 'ready for multilingual Swiss growth' }
 ];
 
-export const faqs = [
-  ['Can this run on GitHub Pages?', 'Yes. The project is configured as a Next.js static export, so the final deployment is static HTML, CSS and JavaScript.'],
-  ['Can clients edit it themselves?', 'For the cheapest packages, updates are handled as a care plan. For bigger clients, a CMS can be added later, but GitHub Pages alone is static.'],
-  ['Can we make it multilingual?', 'Yes. The structure is ready for language versions. For Swiss SMEs, German plus English or French is a strong upsell.'],
-  ['Do you use copyrighted images?', 'The build references free commercial-use stock-photo providers and includes an asset license note. You can replace any image before selling to a real client.'],
-  ['Can every demo become a real client site?', 'Yes. Each demo is intentionally built like a real niche template, but with custom copy, images and branding per client.']
-];
+export const demos = [
+  {
+    slug: 'bakery',
+    name: 'Atelier Brot',
+    sector: 'Bakery & café',
+    mood: 'warm, handcrafted, appetizing',
+    headline: 'A neighborhood bakery that feels worth crossing town for.',
+    href: '/demos/bakery/',
+    accent: '#e76635',
+    accent2: '#f4c15d',
+    paper: '#fff7ec',
+    ink: '#2b1711',
+    dark: '#180d09',
+    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1800&q=86',
+    thumb: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80',
+    tag: 'food / retail',
+    cta: 'Reserve weekend bread',
+    nav: ['Bread', 'Café', 'Events', 'Visit'],
+    sections: [
+      { title: 'Slow dough. Fast recognition.', body: 'Every image, menu block, and opening-hour detail is shaped so a passer-by instantly understands craft, price level, and mood.' },
+      { title: 'Seasonal menu system', body: 'Featured breads, coffee, brunch plates, and catering trays can be swapped without redesigning the page.' },
+      { title: 'Local trust cues', body: 'Supplier notes, opening hours, neighborhood delivery, and Google Maps-ready contact prompts.' }
+    ],
+    stats: [
+      ['05:30', 'oven starts'],
+      ['28h', 'sourdough rise'],
+      ['12+', 'daily pastries']
+    ],
+    features: ['Signature sourdough page', 'Weekend reservation CTA', 'Catering inquiry section', 'Press-ready story block'],
+    gallery: [
+      'https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=1200&q=82',
+      'https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&w=1200&q=82',
+      'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=1200&q=82'
+    ]
+  },
+  {
+    slug: 'garage',
+    name: 'Nordwerk Garage',
+    sector: 'Mechanic & auto service',
+    mood: 'precise, tough, technical',
+    headline: 'A garage website that makes competence visible before the first phone call.',
+    href: '/demos/garage/',
+    accent: '#6ee7f9',
+    accent2: '#f59e0b',
+    paper: '#eaf8ff',
+    ink: '#071017',
+    dark: '#05090d',
+    image: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1800&q=86',
+    thumb: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80',
+    tag: 'trade / service',
+    cta: 'Book diagnostics',
+    nav: ['Service', 'Diagnostics', 'Fleet', 'Contact'],
+    sections: [
+      { title: 'Service menus without confusion', body: 'Diagnostics, tires, MFK preparation, fleet service, and emergency repair are separated into clear conversion paths.' },
+      { title: 'Workshop credibility', body: 'Equipment, certification, years of experience, and process cards give non-technical customers confidence.' },
+      { title: 'Call-first design', body: 'Large tap targets, phone-first CTAs, and opening hours keep the path short on mobile.' }
+    ],
+    stats: [
+      ['24h', 'quote window'],
+      ['4.8', 'rating module'],
+      ['MFK', 'prep focus']
+    ],
+    features: ['Service estimator layout', 'Fleet customer section', 'Emergency repair CTA', 'Review highlight system'],
+    gallery: [
+      'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=82',
+      'https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=1200&q=82',
+      'https://images.unsplash.com/photo-1632823471565-1ecdf5c7b8c8?auto=format&fit=crop&w=1200&q=82'
+    ]
+  },
+  {
+    slug: 'municipality',
+    name: 'Gemeinde Valdora',
+    sector: 'Municipality & public office',
+    mood: 'calm, official, accessible',
+    headline: 'A municipal website that makes services simple instead of bureaucratic.',
+    href: '/demos/municipality/',
+    accent: '#2f6bff',
+    accent2: '#62d2a2',
+    paper: '#eef4ff',
+    ink: '#07122f',
+    dark: '#071124',
+    image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=86',
+    thumb: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80',
+    tag: 'public / civic',
+    cta: 'Open citizen desk',
+    nav: ['Services', 'News', 'Council', 'Forms'],
+    sections: [
+      { title: 'Citizen tasks first', body: 'The homepage starts with what residents actually need: forms, opening hours, appointments, taxes, schools, waste collection.' },
+      { title: 'Official without feeling old', body: 'A serious typographic system, strong accessibility contrast, and calm interaction patterns.' },
+      { title: 'Scalable information architecture', body: 'Departments, announcements, documents, and events can grow without turning the site into a maze.' }
+    ],
+    stats: [
+      ['18', 'quick services'],
+      ['3', 'languages ready'],
+      ['AA', 'contrast target']
+    ],
+    features: ['Resident service grid', 'Council announcement feed', 'Document area', 'Accessible contact blocks'],
+    gallery: [
+      'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1200&q=82',
+      'https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?auto=format&fit=crop&w=1200&q=82',
+      'https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=82'
+    ]
+  },
+  {
+    slug: 'clinic',
+    name: 'Praxis Am Markt',
+    sector: 'Clinic & healthcare practice',
+    mood: 'clean, human, reassuring',
+    headline: 'A practice website that reduces anxiety and makes booking feel easy.',
+    href: '/demos/clinic/',
+    accent: '#21b6a8',
+    accent2: '#9bd7ff',
+    paper: '#effdf9',
+    ink: '#08231f',
+    dark: '#061310',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1800&q=86',
+    thumb: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80',
+    tag: 'health / trust',
+    cta: 'Request appointment',
+    nav: ['Treatments', 'Team', 'Patients', 'Contact'],
+    sections: [
+      { title: 'Trust starts in the first fold', body: 'The design puts human warmth, medical clarity, and practical appointment information above decorative noise.' },
+      { title: 'Patient-ready content', body: 'Treatment cards, new-patient guidance, insurance notes, and emergency instructions are structured clearly.' },
+      { title: 'Calm visual language', body: 'Soft depth, spacious layouts, and careful contrast make the practice feel competent and approachable.' }
+    ],
+    stats: [
+      ['08:00', 'first appointments'],
+      ['6', 'treatment areas'],
+      ['48h', 'reply target']
+    ],
+    features: ['Appointment CTA', 'Team profile system', 'Treatment pages', 'Patient information block'],
+    gallery: [
+      'https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1200&q=82',
+      'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=82',
+      'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=82'
+    ]
+  }
+] as const;
 
-export const iconSet = { ArrowRight, Building2, CalendarDays, CarFront, Clock3, Coffee, Cross, Landmark, MapPin, Store, Workflow, Zap };
+export type Demo = (typeof demos)[number];

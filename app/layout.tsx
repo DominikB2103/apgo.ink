@@ -1,25 +1,26 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { ProgressBar } from '@/components/AnimatedShell';
+import { studio } from '@/lib/site-data';
 
 export const metadata: Metadata = {
-  title: 'APTO.INK — Premium websites for Swiss SMEs',
-  description: 'APTO.INK builds premium static websites for small and medium-sized Swiss businesses: fast, elegant, affordable and ready for GitHub Pages.',
-  metadataBase: new URL('https://apto.ink'),
+  metadataBase: new URL(`https://${studio.domain}`),
+  title: 'APTO.INK — Premium websites for Swiss local businesses',
+  description: 'APTO.INK designs premium websites for Swiss small and medium-sized businesses: bakeries, garages, clinics, municipalities, trades, restaurants, and local services.',
   openGraph: {
-    title: 'APTO.INK — Premium websites for Swiss SMEs',
-    description: 'Static, premium, conversion-focused websites for local Swiss businesses.',
-    url: 'https://apto.ink',
-    siteName: 'APTO.INK',
-    type: 'website'
-  }
+    title: 'APTO.INK — Premium websites for Swiss local businesses',
+    description: 'High-end web design for businesses that need to look trusted, modern, and worth calling.',
+    type: 'website',
+    url: `https://${studio.domain}`,
+    images: ['/brand/og.svg']
+  },
+  icons: [{ rel: 'icon', url: '/brand/favicon.svg', type: 'image/svg+xml' }]
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body>
-        <ProgressBar />
+        <div className="grain" aria-hidden="true" />
         {children}
       </body>
     </html>
