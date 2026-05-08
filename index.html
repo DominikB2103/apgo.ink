@@ -1,236 +1,29 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-apto="dropin">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>APTO.INK — Websites for Swiss small businesses</title>
-  <meta name="description" content="Premium websites for Swiss SMEs: modern design, clear pricing, strong local trust and industry-specific examples.">
-  <meta name="theme-color" content="#07080b">
-  <meta property="og:title" content="APTO.INK — Websites for Swiss SMEs">
-  <meta property="og:description" content="Websites that make small businesses look established, credible and ready to buy from.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="/assets/svg/og-card.svg">
-  <link rel="icon" href="/assets/svg/favicon.svg" type="image/svg+xml">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/assets/css/reset.css">
-  <link rel="stylesheet" href="/assets/css/tokens.css">
-  <link rel="stylesheet" href="/assets/css/base.css">
-  <link rel="stylesheet" href="/assets/css/layout.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
-  <link rel="stylesheet" href="/assets/css/motion.css">
-  <link rel="stylesheet" href="/assets/css/responsive.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f1e4d0" />
+  <meta name="description" content="Swiss web studio building premium websites for small and medium-sized businesses." />
+  <title>APTO.INK — Websites that make Swiss businesses look established</title>
+  <link rel="preload" href="./styles/01-tokens.css" as="style" />
+  <link rel="stylesheet" href="./styles/00-reset.css" />
+  <link rel="stylesheet" href="./styles/01-tokens.css" />
+  <link rel="stylesheet" href="./styles/02-typography.css" />
+  <link rel="stylesheet" href="./styles/03-layout.css" />
+  <link rel="stylesheet" href="./styles/04-components.css" />
+  <link rel="stylesheet" href="./styles/05-motion.css" />
+  <link rel="stylesheet" href="./styles/06-pages.css" />
+  <link rel="stylesheet" href="./styles/07-demos.css" />
+  <link rel="stylesheet" href="./styles/08-responsive.css" />
 </head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header" data-header>
-    <nav class="nav shell" aria-label="Primary navigation">
-      <a class="brand" href="/" aria-label="APTO.INK home">
-        <span class="brand-mark"><img src="/assets/svg/monogram.svg" alt="" width="42" height="42"></span>
-        <span><strong>APTO.INK</strong><small>Swiss SME web studio</small></span>
-      </a>
-      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="mobile-menu"><i></i><i></i></button>
-      <div class="nav-menu" id="nav-menu">
-        <a href="#examples">Examples</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#process">Process</a>
-        <a href="#faq">FAQ</a>
-      </div>
-      <a class="btn btn-primary nav-cta" href="mailto:hello@apto.ink?subject=Website%20request">Request a website</a>
-    </nav>
-    <div class="mobile-drawer" id="mobile-menu" data-mobile-drawer>
-      <a href="#examples">Examples</a><a href="#pricing">Pricing</a><a href="#process">Process</a><a href="#faq">FAQ</a><a href="mailto:hello@apto.ink?subject=Website%20request">Request a website</a>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="hero">
-      <div class="hero-orb" aria-hidden="true"></div>
-      <div class="shell hero-grid">
-        <div class="hero-copy reveal">
-          <div class="eyebrow">Built for local trust</div>
-          <h1>Websites that make Swiss SMEs look <em>impossible to ignore.</em></h1>
-          <p class="lead">APTO.INK designs polished, fast, sales-focused websites for small and medium-sized businesses that need to look established before the first phone call.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#examples">View example websites</a>
-            <a class="btn btn-ghost" href="#pricing">See pricing</a>
-          </div>
-          <div class="proof-strip" aria-label="Proof points">
-            <span class="pill">Mobile-first</span>
-            <span class="pill">Swiss business tone</span>
-            <span class="pill">Clear fixed pricing</span>
-            <span class="pill">Launch-ready copy</span>
-          </div>
-        </div>
-        <div class="hero-stage reveal delay-1" aria-label="Website previews">
-          <a class="stage-card stage-main stage-preview stage-bakery floaty" href="/demos/bakery/" data-tilt>
-            <div class="preview-toolbar"><span class="preview-dots"><i></i><i></i><i></i></span><strong>Bakery example</strong></div>
-            <div class="preview-hero">
-              <span class="preview-chip">Golden Crust Atelier</span>
-              <h3>Morning bread, designed to sell before 8am.</h3>
-              <p>Warm product photography, counter highlights, opening hours and a preorder path.</p>
-            </div>
-            <div class="preview-menu"><span>Daily counter</span><span>Seasonal cakes</span><span>Pre-order</span></div>
-          </a>
-          <a class="stage-card stage-mini stage-preview stage-garage" href="/demos/garage/" data-tilt>
-            <div class="preview-toolbar"><span class="preview-dots"><i></i><i></i><i></i></span><strong>Garage</strong></div>
-            <div class="preview-hero">
-              <span class="preview-chip">Nordwerk</span>
-              <h3>Diagnostics, proof and booking.</h3>
-            </div>
-            <div class="preview-menu"><span>Service cards</span><span>24h request</span></div>
-          </a>
-          <aside class="stage-card stage-pricing" data-tilt>
-            <small>Main package</small>
-            <strong>CHF 1’850</strong>
-            <p style="color:rgba(7,16,13,.66)">Complete local business website: strategy, design, pages, contact flow.</p>
-            <ul><li>✓ 4–6 tailored pages</li><li>✓ Mobile-first design</li><li>✓ Launch support</li></ul>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="marquee" aria-label="APTO.INK service principles">
-      <div class="marquee-track">
-        <span>Premium first impression</span><span>Swiss SME positioning</span><span>Clear calls to action</span><span>Local trust signals</span><span>Fast static pages</span><span>Industry-specific design</span>
-        <span>Premium first impression</span><span>Swiss SME positioning</span><span>Clear calls to action</span><span>Local trust signals</span><span>Fast static pages</span><span>Industry-specific design</span>
-      </div>
-    </section>
-
-    <section class="section-pad" id="why">
-      <div class="shell">
-        <div class="section-head">
-          <div class="reveal"><div class="eyebrow">What you sell</div><h2>A better website is not decoration. It changes who trusts you.</h2></div>
-          <p class="reveal delay-1">Most small businesses do not need a giant platform. They need a sharp public face: proof, offer, location, opening hours, photos, services, and one obvious next step.</p>
-        </div>
-        <div class="bento">
-          <article class="bento-card surface wide card-glow reveal" data-tilt>
-            <span class="pill">Lead psychology</span>
-            <h3>Make the business feel bigger before the customer arrives.</h3>
-            <p>Strong typography, confident spacing, real service structure, quality visuals, and simple calls to action create the feeling of an established company.</p>
-            <div class="signature-line"></div>
-            <div class="metric"><span data-count="4" data-suffix="×">0×</span><small> more memorable than a social-only presence</small></div>
-          </article>
-          <article class="bento-card surface narrow reveal delay-1" data-tilt>
-            <span class="pill">Website audit</span>
-            <div class="audit-board" aria-label="Audit checks">
-              <div class="audit-row"><i class="audit-dot"></i><strong>No website</strong><span>Call target</span></div>
-              <div class="audit-row"><i class="audit-dot" style="background:var(--gold)"></i><strong>Old website</strong><span>Redesign target</span></div>
-              <div class="audit-row"><i class="audit-dot" style="background:var(--mint)"></i><strong>Good website</strong><span>Leave alone</span></div>
-            </div>
-            <p style="margin-top:24px">Your outreach can focus on businesses where the pain is visible: no web presence, outdated layout, missing mobile experience, or weak contact flow.</p>
-          </article>
-          <article class="bento-card surface third reveal" data-tilt><span class="pill">Copy</span><h3>Words that sound human.</h3><p>No startup jargon. No fake agency language. Just clear Swiss business copy that says what they do, where they are, and why people should call.</p></article>
-          <article class="bento-card surface third reveal delay-1" data-tilt><span class="pill">Design</span><h3>Each industry gets its own atmosphere.</h3><p>A bakery should feel warm. A garage should feel precise. A clinic should feel calm. A municipality should feel clear and trustworthy.</p></article>
-          <article class="bento-card surface third reveal delay-2" data-tilt><span class="pill">Launch</span><h3>No endless project drag.</h3><p>A fixed scope, a deposit, one focused feedback round, and a clean launch. Simple enough for small businesses to say yes.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-pad" id="examples">
-      <div class="shell">
-        <div class="section-head">
-          <div class="reveal"><div class="eyebrow">Example websites</div><h2>Show clients exactly what their business could feel like online.</h2></div>
-          <p class="reveal delay-1">Every example is designed as a real sellable direction: visual identity, structure, conversion flow and industry-specific trust signals.</p>
-        </div>
-        <div class="example-grid">
-          <a class="example-card reveal" href="/demos/bakery/" style="--image:url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=85')" data-tilt>
-            <div class="example-card-content"><div class="example-meta"><span>Bakery</span><span>CHF 1’850+</span></div><h3>Warm artisan storefront</h3><p>Product desire, opening hours, order intent, local charm.</p><span class="link-line">Open example</span></div>
-          </a>
-          <a class="example-card reveal delay-1" href="/demos/garage/" style="--image:url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1200&q=85')" data-tilt>
-            <div class="example-card-content"><div class="example-meta"><span>Garage</span><span>CHF 2’400+</span></div><h3>Precision auto service</h3><p>Diagnostic trust, service packages, appointment request.</p><span class="link-line">Open example</span></div>
-          </a>
-          <a class="example-card reveal delay-2" href="/demos/municipality/" style="--image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85')" data-tilt>
-            <div class="example-card-content"><div class="example-meta"><span>Municipality</span><span>CHF 4’900+</span></div><h3>Clear civic services</h3><p>Notices, services, departments, resident information.</p><span class="link-line">Open example</span></div>
-          </a>
-          <a class="example-card reveal delay-3" href="/demos/clinic/" style="--image:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=85')" data-tilt>
-            <div class="example-card-content"><div class="example-meta"><span>Clinic</span><span>CHF 2’900+</span></div><h3>Calm appointment flow</h3><p>Services, doctor credibility, patient confidence, booking.</p><span class="link-line">Open example</span></div>
-          </a>
-        </div>
-        <p style="margin-top:22px"><a class="link-line" href="/demos/">View all examples as a directory</a></p>
-      </div>
-    </section>
-
-    <section class="section-pad" id="pricing">
-      <div class="shell">
-        <div class="section-head">
-          <div class="reveal"><div class="eyebrow">Pricing</div><h2>Simple enough to say on a phone call. Serious enough to be respected.</h2></div>
-          <p class="reveal delay-1">Start with fixed packages. Avoid hourly confusion. Ask for a deposit. Define the scope clearly. Upsell maintenance only after trust exists.</p>
-        </div>
-        <div class="pricing-grid">
-          <article class="price-card surface reveal" data-tilt>
-            <span class="pill">Starter</span><h3>Starter Presence</h3><p>For businesses that need a professional one-page site quickly.</p><div class="price">CHF 890<span> from</span></div><ul class="price-features"><li>One polished landing page</li><li>Mobile-first design</li><li>Contact and location section</li><li>Basic copy improvement</li><li>Launch handoff</li></ul><a class="btn btn-ghost" href="mailto:hello@apto.ink?subject=Starter%20website">Ask for Starter</a>
-          </article>
-          <article class="price-card featured reveal delay-1" data-tilt>
-            <span class="pill" style="color:#07100d;border-color:rgba(7,16,13,.15);background:rgba(7,16,13,.04)">Best seller</span><h3>Local Business</h3><p>The main offer for restaurants, garages, clinics, salons, shops and service businesses.</p><div class="price">CHF 1’850<span> from</span></div><ul class="price-features"><li>4–6 custom pages</li><li>Industry-specific design direction</li><li>Services / pricing / gallery / FAQ</li><li>Local search structure</li><li>One revision round</li></ul><a class="btn btn-dark" href="mailto:hello@apto.ink?subject=Local%20Business%20website">Start this package</a>
-          </article>
-          <article class="price-card surface reveal delay-2" data-tilt>
-            <span class="pill">Premium</span><h3>Signature Build</h3><p>For businesses that want to look like the best choice in their region.</p><div class="price">CHF 3’900<span>+</span></div><ul class="price-features"><li>Advanced visual identity</li><li>More pages and richer motion</li><li>Multilingual structure</li><li>Custom forms and content flows</li><li>Priority launch support</li></ul><a class="btn btn-ghost" href="mailto:hello@apto.ink?subject=Signature%20website">Discuss premium build</a>
-          </article>
-        </div>
-        <div class="addons-grid" style="margin-top:18px">
-          <article class="addon reveal"><span>Care plan</span><h3>CHF 95–290 / month</h3><p>Small content edits, backups, polish and ongoing support.</p></article>
-          <article class="addon reveal delay-1"><span>Extra language</span><h3>CHF 350+</h3><p>German, French, Italian or English page variants when the business needs it.</p></article>
-          <article class="addon reveal delay-2"><span>Photo day</span><h3>CHF 450+</h3><p>Replace generic images with real shop, team and product photography.</p></article>
-          <article class="addon reveal delay-3"><span>Outreach angle</span><h3>Free audit</h3><p>Offer a short visual audit before pitching the paid redesign.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-pad" id="process">
-      <div class="shell">
-        <div class="section-head"><div class="reveal"><div class="eyebrow">Process</div><h2>A clean path from first call to launch.</h2></div><p class="reveal delay-1">You do not sell “a website.” You sell relief: a business looks professional, customers understand it, and the owner stops being embarrassed by their online presence.</p></div>
-        <div class="process">
-          <article class="process-card surface reveal"><h3>Audit</h3><p>Check the current presence, Google listing, mobile experience, photos, and competitors. Find the obvious gap.</p></article>
-          <article class="process-card surface reveal delay-1"><h3>Offer</h3><p>Recommend the package, define pages, timeline and deposit. Keep the scope simple and written.</p></article>
-          <article class="process-card surface reveal delay-2"><h3>Build</h3><p>Design the first version with real copy, industry imagery, trust sections and one strong conversion path.</p></article>
-          <article class="process-card surface reveal delay-3"><h3>Launch</h3><p>Apply one focused feedback round, connect domain, publish, and offer maintenance without pressure.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-pad">
-      <div class="shell">
-        <div class="comparison reveal">
-          <div class="comparison-row head"><div>What buyers see</div><div>Weak website</div><div>APTO.INK direction</div></div>
-          <div class="comparison-row"><div>First impression</div><div class="no">Outdated / uncertain</div><div class="yes">Premium / trustworthy</div></div>
-          <div class="comparison-row"><div>Services</div><div class="no">Hidden or vague</div><div class="yes">Structured and easy</div></div>
-          <div class="comparison-row"><div>Mobile</div><div class="no">Hard to use</div><div class="yes">Designed for phone-first browsing</div></div>
-          <div class="comparison-row"><div>Action</div><div class="no">No clear next step</div><div class="yes">Call, request, visit, book</div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-pad" id="faq">
-      <div class="shell">
-        <div class="section-head"><div class="reveal"><div class="eyebrow">FAQ</div><h2>Questions a business owner will ask before paying.</h2></div><p class="reveal delay-1">These answers should be confident, direct and boringly clear. That is what sells.</p></div>
-        <div class="faq-list">
-          <div class="faq-item is-open reveal"><button type="button">How long does a website take?</button><p>A starter page can be ready in about one week if content is available. A normal local business website usually needs two to four weeks depending on pages, feedback and photos.</p></div>
-          <div class="faq-item reveal"><button type="button">Do you write the text?</button><p>Yes. The business gives the facts; APTO.INK turns them into clear, professional page copy that customers can understand immediately.</p></div>
-          <div class="faq-item reveal"><button type="button">Can the business update it later?</button><p>Yes. Small updates can be handled through a care plan, or the site can be handed over with simple edit instructions depending on the scope.</p></div>
-          <div class="faq-item reveal"><button type="button">Is the price fixed?</button><p>The package price is fixed when the scope is fixed. Extra pages, extra languages, new photography and advanced features are quoted separately.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-pad-sm">
-      <div class="shell cta-panel reveal">
-        <div class="eyebrow">Ready to sell</div>
-        <h2>Call the business. Send the examples. Close the first build.</h2>
-        <p class="lead">The website gives prospects a direct way to understand your style, pricing and examples before they commit to a conversation.</p>
-        <div class="hero-actions" style="margin-top:28px"><a class="btn btn-primary" href="/demos/">Open examples</a><a class="btn btn-ghost" href="mailto:hello@apto.ink?subject=Website%20project">Request a quote</a></div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="shell footer-grid">
-      <div><a class="brand" href="/"><span class="brand-mark"><img src="/assets/svg/monogram.svg" alt="" width="42" height="42"></span><span><strong>APTO.INK</strong><small>Swiss SME web studio</small></span></a><p style="margin-top:16px">Premium websites for local businesses that want to look credible before the customer calls.</p></div>
-      <div><h4>Explore</h4><a href="#examples">Examples</a><a href="#pricing">Pricing</a><a href="#process">Process</a></div>
-      <div><h4>Demos</h4><a href="/demos/bakery/">Bakery</a><a href="/demos/garage/">Garage</a><a href="/demos/municipality/">Municipality</a><a href="/demos/clinic/">Clinic</a></div>
-      <div><h4>Contact</h4><a href="mailto:hello@apto.ink">hello@apto.ink</a><a href="/legal/impressum/">Impressum</a><a href="/legal/privacy/">Privacy</a></div>
-    </div>
-    <div class="shell footer-bottom"><span>© <span data-year></span> APTO.INK</span><span>Built for Swiss small-business trust.</span></div>
-  </footer>
-  <script src="/assets/js/main.js" defer></script>
+<body data-route="home" data-slug="">
+  <div id="app">
+    <main class="boot-screen" aria-label="Loading APTO.INK">
+      <span class="boot-mark">APTO.INK</span>
+      <span class="boot-line"></span>
+    </main>
+  </div>
+  <script type="module" src="./src/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,35 @@
+:root{
+  --ink:#18130f;
+  --ink-2:#231a14;
+  --ink-3:#34261d;
+  --paper:#f3e7d6;
+  --paper-2:#ead8bf;
+  --paper-3:#fff8ed;
+  --cream:#fbf3e6;
+  --sand:#dbc29d;
+  --clay:#b7643e;
+  --clay-2:#d1844f;
+  --ochre:#c49152;
+  --olive:#7b8066;
+  --rose:#c87868;
+  --muted:#766c60;
+  --muted-2:#a39888;
+  --white:#fffaf2;
+  --black:#050403;
+  --line:rgba(24,19,15,.14);
+  --line-light:rgba(255,250,242,.18);
+  --panel:rgba(255,250,242,.64);
+  --panel-dark:#201813;
+  --shadow:0 26px 80px rgba(49,32,20,.15);
+  --shadow-soft:0 14px 44px rgba(49,32,20,.11);
+  --r-xs:8px;--r-sm:14px;--r-md:22px;--r-lg:34px;--r-xl:46px;--r-pill:999px;
+  --s-1:.25rem;--s-2:.5rem;--s-3:.75rem;--s-4:1rem;--s-5:1.25rem;--s-6:1.5rem;--s-8:2rem;--s-10:2.5rem;--s-12:3rem;--s-16:4rem;--s-20:5rem;--s-24:6rem;--s-32:8rem;
+  --font-sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --font-serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --font-mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  --max:1180px;--wide:1440px;--nav-h:76px;
+}
+body.theme-bakery{--theme:#d1844f;--theme-2:#f4d5ad;--theme-dark:#2f1c12;--theme-paper:#fff1df}
+body.theme-garage{--theme:#b85a37;--theme-2:#d8c0a8;--theme-dark:#191512;--theme-paper:#f1e7dc}
+body.theme-municipality{--theme:#8f7f4d;--theme-2:#e6d9b7;--theme-dark:#262315;--theme-paper:#f7f0dd}
+body.theme-clinic{--theme:#c87868;--theme-2:#f0cec1;--theme-dark:#241816;--theme-paper:#fff2ea}
