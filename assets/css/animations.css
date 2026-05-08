@@ -1,3 +1,0 @@
-@media (prefers-reduced-motion:no-preference){
-  .btn, .nav-menu a::after, .range-switch button{transition-duration:.22s}
-}
