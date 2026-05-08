@@ -1,1 +1,0 @@
-export function initGallery(){document.querySelectorAll('[data-gallery]').forEach(g=>{const imgs=[...g.querySelectorAll('img')];imgs.forEach(img=>img.addEventListener('click',()=>{imgs.forEach(i=>i.classList.remove('active'));img.classList.add('active')}))})}
