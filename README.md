@@ -1,14 +1,5 @@
-# APTO.INK — drop-in GitHub Pages site
+# APTO.INK fixed drop-in package
 
-Upload these files to the repository root. No npm install, no build step, no server.
+Upload the contents of this folder directly to the repository root.
 
-This is a static site that uses React as browser ES modules from esm.sh, so it still has component structure while remaining directly deployable.
-
-Routes:
-- /
-- /demos/bakery/
-- /demos/garage/
-- /demos/municipality/
-- /demos/clinic/
-
-Replace legal placeholders before public use.
+This version is pre-rendered: every public page already contains real content inside `#app`, so the site does not go white if JavaScript, modules, or animations fail. The component source remains in `/src` for editing.

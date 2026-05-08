@@ -1,1 +1,57 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>APTO.INK Demo</title><link rel="preconnect" href="https://images.unsplash.com"><link rel="stylesheet" href="/assets/css/base.css"><link rel="stylesheet" href="/assets/css/demos.css"></head><body><div id="root"></div><script type="module" src="/assets/js/demo.js"></script></body></html>
+<!doctype html>
+<html lang="en" data-apto="dropin">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#050505" />
+  <meta name="description" content="Swiss web studio building premium websites for small and medium-sized businesses." />
+  <title>Bakery example — APTO.INK</title>
+  <link rel="preload" href="../../styles/01-tokens.css" as="style" />
+  <link rel="stylesheet" href="../../styles/00-reset.css" />
+  <link rel="stylesheet" href="../../styles/01-tokens.css" />
+  <link rel="stylesheet" href="../../styles/02-typography.css" />
+  <link rel="stylesheet" href="../../styles/03-layout.css" />
+  <link rel="stylesheet" href="../../styles/04-components.css" />
+  <link rel="stylesheet" href="../../styles/05-motion.css" />
+  <link rel="stylesheet" href="../../styles/06-pages.css" />
+  <link rel="stylesheet" href="../../styles/07-demos.css" />
+  <link rel="stylesheet" href="../../styles/08-responsive.css" />
+</head>
+<body data-route="demo" data-slug="bakery">
+  <div class="ambient-orb ambient-a"></div>
+  <div class="ambient-orb ambient-b"></div>
+  <div id="cursor-glow" aria-hidden="true"></div>
+  <div id="app">
+
+    <header class="nav">
+      <div class="nav-inner">
+        <a class="brand magnetic" href="/" aria-label="APTO.INK home"><span class="brand-mark">A</span><span>APTO.INK</span></a>
+        <nav class="nav-links" aria-label="Main navigation"><a href="/" class="">Studio</a><a href="/demos/" class="active">Examples</a><a href="/#pricing" class="">Pricing</a><a href="/#process" class="">Process</a></nav>
+        <div class="nav-actions">
+          <a class="btn btn-ghost magnetic" href="/demos/">Examples</a>
+          <a class="btn btn-primary magnetic" href="/#contact">Start a site</a>
+          <button class="btn btn-ghost mobile-toggle" aria-label="Toggle menu">Menu</button>
+        </div>
+      </div>
+    </header><main class="demo-shell demo-page demo-bakery">
+    <section class="demo-hero bakery-hero"><div class="container bakery-hero-grid"><div class="reveal"><span class="demo-label">Artisan bakery concept</span><h1 class="demo-title">Maison Levain</h1><p class="demo-lead">A sensory, product-led bakery website: soft photography, elegant serif typography, seasonal menus, breakfast boxes, pre-orders, and opening hours that never hide.</p><div class="demo-actions"><a class="btn demo-primary magnetic" href="#book">Reserve a breakfast box<span>→</span></a><a class="btn demo-secondary magnetic" href="#services">View seasonal menu</a></div></div><div class="bakery-photo-stack reveal"><img class="photo-a" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1800&q=80" alt="Bakery bread"><img class="photo-b" src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1800&q=80" alt="Pastries"><div class="bakery-note"><strong>05:30</strong><span>first batch from the oven</span></div></div></div></section>
+    <section class="demo-section alt" id="services"><div class="container"><div class="demo-section-head reveal"><h2>The daily ritual</h2><p>The homepage opens like a morning window: image, smell, craft, and one clear next action.</p></div><div class="demo-card-grid stagger"><article class="demo-card"><span class="big">1</span><h3>Sourdough loaves</h3><p>Fresh categories with appetite, price cues and order moments.</p></article><article class="demo-card"><span class="big">2</span><h3>Morning pastries</h3><p>Designed to make morning visits feel like a habit.</p></article><article class="demo-card"><span class="big">3</span><h3>Breakfast boxes</h3><p>Pre-order paths for offices, weekends and holidays.</p></article><article class="demo-card"><span class="big">4</span><h3>Catering trays</h3><p>Catering pages that feel premium instead of generic.</p></article><article class="demo-card"><span class="big">5</span><h3>Coffee corner</h3><p>Coffee and shop details connected to daily rhythm.</p></article><article class="demo-card"><span class="big">6</span><h3>Holiday pre-orders</h3><p>Seasonal launches that can change without redesign.</p></article></div></div></section>
+    <section class="demo-section bakery-menu dark"><div class="container"><div class="demo-section-head reveal"><h2>Product rhythm</h2><p>Instead of generic blocks, the bakery gets menu cards, limited-batch moments, and reservation prompts.</p></div><div class="bakery-menu-grid stagger"><article><span>Country sourdough</span><p>Dark crust, long fermentation, baked daily</p><strong>CHF 8</strong></article><article><span>Apricot brioche</span><p>Seasonal fruit, butter-rich dough</p><strong>CHF 6</strong></article><article><span>Office breakfast box</span><p>Pastries, bread, jam, coffee cards</p><strong>CHF 42</strong></article><article><span>Weekend focaccia</span><p>Rosemary, sea salt, olive oil</p><strong>CHF 12</strong></article></div></div></section>
+    <section class="demo-section demo-gallery-section"><div class="container"><div class="gallery-rail reveal"><div class="gallery-tile tall"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1800&q=80" alt="Maison Levain detail image"></div><div class="gallery-copy"><span class="section-kicker">Visual direction</span><h2>Local trust</h2><p>Opening hours, map cues, story, and regular order paths are visible without turning the site into a spreadsheet.</p></div><div class="gallery-tile"><img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=1800&q=80" alt="Maison Levain secondary image"></div></div></div></section>
+    <section class="demo-section"><div class="container"><div class="review-card reveal"><blockquote>“It feels like the shop before you arrive: warm, precise, and impossible not to visit.”</blockquote><cite>Example client reaction</cite></div></div></section>
+    <section class="demo-section" id="book"><div class="container"><div class="demo-footer-cta reveal"><h2>Like this direction?</h2><p>This is one example of how APTO.INK can make a local business feel established, memorable, and easy to contact.</p><div class="demo-actions"><a class="btn btn-primary magnetic" href="/">Back to APTO.INK</a><a class="btn btn-ghost magnetic" href="/demos/">View more examples</a></div></div></div></section>
+  </main><footer class="footer">
+    <div class="container footer-grid">
+      <div class="stack">
+        <a class="brand" href="/"><span class="brand-mark">A</span><span>APTO.INK</span></a>
+        <p class="copy">Premium websites for Swiss businesses that need to look established before the first call.</p>
+      </div>
+      <div class="stack"><strong>Examples</strong><a href="/demos/bakery/">Bakery</a><a href="/demos/garage/">Garage</a><a href="/demos/municipality/">Municipality</a><a href="/demos/clinic/">Clinic</a></div>
+      <div class="stack"><strong>Studio</strong><a href="/#pricing">Pricing</a><a href="/#process">Process</a><a href="/#contact">Contact</a><a href="/demos/">All demos</a></div>
+      <div class="stack"><strong>Legal</strong><a href="/legal/impressum/">Impressum</a><a href="/legal/privacy/">Privacy</a><span class="muted tiny">© 2026 APTO.INK</span></div>
+    </div>
+  </footer>
+  </div>
+  <script type="module" src="../../src/main.js"></script>
+</body>
+</html>
