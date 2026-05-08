@@ -1,5 +1,5 @@
 # Asset notes
 
-Remote photography is loaded from Unsplash image URLs. Unsplash images can be used for commercial and non-commercial projects under the Unsplash License. Replace any image URLs with your own client photography when available.
+The design uses original CSS/SVG graphics created for this package plus remote demo photos from Unsplash image URLs. Unsplash images are intended for free commercial and non-commercial use under the Unsplash license, but you should replace demo images with final chosen assets or self-hosted client photography before selling a production website.
 
-React, ReactDOM and Babel Standalone are loaded from public CDNs so the package can be dropped into GitHub Pages without an npm build step.
+No paid fonts, icon packs, or proprietary template assets are included.
