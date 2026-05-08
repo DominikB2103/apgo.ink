@@ -5,7 +5,7 @@ import { SceneCanvas } from '@/components/SceneCanvas';
 export function Hero() {
   return (
     <section className="hero">
-      <div className="hero-orb" aria-hidden="true" />
+      
       <SceneCanvas />
       <div className="shell hero-grid">
         <Reveal className="hero-copy">
