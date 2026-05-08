@@ -1,5 +1,11 @@
-# APTO.INK drop-in React website
+# APTO.INK drop-in site
 
-Upload these files directly to a GitHub Pages repository root. No npm install, no build command, no dev server.
+Upload the contents of this folder to the repository root. The site is static-exported and works through `index.html` files at the root and demo directories. No install step is required for the public site.
 
-The site uses React components in `src/`, CSS in `styles/`, and real route folders with their own `index.html` files.
+Important public routes:
+- `/`
+- `/demos/`
+- `/demos/bakery/`
+- `/demos/garage/`
+- `/demos/municipality/`
+- `/demos/clinic/`
