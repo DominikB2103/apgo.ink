@@ -1,0 +1,13 @@
+:root{
+  --ink:#050505;--ink-2:#0b0b0c;--ink-3:#121214;--paper:#f8f4ec;--paper-2:#ebe2d4;--paper-3:#fffaf0;--muted:#8c877e;--muted-2:#bbb0a2;
+  --gold:#dfb86a;--gold-2:#ffe2a3;--green:#92d8bc;--blue:#9ad7ff;--violet:#b99cff;--red:#ff6b5e;--white:#fff;--black:#000;
+  --line:rgba(255,255,255,.13);--line-dark:rgba(5,5,5,.12);--glass:rgba(255,255,255,.075);--glass-strong:rgba(255,255,255,.14);--shadow:0 30px 90px rgba(0,0,0,.32);
+  --r-xs:8px;--r-sm:14px;--r-md:22px;--r-lg:34px;--r-xl:48px;--r-pill:999px;
+  --s-1:.25rem;--s-2:.5rem;--s-3:.75rem;--s-4:1rem;--s-5:1.25rem;--s-6:1.5rem;--s-8:2rem;--s-10:2.5rem;--s-12:3rem;--s-16:4rem;--s-20:5rem;--s-24:6rem;--s-32:8rem;
+  --font-sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--font-serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--font-mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  --max:1180px;--wide:1440px;--nav-h:78px;
+}
+body.theme-bakery{--theme:#d99a5b;--theme-2:#ffe1b8;--theme-dark:#321c10;--theme-paper:#fff7ec}
+body.theme-garage{--theme:#f2583e;--theme-2:#a4d4ff;--theme-dark:#090c10;--theme-paper:#eef3f8}
+body.theme-municipality{--theme:#5da4a0;--theme-2:#d9e9cc;--theme-dark:#122622;--theme-paper:#f5f8f2}
+body.theme-clinic{--theme:#78b9ff;--theme-2:#cbf3e8;--theme-dark:#101b26;--theme-paper:#f7fbff}
