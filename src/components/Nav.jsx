@@ -1,0 +1,2 @@
+import React from 'https://esm.sh/react@18.2.0';
+export function Nav(){return <header className="nav"><div className="wrap navin"><a className="brand" href="/">APTO<span>.INK</span></a><nav className="navlinks"><a href="/#work">Examples</a><a href="/#pricing">Pricing</a><a href="/#process">Process</a><a href="/demos/">All demos</a><a className="btn light" href="mailto:hello@apto.ink">Start</a></nav></div></header>}

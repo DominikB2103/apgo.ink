@@ -1,5 +1,5 @@
-# APTO.INK fixed drop-in package
+# APTO.INK drop-in React website
 
-Upload the contents of this folder directly to the repository root.
+Upload these files directly to a GitHub Pages repository root. No npm install, no build command, no dev server.
 
-This version is pre-rendered: every public page already contains real content inside `#app`, so the site does not go white if JavaScript, modules, or animations fail. The component source remains in `/src` for editing.
+The site uses React components in `src/`, CSS in `styles/`, and real route folders with their own `index.html` files.

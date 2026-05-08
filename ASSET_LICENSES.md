@@ -1,5 +1,5 @@
-# Assets
+# Asset notes
 
-This package uses remote photography from Unsplash image CDN URLs and original CSS/HTML/JS components. Replace any image URL before commercial delivery if a client wants exclusive or locally hosted media.
+Remote photography is loaded from Unsplash image URLs. Unsplash images can be used for commercial and non-commercial projects under the Unsplash License. Replace any image URLs with your own client photography when available.
 
-No default framework favicon bundle, no Vite scaffold, no build step required for the included drop-in version.
+React, ReactDOM and Babel Standalone are loaded from public CDNs so the package can be dropped into GitHub Pages without an npm build step.
