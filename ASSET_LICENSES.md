@@ -1,5 +1,5 @@
-# Asset notes
+# Assets
 
-The public pages use remote Unsplash image URLs for high-resolution demo imagery. Replace them with client-owned photos before delivery whenever possible.
+All image files in this package are bundled locally. They are generated/cropped as part of this APTO.INK package and do not require remote image loading.
 
-This package is a full static export: upload the contents to the repository root. The root `index.html` is the actual homepage.
+Before using this commercially, replace placeholder legal pages with real business/legal details.

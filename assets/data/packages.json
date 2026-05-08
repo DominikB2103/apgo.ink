@@ -1,0 +1,16 @@
+{
+  "packages": [
+    {
+      "name": "Starter",
+      "price": "CHF 890"
+    },
+    {
+      "name": "Local business",
+      "price": "CHF 1\u2019850"
+    },
+    {
+      "name": "Signature",
+      "price": "CHF 3\u2019900"
+    }
+  ]
+}

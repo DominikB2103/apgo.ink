@@ -1,0 +1,8 @@
+{
+  "name": "APTO.INK",
+  "short_name": "APTO",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f4ec",
+  "theme_color": "#0b1114"
+}

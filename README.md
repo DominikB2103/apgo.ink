@@ -1,15 +1,15 @@
-# APTO.INK complete drop-in static site
+# APTO.INK complete replacement package
 
-Upload every file and folder in this zip to the GitHub repository root. Do not upload the enclosing folder itself.
+This zip is a full drop-in site. Delete the old files in your GitHub Pages repository and upload **everything** from this folder.
 
-The public homepage is `index.html`. The domain file `CNAME` is included.
+## Included
+- Root `index.html`
+- `CNAME` set to `apgo.ink`
+- Four unique demo sites under `/demos/`
+- Local raster image assets in `/assets/img/`
+- CSS split by base, home and each demo theme
+- JS modules in `/assets/js/components/`
+- Layout/component reference folders
+- Legal placeholders, 404, robots, sitemap, manifest
 
-Routes included:
-- `/`
-- `/demos/`
-- `/demos/bakery/`
-- `/demos/garage/`
-- `/demos/municipality/`
-- `/demos/clinic/`
-- `/legal/impressum/`
-- `/legal/privacy/`
+No npm install. No server. No build step.
