@@ -9,7 +9,7 @@ export function Faq() {
   return (
     <section className="section-pad" id="faq">
       <div className="shell">
-        <div className="section-head"><div><div className="eyebrow">FAQ</div><h2>Questions a business owner will ask before paying.</h2></div><p>These answers should be confident, direct and clear.</p></div>
+        <div className="section-head faq-head"><div><div className="eyebrow">FAQ</div><h2>Answers before the first call.</h2></div><p>Clear answers about timing, content, updates and pricing — without a long discovery meeting first.</p></div>
         <div className="faq-list">{faqs.map(([q, a], index) => <div className={`faq-item ${index === 0 ? 'is-open' : ''}`} key={q}><button type="button">{q}</button><p>{a}</p></div>)}</div>
       </div>
     </section>

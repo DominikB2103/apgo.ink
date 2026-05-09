@@ -27,16 +27,6 @@
     : null;
   $$('.reveal').forEach((el) => revealObserver ? revealObserver.observe(el) : el.classList.add('is-visible'));
 
-  $$('[data-tilt]').forEach((card) => {
-    card.addEventListener('pointermove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-      card.style.transform = `rotateX(${y * -7}deg) rotateY(${x * 9}deg) translateY(-4px)`;
-    });
-    card.addEventListener('pointerleave', () => { card.style.transform = ''; });
-  });
-
   $$('[data-count]').forEach((el) => {
     const target = Number(el.dataset.count || 0);
     const decimals = Number(el.dataset.decimals || 0);

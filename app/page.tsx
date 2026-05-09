@@ -12,7 +12,6 @@ export default function HomePage() {
       <Nav />
       <main>
         <Hero />
-        <section className="marquee"><div className="marquee-track"><span>Premium first impression</span><span>Swiss SME positioning</span><span>Clear calls to action</span><span>Local trust signals</span><span>Industry-specific design</span></div></section>
         <Examples />
         <Pricing />
         <Process />
