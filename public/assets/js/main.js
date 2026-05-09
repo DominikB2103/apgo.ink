@@ -26,6 +26,8 @@
     }, { threshold: 0.16 })
     : null;
   $$('.reveal').forEach((el) => revealObserver ? revealObserver.observe(el) : el.classList.add('is-visible'));
+    card.addEventListener('pointerleave', () => { card.style.transform = ''; });
+  });
 
   $$('[data-count]').forEach((el) => {
     const target = Number(el.dataset.count || 0);
@@ -46,6 +48,22 @@
       obs.disconnect();
     }, { threshold: 0.4 });
     obs.observe(el);
+  });
+
+
+
+  const processTitle = $('[data-process-title]');
+  const processLabel = $('[data-process-label]');
+  $$('.process-step').forEach((step) => {
+    const activate = () => {
+      $$('.process-step').forEach((item) => item.classList.remove('is-active'));
+      step.classList.add('is-active');
+      if (processTitle) processTitle.textContent = step.dataset.process || '';
+      if (processLabel) processLabel.textContent = step.dataset.label || '';
+    };
+    step.addEventListener('mouseenter', activate);
+    step.addEventListener('focusin', activate);
+    step.addEventListener('click', activate);
   });
 
   $$('.faq-item button').forEach((button) => {

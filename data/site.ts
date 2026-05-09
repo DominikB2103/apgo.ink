@@ -47,7 +47,7 @@ export const packages = [
     badge: 'Starter',
     price: 'CHF 890',
     description: 'One-page professional web presence for businesses that need credibility fast.',
-    features: ['One premium page', 'Responsive layout', 'Contact and location section', 'Copy polish', 'Launch handoff']
+    features: ['One premium page', 'Desktop and phone layouts', 'Contact and location section', 'Copy polish', 'Launch handoff']
   },
   {
     name: 'Local Business',
@@ -67,8 +67,8 @@ export const packages = [
 ] as const;
 
 export const processSteps = [
-  ['Audit the current impression.', 'Look at the existing web presence, photos, services, competitors and the missing trust signals.'],
-  ['Choose the strongest direction.', 'Define the pages, message, visual atmosphere and fixed scope before design starts.'],
-  ['Build one polished version.', 'Design with real copy, real industry imagery, clear navigation and a direct contact path.'],
-  ['Refine, publish, maintain.', 'One focused feedback round, clean launch, then optional care for updates and small improvements.']
+  ['Audit', 'Check online presence, competitors, mobile experience, photos and obvious conversion gaps.'],
+  ['Offer', 'Set a fixed scope, package, timeline, deposit and simple approval path.'],
+  ['Build', 'Design with real copy, trust sections, local positioning and one clear next step.'],
+  ['Launch', 'Apply one focused feedback round, publish and offer ongoing care without pressure.']
 ] as const;

@@ -48,6 +48,22 @@
     obs.observe(el);
   });
 
+
+
+  const processTitle = $('[data-process-title]');
+  const processLabel = $('[data-process-label]');
+  $$('.process-step').forEach((step) => {
+    const activate = () => {
+      $$('.process-step').forEach((item) => item.classList.remove('is-active'));
+      step.classList.add('is-active');
+      if (processTitle) processTitle.textContent = step.dataset.process || '';
+      if (processLabel) processLabel.textContent = step.dataset.label || '';
+    };
+    step.addEventListener('mouseenter', activate);
+    step.addEventListener('focusin', activate);
+    step.addEventListener('click', activate);
+  });
+
   $$('.faq-item button').forEach((button) => {
     button.addEventListener('click', () => button.closest('.faq-item')?.classList.toggle('is-open'));
   });
