@@ -1,81 +1,59 @@
-# Research microsite
+# Meridian Review — static research editorial site
 
-This folder is a completely independent `/research` homepage. It does not inherit the previous apgo.ink typography, layout, neon/glass treatment, or animation language.
+A serious, restrained research-publication website designed for GitHub Pages. The design direction is editorial, typographic, and institutional: print-like hierarchy, dense but readable spacing, quiet color, and original SVG/CSS visuals instead of third-party image dependencies.
 
-## Files
+## Stack
 
-```txt
-research/
-  index.html
-  styles.css
-  app.js
-  README.md
-  data/
-    records.js
-  assets/
-    botanical-plate.svg
-    field-map.svg
-    human-study.svg
-    specimen-seal.svg
+- Next.js static export
+- React and TypeScript
+- Custom CSS design system
+- Original inline SVG and CSS figures
+- GitHub Actions deployment to GitHub Pages
+
+## Local development
+
+```bash
+npm install
+npm run dev
 ```
 
-## Design direction
+Open `http://localhost:3000`.
 
-- Editorial, serious, academic, human, and nature-oriented.
-- Black-and-white typographic foundation with restrained natural color from photography and botanical illustrations.
-- No glass panels, no neon gradients, no scroll-triggered fade-ins.
-- Large reading-first typography using open web fonts.
-- Nature-inspired imagery, paper texture, topographic diagrams, and human-scale illustration.
+## Static build
 
-## How to add work
-
-Edit `data/records.js` and add objects to `window.RESEARCH_RECORDS`.
-
-```js
-window.RESEARCH_RECORDS = [
-  {
-    id: "first-paper",
-    kind: "paper",
-    title: "Title of the work",
-    date: "2026-05-11",
-    status: "draft",
-    field: "Mathematics",
-    abstract: "One clear sentence explaining the work.",
-    tags: ["proof", "model", "systems"],
-    url: "./papers/first-paper.pdf"
-  }
-];
+```bash
+npm run build
 ```
 
-Accepted `kind` values:
+The exported static site is written to `out/`.
 
-- `paper`
-- `theorem`
-- `discovery`
-- `invention`
-- `writing`
-- `news`
+## Deploy to GitHub Pages
 
-## Image and media sources
+1. Create a GitHub repository and push these files to the `main` branch.
+2. In GitHub, open **Settings → Pages**.
+3. Under **Build and deployment**, choose **GitHub Actions**.
+4. Push to `main`; the included workflow builds and publishes the static `out/` folder.
 
-Original local SVGs in `assets/` were generated for this page.
+The `next.config.mjs` file automatically sets a base path for project pages such as:
 
-Remote nature photographs are loaded from Unsplash image CDN URLs in `styles.css`:
+```text
+https://username.github.io/repository-name/
+```
 
-- Misty mountain / forest hero: `photo-1470071459604-3b5ec3a7fe05`
-- Forest canopy statement image: `photo-1441974231531-c6227db76b6e`
-- Leaf image: `photo-1501004318641-b39e6451bec6`
-- Water / landscape image: `photo-1500530855697-b586d89ba3ee`
+For a user or organization site such as `username.github.io`, no project base path is applied.
 
-Unsplash states that its images can be used for free for commercial and non-commercial purposes without permission, with attribution appreciated. Check each image yourself before final commercial publication if you need formal provenance records.
+## Customize the content
 
-## Fonts
+Edit these files:
 
-The page imports open web fonts from Google Fonts:
+- `data/content.ts` — issue title, article cards, departments, and metrics.
+- `app/page.tsx` — section order and page structure.
+- `app/globals.css` — visual system, spacing, color, and typography.
+- `public/mark.svg` — site mark and favicon.
 
-- Newsreader
-- Source Serif 4
-- IBM Plex Sans
-- IBM Plex Mono
+## Design notes
 
-You can replace the import in `index.html` with self-hosted font files later if you want the page to work without external font requests.
+- No decorative stock photos are required.
+- The layout avoids casual microcopy and playful visual motifs.
+- Figures are generated from original SVG/CSS so the site remains portable, static, and legally clean.
+- The site uses no database, no API routes, no server rendering requirement, and no tracking scripts.
