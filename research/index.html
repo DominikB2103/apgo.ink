@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Research</title>
+  <meta name="description" content="A structured research portal for papers, writings, theorems, discoveries, inventions, and news." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#07101d" />
+  <link rel="icon" href="./assets/research-mark.svg" type="image/svg+xml" />
+  <link rel="preload" href="./assets/field-lattice.svg" as="image" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="progress" data-progress aria-hidden="true"></div>
+
+  <header class="site-header" data-shell>
+    <a class="brand" href="./" aria-label="Research home">
+      <img src="./assets/research-mark.svg" alt="" width="44" height="44" />
+      <span>
+        <strong>Research</strong>
+        <small>Formal work index</small>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="#records">Records</a>
+      <a href="#fields">Fields</a>
+      <a href="#protocol">Protocol</a>
+      <a href="#submit">Add work</a>
+    </nav>
+    <button class="command-button" type="button" data-open-command aria-label="Open research command console">
+      <span>⌘</span><span>K</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" data-shell>
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> Independent research registry</p>
+        <h1>A precise home for papers, theorems, inventions, field notes, and public updates.</h1>
+        <p class="lede">A research-grade interface for publishing and navigating serious work: formal documents, speculative writing, technical discoveries, invention records, and dated news.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#records">Explore the index</a>
+          <a class="button secondary" href="#protocol">Publication protocol</a>
+        </div>
+        <dl class="metrics" aria-label="Research portal status">
+          <div>
+            <dt data-count-records>0</dt>
+            <dd>records indexed</dd>
+          </div>
+          <div>
+            <dt>6</dt>
+            <dd>entry classes</dd>
+          </div>
+          <div>
+            <dt data-year>2026</dt>
+            <dd>active cycle</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="hero-visual reveal" aria-label="Research interface preview">
+        <div class="visual-card visual-card-large tilt-card">
+          <img src="./assets/field-lattice.svg" alt="Abstract research lattice" />
+          <div class="visual-overlay">
+            <p>Knowledge graph</p>
+            <strong>Structured inquiry map</strong>
+          </div>
+        </div>
+        <div class="instrument-panel tilt-card" aria-hidden="true">
+          <div class="instrument-header">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="instrument-line wide"></div>
+          <div class="instrument-line"></div>
+          <div class="instrument-line short"></div>
+          <div class="signal-row"><i></i><i></i><i></i><i></i><i></i></div>
+          <small>index: ready</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section collection" data-shell id="records">
+      <div class="section-head reveal">
+        <p class="eyebrow"><span></span> Record system</p>
+        <h2>Everything belongs to a searchable, typed record.</h2>
+        <p>Use this area as the master catalogue for work that needs authority, versioning, and long-term discoverability.</p>
+      </div>
+
+      <div class="toolbar reveal" role="search">
+        <label class="search-box">
+          <span>Search</span>
+          <input type="search" data-search placeholder="title, field, tag, abstract…" autocomplete="off" />
+        </label>
+        <div class="filters" aria-label="Filter records by type">
+          <button type="button" class="filter active" data-filter="all">All</button>
+          <button type="button" class="filter" data-filter="paper">Papers</button>
+          <button type="button" class="filter" data-filter="theorem">Theorems</button>
+          <button type="button" class="filter" data-filter="discovery">Discoveries</button>
+          <button type="button" class="filter" data-filter="invention">Inventions</button>
+          <button type="button" class="filter" data-filter="writing">Writings</button>
+          <button type="button" class="filter" data-filter="news">News</button>
+        </div>
+      </div>
+
+      <div class="records-grid reveal" data-records aria-live="polite"></div>
+      <template id="record-template">
+        <article class="record-card tilt-card">
+          <div class="record-top">
+            <span class="record-type"></span>
+            <span class="record-status"></span>
+          </div>
+          <h3></h3>
+          <p></p>
+          <div class="record-meta"></div>
+          <a class="record-link" href="#">Open record</a>
+        </article>
+      </template>
+      <div class="empty-state reveal" data-empty>
+        <div class="empty-orbit" aria-hidden="true"></div>
+        <p class="eyebrow"><span></span> Awaiting first entry</p>
+        <h3>No records have been published yet.</h3>
+        <p>Add work inside <code>data/records.js</code>. The interface will automatically render entries, counts, filters, search, and record cards.</p>
+      </div>
+    </section>
+
+    <section class="section fields" data-shell id="fields">
+      <div class="section-head compact reveal">
+        <p class="eyebrow"><span></span> Disciplines of output</p>
+        <h2>Six classes for a complete intellectual body of work.</h2>
+      </div>
+      <div class="field-grid">
+        <article class="field-card reveal tilt-card" data-type="paper">
+          <span>01</span>
+          <h3>Papers</h3>
+          <p>Formal arguments, long-form proofs, technical reports, research manuscripts, and PDF-ready documents.</p>
+        </article>
+        <article class="field-card reveal tilt-card" data-type="theorem">
+          <span>02</span>
+          <h3>Theorems</h3>
+          <p>Definitions, axioms, propositions, lemmas, conjectures, proof sketches, and finished formal results.</p>
+        </article>
+        <article class="field-card reveal tilt-card" data-type="discovery">
+          <span>03</span>
+          <h3>Discoveries</h3>
+          <p>Observed patterns, empirical findings, conceptual breakthroughs, and newly identified mechanisms.</p>
+        </article>
+        <article class="field-card reveal tilt-card" data-type="invention">
+          <span>04</span>
+          <h3>Inventions</h3>
+          <p>Systems, methods, prototypes, devices, workflows, product ideas, and technical architectures.</p>
+        </article>
+        <article class="field-card reveal tilt-card" data-type="writing">
+          <span>05</span>
+          <h3>Writings</h3>
+          <p>Essays, notes, criticism, theoretical fragments, arguments, and polished public texts.</p>
+        </article>
+        <article class="field-card reveal tilt-card" data-type="news">
+          <span>06</span>
+          <h3>News</h3>
+          <p>Dated updates, releases, revisions, public milestones, version changes, and field announcements.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section atlas" data-shell>
+      <div class="atlas-media reveal">
+        <img src="./assets/knowledge-orbit.svg" alt="Knowledge orbit diagram" />
+      </div>
+      <div class="atlas-copy reveal">
+        <p class="eyebrow"><span></span> Navigation model</p>
+        <h2>Designed as a living atlas, not a blog.</h2>
+        <p>Each item can be treated as a scholarly object: typed, dated, tagged, versioned, and connected to related work. The page is built to scale from one note to a complete personal research corpus.</p>
+        <ul class="feature-list">
+          <li><strong>Typed records</strong><span>Every item has a class, status, year, abstract, tags, and target link.</span></li>
+          <li><strong>Low-noise discovery</strong><span>Search and filters prioritize retrieval over decoration.</span></li>
+          <li><strong>Public-ready structure</strong><span>Clear areas for manuscripts, proofs, inventions, and announcements.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section protocol" data-shell id="protocol">
+      <div class="section-head reveal">
+        <p class="eyebrow"><span></span> Publication protocol</p>
+        <h2>A clean standard for adding new work later.</h2>
+      </div>
+      <div class="protocol-grid">
+        <article class="protocol-card reveal">
+          <strong>01</strong>
+          <h3>Classify</h3>
+          <p>Choose the correct record type: paper, theorem, discovery, invention, writing, or news.</p>
+        </article>
+        <article class="protocol-card reveal">
+          <strong>02</strong>
+          <h3>Abstract</h3>
+          <p>Write one exact paragraph stating the problem, method, and contribution.</p>
+        </article>
+        <article class="protocol-card reveal">
+          <strong>03</strong>
+          <h3>Version</h3>
+          <p>Mark the entry as draft, review, published, or sealed so readers know its maturity.</p>
+        </article>
+        <article class="protocol-card reveal">
+          <strong>04</strong>
+          <h3>Link</h3>
+          <p>Connect the card to a PDF, article page, notebook, proof, dataset, or release note.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section submission" data-shell id="submit">
+      <div class="submission-card reveal">
+        <div>
+          <p class="eyebrow"><span></span> Editing surface</p>
+          <h2>Ready for your first record.</h2>
+          <p>Open <code>data/records.js</code>, paste a new object into <code>window.RESEARCH_RECORDS</code>, and the front page becomes populated without redesigning the layout.</p>
+        </div>
+        <pre aria-label="Example record"><code>{
+  title: "Title of the work",
+  type: "paper",
+  year: "2026",
+  status: "draft",
+  abstract: "One precise paragraph describing the work.",
+  tags: ["field", "method"],
+  href: "./papers/title.pdf"
+}</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" data-shell>
+    <span>Research portal</span>
+    <span>Built for formal work, public notes, and technical records.</span>
+  </footer>
+
+  <dialog class="command" data-command>
+    <form method="dialog">
+      <button class="dialog-close" aria-label="Close command console">×</button>
+    </form>
+    <div class="command-inner">
+      <p class="eyebrow"><span></span> Command console</p>
+      <label>
+        <span>Find anything</span>
+        <input type="search" data-command-search placeholder="Search records or jump to sections…" />
+      </label>
+      <div class="command-results" data-command-results></div>
+    </div>
+  </dialog>
+
+  <script src="./data/records.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
