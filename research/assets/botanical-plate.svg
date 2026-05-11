@@ -1,0 +1,31 @@
+<svg width="1400" height="1200" viewBox="0 0 1400 1200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Botanical line plate">
+  <rect width="1400" height="1200" fill="#F8F5EE"/>
+  <g opacity=".08" stroke="#111111" stroke-width="1">
+    <path d="M100 160H1300M100 320H1300M100 480H1300M100 640H1300M100 800H1300M100 960H1300"/>
+    <path d="M220 80V1120M420 80V1120M620 80V1120M820 80V1120M1020 80V1120M1220 80V1120"/>
+  </g>
+  <g stroke="#171512" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M708 1064C695 972 690 875 696 775C705 623 743 476 802 337C831 269 856 211 866 143"/>
+    <path d="M704 824C650 761 594 691 558 613C532 558 520 497 528 436"/>
+    <path d="M725 710C779 646 820 568 844 483C858 432 867 381 872 329"/>
+    <path d="M697 920C769 872 841 818 895 747C936 693 962 630 973 562"/>
+    <path d="M686 934C608 912 532 874 476 816C431 769 399 710 386 646"/>
+  </g>
+  <g stroke="#171512" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M528 436C489 451 457 483 443 523C429 563 435 608 461 641C502 606 531 561 544 509C550 483 550 458 528 436Z" fill="#D7E4D1"/>
+    <path d="M558 613C517 624 479 650 455 686C431 721 423 767 439 807C495 786 536 747 563 695C576 668 587 638 558 613Z" fill="#B7CFA6"/>
+    <path d="M844 483C881 503 911 537 923 578C935 620 924 665 895 697C848 655 823 601 821 539C820 516 822 493 844 483Z" fill="#C7D8BB"/>
+    <path d="M872 329C912 349 941 385 950 429C959 474 944 519 912 548C871 502 849 447 851 386C852 360 854 339 872 329Z" fill="#D9E5D3"/>
+    <path d="M973 562C1010 590 1033 632 1033 679C1033 727 1010 771 972 799C940 748 927 690 937 631C942 599 952 573 973 562Z" fill="#AFC69E"/>
+    <path d="M895 747C935 757 972 783 996 819C1020 856 1027 902 1010 944C954 922 912 884 884 833C869 804 866 771 895 747Z" fill="#D4C18A"/>
+    <path d="M386 646C347 673 323 714 321 761C319 807 340 852 376 882C413 836 432 782 426 724C423 692 411 658 386 646Z" fill="#C9DAAB"/>
+    <path d="M476 816C437 830 403 858 384 896C365 933 364 978 384 1016C438 989 476 946 498 891C508 864 506 834 476 816Z" fill="#E2D6A3"/>
+  </g>
+  <g fill="#171512">
+    <circle cx="866" cy="143" r="10"/>
+    <circle cx="803" cy="337" r="7"/>
+    <circle cx="704" cy="824" r="6"/>
+  </g>
+  <text x="96" y="98" font-family="Georgia,serif" font-size="28" letter-spacing="6" fill="#171512">PLATE I — FIELD STRUCTURE</text>
+  <text x="96" y="1142" font-family="Arial,sans-serif" font-size="17" letter-spacing="3" fill="#5E5A51">OBSERVATION / CLASSIFICATION / REVISION</text>
+</svg>

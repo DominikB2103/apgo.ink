@@ -1,0 +1,23 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Topographic field map">
+  <rect width="1400" height="900" fill="#F6F2E9"/>
+  <g stroke="#191714" stroke-width="1.3" opacity=".22">
+    <path d="M-60 206C121 119 296 93 459 128C615 161 707 244 853 256C1035 271 1179 174 1458 132"/>
+    <path d="M-43 260C142 174 292 168 436 197C595 228 699 313 850 323C1024 334 1204 261 1441 219"/>
+    <path d="M-44 323C106 265 293 241 458 273C604 302 706 379 853 389C1030 402 1197 337 1445 307"/>
+    <path d="M-42 382C143 332 296 315 459 347C619 379 715 450 861 456C1048 463 1211 421 1447 386"/>
+    <path d="M-41 455C137 402 306 390 472 422C613 449 715 520 864 524C1046 529 1233 506 1447 477"/>
+    <path d="M-38 533C141 470 316 463 481 496C628 525 723 590 866 592C1054 596 1207 587 1442 559"/>
+    <path d="M-38 604C142 548 332 530 499 566C650 599 727 661 874 660C1063 659 1210 666 1446 643"/>
+    <path d="M-41 681C135 632 336 608 514 645C668 677 752 737 907 730C1103 721 1217 750 1448 729"/>
+  </g>
+  <g stroke="#111" stroke-width="2" opacity=".65">
+    <path d="M184 687L311 572L430 614L567 452L703 511L849 355L1011 410L1194 287"/>
+    <circle cx="184" cy="687" r="7" fill="#111"/><circle cx="311" cy="572" r="7" fill="#111"/><circle cx="430" cy="614" r="7" fill="#111"/><circle cx="567" cy="452" r="7" fill="#111"/><circle cx="703" cy="511" r="7" fill="#111"/><circle cx="849" cy="355" r="7" fill="#111"/><circle cx="1011" cy="410" r="7" fill="#111"/><circle cx="1194" cy="287" r="7" fill="#111"/>
+  </g>
+  <g fill="#111" font-family="Arial,sans-serif" font-size="20" letter-spacing="3">
+    <text x="184" y="736">OBSERVATION</text>
+    <text x="520" y="420">MODEL</text>
+    <text x="822" y="323">PROOF</text>
+    <text x="1090" y="253">APPLICATION</text>
+  </g>
+</svg>
