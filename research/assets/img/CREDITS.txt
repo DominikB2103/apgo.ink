@@ -1,0 +1,3 @@
+Image credits
+
+hero-observatory.jpg, spectral-plate.jpg, and article-plate.jpg are original generated visual assets created for this static site. They are included locally so the website does not depend on remote image services.

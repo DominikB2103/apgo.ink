@@ -30,6 +30,6 @@ A static, editorial research website prepared for GitHub Pages. It uses only HTM
 ## Design notes
 
 - Typography is intentionally restrained and system-font based for reliability.
-- Figures are local SVG, so the site does not depend on third-party image hosting.
+- Visual plates are local original image assets in `assets/img/`; the site does not depend on third-party image hosting.
 - The archive search and theorem carousel are static JavaScript components.
 - The CSS is shared by the landing page and document pages.

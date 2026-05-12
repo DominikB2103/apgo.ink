@@ -6,7 +6,7 @@ const archiveItems = [
     date: "2026-05-04",
     url: "documents/spectral-gap-note/",
     tags: ["operator theory", "spectra", "analysis"],
-    excerpt: "A compact note describing a numerically stable test case for gap persistence under sparse perturbations. Includes assumptions, proof sketch, and reproducibility notes."
+    excerpt: "A compact note describing a stable test case for gap persistence under sparse perturbations, with assumptions and a proof sketch kept close to the statement."
   },
   {
     title: "Noether symmetry, stated for working readers",
@@ -15,7 +15,7 @@ const archiveItems = [
     date: "2026-04-18",
     url: "documents/noether-symmetry/",
     tags: ["symmetry", "variational methods", "physics"],
-    excerpt: "A restrained theorem card and explanatory proof outline linking continuous symmetries with conserved quantities."
+    excerpt: "A careful theorem card connecting continuous symmetries with conserved quantities, written for readers who want the statement before the surrounding history."
   },
   {
     title: "Prime distribution: an editorial primer",
@@ -24,7 +24,7 @@ const archiveItems = [
     date: "2026-03-27",
     url: "documents/_template/",
     tags: ["number theory", "asymptotics", "template"],
-    excerpt: "A template preview showing how an expository document can handle notation, references, figures, and result summaries."
+    excerpt: "A complete article template showing how an expository document can handle notation, references, figures, and result summaries."
   },
   {
     title: "Instrument drift reported in low-temperature arrays",
@@ -33,7 +33,7 @@ const archiveItems = [
     date: "2026-03-12",
     url: "#archive",
     tags: ["measurement", "instrumentation", "materials"],
-    excerpt: "A concise house-style news item placeholder for timely updates, experimental corrections, and apparatus reports."
+    excerpt: "A concise news-style entry for experimental corrections, apparatus reports, and dated updates that need context without a full article."
   },
   {
     title: "New bounds for a model counting problem",
@@ -42,7 +42,7 @@ const archiveItems = [
     date: "2026-02-26",
     url: "#archive",
     tags: ["complexity", "combinatorics", "bounds"],
-    excerpt: "A placeholder entry designed to demonstrate how discoveries are indexed and filtered by field and article type."
+    excerpt: "A discovery record format for tracking claims, constraints, and verification notes as a result moves from observation to durable reference."
   },
   {
     title: "A compact catalogue of useful inequalities",
@@ -60,22 +60,22 @@ const carouselItems = [
     label: "Theorem I",
     title: "Noether Correspondence",
     field: "Variational calculus",
-    statement: "Every differentiable symmetry of the action of a physical system has a corresponding conserved quantity, provided the Euler–Lagrange equations are satisfied.",
-    note: "Displayed here as an editorial theorem card; the full article template supports assumptions, proof sketch, and references."
+    statement: "Every differentiable symmetry of the action of a physical system determines a conserved quantity whenever the Euler–Lagrange equations are satisfied.",
+    note: "Use theorem cards for compact formal statements with a field label, a stable title, and a link to a longer proof when available."
   },
   {
     label: "Theorem II",
     title: "Prime Number Asymptotic",
     field: "Analytic number theory",
     statement: "The number of primes not exceeding x is asymptotic to x / log x as x tends to infinity.",
-    note: "Use this area for short theorem previews, not full proofs; longer expositions live in the document folders."
+    note: "The homepage should preview the intellectual substance of the archive rather than fill space with decorative summaries."
   },
   {
     label: "Theorem III",
-    title: "Compactness Criterion",
+    title: "Arzelà–Ascoli Criterion",
     field: "Functional analysis",
-    statement: "A uniformly bounded and equicontinuous family on a compact metric space has a uniformly convergent subsequence.",
-    note: "A restrained carousel keeps the landing page dynamic without feeling promotional or decorative."
+    statement: "Every uniformly bounded and equicontinuous family of real-valued functions on a compact metric space has a uniformly convergent subsequence.",
+    note: "Short statements work best when the assumptions are visible and the language is stable enough to quote."
   }
 ];
 
@@ -88,6 +88,10 @@ function normalise(value) {
   return value.toLowerCase().trim();
 }
 
+function sectionClass(section) {
+  return section.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+}
+
 function renderResults() {
   const container = document.querySelector("[data-results]");
   if (!container) return;
@@ -97,7 +101,8 @@ function renderResults() {
   const sortValue = document.querySelector("#sortSelect")?.value || "newest";
 
   let items = archiveItems.filter((item) => {
-    const filterMatch = activeFilter === "All" || item.section === activeFilter || item.tags.includes(activeFilter.toLowerCase());
+    const tagMatch = item.tags.some((tag) => tag === activeFilter.toLowerCase());
+    const filterMatch = activeFilter === "All" || item.section === activeFilter || tagMatch;
     const haystack = normalise([item.title, item.section, item.type, item.excerpt, ...item.tags].join(" "));
     return filterMatch && (!query || haystack.includes(query));
   });
@@ -109,22 +114,26 @@ function renderResults() {
   });
 
   const count = document.querySelector("[data-result-count]");
-  if (count) count.textContent = `${items.length} item${items.length === 1 ? "" : "s"}`;
+  if (count) count.textContent = `${items.length} record${items.length === 1 ? "" : "s"}`;
 
   if (!items.length) {
-    container.innerHTML = `<div class="no-results"><strong>No matching records.</strong><br>Try a broader query, a different section, or a field tag.</div>`;
+    container.innerHTML = `<div class="no-results"><strong>No matching records.</strong><br>Try a broader query, another section, or a field tag.</div>`;
     return;
   }
 
   container.innerHTML = items.map((item) => `
-    <article class="result-card">
-      <small><span>${item.section}</span><span>${formatDate(item.date)}</span></small>
+    <article class="result-card ${sectionClass(item.section)}">
+      <div class="result-top">
+        <span class="section-pill">${item.section}</span>
+        <time datetime="${item.date}">${formatDate(item.date)}</time>
+      </div>
       <h3><a href="${item.url}">${item.title}</a></h3>
+      <p class="result-type">${item.type}</p>
       <p>${item.excerpt}</p>
-      <a class="read-link" href="${item.url}">Open record →</a>
       <div class="card-foot" aria-label="Tags">
         ${item.tags.map((tag) => `<span class="chip">${tag}</span>`).join("")}
       </div>
+      <a class="read-link" href="${item.url}">Read record</a>
     </article>
   `).join("");
 }
@@ -132,10 +141,10 @@ function renderResults() {
 function setupFilters() {
   const filters = document.querySelector("[data-filters]");
   if (!filters) return;
-  const baseFilters = ["All", "News", "Discoveries", "Theorems", "analysis", "number theory", "physics"];
+  const baseFilters = ["All", "News", "Discoveries", "Theorems", "analysis", "physics", "number theory", "instrumentation"];
   filters.innerHTML = baseFilters.map((filter, index) => `
     <button class="filter-btn" type="button" data-filter="${filter}" aria-pressed="${index === 0 ? "true" : "false"}">${filter}</button>
-  `).join("") + `<span class="result-count" data-result-count>0 items</span>`;
+  `).join("");
 
   filters.addEventListener("click", (event) => {
     const button = event.target.closest(".filter-btn");
