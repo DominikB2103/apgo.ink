@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Observatory — Meridian Research</title>
+  <meta name="description" content="Meridian Research observatory: a static dashboard for institutional signals, confidence ratings, and research notes." />
+  <meta name="theme-color" content="#f5f2ea" />
+  <meta property="og:title" content="Observatory — Meridian Research" />
+  <meta property="og:description" content="Signals tracked by the Meridian desk." />
+  <meta property="og:image" content="assets/og.svg" />
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Meridian Research home"><img src="assets/mark.svg" width="34" height="34" alt="" /><span><strong>Meridian</strong><small>Research Institute</small></span></a>
+      <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" data-nav-toggle><span>Menu</span></button>
+      <nav id="site-nav" class="site-nav" data-nav>
+        <a href="index.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="programmes.html">Programmes</a>
+        <a aria-current="page" href="observatory.html">Observatory</a>
+        <a href="about.html">About</a>
+        <a class="nav-cta" href="about.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero section-lined">
+      <div class="container page-hero-grid">
+        <div>
+          <p class="eyebrow">Observatory</p>
+          <h1>Tracked signals for slow crises and fast decisions.</h1>
+        </div>
+        <p class="page-lede">A static dashboard format for signal tracking, evidence confidence, and desk-level commentary. It uses only local HTML, CSS, SVG, and small JavaScript interactions.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container dashboard-grid">
+        <article class="indicator-card emphasis">
+          <span>Composite pressure index</span>
+          <strong>74</strong>
+          <p>Elevated relative to the previous quarterly baseline.</p>
+        </article>
+        <article class="indicator-card">
+          <span>Signals rising</span>
+          <strong>11</strong>
+          <p>Across infrastructure, supply, governance, and health desks.</p>
+        </article>
+        <article class="indicator-card">
+          <span>Signals stable</span>
+          <strong>08</strong>
+          <p>Material but not accelerating under current assumptions.</p>
+        </article>
+        <article class="indicator-card">
+          <span>Review confidence</span>
+          <strong>Med–High</strong>
+          <p>Based on dataset continuity and specialist review.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-warm">
+      <div class="container map-grid">
+        <div>
+          <p class="eyebrow">Field network</p>
+          <h2>Observation corridors, not decoration.</h2>
+          <p>The abstract map is locally generated SVG. It gives the page a serious data-publication atmosphere without relying on stock photography or copyright-sensitive imagery.</p>
+          <a class="text-link" href="assets/field-map.svg">Open SVG asset</a>
+        </div>
+        <figure class="field-map">
+          <img src="assets/field-map.svg" alt="Abstract map of research corridors and observation nodes" />
+          <figcaption>Abstracted observation corridors. This is not a geographic map.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container tracker-layout">
+        <div class="section-head">
+          <p class="eyebrow">Signal tracker</p>
+          <h2>Current desk assessment.</h2>
+        </div>
+        <div class="tracker-table" role="table" aria-label="Signal tracker">
+          <div class="tracker-row tracker-head" role="row"><span>Signal</span><span>Desk</span><span>Direction</span><span>Confidence</span><span>Decision relevance</span></div>
+          <div class="tracker-row" role="row"><span>Grid congestion in advanced manufacturing corridors</span><span>Infrastructure</span><span class="trend rising">Rising</span><span>High</span><span>Capital planning; siting; permitting</span></div>
+          <div class="tracker-row" role="row"><span>Cross-border water governance disputes</span><span>Climate</span><span class="trend rising">Rising</span><span>Medium</span><span>Disclosure; treaty stress; industrial siting</span></div>
+          <div class="tracker-row" role="row"><span>Clinical model certification bottlenecks</span><span>Health</span><span class="trend stable">Stable</span><span>Medium</span><span>Procurement; approval timelines; liability</span></div>
+          <div class="tracker-row" role="row"><span>Strategic stockpile disclosure requirements</span><span>Supply</span><span class="trend rising">Rising</span><span>High</span><span>Inventory policy; regulatory compliance</span></div>
+          <div class="tracker-row" role="row"><span>Model documentation norms in public procurement</span><span>AI</span><span class="trend rising">Rising</span><span>Medium</span><span>Contracting; auditability; assurance</span></div>
+          <div class="tracker-row" role="row"><span>Heat-linked interruption of outdoor labour</span><span>Urban systems</span><span class="trend rising">Rising</span><span>High</span><span>Work rules; insurance; municipal budgets</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="container chart-grid">
+        <div>
+          <p class="eyebrow">Quarterly movement</p>
+          <h2>Static chart modules for editorial dashboards.</h2>
+          <p>These chart elements are pure HTML/CSS. Replace the numbers directly in the markup and the layout remains stable.</p>
+        </div>
+        <div class="bar-panel" aria-label="Quarterly pressure movement">
+          <div class="bar-row"><span>Infrastructure</span><i style="--w:82%"></i><b>82</b></div>
+          <div class="bar-row"><span>Critical supply</span><i style="--w:76%"></i><b>76</b></div>
+          <div class="bar-row"><span>AI governance</span><i style="--w:68%"></i><b>68</b></div>
+          <div class="bar-row"><span>Public health</span><i style="--w:61%"></i><b>61</b></div>
+          <div class="bar-row"><span>Water governance</span><i style="--w:74%"></i><b>74</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container note-grid">
+        <article>
+          <p class="eyebrow">Desk note</p>
+          <h2>What changed this quarter?</h2>
+          <p>The observatory format is designed to support concise interpretation: what moved, what stayed unresolved, which indicators are stale, and which decisions should be revisited.</p>
+        </article>
+        <article class="note-card"><span>01</span><h3>Infrastructure risk is becoming less seasonal.</h3><p>Observed pressure increasingly comes from compounding failures rather than a single hazard category.</p></article>
+        <article class="note-card"><span>02</span><h3>Procurement rules are now a research object.</h3><p>Public agencies are encoding governance choices into technical purchasing language.</p></article>
+        <article class="note-card"><span>03</span><h3>Confidence depends on update cadence.</h3><p>Dashboards become misleading when datasets update slower than institutional decisions.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><a class="brand brand-footer" href="index.html"><img src="assets/mark.svg" width="30" height="30" alt="" /><span><strong>Meridian</strong><small>Research Institute</small></span></a><p>Independent research, policy intelligence, and institutional analysis. Static template text and data are illustrative.</p></div>
+      <div class="footer-links"><a href="index.html">Home</a><a href="publications.html">Publications</a><a href="programmes.html">Programmes</a><a href="about.html">About</a><a href="about.html#contact">Contact</a></div>
+      <p class="copyright">© 2026 Meridian Research Institute. Static editorial template.</p>
+    </div>
+  </footer>
+  <script src="assets/main.js"></script>
+</body>
+</html>

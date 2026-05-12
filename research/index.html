@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Meridian Research — Independent Science, Policy & Systems Intelligence</title>
-  <meta name="description" content="A restrained editorial research website for publishing serious analysis, briefings, dossiers, and institutional research programmes." />
+  <meta name="description" content="A restrained editorial research website for publishing serious analysis, briefings, dossiers, observatory notes, and institutional research programmes." />
   <meta name="theme-color" content="#f5f2ea" />
   <meta property="og:title" content="Meridian Research" />
   <meta property="og:description" content="Independent science, policy and systems intelligence." />
@@ -18,7 +18,7 @@
 
   <header class="site-header" data-header>
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Meridian Research home">
+      <a class="brand" href="index.html" aria-label="Meridian Research home">
         <img src="assets/mark.svg" width="34" height="34" alt="" />
         <span>
           <strong>Meridian</strong>
@@ -29,30 +29,31 @@
         <span>Menu</span>
       </button>
       <nav id="site-nav" class="site-nav" data-nav>
-        <a href="#research">Research</a>
-        <a href="#briefings">Briefings</a>
-        <a href="#observatory">Observatory</a>
-        <a href="#agenda">Agenda</a>
-        <a class="nav-cta" href="#subscribe">Subscribe</a>
+        <a aria-current="page" href="index.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="programmes.html">Programmes</a>
+        <a href="observatory.html">Observatory</a>
+        <a href="about.html">About</a>
+        <a class="nav-cta" href="about.html#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section id="top" class="hero section-lined">
+    <section class="hero section-lined">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Independent systems intelligence · Issue 04 / 2026</p>
-          <h1>Research for institutions navigating scientific, economic, and planetary transition.</h1>
-          <p class="lede">Meridian publishes rigorous analysis, field notes, and data-led briefings for decision-makers who need clarity without theatricality.</p>
+          <p class="eyebrow">Independent systems intelligence · Public edition 2026</p>
+          <h1>Evidence for institutions navigating scientific, economic, and planetary transition.</h1>
+          <p class="lede">Meridian publishes rigorous analysis, field notes, and data-led briefings for decision-makers who need clarity without theatricality. The design system is quiet, editorial, and built to make difficult material readable.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#briefings">Read latest briefing</a>
-            <a class="button button-secondary" href="#research">View research themes</a>
+            <a class="button button-primary" href="publications.html">Read the publication archive</a>
+            <a class="button button-secondary" href="programmes.html">View research programmes</a>
           </div>
           <dl class="hero-metrics" aria-label="Institute metrics">
             <div>
               <dt>42</dt>
-              <dd>active research programmes</dd>
+              <dd>active research workstreams</dd>
             </div>
             <div>
               <dt>18</dt>
@@ -88,9 +89,73 @@
       </div>
     </section>
 
-    <section id="research" class="research section">
+    <section class="issue-strip" aria-label="Current issue highlights">
+      <div class="container issue-strip-inner">
+        <span class="issue-label">Current desk</span>
+        <a href="observatory.html">Grid congestion</a>
+        <a href="publications.html">Clinical model assurance</a>
+        <a href="programmes.html">Critical supply chains</a>
+        <a href="observatory.html">Water governance</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split-intro">
+        <div class="section-kicker">
+          <p class="eyebrow">Research posture</p>
+          <h2>Built like a journal. Written like a briefing desk. Structured like a long-term observatory.</h2>
+        </div>
+        <div class="intro-columns">
+          <p>Meridian’s public site is designed for serious readers: policymakers, researchers, analysts, and institutional operators. It avoids inflated visual language and gives priority to precision, source discipline, and editorial hierarchy.</p>
+          <p>The template now includes a publication archive, programme pages, an observatory dashboard, governance and methodology sections, contact areas, and reusable components for long-form research presentation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-warm">
+      <div class="container editorial-grid">
+        <article class="feature-article">
+          <p class="eyebrow">Latest analysis</p>
+          <h2>Beyond risk registers: why institutional resilience now depends on live measurement.</h2>
+          <p>Static planning tools are failing to capture the cadence of environmental, financial, and computational risk. A new institutional operating model is emerging around continuously updated evidence, disciplined uncertainty, and traceable assumptions.</p>
+          <a class="text-link" href="publications.html#latest">Read latest briefings</a>
+        </article>
+        <div class="article-list" aria-label="Recent briefings">
+          <article>
+            <div>
+              <span class="category">Policy memo</span>
+              <h3><a href="publications.html">Procurement rules for sovereign AI infrastructure</a></h3>
+            </div>
+            <time datetime="2026-04-28">28 Apr 2026</time>
+          </article>
+          <article>
+            <div>
+              <span class="category">Field note</span>
+              <h3><a href="publications.html">Urban heat, labour productivity, and municipal adaptation budgets</a></h3>
+            </div>
+            <time datetime="2026-04-14">14 Apr 2026</time>
+          </article>
+          <article>
+            <div>
+              <span class="category">Data review</span>
+              <h3><a href="publications.html">Battery-grade mineral flows after the second wave of export controls</a></h3>
+            </div>
+            <time datetime="2026-03-22">22 Mar 2026</time>
+          </article>
+          <article>
+            <div>
+              <span class="category">Research letter</span>
+              <h3><a href="publications.html">Model evaluation benchmarks for public clinical tools</a></h3>
+            </div>
+            <time datetime="2026-03-09">09 Mar 2026</time>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="research">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head section-head-wide">
           <p class="eyebrow">Research themes</p>
           <h2>Disciplined inquiry across connected systems.</h2>
           <p>Every programme pairs domain specialists with economists, data scientists, and field researchers. The result is editorially clear work that remains technically accountable.</p>
@@ -100,73 +165,61 @@
             <span class="theme-index">01</span>
             <h3>Climate adaptation and infrastructure</h3>
             <p>Stress-testing the networks that keep cities, ports, power, and public services operational under accelerating hazard profiles.</p>
+            <a href="programmes.html#adaptation">Programme details</a>
           </article>
           <article class="theme-card">
             <span class="theme-index">02</span>
             <h3>Computational biology and public health</h3>
             <p>Tracking the institutional, technical, and ethical consequences of automated discovery pipelines and predictive health systems.</p>
+            <a href="programmes.html#health">Programme details</a>
           </article>
           <article class="theme-card">
             <span class="theme-index">03</span>
             <h3>Industrial policy and critical supply</h3>
             <p>Mapping the constraints that shape semiconductors, energy materials, food systems, and strategic manufacturing capacity.</p>
+            <a href="programmes.html#supply">Programme details</a>
           </article>
           <article class="theme-card">
             <span class="theme-index">04</span>
             <h3>AI governance and measurement</h3>
             <p>Developing pragmatic evaluation frameworks for high-impact models, frontier institutions, and public-sector adoption.</p>
+            <a href="programmes.html#ai">Programme details</a>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="briefings" class="briefings section section-warm">
-      <div class="container editorial-grid">
-        <div class="feature-article">
-          <p class="eyebrow">Latest analysis</p>
-          <h2>Beyond risk registers: why institutional resilience now depends on live measurement.</h2>
-          <p>Static planning tools are failing to capture the cadence of environmental, financial, and computational risk. A new institutional operating model is emerging around continuously updated evidence.</p>
-          <a class="text-link" href="#subscribe">Request the full briefing</a>
+    <section class="section section-dark">
+      <div class="container cover-grid">
+        <div>
+          <p class="eyebrow">Dossier system</p>
+          <h2>Long-form reports that stay visually calm under technical density.</h2>
+          <p>Use modular evidence panels, tables, annotations, charts, and cross-reference blocks without breaking the editorial tone. The site is meant to feel credible before the reader reaches the second paragraph.</p>
+          <div class="tag-cloud" aria-label="Dossier tags">
+            <span>Scenario modelling</span><span>Evidence grading</span><span>Technical appendix</span><span>Policy pathways</span><span>Field synthesis</span>
+          </div>
         </div>
-        <div class="article-list" aria-label="Recent briefings">
-          <article>
-            <div>
-              <span class="category">Policy memo</span>
-              <h3>Procurement rules for sovereign AI infrastructure</h3>
-            </div>
-            <time datetime="2026-04-28">28 Apr 2026</time>
-          </article>
-          <article>
-            <div>
-              <span class="category">Field note</span>
-              <h3>Urban heat, labour productivity, and municipal adaptation budgets</h3>
-            </div>
-            <time datetime="2026-04-14">14 Apr 2026</time>
-          </article>
-          <article>
-            <div>
-              <span class="category">Data review</span>
-              <h3>Battery-grade mineral flows after the second wave of export controls</h3>
-            </div>
-            <time datetime="2026-03-22">22 Mar 2026</time>
-          </article>
-          <article>
-            <div>
-              <span class="category">Research letter</span>
-              <h3>Model evaluation benchmarks for public clinical tools</h3>
-            </div>
-            <time datetime="2026-03-09">09 Mar 2026</time>
-          </article>
+        <div class="dossier-cover" aria-label="Example dossier cover">
+          <div class="cover-rule"></div>
+          <span>Meridian Dossier 04</span>
+          <h3>Infrastructure exposure and institutional response capacity</h3>
+          <p>Comparative analysis · Public edition · May 2026</p>
+          <dl>
+            <div><dt>Primary desk</dt><dd>Climate adaptation</dd></div>
+            <div><dt>Evidence grade</dt><dd>Moderate–high</dd></div>
+            <div><dt>Review status</dt><dd>External specialist review</dd></div>
+          </dl>
         </div>
       </div>
     </section>
 
-    <section id="observatory" class="observatory section">
+    <section class="section" id="observatory-preview">
       <div class="container observatory-grid">
         <div>
           <p class="eyebrow">Observatory</p>
           <h2>Signals tracked by the Meridian desk.</h2>
           <p>The observatory combines public datasets, partner reporting, and expert review to surface consequential shifts before they become institutional emergencies.</p>
+          <a class="text-link" href="observatory.html">Open observatory dashboard</a>
         </div>
         <div class="signal-table" role="table" aria-label="Research observatory signals">
           <div class="signal-row signal-head" role="row">
@@ -198,39 +251,47 @@
       </div>
     </section>
 
-    <section id="agenda" class="agenda section section-dark">
-      <div class="container agenda-grid">
-        <div class="section-head inverse">
-          <p class="eyebrow">Editorial standard</p>
-          <h2>Serious work deserves calm presentation.</h2>
-          <p>Designed to feel institutional, modern, and publication-grade: restrained colour, high contrast, measured whitespace, dense typography, and no decorative excess.</p>
+    <section class="section section-warm">
+      <div class="container methods-grid">
+        <div class="section-head">
+          <p class="eyebrow">Method</p>
+          <h2>Transparent by default.</h2>
+          <p>Meridian pages are written to distinguish observation, inference, modelling, and recommendation. This is both an editorial standard and a visual standard.</p>
         </div>
-        <div class="principles">
+        <div class="method-stack">
           <article>
-            <span>Method</span>
-            <h3>Transparent assumptions</h3>
-            <p>Each publication separates observation, modelling, inference, and recommendation.</p>
+            <span>01</span>
+            <h3>Evidence classification</h3>
+            <p>Claims are grouped by evidence type: direct measurement, institutional record, expert elicitation, modelled estimate, and scenario assumption.</p>
           </article>
           <article>
-            <span>Review</span>
-            <h3>Expert-led verification</h3>
-            <p>Technical claims are reviewed by relevant domain specialists before publication.</p>
+            <span>02</span>
+            <h3>Review notes</h3>
+            <p>Every major publication reserves space for reviewer concerns, known uncertainties, and unresolved methodological issues.</p>
           </article>
           <article>
-            <span>Design</span>
-            <h3>Editorial restraint</h3>
-            <p>The visual system prioritises legibility, hierarchy, and trust over novelty.</p>
+            <span>03</span>
+            <h3>Decision relevance</h3>
+            <p>The final layer translates findings into institutional choices without pretending that research can remove political judgement.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="subscribe" class="subscribe section">
+    <section class="section">
+      <div class="container quote-panel">
+        <p class="eyebrow">Editorial principle</p>
+        <blockquote>“Serious research design does not need to shout. It should establish hierarchy, protect nuance, and leave room for uncertainty.”</blockquote>
+        <cite>Meridian design memorandum</cite>
+      </div>
+    </section>
+
+    <section class="section subscribe" id="subscribe">
       <div class="container subscribe-card">
         <div>
           <p class="eyebrow">Institutional briefing list</p>
           <h2>Receive quarterly research notes and public dossiers.</h2>
-          <p>This static template includes a non-submitting demo form. Connect it later to Formspree, Basin, Buttondown, or another static-friendly provider.</p>
+          <p>This static template includes a mailto form. You can later connect it to any static-friendly provider without changing the design system.</p>
         </div>
         <form class="signup-form" action="mailto:research@example.org" method="post" enctype="text/plain">
           <label for="email">Work email</label>
@@ -247,17 +308,18 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <a class="brand brand-footer" href="#top" aria-label="Meridian Research home">
+        <a class="brand brand-footer" href="index.html" aria-label="Meridian Research home">
           <img src="assets/mark.svg" width="30" height="30" alt="" />
           <span><strong>Meridian</strong><small>Research Institute</small></span>
         </a>
-        <p>Independent research, policy intelligence, and institutional analysis.</p>
+        <p>Independent research, policy intelligence, and institutional analysis. Static template text and data are illustrative.</p>
       </div>
       <div class="footer-links">
-        <a href="#research">Research</a>
-        <a href="#briefings">Briefings</a>
-        <a href="#observatory">Observatory</a>
-        <a href="#subscribe">Contact</a>
+        <a href="publications.html">Publications</a>
+        <a href="programmes.html">Programmes</a>
+        <a href="observatory.html">Observatory</a>
+        <a href="about.html">About</a>
+        <a href="about.html#contact">Contact</a>
       </div>
       <p class="copyright">© 2026 Meridian Research Institute. Static editorial template.</p>
     </div>

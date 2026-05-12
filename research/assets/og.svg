@@ -1,11 +1,22 @@
-<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="630" fill="#F5F2EA"/>
-  <path d="M0 110H1200M0 315H1200M0 520H1200M260 0V630M600 0V630M940 0V630" stroke="#171717" stroke-opacity="0.09"/>
-  <rect x="74" y="72" width="88" height="88" fill="#171916"/>
-  <circle cx="118" cy="116" r="25" stroke="#F5F2EA" stroke-width="3" fill="none"/>
-  <path d="M118 88V144M90 116H146" stroke="#F5F2EA" stroke-width="3"/>
-  <path d="M101 132C108 125 113 120 118 116C123 112 128 107 135 100" stroke="#9B3030" stroke-width="5"/>
-  <text x="74" y="258" font-family="Georgia, Times New Roman, serif" font-size="88" letter-spacing="-4" fill="#171717">Meridian Research</text>
-  <text x="78" y="322" font-family="Inter, Arial, sans-serif" font-size="24" letter-spacing="5" fill="#7C1F1F">INDEPENDENT SYSTEMS INTELLIGENCE</text>
-  <text x="78" y="426" font-family="Georgia, Times New Roman, serif" font-size="50" letter-spacing="-2" fill="#171717">Science, policy, and institutional analysis.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f5f2ea"/>
+      <stop offset="1" stop-color="#e5ddcd"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <path d="M95 104h1010M95 526h1010M240 80v470M600 80v470M960 80v470" stroke="#171717" stroke-opacity=".14"/>
+  <rect x="95" y="104" width="1010" height="422" fill="none" stroke="#171717" stroke-opacity=".28"/>
+  <g transform="translate(120 130)">
+    <rect width="78" height="78" fill="#171916"/>
+    <path d="M16 58h46M25 58c0-23 6.7-39 14-39s14 16 14 39M18 39h42M39 13v50" fill="none" stroke="#f5f2ea" stroke-width="3"/>
+    <path d="M39 13v50" stroke="#7c1f1f" stroke-width="3"/>
+  </g>
+  <text x="120" y="285" font-family="Georgia, 'Times New Roman', serif" font-size="82" fill="#171717" letter-spacing="-4">Meridian Research</text>
+  <text x="120" y="356" font-family="Arial, sans-serif" font-size="25" fill="#4c4840" letter-spacing="2">INDEPENDENT SCIENCE, POLICY &amp; SYSTEMS INTELLIGENCE</text>
+  <text x="120" y="455" font-family="Arial, sans-serif" font-size="22" fill="#6d675d">Calm editorial design for serious research publishing.</text>
+  <circle cx="965" cy="242" r="107" fill="none" stroke="#171717" stroke-opacity=".20" stroke-width="2"/>
+  <ellipse cx="965" cy="242" rx="134" ry="58" fill="none" stroke="#7c1f1f" stroke-opacity=".55" stroke-width="2" transform="rotate(-24 965 242)"/>
+  <ellipse cx="965" cy="242" rx="134" ry="58" fill="none" stroke="#171717" stroke-opacity=".20" stroke-width="2" transform="rotate(25 965 242)"/>
 </svg>
