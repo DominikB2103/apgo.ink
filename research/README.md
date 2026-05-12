@@ -1,30 +1,31 @@
-# Meridian Research Institute — static flagship website
+# Meridian Research Institute — static editorial website
 
-This is a zero-build static website. It is intended to be dragged directly into a GitHub Pages repository root.
+This is a zero-build static website designed for GitHub Pages.
 
 ## Deploy
 
-1. Delete the old site files from the repository.
-2. Copy every file and folder from this ZIP into the repository root.
+1. Unzip the package.
+2. Drag all files into the root of your GitHub repository.
 3. In GitHub, open **Settings → Pages**.
-4. Set the source to your main branch and the root folder.
-5. Commit and push.
+4. Set the source to your main branch and root folder.
+5. Save.
 
-No npm install, no local build, no workflow, and no external assets are required.
+There is no npm install, no Next.js build, no action required, and no server-side code.
 
 ## Files
 
-- `index.html` — editorial homepage
-- `publications.html` — searchable/filterable archive
-- `programmes.html` — research programmes
-- `observatory.html` — static signal dashboard
-- `methodology.html` — evidence grading and correction process
-- `about.html` — institute and governance page
+- `index.html` — homepage
+- `publications.html` — publication archive with local filtering
+- `programmes.html` — research programme portfolio
+- `observatory.html` — static dashboard surface
+- `methodology.html` — evidence and review protocol
+- `about.html` — institute model and governance surface
 - `contact.html` — static contact page
-- `dossier-systems.html` — long-form flagship dossier template
-- `assets/styles.css` — complete visual system
-- `assets/main.js` — mobile menu and archive filters
+- `dossier-infrastructure.html` — sample long-form dossier
+- `assets/styles.css` — complete editorial design system
+- `assets/main.js` — mobile navigation and archive filtering
 
-## Customization
+## Customize
 
-Replace placeholder email addresses in `index.html` and `contact.html` before publishing. Update `sitemap.xml` with your final domain.
+Replace placeholder text and the `mailto:research@example.org` form action with your real contact address.
+All graphics are original SVG/CSS assets in the package.

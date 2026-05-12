@@ -4,101 +4,56 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact · Meridian Research Institute</title>
-  <meta name="description" content="Contact the Meridian Research Institute editorial desk.">
-  <meta name="theme-color" content="#f3efe6">
+  <meta name="description" content="A static editorial research website for serious institutional analysis.">
+  <meta name="theme-color" content="#efebe2">
   <meta property="og:title" content="Contact · Meridian Research Institute">
-  <meta property="og:description" content="Contact the Meridian Research Institute editorial desk.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/og-card.svg">
+  <meta property="og:description" content="A static editorial research website for serious institutional analysis.">
+  <meta property="og:image" content="assets/og.svg">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body class="">
-<a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header" data-header>
-  <div class="topline" aria-label="Edition information">
-    <div class="wrap topline-inner">
-      <span>Public Edition 2026</span>
-      <span>Independent systems intelligence</span>
-      <span>Updated 12 May</span>
-    </div>
-  </div>
-  <div class="wrap masthead">
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-topbar" data-site-header>
+  <div class="nav-wrap">
     <a class="brand" href="index.html" aria-label="Meridian Research Institute home">
-      <img src="assets/logo.svg" width="42" height="42" alt="" aria-hidden="true">
-      <span><strong>Meridian</strong><em>Research Institute</em></span>
+      <img class="brand-mark" src="assets/mark.svg" alt="" width="38" height="38">
+      <span><span class="brand-name">Meridian</span><span class="brand-sub">RESEARCH INSTITUTE</span></span>
     </a>
-    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav">
-      <span>Menu</span>
-      <i aria-hidden="true"></i>
-    </button>
-    <nav class="primary-nav" id="primary-nav" data-nav aria-label="Primary navigation">
-      <a class="nav-link " href="index.html">Home</a>
-<a class="nav-link " href="publications.html">Briefings</a>
-<a class="nav-link " href="programmes.html">Programmes</a>
-<a class="nav-link " href="observatory.html">Observatory</a>
-<a class="nav-link " href="methodology.html">Method</a>
-<a class="nav-link " href="about.html">About</a>
-      <a class="nav-link nav-link--boxed" href="contact.html">Contact</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="nav-links" aria-label="Primary navigation">
+      <a href="index.html" class="">Home</a>
+<a href="publications.html" class="">Publications</a>
+<a href="programmes.html" class="">Programmes</a>
+<a href="observatory.html" class="">Observatory</a>
+<a href="methodology.html" class="">Method</a>
+<a href="about.html" class="">About</a>
+      <a class="nav-cta is-active" href="contact.html">Contact</a>
     </nav>
   </div>
 </header>
-<main id="main">
+<main id="content" class="page">
 
-<section class="page-hero page-hero--compact">
-  <div class="wrap page-hero-grid">
-    <div><p class="eyebrow">Contact</p><h1>Reach the editorial desk.</h1></div>
-    <p>Replace the placeholder addresses with your real inboxes before publishing. The form uses a mail action so it remains static and GitHub Pages compatible.</p>
-  </div>
-</section>
-<section class="section section--white">
-  <div class="wrap contact-grid">
-    <form class="contact-form" action="mailto:research@example.org" method="post" enctype="text/plain">
-      <label for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name">
-      <label for="email2">Email</label><input id="email2" name="email" type="email" placeholder="name@institution.org">
-      <label for="topic">Topic</label><select id="topic" name="topic"><option>Editorial inquiry</option><option>Data correction</option><option>Programme partnership</option><option>Media request</option></select>
-      <label for="message">Message</label><textarea id="message" name="message" rows="7" placeholder="Briefly describe the request"></textarea>
-      <button class="button button--dark" type="submit">Send message</button>
-    </form>
-    <aside class="contact-sidebar">
-      <div><p class="eyebrow">Desk addresses</p><h2>Use clear routing.</h2></div>
-      <dl class="contact-list"><div><dt>Editorial</dt><dd>research@example.org</dd></div><div><dt>Corrections</dt><dd>corrections@example.org</dd></div><div><dt>Programmes</dt><dd>programmes@example.org</dd></div></dl>
-      <p class="small-note">For sensitive material, do not use this prototype form. Replace with your own secure reporting process.</p>
-    </aside>
-  </div>
-</section>
+<section class="page-hero compact"><div class="container"><p class="breadcrumbs"><a href="index.html">Home</a> / Contact</p><p class="kicker">Contact desk</p><h1>Briefing requests, review inquiries, and institutional notes.</h1><p class="lead">This page is fully static. The form uses a mail action that you can replace with your own address or connect to a static form provider later.</p></div></section>
+<section class="section"><div class="container contact-panel"><div class="contact-copy"><p class="kicker neutral">Research desk</p><h2>Use the form for serious inquiries only.</h2><p class="muted" style="margin-top:18px">For a public GitHub Pages deployment, replace <code>research@example.org</code> in this file with your real inbox. Nothing here requires JavaScript or server-side processing.</p><div class="pill-row"><span class="pill">Briefing request</span><span class="pill">Methods question</span><span class="pill">Correction note</span><span class="pill">Partnership inquiry</span></div></div><form class="contact-form" action="mailto:research@example.org" method="post" enctype="text/plain"><div class="field"><label for="name">Name</label><input id="name" name="name" placeholder="Your name"></div><div class="field"><label for="org">Organization</label><input id="org" name="organization" placeholder="Institution or team"></div><div class="field"><label for="topic">Topic</label><select id="topic" name="topic"><option>Briefing request</option><option>Methodology question</option><option>Correction note</option><option>General inquiry</option></select></div><div class="field"><label for="message">Message</label><textarea id="message" name="message" placeholder="What should the desk know?"></textarea></div><button class="btn" type="submit">Prepare email</button></form></div></section>
 
 </main>
 <footer class="site-footer">
-  <div class="wrap footer-grid">
+  <div class="container footer-grid">
     <div>
-      <a class="footer-brand" href="index.html"><img src="assets/logo-light.svg" width="38" height="38" alt=""><span>Meridian<br><em>Research Institute</em></span></a>
-      <p>Editorial research for leaders who need evidence, judgement, and uncertainty presented without spectacle.</p>
+      <a class="brand" href="index.html" style="color:inherit">
+        <img class="brand-mark" src="assets/mark.svg" alt="" width="38" height="38">
+        <span><span class="brand-name">Meridian</span><span class="brand-sub">RESEARCH INSTITUTE</span></span>
+      </a>
+      <p class="small" style="margin-top:18px;max-width:460px">A static publication system for research teams that need the discipline of a journal, the speed of a briefing desk, and the clarity of an observatory.</p>
     </div>
-    <div>
-      <h2>Explore</h2>
-      <a href="publications.html">Briefings</a>
-      <a href="programmes.html">Programmes</a>
-      <a href="observatory.html">Observatory</a>
-      <a href="methodology.html">Methodology</a>
+    <div class="footer-links">
+      <div><div class="footer-title">Sections</div><a href="publications.html">Publication archive</a><a href="programmes.html">Programmes</a><a href="observatory.html">Observatory</a></div>
+      <div><div class="footer-title">Institute</div><a href="methodology.html">Methodology</a><a href="about.html">Governance</a><a href="contact.html">Contact desk</a></div>
+      <div><div class="footer-title">Static system</div><a href="README.md">Implementation notes</a><a href="sitemap.xml">Sitemap</a><a href="404.html">404 page</a></div>
     </div>
-    <div>
-      <h2>Standards</h2>
-      <a href="methodology.html#evidence-ladder">Evidence ladder</a>
-      <a href="methodology.html#corrections">Corrections</a>
-      <a href="about.html#governance">Governance</a>
-      <a href="contact.html">Editorial contact</a>
-    </div>
-    <div class="footer-note">
-      <h2>Static by design</h2>
-      <p>No trackers, no build system, no runtime dependency. Drop these files into GitHub Pages and publish directly.</p>
-    </div>
-  </div>
-  <div class="wrap footer-bottom">
-    <span>© 2026 Meridian Research Institute</span>
-    <span>Built for GitHub Pages</span>
   </div>
 </footer>
-<script src="assets/main.js"></script>
+<script src="assets/main.js" defer></script>
 </body>
 </html>

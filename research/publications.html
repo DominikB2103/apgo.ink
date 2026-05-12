@@ -3,130 +3,84 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Briefings · Meridian Research Institute</title>
-  <meta name="description" content="A filterable archive of Meridian research notes, policy memos, dossiers, and data reviews.">
-  <meta name="theme-color" content="#f3efe6">
-  <meta property="og:title" content="Briefings · Meridian Research Institute">
-  <meta property="og:description" content="A filterable archive of Meridian research notes, policy memos, dossiers, and data reviews.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/og-card.svg">
+  <title>Publications · Meridian Research Institute</title>
+  <meta name="description" content="A static editorial research website for serious institutional analysis.">
+  <meta name="theme-color" content="#efebe2">
+  <meta property="og:title" content="Publications · Meridian Research Institute">
+  <meta property="og:description" content="A static editorial research website for serious institutional analysis.">
+  <meta property="og:image" content="assets/og.svg">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body class="">
-<a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header" data-header>
-  <div class="topline" aria-label="Edition information">
-    <div class="wrap topline-inner">
-      <span>Public Edition 2026</span>
-      <span>Independent systems intelligence</span>
-      <span>Updated 12 May</span>
-    </div>
-  </div>
-  <div class="wrap masthead">
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-topbar" data-site-header>
+  <div class="nav-wrap">
     <a class="brand" href="index.html" aria-label="Meridian Research Institute home">
-      <img src="assets/logo.svg" width="42" height="42" alt="" aria-hidden="true">
-      <span><strong>Meridian</strong><em>Research Institute</em></span>
+      <img class="brand-mark" src="assets/mark.svg" alt="" width="38" height="38">
+      <span><span class="brand-name">Meridian</span><span class="brand-sub">RESEARCH INSTITUTE</span></span>
     </a>
-    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav">
-      <span>Menu</span>
-      <i aria-hidden="true"></i>
-    </button>
-    <nav class="primary-nav" id="primary-nav" data-nav aria-label="Primary navigation">
-      <a class="nav-link " href="index.html">Home</a>
-<a class="nav-link is-active" href="publications.html">Briefings</a>
-<a class="nav-link " href="programmes.html">Programmes</a>
-<a class="nav-link " href="observatory.html">Observatory</a>
-<a class="nav-link " href="methodology.html">Method</a>
-<a class="nav-link " href="about.html">About</a>
-      <a class="nav-link nav-link--boxed" href="contact.html">Contact</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="nav-links" aria-label="Primary navigation">
+      <a href="index.html" class="">Home</a>
+<a href="publications.html" class="is-active">Publications</a>
+<a href="programmes.html" class="">Programmes</a>
+<a href="observatory.html" class="">Observatory</a>
+<a href="methodology.html" class="">Method</a>
+<a href="about.html" class="">About</a>
+      <a class="nav-cta " href="contact.html">Contact</a>
     </nav>
   </div>
 </header>
-<main id="main">
+<main id="content" class="page">
 
-<section class="page-hero">
-  <div class="wrap page-hero-grid">
-    <div>
-      <p class="eyebrow">Briefings archive</p>
-      <h1>Research notes with source discipline and editorial hierarchy.</h1>
+<section class="page-hero compact">
+  <div class="container">
+    <p class="breadcrumbs"><a href="index.html">Home</a> / Publications</p>
+    <p class="kicker">Publication archive</p>
+    <h1>Analysis designed for inspection, citation, and institutional use.</h1>
+    <p class="lead">A compact archive with filters, evidence grades, review status, and desk attribution. The structure can hold essays, reports, data notes, and long-form dossiers without breaking the editorial system.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="filter-bar" data-filter-root>
+      <input type="search" placeholder="Search the archive" aria-label="Search publications" data-search>
+      <button class="filter-btn is-active" type="button" data-filter="all">All</button>
+      <button class="filter-btn" type="button" data-filter="dossier">Dossier</button>
+      <button class="filter-btn" type="button" data-filter="memo">Memo</button>
+      <button class="filter-btn" type="button" data-filter="field">Field note</button>
+      <button class="filter-btn" type="button" data-filter="data">Data review</button>
     </div>
-    <p>Filter the archive by desk, format, or search term. The layout is intentionally compact: serious readers should be able to scan the work without a promotional layer getting in the way.</p>
-  </div>
-</section>
-<section class="section section--white">
-  <div class="wrap archive-tools">
-    <label class="search-label" for="archive-search">Search archive</label>
-    <input id="archive-search" data-search type="search" placeholder="Search by title, desk, format, or keyword">
-    <div class="filter-row" data-filters>
-      <button class="filter is-active" type="button" data-filter="all">All</button>
-      <button class="filter" type="button" data-filter="ai">AI governance</button>
-      <button class="filter" type="button" data-filter="climate">Climate</button>
-      <button class="filter" type="button" data-filter="industry">Industry</button>
-      <button class="filter" type="button" data-filter="health">Health</button>
+    <div class="publication-grid">
+      <article class="publication-card" data-kind="dossier" data-title="infrastructure exposure institutional response capacity"><div><span class="tag">Dossier</span><p class="small">May 2026</p></div><div><h3><a href="dossier-infrastructure.html">Infrastructure exposure and institutional response capacity</a></h3><p>Long-form comparative analysis of adaptation planning, fiscal exposure, and network dependencies across critical infrastructure.</p><p class="meta">Climate adaptation desk · External specialist review</p></div><div class="right"><span class="badge">Moderate–high</span><span class="badge">Open access</span><p>Includes methods note, evidence table, and scenario appendix.</p></div></article>
+      <article class="publication-card" data-kind="memo" data-title="procurement rules sovereign ai infrastructure"><div><span class="tag">Policy memo</span><p class="small">Apr 2026</p></div><div><h3>Procurement rules for sovereign AI infrastructure</h3><p>Auditability clauses, validation rights, data custody language, and escalation thresholds for public-sector buyers.</p><p class="meta">AI governance desk · Internal review complete</p></div><div class="right"><span class="badge">Moderate</span><span class="badge">Memo</span><p>Best suited for cabinet offices, public buyers, and institutional counsel.</p></div></article>
+      <article class="publication-card" data-kind="field" data-title="urban heat labour productivity municipal adaptation budgets"><div><span class="tag">Field note</span><p class="small">Apr 2026</p></div><div><h3>Urban heat, labour productivity, and municipal adaptation budgets</h3><p>Field synthesis on budget timing, heat exposure, staffing pressure, and service continuity during high-temperature periods.</p><p class="meta">Infrastructure desk · Desk review</p></div><div class="right"><span class="badge">Developing</span><span class="badge">Field note</span><p>Designed as a fast interpretive layer rather than a full dossier.</p></div></article>
+      <article class="publication-card" data-kind="data" data-title="battery grade mineral flows export controls"><div><span class="tag">Data review</span><p class="small">Mar 2026</p></div><div><h3>Battery-grade mineral flows after the second wave of export controls</h3><p>Short analysis of trade dependencies, substitution constraints, and exposure windows for strategic manufacturing.</p><p class="meta">Industrial policy desk · Methods check</p></div><div class="right"><span class="badge">Medium</span><span class="badge">Data review</span><p>Includes uncertainty notes and source classification.</p></div></article>
+      <article class="publication-card" data-kind="memo" data-title="clinical model assurance public health systems"><div><span class="tag">Research letter</span><p class="small">Feb 2026</p></div><div><h3>Clinical model assurance for public health systems</h3><p>How procurement teams can distinguish evaluation theatre from assurance that is meaningful under real operational constraints.</p><p class="meta">Computational biology desk · Specialist comment</p></div><div class="right"><span class="badge">Moderate</span><span class="badge">Research letter</span><p>Short-form but fully annotated.</p></div></article>
+      <article class="publication-card" data-kind="field" data-title="water basin contracts agricultural climate disclosure"><div><span class="tag">Field synthesis</span><p class="small">Jan 2026</p></div><div><h3>Water basin contracts and agricultural climate disclosure</h3><p>Field synthesis on contract revision, basin governance, and credit-sensitive disclosure patterns.</p><p class="meta">Climate desk · Desk review</p></div><div class="right"><span class="badge">High</span><span class="badge">Synthesis</span><p>Evidence base includes public filings and expert interviews.</p></div></article>
     </div>
   </div>
-  <div class="wrap archive-grid" data-archive>
-    <article class="publication-card" data-category="ai" data-text="procurement sovereign ai infrastructure public systems auditability policy memo">
-      <span class="pub-type">Policy memo</span><time>28 Apr 2026</time><h2>Procurement rules for sovereign AI infrastructure</h2><p>Contract terms for auditability, escalation, model updates, and institutional accountability.</p><dl><div><dt>Desk</dt><dd>AI governance</dd></div><div><dt>Evidence</dt><dd>Moderate–high</dd></div><div><dt>Format</dt><dd>Memo · 18 pages</dd></div></dl><a href="dossier-systems.html">Read dossier</a>
-    </article>
-    <article class="publication-card" data-category="climate" data-text="urban heat labour productivity municipal adaptation budgets climate field note">
-      <span class="pub-type">Field note</span><time>14 Apr 2026</time><h2>Urban heat, labour productivity, and adaptation budgets</h2><p>How city finance teams are translating heat risk into work-hour loss and service-continuity planning.</p><dl><div><dt>Desk</dt><dd>Climate</dd></div><div><dt>Evidence</dt><dd>Medium</dd></div><div><dt>Format</dt><dd>Field note</dd></div></dl><a href="publications.html">View record</a>
-    </article>
-    <article class="publication-card" data-category="industry" data-text="battery mineral flows export controls critical supply data review">
-      <span class="pub-type">Data review</span><time>22 Mar 2026</time><h2>Battery-grade mineral flows after export controls</h2><p>Supply-chain exposure indices for planners assessing regional import dependency and policy response windows.</p><dl><div><dt>Desk</dt><dd>Critical supply</dd></div><div><dt>Evidence</dt><dd>High</dd></div><div><dt>Format</dt><dd>Dataset note</dd></div></dl><a href="publications.html">View record</a>
-    </article>
-    <article class="publication-card" data-category="health ai" data-text="hospital procurement model confidence reports clinical ai validation health research letter">
-      <span class="pub-type">Research letter</span><time>09 Mar 2026</time><h2>Model confidence reports for hospital procurement</h2><p>What clinical buyers need from vendors before high-impact predictive systems move into service.</p><dl><div><dt>Desk</dt><dd>Public health</dd></div><div><dt>Evidence</dt><dd>Moderate</dd></div><div><dt>Format</dt><dd>Letter</dd></div></dl><a href="publications.html">View record</a>
-    </article>
-    <article class="publication-card" data-category="climate industry" data-text="grid interconnection queue delays data centres energy transition observatory note">
-      <span class="pub-type">Observatory note</span><time>18 Feb 2026</time><h2>Grid interconnection queue delays and industrial siting</h2><p>Signal layer for regional planners evaluating load growth, permitting friction, and energy access.</p><dl><div><dt>Desk</dt><dd>Infrastructure</dd></div><div><dt>Evidence</dt><dd>Medium</dd></div><div><dt>Format</dt><dd>Signal note</dd></div></dl><a href="observatory.html">Open signal</a>
-    </article>
-    <article class="publication-card" data-category="industry" data-text="food systems price shocks critical supply agricultural water trade memo">
-      <span class="pub-type">Trade memo</span><time>31 Jan 2026</time><h2>Food-system price shocks and contract exposure</h2><p>Cross-border price volatility, water stress, and contract design in strategic food procurement.</p><dl><div><dt>Desk</dt><dd>Critical supply</dd></div><div><dt>Evidence</dt><dd>Moderate</dd></div><div><dt>Format</dt><dd>Memo</dd></div></dl><a href="publications.html">View record</a>
-    </article>
-  </div>
 </section>
-<section class="section section--panel">
-  <div class="wrap collection-grid">
-    <div><p class="eyebrow">Special collections</p><h2>Curated dossiers for readers who need context quickly.</h2></div>
-    <a class="collection-card" href="publications.html"><span>Collection 01</span><h3>Model assurance and public procurement</h3><p>Evaluation, contract language, risk posture, and audit trails.</p></a>
-    <a class="collection-card" href="publications.html"><span>Collection 02</span><h3>Infrastructure exposure and adaptation finance</h3><p>Physical-risk translation for public budgets and service continuity.</p></a>
-    <a class="collection-card" href="publications.html"><span>Collection 03</span><h3>Critical supply and industrial resilience</h3><p>Minerals, tooling, food, and logistics constraints in policy practice.</p></a>
-  </div>
-</section>
+<section class="section tight"><div class="container stat-grid"><div class="stat"><strong>18</strong><span>Open public dossiers</span></div><div class="stat"><strong>42</strong><span>Briefing notes in archive</span></div><div class="stat"><strong>06</strong><span>Data appendices prepared for release</span></div><div class="stat"><strong>04</strong><span>Specialist review lanes</span></div></div></section>
 
 </main>
 <footer class="site-footer">
-  <div class="wrap footer-grid">
+  <div class="container footer-grid">
     <div>
-      <a class="footer-brand" href="index.html"><img src="assets/logo-light.svg" width="38" height="38" alt=""><span>Meridian<br><em>Research Institute</em></span></a>
-      <p>Editorial research for leaders who need evidence, judgement, and uncertainty presented without spectacle.</p>
+      <a class="brand" href="index.html" style="color:inherit">
+        <img class="brand-mark" src="assets/mark.svg" alt="" width="38" height="38">
+        <span><span class="brand-name">Meridian</span><span class="brand-sub">RESEARCH INSTITUTE</span></span>
+      </a>
+      <p class="small" style="margin-top:18px;max-width:460px">A static publication system for research teams that need the discipline of a journal, the speed of a briefing desk, and the clarity of an observatory.</p>
     </div>
-    <div>
-      <h2>Explore</h2>
-      <a href="publications.html">Briefings</a>
-      <a href="programmes.html">Programmes</a>
-      <a href="observatory.html">Observatory</a>
-      <a href="methodology.html">Methodology</a>
+    <div class="footer-links">
+      <div><div class="footer-title">Sections</div><a href="publications.html">Publication archive</a><a href="programmes.html">Programmes</a><a href="observatory.html">Observatory</a></div>
+      <div><div class="footer-title">Institute</div><a href="methodology.html">Methodology</a><a href="about.html">Governance</a><a href="contact.html">Contact desk</a></div>
+      <div><div class="footer-title">Static system</div><a href="README.md">Implementation notes</a><a href="sitemap.xml">Sitemap</a><a href="404.html">404 page</a></div>
     </div>
-    <div>
-      <h2>Standards</h2>
-      <a href="methodology.html#evidence-ladder">Evidence ladder</a>
-      <a href="methodology.html#corrections">Corrections</a>
-      <a href="about.html#governance">Governance</a>
-      <a href="contact.html">Editorial contact</a>
-    </div>
-    <div class="footer-note">
-      <h2>Static by design</h2>
-      <p>No trackers, no build system, no runtime dependency. Drop these files into GitHub Pages and publish directly.</p>
-    </div>
-  </div>
-  <div class="wrap footer-bottom">
-    <span>© 2026 Meridian Research Institute</span>
-    <span>Built for GitHub Pages</span>
   </div>
 </footer>
-<script src="assets/main.js"></script>
+<script src="assets/main.js" defer></script>
 </body>
 </html>
