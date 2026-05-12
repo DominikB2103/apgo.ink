@@ -1,0 +1,11 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F5F2EA"/>
+  <path d="M0 110H1200M0 315H1200M0 520H1200M260 0V630M600 0V630M940 0V630" stroke="#171717" stroke-opacity="0.09"/>
+  <rect x="74" y="72" width="88" height="88" fill="#171916"/>
+  <circle cx="118" cy="116" r="25" stroke="#F5F2EA" stroke-width="3" fill="none"/>
+  <path d="M118 88V144M90 116H146" stroke="#F5F2EA" stroke-width="3"/>
+  <path d="M101 132C108 125 113 120 118 116C123 112 128 107 135 100" stroke="#9B3030" stroke-width="5"/>
+  <text x="74" y="258" font-family="Georgia, Times New Roman, serif" font-size="88" letter-spacing="-4" fill="#171717">Meridian Research</text>
+  <text x="78" y="322" font-family="Inter, Arial, sans-serif" font-size="24" letter-spacing="5" fill="#7C1F1F">INDEPENDENT SYSTEMS INTELLIGENCE</text>
+  <text x="78" y="426" font-family="Georgia, Times New Roman, serif" font-size="50" letter-spacing="-2" fill="#171717">Science, policy, and institutional analysis.</text>
+</svg>

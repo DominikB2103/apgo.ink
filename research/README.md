@@ -1,59 +1,28 @@
-# Meridian Review — static research editorial site
+# Meridian Research Static Site
 
-A serious, restrained research-publication website designed for GitHub Pages. The design direction is editorial, typographic, and institutional: print-like hierarchy, dense but readable spacing, quiet color, and original SVG/CSS visuals instead of third-party image dependencies.
+This is a zero-build, zero-install static website for GitHub Pages.
 
-## Stack
+## Use
 
-- Next.js static export
-- React and TypeScript
-- Custom CSS design system
-- Original inline SVG and CSS figures
-- GitHub Actions deployment to GitHub Pages
+1. Unzip the files.
+2. Drag everything into the root of your GitHub repository.
+3. In GitHub, go to **Settings → Pages**.
+4. Choose **Deploy from a branch** and select your branch, usually `main`, with the folder set to `/root`.
+5. Save.
 
-## Local development
+No npm install. No Next.js build. No workflow required. The site runs directly from `index.html`.
 
-```bash
-npm install
-npm run dev
-```
+## Files
 
-Open `http://localhost:3000`.
+- `index.html` — complete homepage
+- `404.html` — GitHub Pages error page
+- `.nojekyll` — prevents Jekyll processing on GitHub Pages
+- `assets/styles.css` — full design system and responsive styling
+- `assets/main.js` — mobile navigation only
+- `assets/mark.svg` — original logo mark
+- `assets/og.svg` — original social preview image
+- `robots.txt` and `sitemap.xml` — basic search metadata placeholders
 
-## Static build
+## Customise
 
-```bash
-npm run build
-```
-
-The exported static site is written to `out/`.
-
-## Deploy to GitHub Pages
-
-1. Create a GitHub repository and push these files to the `main` branch.
-2. In GitHub, open **Settings → Pages**.
-3. Under **Build and deployment**, choose **GitHub Actions**.
-4. Push to `main`; the included workflow builds and publishes the static `out/` folder.
-
-The `next.config.mjs` file automatically sets a base path for project pages such as:
-
-```text
-https://username.github.io/repository-name/
-```
-
-For a user or organization site such as `username.github.io`, no project base path is applied.
-
-## Customize the content
-
-Edit these files:
-
-- `data/content.ts` — issue title, article cards, departments, and metrics.
-- `app/page.tsx` — section order and page structure.
-- `app/globals.css` — visual system, spacing, color, and typography.
-- `public/mark.svg` — site mark and favicon.
-
-## Design notes
-
-- No decorative stock photos are required.
-- The layout avoids casual microcopy and playful visual motifs.
-- Figures are generated from original SVG/CSS so the site remains portable, static, and legally clean.
-- The site uses no database, no API routes, no server rendering requirement, and no tracking scripts.
+Change the name, text, sections, and contact email directly in `index.html`. The design uses system fonts and original SVG graphics, so there are no external asset dependencies.

@@ -1,0 +1,7 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Meridian mark">
+  <rect x="1" y="1" width="62" height="62" fill="#171916" stroke="#171916" stroke-width="2"/>
+  <path d="M14 32C14 22.059 22.059 14 32 14C41.941 14 50 22.059 50 32C50 41.941 41.941 50 32 50C22.059 50 14 41.941 14 32Z" stroke="#F5F2EA" stroke-width="2"/>
+  <path d="M32 10V54" stroke="#F5F2EA" stroke-width="2"/>
+  <path d="M10 32H54" stroke="#F5F2EA" stroke-width="2"/>
+  <path d="M20 44C24.2 39.8 27.6 35.6 32 32C36.4 28.4 39.8 24.2 44 20" stroke="#9B3030" stroke-width="3" stroke-linecap="square"/>
+</svg>
