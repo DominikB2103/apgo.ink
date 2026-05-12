@@ -3,82 +3,120 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Document title template — Continuum Review</title>
-  <meta name="description" content="A reusable editorial page for theorem briefs, discoveries, news updates, and research notes.">
-  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../../styles.css">
+  <title>Research Article Template — Asterion Review</title>
+  <meta name="description" content="A complete HTML article template for research notes, theorem briefs, and discovery reports.">
+  <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
 <body class="article-page">
-  <header class="site-header" data-elevate>
-    <div class="container header-inner">
-      <a class="brand" href="../../index.html" aria-label="Continuum Review home">
-        <img src="../../assets/logo-mark.svg" alt="" width="44" height="44">
-        <span><strong>Continuum Review</strong><em>Mathematics · Science · Field Notes</em></span>
+  <a class="skip-link" href="#article">Skip to article</a>
+
+  <header class="article-header">
+    <div class="container article-topbar">
+      <a class="brand" href="../../index.html">
+        <span class="brand-mark" aria-hidden="true">A</span>
+        <span>
+          <strong>Asterion Review</strong>
+          <em>Journal of Formal Inquiry</em>
+        </span>
       </a>
-      <nav class="main-nav" aria-label="Primary navigation">
-        <a href="../../index.html#latest">Latest</a>
-        <a href="../../index.html#research-index">Search</a>
-        <a href="../../index.html#sections">Sections</a>
-        <a href="../template/">Template</a>
-      </nav>
+      <a class="back-link" href="../../index.html#documents">Back to archive</a>
+    </div>
+    <div class="container article-hero">
+      <div>
+        <p class="eyebrow">Article template / methods</p>
+        <h1>Title of the research note, theorem brief, or discovery report.</h1>
+        <p class="article-abstract">Replace this paragraph with a disciplined abstract. State the subject, the principal claim, the method used, and the limitation that a careful reader should remember.</p>
+      </div>
+      <aside class="article-meta-card" aria-label="Article metadata">
+        <dl>
+          <div>
+            <dt>Author</dt>
+            <dd>Your name</dd>
+          </div>
+          <div>
+            <dt>Section</dt>
+            <dd>Theorems, discoveries, methods, or news</dd>
+          </div>
+          <div>
+            <dt>Status</dt>
+            <dd>Draft, reviewed, or final</dd>
+          </div>
+          <div>
+            <dt>Keywords</dt>
+            <dd>proof, model, evidence</dd>
+          </div>
+        </dl>
+      </aside>
     </div>
   </header>
 
-  <main>
-    <section class="article-hero">
-      <div class="container article-hero-grid">
-        <div>
-          <p class="eyebrow">Template</p>
-          <h1 class="article-title">Document title template</h1>
-          <p class="article-deck">A reusable editorial page for theorem briefs, discoveries, news updates, and research notes.</p>
-        </div>
-        <aside class="article-meta" aria-label="Article metadata">
-          <dl>
-            <div><dt>Published</dt><dd><time datetime="2026-05-12">2026-05-12</time></dd></div>
-            <div><dt>Editor</dt><dd>Your name</dd></div>
-            <div><dt>Section</dt><dd>Template</dd></div>
-          </dl>
-          <div class="tags"><span>replace</span><span>these</span><span>tags</span></div>
-        </aside>
-      </div>
-    </section>
+  <main class="container article-layout" id="article">
+    <nav class="article-sidebar" aria-label="Article sections">
+      <h2>Contents</h2>
+      <a href="#summary">Summary</a>
+      <a href="#claim">Main claim</a>
+      <a href="#method">Method</a>
+      <a href="#evidence">Evidence</a>
+      <a href="#references">References</a>
+    </nav>
 
-    <div class="container article-shell">
-      <article class="article-content">
-        <p class="lead">Replace this paragraph with a strong editorial deck for the document. It should state the central object of the note, why it matters, and what the reader will find below.</p>
-<h2>Abstract</h2>
-<p>Write a precise abstract in four to six sentences. Keep it readable. Define the subject, the method or argument, the main result, and the limits of the claim.</p>
-<h2>Main statement</h2>
-<p>Use this section for a theorem, observation, discovery note, or editorial finding. Keep the first paragraph direct and avoid unnecessary background.</p>
-<p class="equation">Replace with formula, measurement, or key relation</p>
-<h2>Proof sketch or evidence</h2>
-<p>For theorem notes, summarize the proof strategy without hiding the main dependency. For discovery notes, describe the observation, measurement conditions, and uncertainty.</p>
-<h2>References and next steps</h2>
-<ul>
-  <li>Add the most important reference, dataset, or source note.</li>
-  <li>Add any planned verification, replication, or expansion.</li>
-  <li>Add a short note on what would change the interpretation.</li>
-</ul>
-      </article>
-      <aside class="article-aside" aria-label="Document navigation">
-        <div class="article-card">
-          <img src="../../assets/field-correspondence.svg" alt="">
-          <div>
-            <h2>Archive entry</h2>
-            <p>Duplicate this folder for a new note, then replace the title, metadata, tags, and article body.</p>
-            <a class="button secondary" href="../../index.html#research-index">Back to index</a>
-          </div>
+    <article class="article-content">
+      <!--
+        Duplicate this folder for each new document:
+        documents/name-of-your-document/index.html
+        Then edit the title, abstract, metadata, body sections, and the entry in assets/js/data.js.
+      -->
+
+      <section id="summary">
+        <h2>Summary</h2>
+        <p>Begin with the reason the document exists. Avoid ornamental language. Give the reader the smallest accurate map of the problem, the result, and the evidence.</p>
+        <p>For a theorem, state the hypotheses before the conclusion. For a discovery, separate observation from interpretation. For a news entry, explain what changed and why it matters.</p>
+      </section>
+
+      <section id="claim">
+        <h2>Main claim</h2>
+        <div class="theorem-box">
+          <h3>Theorem or principal statement</h3>
+          <p><strong>Statement.</strong> Under clearly specified assumptions, a precise conclusion follows. Replace this with your formal statement or central finding.</p>
+          <p><strong>Conditions.</strong> List the space, model, sample, instrument, or dataset conditions that make the claim valid.</p>
         </div>
-      </aside>
-    </div>
+      </section>
+
+      <section id="method">
+        <h2>Method</h2>
+        <p>Describe the proof strategy, experimental design, computational procedure, or editorial basis. Keep the method reproducible enough that a reader can identify what would falsify or weaken the claim.</p>
+        <ol>
+          <li>Define the objects or measurements.</li>
+          <li>State the dependency line: lemmas, assumptions, instruments, or data sources.</li>
+          <li>Explain the central step without hiding uncertainty.</li>
+        </ol>
+      </section>
+
+      <section id="evidence">
+        <h2>Evidence and interpretation</h2>
+        <figure class="figure-block">
+          <img src="../../assets/img/microscope.jpg" alt="A phase contrast microscope on a laboratory bench">
+          <figcaption>Replace this image and caption with a relevant figure, diagram, or photograph. Keep captions explanatory rather than decorative.</figcaption>
+        </figure>
+        <p>The evidence section should distinguish what is directly shown from what is inferred. In a proof note, this may be a lemma chain. In a field report, it may be a record of measurements.</p>
+        <div class="note-box">
+          <h3>Editorial note</h3>
+          <p>Use notes sparingly. They should clarify uncertainty, scope, or terminology; they should not interrupt the main argument.</p>
+        </div>
+      </section>
+
+      <section id="references">
+        <h2>References</h2>
+        <div class="reference-box">
+          <h3>Reference format</h3>
+          <p>Author. Title. Journal or archive. Year. Link or local citation. Add only references that directly support the document.</p>
+        </div>
+      </section>
+    </article>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div><strong>Continuum Review</strong><p>Research notes, theorem briefs, and discoveries presented with editorial discipline.</p></div>
-      <nav aria-label="Footer navigation"><a href="../../index.html#latest">Latest</a><a href="../../index.html#research-index">Search</a><a href="../../index.html#sections">Sections</a></nav>
-    </div>
+  <footer class="article-footer">
+    <div class="container">Asterion Review article template. Duplicate this folder to create a new standalone HTML document.</div>
   </footer>
-  <script src="../../script.js"></script>
 </body>
 </html>

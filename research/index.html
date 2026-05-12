@@ -3,191 +3,218 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Continuum Review — Research Notes, Theorems, Discoveries</title>
-  <meta name="description" content="A serious editorial research website for theorem briefs, discoveries, news, and self-contained scholarly documents.">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/hero-atlas.svg" as="image">
-  <link rel="stylesheet" href="styles.css">
+  <title>Asterion Review — Research, Proof, and Discovery</title>
+  <meta name="description" content="An editorial research archive for concise discoveries, theorem briefs, and carefully indexed documents.">
+  <meta name="theme-color" content="#17233c">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#research-index">Skip to research index</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" data-elevate>
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Continuum Review home">
-        <img src="assets/logo-mark.svg" alt="" width="44" height="44">
+  <header class="site-header" id="top">
+    <div class="top-rule">
+      <span>Research archive</span>
+      <span>Methods, proof, and measured discovery</span>
+      <span>Independent editorial desk</span>
+    </div>
+    <div class="masthead container">
+      <a class="brand" href="index.html" aria-label="Asterion Review home">
+        <span class="brand-mark" aria-hidden="true">A</span>
         <span>
-          <strong>Continuum Review</strong>
-          <em>Mathematics · Science · Field Notes</em>
+          <strong>Asterion Review</strong>
+          <em>Journal of Formal Inquiry</em>
         </span>
       </a>
-      <nav class="main-nav" aria-label="Primary navigation">
-        <a href="#latest">Latest</a>
-        <a href="#research-index">Search</a>
-        <a href="#sections">Sections</a>
-        <a href="documents/template/">Template</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+        <a href="#news">News</a>
+        <a href="#discoveries">Discoveries</a>
+        <a href="#theorems">Theorems</a>
+        <a href="#documents">Documents</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-media" aria-hidden="true">
-        <img src="assets/hero-atlas.svg" alt="">
-      </div>
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Independent editorial archive</p>
-          <h1 id="hero-title">Clear research writing with the gravity of a printed journal.</h1>
-          <p class="hero-lede">Continuum Review gathers theorem briefs, discovery notes, and carefully edited research updates in a quiet, readable interface built for serious study.</p>
-          <div class="hero-actions" aria-label="Featured actions">
-            <a class="button primary" href="#research-index">Search the archive</a>
-            <a class="button secondary" href="#latest">Read latest briefs</a>
-          </div>
-        </div>
-        <aside class="hero-card theorem-carousel" aria-label="Featured theorem carousel">
-          <div class="carousel-topline">
-            <span>Theorem brief</span>
-            <div class="carousel-controls">
-              <button type="button" class="icon-button" data-carousel-prev aria-label="Previous theorem">‹</button>
-              <button type="button" class="icon-button" data-carousel-next aria-label="Next theorem">›</button>
-            </div>
-          </div>
-          <div class="carousel-window" data-carousel-window>
-            <article class="theorem-slide is-active" data-slide>
-              <h2>Energy Monotonicity Principle</h2>
-              <p class="formula">E(t₂) ≤ E(t₁) + ∫<sub>t₁</sub><sup>t₂</sup> R(s) ds</p>
-              <p>When the residual term is integrable and controlled at scale, the evolving system preserves a usable energy hierarchy across the full interval.</p>
-              <a href="documents/energy-monotonicity/">Read the brief</a>
-            </article>
-            <article class="theorem-slide" data-slide>
-              <h2>Spectral Gap Criterion</h2>
-              <p class="formula">λ₂ − λ₁ ≥ c · κ²</p>
-              <p>A lower curvature threshold forces separation in the first non-trivial eigenvalues, sharpening stability estimates for compact operators.</p>
-              <a href="documents/spectral-gap/">Read the brief</a>
-            </article>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="container metric-strip" aria-label="Archive overview">
-      <div>
-        <strong data-count-total>0</strong>
-        <span>indexed documents</span>
-      </div>
-      <div>
-        <strong>4</strong>
-        <span>editorial sections</span>
-      </div>
-      <div>
-        <strong>12</strong>
-        <span>research tags</span>
-      </div>
-      <div>
-        <strong>Curated</strong>
-        <span>for close reading</span>
-      </div>
-    </section>
-
-    <section class="container feature-layout" id="latest" aria-labelledby="latest-title">
-      <div class="section-heading">
-        <p class="eyebrow">Latest selection</p>
-        <h2 id="latest-title">Recent editorial briefs</h2>
-        <p>Short, disciplined entries with enough context to decide what deserves a closer reading.</p>
-      </div>
-      <div class="feature-grid" data-featured-grid></div>
-    </section>
-
-    <section class="index-section" id="research-index" aria-labelledby="index-title">
-      <div class="container">
-        <div class="search-panel">
-          <div class="search-heading">
-            <div>
-              <p class="eyebrow">Research index</p>
-              <h2 id="index-title">Search documents, tags, and sections</h2>
-            </div>
-            <p>Use the archive to narrow work by section, date, or subject. Results open as full research notes.</p>
-          </div>
-
-          <div class="search-controls" role="search">
-            <label class="search-box" for="site-search">
-              <span>Search</span>
-              <input id="site-search" type="search" placeholder="Try “spectral gap”, “geometry”, “field notes”…" autocomplete="off" data-search-input>
-            </label>
-            <label class="select-box" for="section-filter">
-              <span>Section</span>
-              <select id="section-filter" data-section-filter>
-                <option value="all">All sections</option>
-                <option value="News">News</option>
-                <option value="Discoveries">Discoveries</option>
-                <option value="Theorems">Theorems</option>
-                <option value="Documents">Documents</option>
-              </select>
-            </label>
-          </div>
-
-          <div class="tag-row" data-tag-row aria-label="Filter by tag"></div>
-          <div class="result-meta" aria-live="polite"><span data-result-count>0</span> results</div>
-          <div class="results-grid" data-results-grid></div>
+  <main id="main">
+    <section class="hero container" aria-labelledby="hero-title">
+      <figure class="hero-media">
+        <img src="assets/img/john-work-garrett-library.jpg" alt="A wood-panelled research library with bookshelves and reading chairs">
+        <figcaption>Editorial archive, readings, and primary notes.</figcaption>
+      </figure>
+      <div class="hero-copy">
+        <p class="eyebrow">Issue field / mathematics / scientific method</p>
+        <h1 id="hero-title">A serious record for proofs, experiments, and long-range inquiry.</h1>
+        <p class="lead">Read concise dispatches from the research desk, browse theorem briefs, and search a growing library of self-contained HTML documents.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#documents">Search the archive</a>
+          <a class="button secondary" href="documents/template/">Open article template</a>
         </div>
       </div>
     </section>
 
-    <section class="container sections-block" id="sections" aria-labelledby="sections-title">
+    <section class="ticker" aria-label="Editorial highlights">
+      <div class="ticker-inner container">
+        <span>Latest brief: stability in nonlinear systems</span>
+        <span>Featured theorem: contraction mapping principle</span>
+        <span>New template: standalone HTML research note</span>
+      </div>
+    </section>
+
+    <section class="container editorial-grid" aria-labelledby="briefing-title">
       <div class="section-heading compact">
-        <p class="eyebrow">Sections</p>
-        <h2 id="sections-title">Built around the way research is read</h2>
+        <p class="eyebrow">This edition</p>
+        <h2 id="briefing-title">Selected research dispatches</h2>
       </div>
-      <div class="section-cards">
-        <article>
-          <span>01</span>
-          <h3>News</h3>
-          <p>Editorial updates, publication notes, conference signals, and short contextual reports.</p>
+      <article class="feature-card feature-card-large">
+        <p class="card-kicker">News</p>
+        <h3>Open problems require slower reading, cleaner notation, and better records.</h3>
+        <p>The Review is organised around short, durable entries: each document includes a plain-language abstract, precise terms, and links back to the archive.</p>
+        <a href="#documents" class="text-link">Browse current entries</a>
+      </article>
+      <article class="feature-card tinted">
+        <p class="card-kicker">Discovery</p>
+        <h3>Structured observation before interpretation.</h3>
+        <p>Field notes are written to separate measurement, inference, and editorial judgement.</p>
+      </article>
+      <article class="feature-card dark-card">
+        <p class="card-kicker">Theorem</p>
+        <h3>Compact statements, rigorous prerequisites.</h3>
+        <p>Theorem cards emphasise hypotheses first, then consequences and proof strategy.</p>
+      </article>
+    </section>
+
+    <section class="container theorem-section" id="theorems" aria-labelledby="theorem-title">
+      <div class="section-heading with-controls">
+        <div>
+          <p class="eyebrow">Theorem briefs</p>
+          <h2 id="theorem-title">Two concise statements for reference</h2>
+        </div>
+        <div class="carousel-controls" aria-label="Theorem carousel controls">
+          <button class="circle-button" type="button" data-carousel-prev aria-label="Previous theorem">Prev</button>
+          <button class="circle-button" type="button" data-carousel-next aria-label="Next theorem">Next</button>
+        </div>
+      </div>
+      <div class="theorem-carousel" data-carousel aria-live="polite">
+        <article class="theorem-slide is-active">
+          <div class="theorem-meta">Analysis / Fixed points</div>
+          <h3>Banach contraction principle</h3>
+          <p>In a complete metric space, every contraction has exactly one fixed point, and iterating the contraction from any starting point converges to it.</p>
+          <p class="formula">d(Tx, Ty) &le; q d(x,y), &nbsp; 0 &le; q &lt; 1</p>
+          <a href="documents/spectral-rigidity-note/" class="text-link">Read a related proof note</a>
         </article>
-        <article>
-          <span>02</span>
-          <h3>Discoveries</h3>
-          <p>Measured observations, datasets, field notes, and early evidence worth preserving.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h3>Theorems</h3>
-          <p>Compact theorem statements, proof sketches, examples, and references for later expansion.</p>
-        </article>
-        <article>
-          <span>04</span>
-          <h3>Documents</h3>
-          <p>Longer HTML pages for essays, proofs, bibliographies, and independently hosted notes.</p>
+        <article class="theorem-slide">
+          <div class="theorem-meta">Linear algebra / Operators</div>
+          <h3>Spectral theorem for real symmetric matrices</h3>
+          <p>Every real symmetric matrix admits an orthonormal basis of eigenvectors, allowing the matrix to be diagonalised by an orthogonal change of coordinates.</p>
+          <p class="formula">A = Q&Lambda;Q<sup>T</sup>, &nbsp; Q<sup>T</sup>Q = I</p>
+          <a href="documents/template/" class="text-link">Use the article template</a>
         </article>
       </div>
     </section>
 
-    <section class="container template-callout" aria-labelledby="template-title">
-      <div>
-        <p class="eyebrow">Long-form notes</p>
-        <h2 id="template-title">Each research page follows a consistent, finished editorial structure.</h2>
-        <p>The included template shows the page format used for future essays, theorem briefs, proofs, and field reports.</p>
+    <section class="container split-section" id="discoveries" aria-labelledby="discoveries-title">
+      <div class="image-panel">
+        <img src="assets/img/microscope.jpg" alt="A phase contrast microscope on a laboratory bench">
       </div>
-      <a class="button primary" href="documents/template/">View template</a>
+      <div class="text-panel">
+        <p class="eyebrow">Discoveries</p>
+        <h2 id="discoveries-title">A calmer format for fast-moving claims.</h2>
+        <p>Discovery entries are short by design. They state what changed, what evidence was used, and what remains uncertain. The format rewards precision over noise.</p>
+        <dl class="definition-list">
+          <div>
+            <dt>Observation</dt>
+            <dd>What was directly recorded or computed.</dd>
+          </div>
+          <div>
+            <dt>Interpretation</dt>
+            <dd>What the evidence appears to support.</dd>
+          </div>
+          <div>
+            <dt>Open test</dt>
+            <dd>What must be checked before a stronger claim is made.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="container news-section" id="news" aria-labelledby="news-title">
+      <div class="section-heading">
+        <p class="eyebrow">News desk</p>
+        <h2 id="news-title">Recent editorial notes</h2>
+      </div>
+      <div class="news-grid" data-news-grid>
+        <article>
+          <p class="date-label">Review note</p>
+          <h3>Proof sketches now include a stated dependency line.</h3>
+          <p>Every theorem brief separates prerequisites from proof technique before giving the result.</p>
+        </article>
+        <article>
+          <p class="date-label">Archive note</p>
+          <h3>Document pages are self-contained for long-term storage.</h3>
+          <p>Each article folder can hold its own assets while still linking back to the main index.</p>
+        </article>
+        <article>
+          <p class="date-label">Methods note</p>
+          <h3>Search filters now privilege section and tag over chronology.</h3>
+          <p>The archive is meant for retrieval by concept, not just recency.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container archive-section" id="documents" aria-labelledby="documents-title">
+      <div class="section-heading">
+        <p class="eyebrow">Document archive</p>
+        <h2 id="documents-title">Search the indexed documents</h2>
+        <p>Search by title, field, tag, or summary. Use section filters to narrow the index.</p>
+      </div>
+
+      <div class="search-shell" role="search">
+        <label for="archive-search">Search documents</label>
+        <div class="search-row">
+          <input id="archive-search" name="archive-search" type="search" placeholder="Search proofs, dispatches, experiments, notes..." autocomplete="off">
+          <button class="button primary" type="button" data-clear-search>Clear</button>
+        </div>
+        <div class="facet-row" aria-label="Archive section filters" data-filter-row>
+          <button class="facet is-active" type="button" data-filter="all">All</button>
+          <button class="facet" type="button" data-filter="news">News</button>
+          <button class="facet" type="button" data-filter="discoveries">Discoveries</button>
+          <button class="facet" type="button" data-filter="theorems">Theorems</button>
+          <button class="facet" type="button" data-filter="methods">Methods</button>
+        </div>
+      </div>
+
+      <div class="archive-status" data-result-status aria-live="polite"></div>
+      <div class="result-grid" data-results></div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <strong>Continuum Review</strong>
-        <p>Research notes, theorem briefs, and discoveries presented with editorial discipline.</p>
+        <a class="brand footer-brand" href="#top">
+          <span class="brand-mark" aria-hidden="true">A</span>
+          <span>
+            <strong>Asterion Review</strong>
+            <em>Journal of Formal Inquiry</em>
+          </span>
+        </a>
       </div>
-      <nav aria-label="Footer navigation">
-        <a href="#latest">Latest</a>
-        <a href="#research-index">Search</a>
-        <a href="#sections">Sections</a>
-        <a href="documents/template/">Template</a>
-      </nav>
+      <div>
+        <h2>Sections</h2>
+        <a href="#news">News</a>
+        <a href="#discoveries">Discoveries</a>
+        <a href="#theorems">Theorems</a>
+        <a href="#documents">Documents</a>
+      </div>
+      <div>
+        <h2>For authors</h2>
+        <a href="documents/template/">Article template</a>
+        <a href="documents/spectral-rigidity-note/">Example note</a>
+      </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

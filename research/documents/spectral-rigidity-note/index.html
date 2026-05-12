@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spectral Rigidity in Compact Models — Asterion Review</title>
+  <meta name="description" content="A concise theorem note on real symmetric operators and orthogonal diagonalisation.">
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="article-page">
+  <a class="skip-link" href="#article">Skip to article</a>
+
+  <header class="article-header">
+    <div class="container article-topbar">
+      <a class="brand" href="../../index.html">
+        <span class="brand-mark" aria-hidden="true">A</span>
+        <span>
+          <strong>Asterion Review</strong>
+          <em>Journal of Formal Inquiry</em>
+        </span>
+      </a>
+      <a class="back-link" href="../../index.html#documents">Back to archive</a>
+    </div>
+    <div class="container article-hero">
+      <div>
+        <p class="eyebrow">Theorem brief / linear algebra</p>
+        <h1>Spectral rigidity in compact finite-dimensional models.</h1>
+        <p class="article-abstract">A real symmetric operator cannot hide its principal directions: it admits an orthonormal eigenbasis, and its action becomes diagonal after an orthogonal change of coordinates.</p>
+      </div>
+      <aside class="article-meta-card" aria-label="Article metadata">
+        <dl>
+          <div>
+            <dt>Author</dt>
+            <dd>Editorial desk</dd>
+          </div>
+          <div>
+            <dt>Section</dt>
+            <dd>Theorems</dd>
+          </div>
+          <div>
+            <dt>Status</dt>
+            <dd>Proof note</dd>
+          </div>
+          <div>
+            <dt>Keywords</dt>
+            <dd>operators, eigenvectors, orthogonality</dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+  </header>
+
+  <main class="container article-layout" id="article">
+    <nav class="article-sidebar" aria-label="Article sections">
+      <h2>Contents</h2>
+      <a href="#statement">Statement</a>
+      <a href="#proof">Proof strategy</a>
+      <a href="#consequence">Consequence</a>
+      <a href="#scope">Scope</a>
+    </nav>
+
+    <article class="article-content">
+      <section id="statement">
+        <h2>Statement</h2>
+        <div class="theorem-box">
+          <h3>Spectral theorem, finite-dimensional form</h3>
+          <p>Let <em>A</em> be a real symmetric matrix. There exists an orthogonal matrix <em>Q</em> and a real diagonal matrix <em>&Lambda;</em> such that <em>A = Q&Lambda;Q<sup>T</sup></em>.</p>
+        </div>
+        <p>The hypothesis is not decorative. Symmetry gives a stable relationship between the operator and the inner product, forcing eigenvectors associated with distinct eigenvalues to be orthogonal.</p>
+      </section>
+
+      <section id="proof">
+        <h2>Proof strategy</h2>
+        <p>One begins by locating a real eigenvalue through the characteristic polynomial and the variational behaviour of the quadratic form. After choosing a unit eigenvector, its orthogonal complement is invariant under the same operator.</p>
+        <p>Induction on dimension completes the construction: diagonalise the restriction to the orthogonal complement, then assemble an orthonormal basis for the entire space.</p>
+      </section>
+
+      <section id="consequence">
+        <h2>Consequence</h2>
+        <p>The theorem converts a coupled transformation into independent scalar actions along orthogonal directions. This is why symmetric matrices are especially tractable in optimisation, mechanics, statistics, and numerical analysis.</p>
+        <div class="note-box">
+          <h3>Reading note</h3>
+          <p>When applying the result, check symmetry first. Similar-looking matrices can have complex eigenstructure or fail to admit an orthonormal eigenbasis.</p>
+        </div>
+      </section>
+
+      <section id="scope">
+        <h2>Scope</h2>
+        <p>This note states the finite-dimensional real version only. Infinite-dimensional spectral theory requires additional analytic hypotheses and a more careful distinction between point spectrum and continuous spectrum.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="article-footer">
+    <div class="container">Asterion Review. Concise theorem notes for durable reference.</div>
+  </footer>
+</body>
+</html>
