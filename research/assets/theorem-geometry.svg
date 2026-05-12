@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+<title id="title">Geometric theorem field</title>
+<desc id="desc">A restrained geometric diagram on warm paper.</desc>
+<defs>
+<linearGradient id="paper" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#f5ead8"/><stop offset=".6" stop-color="#d6c6a8"/><stop offset="1" stop-color="#8d9e92"/></linearGradient>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="1.0" numOctaves="3"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .13"/></feComponentTransfer></filter>
+</defs>
+<rect width="1600" height="1000" fill="url(#paper)"/>
+<g transform="translate(800 500)">
+<circle r="312" fill="none" stroke="#11150f" stroke-width="5" stroke-opacity=".76"/>
+<circle r="178" fill="none" stroke="#b85d3e" stroke-width="4" stroke-opacity=".86"/>
+<path d="M-360 130L-80-260 408 175z" fill="none" stroke="#11150f" stroke-width="6" stroke-linejoin="round"/>
+<path d="M-80-260L0 0 408 175M0 0L-360 130" fill="none" stroke="#11150f" stroke-width="3" stroke-opacity=".5"/>
+<path d="M-240-184c147 94 301 133 520 119" fill="none" stroke="#476152" stroke-width="12" stroke-linecap="round" opacity=".45"/>
+<g fill="#11150f"><circle cx="-360" cy="130" r="10"/><circle cx="-80" cy="-260" r="10"/><circle cx="408" cy="175" r="10"/><circle cx="0" cy="0" r="8"/></g>
+</g>
+<g fill="#11150f" opacity=".44"><rect x="96" y="130" width="330" height="10" rx="5"/><rect x="96" y="166" width="230" height="8" rx="4"/><rect x="96" y="196" width="286" height="8" rx="4"/></g>
+<rect width="1600" height="1000" filter="url(#grain)"/>
+</svg>

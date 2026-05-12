@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+<title id="title">Observatory horizon</title>
+<desc id="desc">Abstract observatory dome under a muted dusk sky.</desc>
+<defs>
+<linearGradient id="sky" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#b9cbc7"/><stop offset=".52" stop-color="#ead5b7"/><stop offset="1" stop-color="#6a7a69"/></linearGradient>
+<radialGradient id="sun" cx="72%" cy="27%" r="45%"><stop offset="0" stop-color="#f4c27a" stop-opacity=".9"/><stop offset=".45" stop-color="#c97851" stop-opacity=".3"/><stop offset="1" stop-color="#c97851" stop-opacity="0"/></radialGradient>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .12"/></feComponentTransfer></filter>
+</defs>
+<rect width="1600" height="1000" fill="url(#sky)"/><rect width="1600" height="1000" fill="url(#sun)"/>
+<path d="M0 750c205-96 353-116 540-53s356 42 525-36c174-79 326-70 535 38v301H0z" fill="#2c382d" opacity=".86"/>
+<path d="M504 704a215 215 0 0 1 430 0H504z" fill="#11150f" opacity=".92"/>
+<path d="M594 704a125 125 0 0 1 250 0H594z" fill="#f3e5d0" opacity=".12"/>
+<rect x="452" y="704" width="528" height="54" rx="8" fill="#11150f"/>
+<g stroke="#11150f" stroke-opacity=".34" stroke-width="4" fill="none"><path d="M215 214h410M215 260h300M215 306h370"/><path d="M1036 210l162 135 201-70"/></g>
+<rect width="1600" height="1000" filter="url(#grain)"/>
+</svg>
