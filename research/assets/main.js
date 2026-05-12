@@ -17,22 +17,40 @@
   }
 
   var filterGroup = document.querySelector('[data-filter-group]');
+  var searchInput = document.querySelector('[data-publication-search]');
   var publications = Array.prototype.slice.call(document.querySelectorAll('[data-publications] [data-category]'));
+  var activeFilter = 'all';
+
+  function normalise(value) {
+    return String(value || '').toLowerCase().trim();
+  }
+
+  function applyPublicationFilters() {
+    var query = normalise(searchInput && searchInput.value);
+
+    publications.forEach(function (publication) {
+      var category = publication.getAttribute('data-category');
+      var text = normalise(publication.textContent);
+      var matchesCategory = activeFilter === 'all' || category === activeFilter;
+      var matchesQuery = !query || text.indexOf(query) !== -1;
+      publication.classList.toggle('is-hidden', !(matchesCategory && matchesQuery));
+    });
+  }
 
   if (filterGroup && publications.length) {
     filterGroup.addEventListener('click', function (event) {
       var button = event.target.closest('[data-filter]');
       if (!button) return;
 
-      var filter = button.getAttribute('data-filter');
+      activeFilter = button.getAttribute('data-filter');
       Array.prototype.forEach.call(filterGroup.querySelectorAll('[data-filter]'), function (item) {
         item.classList.toggle('is-active', item === button);
       });
-
-      publications.forEach(function (publication) {
-        var match = filter === 'all' || publication.getAttribute('data-category') === filter;
-        publication.classList.toggle('is-hidden', !match);
-      });
+      applyPublicationFilters();
     });
+  }
+
+  if (searchInput && publications.length) {
+    searchInput.addEventListener('input', applyPublicationFilters);
   }
 })();

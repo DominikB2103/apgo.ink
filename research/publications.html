@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Publications — Meridian Research</title>
-  <meta name="description" content="Publication archive for Meridian Research: dossiers, policy memos, field notes, data reviews, and research letters." />
+  <meta name="description" content="Meridian Research publications: dossiers, policy memos, field notes, data reviews, and research letters." />
   <meta name="theme-color" content="#f5f2ea" />
   <meta property="og:title" content="Publications — Meridian Research" />
   <meta property="og:description" content="Dossiers, policy memos, field notes, data reviews, and research letters." />
@@ -19,12 +19,7 @@
       <a class="brand" href="index.html" aria-label="Meridian Research home"><img src="assets/mark.svg" width="34" height="34" alt="" /><span><strong>Meridian</strong><small>Research Institute</small></span></a>
       <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" data-nav-toggle><span>Menu</span></button>
       <nav id="site-nav" class="site-nav" data-nav>
-        <a href="index.html">Home</a>
-        <a aria-current="page" href="publications.html">Publications</a>
-        <a href="programmes.html">Programmes</a>
-        <a href="observatory.html">Observatory</a>
-        <a href="about.html">About</a>
-        <a class="nav-cta" href="about.html#contact">Contact</a>
+        <a href="index.html">Home</a><a aria-current="page" href="publications.html">Publications</a><a href="programmes.html">Programmes</a><a href="observatory.html">Observatory</a><a href="methodology.html">Method</a><a href="about.html">About</a><a class="nav-cta" href="about.html#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -32,115 +27,63 @@
   <main id="main">
     <section class="page-hero section-lined">
       <div class="container page-hero-grid">
-        <div>
-          <p class="eyebrow">Publication archive</p>
-          <h1>Dossiers, field notes, policy memos, and technical letters.</h1>
-        </div>
-        <p class="page-lede">A structured archive for serious research output. Each entry is designed to carry metadata, publication type, review status, and a concise abstract without requiring a content management system.</p>
+        <div><p class="eyebrow">Publication archive</p><h1>Dossiers, field notes, policy memos, and technical letters.</h1></div>
+        <p class="page-lede">A publication interface for serious research archives: filterable, searchable, metadata-led, and designed for readers who scan by evidence status, topic, and institutional use.</p>
       </div>
     </section>
 
     <section class="section" id="latest">
       <div class="container archive-layout">
-        <aside class="archive-aside" aria-label="Archive filters">
-          <p class="eyebrow">Filter</p>
-          <div class="filter-group" data-filter-group>
-            <button type="button" class="filter-button is-active" data-filter="all">All publications</button>
-            <button type="button" class="filter-button" data-filter="dossier">Dossiers</button>
-            <button type="button" class="filter-button" data-filter="memo">Policy memos</button>
-            <button type="button" class="filter-button" data-filter="field">Field notes</button>
-            <button type="button" class="filter-button" data-filter="data">Data reviews</button>
-            <button type="button" class="filter-button" data-filter="letter">Research letters</button>
+        <aside class="archive-aside">
+          <p class="eyebrow">Archive controls</p>
+          <div class="search-box"><label for="publication-search">Search archive</label><input id="publication-search" data-publication-search type="search" placeholder="Search topic, format, or keyword" /></div>
+          <div class="filter-group" data-filter-group aria-label="Filter publications">
+            <button class="filter-button is-active" type="button" data-filter="all">All outputs</button>
+            <button class="filter-button" type="button" data-filter="dossier">Dossiers</button>
+            <button class="filter-button" type="button" data-filter="memo">Policy memos</button>
+            <button class="filter-button" type="button" data-filter="field">Field notes</button>
+            <button class="filter-button" type="button" data-filter="data">Data reviews</button>
+            <button class="filter-button" type="button" data-filter="letter">Research letters</button>
           </div>
-          <div class="archive-note">
-            <h2>Archive standard</h2>
-            <p>Publication entries include date, programme desk, evidence type, review status, and reading length. Filtering is handled locally in the browser.</p>
-          </div>
+          <div class="archive-note"><h2>Archive standard</h2><p>Each item carries format, date, programme, evidence grade, review status, and expected institutional use.</p></div>
         </aside>
 
         <div class="publication-stack" data-publications>
-          <article class="publication-card publication-card-feature" data-category="dossier">
-            <div class="publication-meta"><span>Dossier</span><span>Climate adaptation</span><time datetime="2026-05-05">05 May 2026</time></div>
-            <h2>Adaptive infrastructure under compounding climate pressure</h2>
-            <p>A comparative model of grid, water, logistics, and health-system resilience across coastal economic corridors. Includes scenario assumptions, institutional response typology, and public-sector procurement implications.</p>
-            <div class="publication-footer"><span>31 pages</span><span>External review</span><span>Data appendix</span></div>
-          </article>
-
-          <article class="publication-card" data-category="memo">
-            <div class="publication-meta"><span>Policy memo</span><span>AI governance</span><time datetime="2026-04-28">28 Apr 2026</time></div>
-            <h2>Procurement rules for sovereign AI infrastructure</h2>
-            <p>Practical guardrails for public agencies purchasing high-impact compute, model access, and evaluation services under conditions of technical uncertainty.</p>
-            <div class="publication-footer"><span>12 pages</span><span>Internal review</span><span>Decision memo</span></div>
-          </article>
-
-          <article class="publication-card" data-category="field">
-            <div class="publication-meta"><span>Field note</span><span>Urban systems</span><time datetime="2026-04-14">14 Apr 2026</time></div>
-            <h2>Urban heat, labour productivity, and municipal adaptation budgets</h2>
-            <p>Notes from three city offices on how heat exposure is being translated into budget categories, workplace rules, and public service continuity planning.</p>
-            <div class="publication-footer"><span>8 pages</span><span>Field synthesis</span><span>Medium confidence</span></div>
-          </article>
-
-          <article class="publication-card" data-category="data">
-            <div class="publication-meta"><span>Data review</span><span>Critical supply</span><time datetime="2026-03-22">22 Mar 2026</time></div>
-            <h2>Battery-grade mineral flows after the second wave of export controls</h2>
-            <p>A concise interpretation of public trade data, corporate disclosures, and port-level reporting relevant to cathode supply chains and strategic stockpiles.</p>
-            <div class="publication-footer"><span>16 pages</span><span>Dataset notes</span><span>Moderate confidence</span></div>
-          </article>
-
-          <article class="publication-card" data-category="letter">
-            <div class="publication-meta"><span>Research letter</span><span>Public health</span><time datetime="2026-03-09">09 Mar 2026</time></div>
-            <h2>Model evaluation benchmarks for public clinical tools</h2>
-            <p>A short technical letter on minimum evaluation practices before deploying predictive tools in high-impact clinical and administrative environments.</p>
-            <div class="publication-footer"><span>6 pages</span><span>Technical review</span><span>Benchmarks</span></div>
-          </article>
-
-          <article class="publication-card" data-category="dossier">
-            <div class="publication-meta"><span>Dossier</span><span>Industrial policy</span><time datetime="2026-02-18">18 Feb 2026</time></div>
-            <h2>Semiconductor corridor capacity and the constraint of electrical interconnection</h2>
-            <p>A systems-level assessment of fab siting, transmission queues, water access, workforce bottlenecks, and local public finance exposure.</p>
-            <div class="publication-footer"><span>44 pages</span><span>External review</span><span>Scenario appendix</span></div>
-          </article>
-
-          <article class="publication-card" data-category="memo">
-            <div class="publication-meta"><span>Policy memo</span><span>Water governance</span><time datetime="2026-01-30">30 Jan 2026</time></div>
-            <h2>Disclosure requirements for cross-border basin stress</h2>
-            <p>A memo for regulators considering mandatory disclosure of water dependency, drought exposure, and treaty-relevant operational risk.</p>
-            <div class="publication-footer"><span>10 pages</span><span>Legal scan</span><span>Medium confidence</span></div>
-          </article>
-
-          <article class="publication-card" data-category="data">
-            <div class="publication-meta"><span>Data review</span><span>Macroeconomic risk</span><time datetime="2025-12-12">12 Dec 2025</time></div>
-            <h2>Port disruption frequency and inventory behaviour in strategic sectors</h2>
-            <p>Review of disruption frequency indicators and how firms are changing buffer inventory policies in food, health, and advanced manufacturing supply chains.</p>
-            <div class="publication-footer"><span>18 pages</span><span>Data review</span><span>High confidence</span></div>
-          </article>
+          <article class="publication-card publication-card-feature" data-category="dossier"><div class="publication-meta"><span>Dossier</span><span>May 2026</span><span>Climate adaptation</span><span>Evidence grade: moderate–high</span></div><h2>Adaptive infrastructure under compounding climate pressure</h2><p>A comparative model of grid, water, logistics, and health-system resilience across coastal economic corridors.</p><div class="publication-footer"><span>31 pages</span><span>External specialist review</span><span>Data appendix included</span></div></article>
+          <article class="publication-card" data-category="memo"><div class="publication-meta"><span>Policy memo</span><span>28 Apr 2026</span><span>AI governance</span></div><h2>Procurement rules for sovereign AI infrastructure</h2><p>Practical language for auditability, escalation rights, data residency, and red-team obligations in public technology purchasing.</p><div class="publication-footer"><span>12 pages</span><span>Legal review</span><span>Implementation checklist</span></div></article>
+          <article class="publication-card" data-category="field"><div class="publication-meta"><span>Field note</span><span>14 Apr 2026</span><span>Urban heat</span></div><h2>Urban heat, labour productivity, and municipal adaptation budgets</h2><p>Field interviews and budget review across metropolitan agencies facing simultaneous heat, labour, and infrastructure constraints.</p><div class="publication-footer"><span>8 pages</span><span>Interview base: 19</span><span>Confidence: medium</span></div></article>
+          <article class="publication-card" data-category="data"><div class="publication-meta"><span>Data review</span><span>22 Mar 2026</span><span>Critical supply</span></div><h2>Battery-grade mineral flows after the second wave of export controls</h2><p>Exposure pathways for battery-grade mineral supply, including contracting behaviour, substitution timelines, and industrial policy response.</p><div class="publication-footer"><span>Dataset v1.2</span><span>Source audit</span><span>Confidence: moderate</span></div></article>
+          <article class="publication-card" data-category="letter"><div class="publication-meta"><span>Research letter</span><span>09 Mar 2026</span><span>Public health</span></div><h2>Model evaluation benchmarks for public clinical tools</h2><p>Why benchmark choice, subgroup reporting, and deployment context must be evaluated together before institutional adoption.</p><div class="publication-footer"><span>6 pages</span><span>Technical review</span><span>Decision note</span></div></article>
+          <article class="publication-card" data-category="memo"><div class="publication-meta"><span>Policy memo</span><span>19 Feb 2026</span><span>Industrial policy</span></div><h2>Semiconductor corridor capacity and the constraint of electrical interconnection</h2><p>A briefing on how electricity access, permitting, and workforce capacity shape advanced manufacturing corridor timelines.</p><div class="publication-footer"><span>10 pages</span><span>Desk review</span><span>Scenario table</span></div></article>
+          <article class="publication-card" data-category="dossier"><div class="publication-meta"><span>Dossier</span><span>30 Jan 2026</span><span>Water governance</span></div><h2>Disclosure requirements for cross-border basin stress</h2><p>Legal, financial, and operational triggers for public disclosure when shared river basins enter sustained deficit conditions.</p><div class="publication-footer"><span>27 pages</span><span>External review</span><span>Evidence grade: high</span></div></article>
+          <article class="publication-card" data-category="data"><div class="publication-meta"><span>Data review</span><span>17 Jan 2026</span><span>Logistics</span></div><h2>Port disruption frequency and inventory behaviour in strategic sectors</h2><p>A review of disruption frequency and inventory policy changes across food, medical, and energy-adjacent sectors.</p><div class="publication-footer"><span>Dataset v0.9</span><span>Confidence: medium</span><span>Update pending</span></div></article>
+          <article class="publication-card" data-category="field"><div class="publication-meta"><span>Field note</span><span>04 Dec 2025</span><span>Local government</span></div><h2>Planning departments under compound adaptation mandates</h2><p>How small technical teams are absorbing climate, housing, transport, and insurance mandates without commensurate analytical capacity.</p><div class="publication-footer"><span>9 pages</span><span>Interview base: 14</span><span>Field synthesis</span></div></article>
+          <article class="publication-card" data-category="letter"><div class="publication-meta"><span>Research letter</span><span>18 Nov 2025</span><span>Measurement</span></div><h2>When confidence intervals are not enough for institutional decisions</h2><p>Guidance on translating statistical uncertainty into decision thresholds, review cadence, and escalation rules.</p><div class="publication-footer"><span>5 pages</span><span>Methods note</span><span>Correction policy attached</span></div></article>
         </div>
       </div>
     </section>
 
     <section class="section section-dark">
       <div class="container evidence-grid">
-        <div>
-          <p class="eyebrow">Publication anatomy</p>
-          <h2>Designed for both narrative reading and institutional extraction.</h2>
-          <p>Every serious research page needs more than paragraphs. The components below are intended for consistent metadata, caveats, and decisions.</p>
-        </div>
-        <div class="evidence-cards">
-          <article><span>Evidence</span><h3>What the claim rests on</h3><p>Direct measurement, administrative records, expert elicitation, model output, or scenario assumption.</p></article>
-          <article><span>Confidence</span><h3>How strongly to act</h3><p>Low, medium, high, or mixed confidence with explicit reason for the rating.</p></article>
-          <article><span>Implication</span><h3>What it changes</h3><p>A concise translation into procurement, governance, capital planning, regulation, or research agenda.</p></article>
+        <div><p class="eyebrow">Publication design</p><h2>Designed for narrative reading and institutional extraction.</h2><p>Publication cards are intentionally metadata-heavy. Readers can understand topic, type, evidence grade, and review status before opening a report.</p></div>
+        <div class="evidence-cards"><article><span>01</span><h3>Editorial hierarchy</h3><p>Format, date, desk, and evidence grade are visible before narrative copy.</p></article><article><span>02</span><h3>Extraction ready</h3><p>Footers support appendices, datasets, checklists, review status, or implementation notes.</p></article><article><span>03</span><h3>Search without infrastructure</h3><p>Local JavaScript filters the archive without a build step, API, or external service.</p></article></div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="collection-head"><p class="eyebrow">Special collections</p><h2>Curated reading paths for institutional desks.</h2><p>Use collections to guide policy, executive, technical, or field readers through a dense archive without resorting to marketing language.</p></div>
+        <div class="collection-grid">
+          <article class="collection-card"><span class="collection-index">A</span><h3>Model assurance and public systems</h3><p>Clinical tools, sovereign AI infrastructure, procurement language, and evaluation thresholds.</p><a href="methodology.html">Method protocol</a></article>
+          <article class="collection-card"><span class="collection-index">B</span><h3>Climate exposure and adaptation finance</h3><p>Municipal disclosure, infrastructure resilience, water stress, and credit implications.</p><a href="programmes.html#adaptation">Adaptation programme</a></article>
+          <article class="collection-card"><span class="collection-index">C</span><h3>Strategic supply and industrial capacity</h3><p>Battery minerals, port disruption, electrical interconnection, and regional manufacturing policy.</p><a href="programmes.html#supply">Supply programme</a></article>
+          <article class="collection-card"><span class="collection-index">D</span><h3>Observatory signals and desk notes</h3><p>Short-cycle updates designed to keep slow-moving risks visible between major publications.</p><a href="observatory.html">Open observatory</a></article>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div><a class="brand brand-footer" href="index.html"><img src="assets/mark.svg" width="30" height="30" alt="" /><span><strong>Meridian</strong><small>Research Institute</small></span></a><p>Independent research, policy intelligence, and institutional analysis. Static template text and data are illustrative.</p></div>
-      <div class="footer-links"><a href="index.html">Home</a><a href="programmes.html">Programmes</a><a href="observatory.html">Observatory</a><a href="about.html">About</a><a href="about.html#contact">Contact</a></div>
-      <p class="copyright">© 2026 Meridian Research Institute. Static editorial template.</p>
-    </div>
-  </footer>
+  <footer class="site-footer"><div class="container footer-grid"><div><a class="brand brand-footer" href="index.html"><img src="assets/mark.svg" width="30" height="30" alt="" /><span><strong>Meridian</strong><small>Research Institute</small></span></a><p>Independent research, policy intelligence, and institutional analysis. Static template text and data are illustrative.</p></div><div class="footer-links"><a href="index.html">Home</a><a href="publications.html">Publications</a><a href="programmes.html">Programmes</a><a href="observatory.html">Observatory</a><a href="methodology.html">Method</a><a href="about.html">About</a></div><p class="copyright">© 2026 Meridian Research Institute. Static editorial template.</p></div></footer>
   <script src="assets/main.js"></script>
 </body>
 </html>

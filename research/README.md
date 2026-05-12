@@ -1,40 +1,52 @@
-# Meridian Research Static Site
+# Meridian Research Static Website
 
-A zero-build, zero-install editorial research website for GitHub Pages. It is intentionally serious, typographic, restrained, and publication-oriented.
+A serious editorial research website designed for GitHub Pages with no build step.
 
-## Use
+## Deploy
 
-1. Unzip the files.
-2. Drag everything into the root of your GitHub repository.
-3. In GitHub, go to **Settings → Pages**.
-4. Choose **Deploy from a branch** and select your branch, usually `main`, with the folder set to `/root`.
+1. Unzip this package.
+2. Drag all files into the root of your GitHub repository.
+3. In GitHub, open **Settings → Pages**.
+4. Set the source to your main branch and `/root`.
 5. Save.
 
-No npm install. No Next.js build. No workflow required. The site runs directly from static files.
+No npm install. No Next.js build. No bundler. No server. No GitHub Actions required.
 
 ## Pages
 
-- `index.html` — publication-style homepage
-- `publications.html` — filterable archive of dossiers, memos, field notes, data reviews, and letters
-- `programmes.html` — research programme portfolio
-- `observatory.html` — static signal dashboard with local SVG visual asset
-- `about.html` — purpose, standards, governance, process, and contact
-- `404.html` — GitHub Pages error page
+- `index.html` — homepage with editorial hero, intelligence ledger, publication highlights, data room, and research areas.
+- `publications.html` — searchable and filterable publication archive.
+- `programmes.html` — programme portfolio and research matrix.
+- `observatory.html` — static observatory dashboard with signals, tables, map, and desk notes.
+- `methodology.html` — evidence grading, review protocol, uncertainty language, and corrections.
+- `about.html` — institutional profile, governance, standards, and contact.
+- `404.html` — GitHub Pages fallback page.
 
-## Assets
+## Customisation
 
-- `assets/styles.css` — complete responsive design system
-- `assets/main.js` — mobile navigation and publication filtering
-- `assets/mark.svg` — original logo mark
-- `assets/og.svg` — original social preview image
-- `assets/field-map.svg` — original abstract map visual
-- `.nojekyll` — prevents Jekyll processing on GitHub Pages
-- `robots.txt` and `sitemap.xml` — basic search metadata placeholders
+- Edit text directly in the HTML files.
+- Replace placeholder email addresses in `index.html` and `about.html`.
+- Update `sitemap.xml` with your production domain.
+- Edit colours and typography in `assets/styles.css`.
+- All visuals are local SVG/CSS assets.
 
-## Customise
+## Files
 
-Edit the HTML files directly. Replace names, publication titles, emails, and placeholder metrics with your own real information. The design uses system fonts and original SVG graphics, so there are no external asset dependencies.
-
-## Important
-
-The included institution name, metrics, publications, and contact emails are template copy. Replace them before publishing a real organisation.
+```text
+assets/
+  field-map.svg
+  main.js
+  mark.svg
+  og.svg
+  styles.css
+.nojekyll
+404.html
+about.html
+index.html
+methodology.html
+observatory.html
+programmes.html
+publications.html
+robots.txt
+sitemap.xml
+```
