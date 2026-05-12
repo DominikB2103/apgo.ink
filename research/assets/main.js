@@ -1,56 +1,42 @@
 (function () {
-  var toggle = document.querySelector('[data-nav-toggle]');
-  var nav = document.querySelector('[data-nav]');
-
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('.nav-links');
   if (toggle && nav) {
     toggle.addEventListener('click', function () {
       var open = nav.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', String(open));
-    });
-
-    nav.addEventListener('click', function (event) {
-      if (event.target && event.target.tagName === 'A') {
-        nav.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
   }
 
-  var filterGroup = document.querySelector('[data-filter-group]');
-  var searchInput = document.querySelector('[data-publication-search]');
-  var publications = Array.prototype.slice.call(document.querySelectorAll('[data-publications] [data-category]'));
-  var activeFilter = 'all';
+  var root = document.querySelector('[data-filter-root]');
+  if (!root) return;
+  var input = root.querySelector('[data-search]');
+  var buttons = Array.prototype.slice.call(root.querySelectorAll('[data-filter]'));
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.publication-card'));
+  var active = 'all';
 
-  function normalise(value) {
-    return String(value || '').toLowerCase().trim();
+  function normalize(value) {
+    return (value || '').toLowerCase().replace(/\s+/g, ' ').trim();
   }
 
-  function applyPublicationFilters() {
-    var query = normalise(searchInput && searchInput.value);
-
-    publications.forEach(function (publication) {
-      var category = publication.getAttribute('data-category');
-      var text = normalise(publication.textContent);
-      var matchesCategory = activeFilter === 'all' || category === activeFilter;
-      var matchesQuery = !query || text.indexOf(query) !== -1;
-      publication.classList.toggle('is-hidden', !(matchesCategory && matchesQuery));
+  function render() {
+    var query = normalize(input ? input.value : '');
+    cards.forEach(function (card) {
+      var kind = card.getAttribute('data-kind') || '';
+      var title = normalize(card.getAttribute('data-title') + ' ' + card.textContent);
+      var matchKind = active === 'all' || kind === active;
+      var matchSearch = !query || title.indexOf(query) !== -1;
+      card.hidden = !(matchKind && matchSearch);
     });
   }
 
-  if (filterGroup && publications.length) {
-    filterGroup.addEventListener('click', function (event) {
-      var button = event.target.closest('[data-filter]');
-      if (!button) return;
-
-      activeFilter = button.getAttribute('data-filter');
-      Array.prototype.forEach.call(filterGroup.querySelectorAll('[data-filter]'), function (item) {
-        item.classList.toggle('is-active', item === button);
-      });
-      applyPublicationFilters();
+  buttons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      active = button.getAttribute('data-filter');
+      buttons.forEach(function (b) { b.classList.remove('is-active'); });
+      button.classList.add('is-active');
+      render();
     });
-  }
-
-  if (searchInput && publications.length) {
-    searchInput.addEventListener('input', applyPublicationFilters);
-  }
+  });
+  if (input) input.addEventListener('input', render);
 })();

@@ -1,52 +1,31 @@
-# Meridian Research Static Website
+# Meridian Research Institute — static editorial website
 
-A serious editorial research website designed for GitHub Pages with no build step.
+This is a zero-build static website designed for GitHub Pages.
 
 ## Deploy
 
-1. Unzip this package.
+1. Unzip the package.
 2. Drag all files into the root of your GitHub repository.
 3. In GitHub, open **Settings → Pages**.
-4. Set the source to your main branch and `/root`.
+4. Set the source to your main branch and root folder.
 5. Save.
 
-No npm install. No Next.js build. No bundler. No server. No GitHub Actions required.
-
-## Pages
-
-- `index.html` — homepage with editorial hero, intelligence ledger, publication highlights, data room, and research areas.
-- `publications.html` — searchable and filterable publication archive.
-- `programmes.html` — programme portfolio and research matrix.
-- `observatory.html` — static observatory dashboard with signals, tables, map, and desk notes.
-- `methodology.html` — evidence grading, review protocol, uncertainty language, and corrections.
-- `about.html` — institutional profile, governance, standards, and contact.
-- `404.html` — GitHub Pages fallback page.
-
-## Customisation
-
-- Edit text directly in the HTML files.
-- Replace placeholder email addresses in `index.html` and `about.html`.
-- Update `sitemap.xml` with your production domain.
-- Edit colours and typography in `assets/styles.css`.
-- All visuals are local SVG/CSS assets.
+There is no npm install, no Next.js build, no action required, and no server-side code.
 
 ## Files
 
-```text
-assets/
-  field-map.svg
-  main.js
-  mark.svg
-  og.svg
-  styles.css
-.nojekyll
-404.html
-about.html
-index.html
-methodology.html
-observatory.html
-programmes.html
-publications.html
-robots.txt
-sitemap.xml
-```
+- `index.html` — homepage
+- `publications.html` — publication archive with local filtering
+- `programmes.html` — research programme portfolio
+- `observatory.html` — static dashboard surface
+- `methodology.html` — evidence and review protocol
+- `about.html` — institute model and governance surface
+- `contact.html` — static contact page
+- `dossier-infrastructure.html` — sample long-form dossier
+- `assets/styles.css` — complete editorial design system
+- `assets/main.js` — mobile navigation and archive filtering
+
+## Customize
+
+Replace placeholder text and the `mailto:research@example.org` form action with your real contact address.
+All graphics are original SVG/CSS assets in the package.

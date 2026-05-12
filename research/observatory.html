@@ -1,38 +1,61 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Observatory — Meridian Research</title>
-  <meta name="description" content="Meridian Research observatory dashboard for tracked signals, current desk assessments, and editorial indicators." />
-  <meta name="theme-color" content="#f5f2ea" />
-  <meta property="og:title" content="Observatory — Meridian Research" />
-  <meta property="og:description" content="Tracked signals for slow crises and fast decisions." />
-  <meta property="og:image" content="assets/og.svg" />
-  <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="assets/styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Observatory · Meridian Research Institute</title>
+  <meta name="description" content="A static editorial research website for serious institutional analysis.">
+  <meta name="theme-color" content="#efebe2">
+  <meta property="og:title" content="Observatory · Meridian Research Institute">
+  <meta property="og:description" content="A static editorial research website for serious institutional analysis.">
+  <meta property="og:image" content="assets/og.svg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header" data-header><div class="container header-inner"><a class="brand" href="index.html" aria-label="Meridian Research home"><img src="assets/mark.svg" width="34" height="34" alt="" /><span><strong>Meridian</strong><small>Research Institute</small></span></a><button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" data-nav-toggle><span>Menu</span></button><nav id="site-nav" class="site-nav" data-nav><a href="index.html">Home</a><a href="publications.html">Publications</a><a href="programmes.html">Programmes</a><a aria-current="page" href="observatory.html">Observatory</a><a href="methodology.html">Method</a><a href="about.html">About</a><a class="nav-cta" href="about.html#contact">Contact</a></nav></div></header>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-topbar" data-site-header>
+  <div class="nav-wrap">
+    <a class="brand" href="index.html" aria-label="Meridian Research Institute home">
+      <img class="brand-mark" src="assets/mark.svg" alt="" width="38" height="38">
+      <span><span class="brand-name">Meridian</span><span class="brand-sub">RESEARCH INSTITUTE</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="nav-links" aria-label="Primary navigation">
+      <a href="index.html" class="">Home</a>
+<a href="publications.html" class="">Publications</a>
+<a href="programmes.html" class="">Programmes</a>
+<a href="observatory.html" class="is-active">Observatory</a>
+<a href="methodology.html" class="">Method</a>
+<a href="about.html" class="">About</a>
+      <a class="nav-cta " href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main id="content" class="page">
 
-  <main id="main">
-    <section class="page-hero section-lined"><div class="container page-hero-grid"><div><p class="eyebrow">Observatory</p><h1>Tracked signals for slow crises and fast decisions.</h1></div><p class="page-lede">A static observatory page for presenting indicators, desk judgement, update cadence, and concise interpretation without a database or analytics runtime.</p></div></section>
+<section class="page-hero compact"><div class="container"><p class="breadcrumbs"><a href="index.html">Home</a> / Observatory</p><p class="kicker">Observatory</p><h1>Static dashboard surfaces for live-looking institutional intelligence.</h1><p class="lead">No backend is required. Indicators are editorial objects: updated manually, versioned transparently, and presented with confidence and interpretation notes.</p></div></section>
+<section class="section tight"><div class="container metric-grid"><div class="metric"><span class="kicker neutral">Signals</span><b>24</b><p class="small">under review</p></div><div class="metric"><span class="kicker neutral">Rising</span><b>09</b><p class="small">trend direction</p></div><div class="metric"><span class="kicker neutral">High</span><b>05</b><p class="small">confidence signals</p></div><div class="metric"><span class="kicker neutral">Refresh</span><b>Q</b><p class="small">quarterly public update</p></div></div></section>
+<section class="section"><div class="container two grid"><div class="chart-panel"><p class="kicker">Signal intensity</p><h3>Desk-weighted exposure index</h3><div class="bar-chart"><div class="bar"><span>Grid queue delay</span><span style="--w:84%"></span><strong>84</strong></div><div class="bar"><span>Water stress disclosure</span><span style="--w:72%"></span><strong>72</strong></div><div class="bar"><span>AI assurance rules</span><span style="--w:64%"></span><strong>64</strong></div><div class="bar"><span>Mineral flow exposure</span><span style="--w:58%"></span><strong>58</strong></div></div></div><div class="chart-panel"><p class="kicker">Interpretive trend</p><h3>Composite movement across current dossiers</h3><svg class="line-figure" viewBox="0 0 620 240" role="img" aria-label="Composite trend line"><g stroke="#d2cabd"><path d="M40 30v170M40 200h540"/><path d="M40 160h540M40 120h540M40 80h540" opacity=".8"/></g><path d="M40 164 C110 152 146 174 204 132 S302 95 360 118 448 143 510 88 568 74 580 68" fill="none" stroke="#8d211f" stroke-width="3"/><g fill="#171714"><circle cx="40" cy="164" r="4"/><circle cx="204" cy="132" r="4"/><circle cx="360" cy="118" r="4"/><circle cx="580" cy="68" r="4"/></g></svg><p class="caption">Illustrative static chart drawn with inline SVG. Replace values directly in the HTML.</p></div></div></section>
+<section class="section"><div class="container"><div class="section-head"><div><p class="kicker">Signal tracker</p><h2>Signals tracked by the Meridian desk.</h2></div><p>Each signal receives an interpretation note and an explicit confidence label. The goal is not live analytics; it is disciplined editorial monitoring.</p></div><div class="table-wrap"><table><thead><tr><th>Signal</th><th>Interpretation</th><th>Trend</th><th>Confidence</th></tr></thead><tbody><tr><td>Grid interconnection queue delays</td><td>Industrial siting and data-centre load pressures are becoming linked planning issues.</td><td>Rising</td><td>Medium</td></tr><tr><td>Climate-linked municipal credit disclosures</td><td>Disclosure language is becoming more specific but uneven across jurisdictions.</td><td>Rising</td><td>High</td></tr><tr><td>Public-sector model assurance rules</td><td>Adoption is faster than procurement language and validation practice.</td><td>Fragmented</td><td>Medium</td></tr><tr><td>Water stress and agricultural contract revisions</td><td>Contract language is moving faster than basin governance capacity.</td><td>Uneven</td><td>Moderate</td></tr><tr><td>Battery mineral flow exposure</td><td>Substitution narratives remain stronger than verified operational alternatives.</td><td>Volatile</td><td>Medium</td></tr></tbody></table></div></div></section>
 
-    <section class="section"><div class="container dashboard-grid" aria-label="Observatory indicators"><article class="indicator-card emphasis"><span>Composite signal</span><strong>74</strong><p>Aggregate pressure reading across infrastructure, public systems, supply, and governance desks.</p></article><article class="indicator-card"><span>Change</span><strong>+8</strong><p>Quarter-over-quarter movement in active risk indicators.</p></article><article class="indicator-card"><span>Coverage</span><strong>18</strong><p>Countries represented in desk reporting and field inputs.</p></article><article class="indicator-card"><span>Cadence</span><strong>30d</strong><p>Standard public refresh cycle for priority indicators.</p></article></div></section>
-
-    <section class="section section-warm"><div class="container map-grid"><div><p class="eyebrow">Field network</p><h2>Observation corridors, not decoration.</h2><p>The map is an original SVG asset. It gives the site a research-institute feel without relying on copyright-risk imagery or stock photography.</p></div><figure class="field-map"><img src="assets/field-map.svg" alt="Abstract field network map" /><figcaption>Illustrative network map for regional field inputs and desk coverage.</figcaption></figure></div></section>
-
-    <section class="section"><div class="container chart-grid"><div><p class="eyebrow">Signal tracker</p><h2>Current desk assessment.</h2><p>Use tabular layouts when precision matters. This format reads well on desktop and collapses cleanly on mobile.</p></div><div class="tracker-table" role="table" aria-label="Current desk assessment"><div class="tracker-row tracker-head"><span>Indicator</span><span>Programme</span><span>Trend</span><span>Confidence</span><span>Editorial action</span></div><div class="tracker-row"><span>Grid interconnection queue delay</span><span>Infrastructure</span><span class="trend rising">Rising</span><span>Medium</span><span>Publish memo</span></div><div class="tracker-row"><span>Clinical AI assurance language</span><span>Health / AI</span><span class="trend rising">Rising</span><span>Medium</span><span>Specialist review</span></div><div class="tracker-row"><span>Battery mineral contracting volatility</span><span>Supply</span><span class="trend stable">Stable</span><span>Moderate</span><span>Data refresh</span></div><div class="tracker-row"><span>Water stress disclosure filings</span><span>Adaptation</span><span class="trend rising">Rising</span><span>High</span><span>Dossier update</span></div></div></div></section>
-
-    <section class="section section-dark"><div class="container chart-grid"><div><p class="eyebrow">Static charts</p><h2>Editorial dashboards without runtime complexity.</h2><p>These CSS bars are simple enough to maintain by hand and serious enough for institutional presentation.</p></div><div class="bar-panel" aria-label="Research pressure by desk"><div class="bar-row"><span>Infrastructure</span><i style="--w: 82%"></i><b>82</b></div><div class="bar-row"><span>AI governance</span><i style="--w: 76%"></i><b>76</b></div><div class="bar-row"><span>Water systems</span><i style="--w: 71%"></i><b>71</b></div><div class="bar-row"><span>Critical supply</span><i style="--w: 64%"></i><b>64</b></div><div class="bar-row"><span>Public health</span><i style="--w: 59%"></i><b>59</b></div></div></div></section>
-
-    <section class="section"><div class="container note-grid"><article><p class="eyebrow">Desk note</p><h2>What changed this quarter?</h2><p>The observatory format supports concise interpretation: what moved, what stayed unresolved, which indicators are stale, and which decisions should be revisited.</p></article><article class="note-card"><span>01</span><h3>Infrastructure risk is becoming less seasonal.</h3><p>Observed pressure increasingly comes from compounding failures rather than a single hazard category.</p></article><article class="note-card"><span>02</span><h3>Procurement rules are now a research object.</h3><p>Public agencies are encoding governance choices into technical purchasing language.</p></article><article class="note-card"><span>03</span><h3>Confidence depends on update cadence.</h3><p>Dashboards become misleading when datasets update slower than institutional decisions.</p></article></div></section>
-
-    <section class="section section-soft"><div class="container cadence-grid"><div><p class="eyebrow">Update cadence</p><h2>A dashboard that admits what it does not know.</h2><p>Static observatories can still be credible when they show recency, uncertainty, and escalation rules instead of pretending to be live intelligence.</p></div><ol class="process-list"><li><span>01</span><div><h3>Monthly screen</h3><p>Desk researchers review priority indicators and mark stale data before any interpretation is updated.</p></div></li><li><span>02</span><div><h3>Quarterly challenge</h3><p>Programme leads challenge assumptions and decide which signals merit a memo, field note, or dossier update.</p></div></li><li><span>03</span><div><h3>Public notation</h3><p>Material changes are dated, attributed to a desk, and linked to the publication archive where appropriate.</p></div></li></ol></div></section>
-  </main>
-
-  <footer class="site-footer"><div class="container footer-grid"><div><a class="brand brand-footer" href="index.html"><img src="assets/mark.svg" width="30" height="30" alt="" /><span><strong>Meridian</strong><small>Research Institute</small></span></a><p>Independent research, policy intelligence, and institutional analysis. Static template text and data are illustrative.</p></div><div class="footer-links"><a href="index.html">Home</a><a href="publications.html">Publications</a><a href="programmes.html">Programmes</a><a href="observatory.html">Observatory</a><a href="methodology.html">Method</a><a href="about.html">About</a></div><p class="copyright">© 2026 Meridian Research Institute. Static editorial template.</p></div></footer>
-  <script src="assets/main.js"></script>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="brand" href="index.html" style="color:inherit">
+        <img class="brand-mark" src="assets/mark.svg" alt="" width="38" height="38">
+        <span><span class="brand-name">Meridian</span><span class="brand-sub">RESEARCH INSTITUTE</span></span>
+      </a>
+      <p class="small" style="margin-top:18px;max-width:460px">A static publication system for research teams that need the discipline of a journal, the speed of a briefing desk, and the clarity of an observatory.</p>
+    </div>
+    <div class="footer-links">
+      <div><div class="footer-title">Sections</div><a href="publications.html">Publication archive</a><a href="programmes.html">Programmes</a><a href="observatory.html">Observatory</a></div>
+      <div><div class="footer-title">Institute</div><a href="methodology.html">Methodology</a><a href="about.html">Governance</a><a href="contact.html">Contact desk</a></div>
+      <div><div class="footer-title">Static system</div><a href="README.md">Implementation notes</a><a href="sitemap.xml">Sitemap</a><a href="404.html">404 page</a></div>
+    </div>
+  </div>
+</footer>
+<script src="assets/main.js" defer></script>
 </body>
 </html>
