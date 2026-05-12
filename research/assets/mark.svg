@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Meridian mark">
-  <rect width="64" height="64" fill="#151612"/>
-  <circle cx="32" cy="32" r="19" fill="none" stroke="#e9e5dc" stroke-width="2"/>
-  <path d="M32 7v50M7 32h50" stroke="#e9e5dc" stroke-width="1.2" opacity=".82"/>
-  <path d="M15 43c9-21 27-24 34-22" fill="none" stroke="#8d211f" stroke-width="2.8" stroke-linecap="round"/>
-  <circle cx="32" cy="32" r="3.2" fill="#e9e5dc"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" role="img" aria-label="APGO mark">
+  <rect width="48" height="48" fill="#151515"/>
+  <path d="M24 8v32M8 24h32" stroke="#f4f0e8" stroke-width="1" opacity=".78"/>
+  <circle cx="24" cy="24" r="12" fill="none" stroke="#f4f0e8" stroke-width="1.2"/>
+  <path d="M14 30c7-12 15-13 20-12" fill="none" stroke="#8f1f1b" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="24" cy="24" r="3" fill="#8f1f1b"/>
 </svg>

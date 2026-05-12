@@ -1,31 +1,31 @@
-# Meridian Research Institute — static editorial website
+# APGO Research Archive
 
-This is a zero-build static website designed for GitHub Pages.
+Zero-build static research archive interface for GitHub Pages.
 
 ## Deploy
 
-1. Unzip the package.
-2. Drag all files into the root of your GitHub repository.
-3. In GitHub, open **Settings → Pages**.
-4. Set the source to your main branch and root folder.
-5. Save.
+1. Delete the old site files from the repository.
+2. Drag these files into the repository root.
+3. Commit and push.
+4. In GitHub Pages, publish from the repository root.
 
-There is no npm install, no Next.js build, no action required, and no server-side code.
+No npm, no build step, no workflow, no external images.
 
-## Files
+## Add real research records
 
-- `index.html` — homepage
-- `publications.html` — publication archive with local filtering
-- `programmes.html` — research programme portfolio
-- `observatory.html` — static dashboard surface
-- `methodology.html` — evidence and review protocol
-- `about.html` — institute model and governance surface
-- `contact.html` — static contact page
-- `dossier-infrastructure.html` — sample long-form dossier
-- `assets/styles.css` — complete editorial design system
-- `assets/main.js` — mobile navigation and archive filtering
+Edit `assets/research-index.json`. It is intentionally empty now.
 
-## Customize
+Expected shape:
 
-Replace placeholder text and the `mailto:research@example.org` form action with your real contact address.
-All graphics are original SVG/CSS assets in the package.
+```json
+[
+  {
+    "title": "...",
+    "authors": "...",
+    "date": "2026-05-12",
+    "type": "paper",
+    "abstract": "...",
+    "keywords": ["..."]
+  }
+]
+```
