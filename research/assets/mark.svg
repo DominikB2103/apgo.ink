@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" role="img" aria-label="APGO mark">
-  <rect width="48" height="48" fill="#151515"/>
-  <path d="M24 8v32M8 24h32" stroke="#f4f0e8" stroke-width="1" opacity=".78"/>
-  <circle cx="24" cy="24" r="12" fill="none" stroke="#f4f0e8" stroke-width="1.2"/>
-  <path d="M14 30c7-12 15-13 20-12" fill="none" stroke="#8f1f1b" stroke-width="2" stroke-linecap="round"/>
-  <circle cx="24" cy="24" r="3" fill="#8f1f1b"/>
-</svg>

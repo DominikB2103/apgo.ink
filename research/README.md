@@ -1,31 +1,35 @@
-# APGO Research Archive
+# Theoria Research Archive
 
-Zero-build static research archive interface for GitHub Pages.
+A static, editorial research website prepared for GitHub Pages. It uses only HTML, CSS, and vanilla JavaScript. There is no build step, no package manager, and no external dependency.
 
-## Deploy
+## Deploy to GitHub Pages
 
-1. Delete the old site files from the repository.
-2. Drag these files into the repository root.
-3. Commit and push.
-4. In GitHub Pages, publish from the repository root.
+1. Upload every file in this folder to your repository root.
+2. Keep `.nojekyll` in the root so GitHub Pages serves underscored folders such as `documents/_template`.
+3. In GitHub, open **Settings → Pages** and publish from the branch/root you uploaded to.
 
-No npm, no build step, no workflow, no external images.
+## Add a new document
 
-## Add real research records
+1. Duplicate `documents/_template/`.
+2. Rename the copied folder, for example `documents/my-new-note/`.
+3. Edit `documents/my-new-note/index.html`.
+4. Open `assets/js/site.js` and add a new object to the `archiveItems` array:
 
-Edit `assets/research-index.json`. It is intentionally empty now.
-
-Expected shape:
-
-```json
-[
-  {
-    "title": "...",
-    "authors": "...",
-    "date": "2026-05-12",
-    "type": "paper",
-    "abstract": "...",
-    "keywords": ["..."]
-  }
-]
+```js
+{
+  title: "My new note",
+  section: "Discoveries",
+  type: "Research Note",
+  date: "2026-05-12",
+  url: "documents/my-new-note/",
+  tags: ["analysis", "example"],
+  excerpt: "One concise preview sentence for search results."
+}
 ```
+
+## Design notes
+
+- Typography is intentionally restrained and system-font based for reliability.
+- Figures are local SVG, so the site does not depend on third-party image hosting.
+- The archive search and theorem carousel are static JavaScript components.
+- The CSS is shared by the landing page and document pages.

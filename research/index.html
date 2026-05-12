@@ -1,109 +1,265 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>APGO Research Archive</title>
-  <meta name="description" content="A static research archive search interface for indexed papers, notes, and evidence records." />
-  <meta name="theme-color" content="#f4f0e8" />
-  <meta property="og:title" content="APGO Research Archive" />
-  <meta property="og:description" content="A restrained archive interface for research records." />
-  <meta property="og:type" content="website" />
-  <link rel="icon" href="./assets/mark.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="./assets/styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Theoria is a static editorial research website for notes, discoveries, theorem briefs, and HTML document archives.">
+  <title>Theoria Research Archive</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-  <a class="skip-link" href="#archive">Skip to archive search</a>
-
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" aria-label="Site header">
     <div class="header-inner">
-      <a class="brand" href="./" aria-label="APGO Research Archive home">
-        <img src="./assets/mark.svg" width="38" height="38" alt="" aria-hidden="true" />
-        <span>
-          <strong>APGO</strong>
-          <small>Research Archive</small>
+      <a class="brand" href="./" aria-label="Theoria home">
+        <span class="brand-mark">T</span>
+        <span class="brand-text">
+          <span class="brand-title">Theoria</span>
+          <span class="brand-subtitle">Research Archive</span>
         </span>
       </a>
       <nav class="nav" aria-label="Primary navigation">
         <a href="#archive">Archive</a>
-        <a href="mailto:fortheasset3@gmail.com">Contact</a>
+        <a href="#theorems">Theorems</a>
+        <a href="#sections">Sections</a>
+        <a href="#template">Template</a>
       </nav>
+      <a class="header-action" href="documents/_template/">Use template</a>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Research index · Static public archive</p>
-          <h1 id="hero-title">A precise archive surface for research.</h1>
-          <p class="lead">Search indexed research records without the noise of a magazine layout. The page is deliberately quiet: clear hierarchy, disciplined spacing, and no fabricated content.</p>
-        </div>
-
-        <aside class="status-card" aria-label="Archive status">
-          <div class="status-topline">
-            <span>Index status</span>
-            <strong data-total-count>0</strong>
+      <div class="hero-grid">
+        <div>
+          <div class="kicker">Static editorial system · GitHub Pages ready</div>
+          <h1 id="hero-title">A serious home for research notes.</h1>
+          <p class="hero-lede">A restrained, typographic landing page for news, discoveries, theorem briefs, and self-contained HTML documents. Built without a package manager, without a build pipeline, and without external dependencies.</p>
+          <div class="hero-meta" aria-label="Archive summary">
+            <div><strong>06</strong><span>Indexed records</span></div>
+            <div><strong>03</strong><span>Editorial sections</span></div>
+            <div><strong>01</strong><span>Reusable template</span></div>
           </div>
-          <dl class="status-list">
-            <div>
-              <dt>Records</dt>
-              <dd data-total-label>None indexed</dd>
+        </div>
+        <aside class="hero-card" aria-label="Featured figure">
+          <div class="hero-card-head"><span>Figure 01</span><span>Editorial map</span></div>
+          <div class="hero-card-body">
+            <div class="figure-frame" aria-hidden="true">
+              <svg viewBox="0 0 520 300" role="img" aria-label="Abstract research network diagram">
+                <defs>
+                  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                    <stop stop-color="#7b1e22" stop-opacity="0.16"/>
+                    <stop offset="1" stop-color="#111111" stop-opacity="0.02"/>
+                  </linearGradient>
+                </defs>
+                <rect x="0" y="0" width="520" height="300" fill="url(#g)"/>
+                <g fill="none" stroke="#111" stroke-opacity=".34" stroke-width="1">
+                  <path d="M37 238 C120 166 170 172 254 98 S408 71 480 35"/>
+                  <path d="M48 91 C138 126 172 58 244 76 S360 184 470 126"/>
+                  <path d="M61 260 C136 216 190 232 267 197 S360 112 462 214"/>
+                  <path d="M98 32 L164 224 L271 66 L387 244 L450 70" stroke-opacity=".18"/>
+                </g>
+                <g fill="#fffdfa" stroke="#111" stroke-width="1.4">
+                  <circle cx="84" cy="194" r="8"/><circle cx="151" cy="139" r="8"/><circle cx="245" cy="76" r="8"/>
+                  <circle cx="322" cy="122" r="8"/><circle cx="426" cy="68" r="8"/><circle cx="392" cy="223" r="8"/>
+                  <circle cx="201" cy="229" r="8"/>
+                </g>
+                <g font-family="Georgia, serif" font-size="12" fill="#111" fill-opacity=".72">
+                  <text x="70" y="176">news</text><text x="258" y="60">theorem</text><text x="335" y="139">note</text><text x="407" y="246">proof</text>
+                </g>
+              </svg>
             </div>
-            <div>
-              <dt>Source</dt>
-              <dd>Local JSON</dd>
-            </div>
-            <div>
-              <dt>Hosting</dt>
-              <dd>GitHub Pages ready</dd>
-            </div>
-          </dl>
+            <p class="hero-card-caption">The visual language is deliberately quiet: strong hierarchy, measured spacing, hairline rules, and research-first content blocks.</p>
+          </div>
         </aside>
       </div>
     </section>
 
-    <section id="archive" class="archive-section" aria-labelledby="archive-title">
-      <div class="container archive-shell">
-        <div class="archive-header">
-          <div>
-            <p class="eyebrow">Archive search</p>
-            <h2 id="archive-title">Find research records.</h2>
+    <section class="section section-rule" aria-labelledby="featured-title">
+      <div class="section-heading">
+        <div>
+          <div class="kicker">Featured dispatch</div>
+          <h2 id="featured-title">Current note</h2>
+        </div>
+        <p>The front page is designed for a small but credible body of work: one lead item, a compact secondary rail, and a searchable archive below.</p>
+      </div>
+      <div class="featured-grid">
+        <article class="featured-main">
+          <span class="eyebrow">Discovery · May 2026</span>
+          <h3>A short note on spectral gaps in sparse operators</h3>
+          <p>A compact research note describing a stable model, a proof sketch, and a clear record of assumptions. The page demonstrates how longer HTML documents can sit inside the archive without disturbing the landing page.</p>
+          <div class="featured-meta">
+            <a class="tag strong" href="documents/spectral-gap-note/">Read note</a>
+            <span class="tag">operator theory</span>
+            <span class="tag">analysis</span>
+            <span class="tag">sparse models</span>
           </div>
-          <p class="archive-note">No articles are bundled. When records are added to <code>assets/research-index.json</code>, they appear here automatically.</p>
+        </article>
+        <aside class="featured-side" aria-label="Editorial rail">
+          <ol class="side-list">
+            <li><small>Theorem brief</small><a href="documents/noether-symmetry/">Noether symmetry, stated for working readers</a></li>
+            <li><small>Archive template</small><a href="documents/_template/">Fully fledged HTML article template</a></li>
+            <li><small>House standard</small><a href="#template">How to add new documents</a></li>
+          </ol>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-rule" id="archive" aria-labelledby="archive-title">
+      <div class="section-heading">
+        <div>
+          <div class="kicker">Archive search</div>
+          <h2 id="archive-title">Find documents by field, section, or tag.</h2>
         </div>
+        <p>The archive is static JavaScript. Edit <span class="code-path">assets/js/site.js</span> to add records, tags, dates, and links to your uploaded document folders.</p>
+      </div>
 
-        <form class="search-panel" role="search" aria-label="Search research archive" data-search-form>
-          <label class="search-field" for="archive-query">
-            <span>Search the archive</span>
-            <input id="archive-query" name="q" type="search" autocomplete="off" placeholder="Search title, author, abstract, keyword…" data-search-input />
-          </label>
-          <button type="button" class="reset-button" data-clear-search>Clear</button>
-        </form>
-
-        <div class="archive-meta" aria-live="polite">
-          <span data-result-count>0 records</span>
-          <span>Sorted by newest first</span>
+      <div class="search-panel">
+        <div class="search-top">
+          <div class="search-input-wrap">
+            <label for="searchInput">Search the archive</label>
+            <input id="searchInput" name="search" type="search" placeholder="Try “analysis”, “symmetry”, “prime”, or “news”" autocomplete="off">
+          </div>
+          <select class="sort-select" id="sortSelect" aria-label="Sort records">
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+            <option value="az">Title A–Z</option>
+          </select>
         </div>
+        <div class="filters" data-filters aria-label="Filter records"></div>
+        <div class="results" data-results aria-live="polite">
+          <article class="result-card">
+            <small><span>Discoveries</span><span>May 4, 2026</span></small>
+            <h3><a href="documents/spectral-gap-note/">A short note on spectral gaps in sparse operators</a></h3>
+            <p>A compact note describing a stable test case for sparse perturbations.</p>
+            <a class="read-link" href="documents/spectral-gap-note/">Open record →</a>
+            <div class="card-foot"><span class="chip">operator theory</span><span class="chip">analysis</span></div>
+          </article>
+          <article class="result-card">
+            <small><span>Theorems</span><span>Apr 18, 2026</span></small>
+            <h3><a href="documents/noether-symmetry/">Noether symmetry, stated for working readers</a></h3>
+            <p>A theorem brief connecting continuous symmetries with conserved quantities.</p>
+            <a class="read-link" href="documents/noether-symmetry/">Open record →</a>
+            <div class="card-foot"><span class="chip">symmetry</span><span class="chip">physics</span></div>
+          </article>
+          <article class="result-card">
+            <small><span>Theorems</span><span>Mar 27, 2026</span></small>
+            <h3><a href="documents/_template/">Prime distribution: an editorial primer</a></h3>
+            <p>A complete template preview for theorem statements, figures, and references.</p>
+            <a class="read-link" href="documents/_template/">Open record →</a>
+            <div class="card-foot"><span class="chip">number theory</span><span class="chip">template</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        <div class="results" data-results aria-label="Research results"></div>
+    <section class="section section-rule" id="theorems" aria-labelledby="theorem-title">
+      <div class="section-heading">
+        <div>
+          <div class="kicker">Theorem carousel</div>
+          <h2 id="theorem-title">Short theorem statements, not decoration.</h2>
+        </div>
+        <p>A theorem rail gives the homepage intellectual density without becoming long. Replace these with theorems that actually match your archive.</p>
+      </div>
+      <div class="theorem-shell">
+        <div class="theorem-controls">
+          <p>Use this component to rotate one or two important statements, proof cards, or definitions. It stays readable on mobile and works without a library.</p>
+          <div class="carousel-actions" aria-label="Theorem carousel controls">
+            <button class="icon-btn" type="button" data-carousel-prev aria-label="Previous theorem">←</button>
+            <button class="icon-btn" type="button" data-carousel-next aria-label="Next theorem">→</button>
+          </div>
+        </div>
+        <article class="theorem-card" data-theorem-card aria-live="polite">
+          <div class="theorem-card-header"><span>Theorem I</span><span>Variational calculus</span></div>
+          <div class="theorem-card-body">
+            <h3>Noether Correspondence</h3>
+            <div class="theorem-statement">Every differentiable symmetry of the action of a physical system has a corresponding conserved quantity, provided the Euler–Lagrange equations are satisfied.</div>
+          </div>
+          <div class="theorem-card-footer">Displayed here as an editorial theorem card; the full article template supports assumptions, proof sketch, and references.</div>
+        </article>
+      </div>
+    </section>
 
-        <div class="empty-state" data-empty-state>
-          <div class="empty-rule" aria-hidden="true"></div>
-          <p class="empty-label">No research records indexed yet.</p>
-          <p class="empty-copy">The archive is ready, but it does not invent publications. Add real records to the JSON index when they exist.</p>
+    <section class="section section-rule" id="sections" aria-labelledby="sections-title">
+      <div class="section-heading">
+        <div>
+          <div class="kicker">Editorial sections</div>
+          <h2 id="sections-title">News, discoveries, and theorem records.</h2>
+        </div>
+        <p>The structure is intentionally modest. It looks credible with a small archive, and it can scale by adding folders and index records.</p>
+      </div>
+      <div class="columns-3">
+        <article class="column-card">
+          <div class="kicker">Section 01</div>
+          <h3>News</h3>
+          <p>Brief updates, corrections, instrument notes, release notices, and editorial announcements.</p>
+          <ul>
+            <li><span>Format</span>150–400 word dispatches</li>
+            <li><span>Use for</span>Timely updates and context</li>
+          </ul>
+        </article>
+        <article class="column-card">
+          <div class="kicker">Section 02</div>
+          <h3>Discoveries</h3>
+          <p>Research notes, provisional findings, preprint watches, experimental records, and field reports.</p>
+          <ul>
+            <li><span>Format</span>Abstract, method, result, limitations</li>
+            <li><span>Use for</span>New work and observations</li>
+          </ul>
+        </article>
+        <article class="column-card">
+          <div class="kicker">Section 03</div>
+          <h3>Theorems</h3>
+          <p>Statements, assumptions, proof sketches, references, and readable theorem briefings.</p>
+          <ul>
+            <li><span>Format</span>Statement, notation, proof sketch</li>
+            <li><span>Use for</span>Stable mathematical records</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="template" aria-labelledby="template-title">
+      <div class="template-callout">
+        <div class="template-copy">
+          <div class="kicker">Document subfolder</div>
+          <h2 id="template-title">Upload each document as its own folder.</h2>
+          <p>Place new HTML documents under <span class="code-path">documents/your-document-name/index.html</span>. Start from the included template, replace the metadata and article body, then add a matching entry inside <span class="code-path">assets/js/site.js</span>.</p>
+          <p><a class="tag strong" href="documents/_template/">Open the template</a></p>
+        </div>
+        <div class="template-steps">
+          <ol>
+            <li>Duplicate <span class="code-path">documents/_template</span>.</li>
+            <li>Rename the folder using lowercase hyphenated words.</li>
+            <li>Edit the title, abstract, tags, figures, and article body.</li>
+            <li>Add the new document to the archive array in <span class="code-path">site.js</span>.</li>
+          </ol>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p>APGO Research Archive</p>
-      <p>Static HTML · CSS · JavaScript</p>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <a class="brand" href="./">
+          <span class="brand-mark">T</span>
+          <span class="brand-text">
+            <span class="brand-title">Theoria</span>
+            <span class="brand-subtitle">Static research archive</span>
+          </span>
+        </a>
+        <p>Serious typography, static deployment, and a maintainable HTML archive for research work.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#archive">Archive</a>
+        <a href="#theorems">Theorems</a>
+        <a href="documents/_template/">Template</a>
+      </div>
     </div>
   </footer>
 
-  <script src="./assets/main.js" defer></script>
+  <script src="assets/js/site.js"></script>
 </body>
 </html>
