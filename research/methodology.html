@@ -4,58 +4,111 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Methodology · Meridian Research Institute</title>
-  <meta name="description" content="A static editorial research website for serious institutional analysis.">
-  <meta name="theme-color" content="#efebe2">
+  <meta name="description" content="Meridian methodology for evidence grading, review, corrections, and editorial standards.">
+  <meta name="theme-color" content="#f3efe6">
   <meta property="og:title" content="Methodology · Meridian Research Institute">
-  <meta property="og:description" content="A static editorial research website for serious institutional analysis.">
-  <meta property="og:image" content="assets/og.svg">
+  <meta property="og:description" content="Meridian methodology for evidence grading, review, corrections, and editorial standards.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/og-card.svg">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body>
-<a class="skip-link" href="#content">Skip to content</a>
-<header class="site-topbar" data-site-header>
-  <div class="nav-wrap">
+<body class="">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" data-header>
+  <div class="topline" aria-label="Edition information">
+    <div class="wrap topline-inner">
+      <span>Public Edition 2026</span>
+      <span>Independent systems intelligence</span>
+      <span>Updated 12 May</span>
+    </div>
+  </div>
+  <div class="wrap masthead">
     <a class="brand" href="index.html" aria-label="Meridian Research Institute home">
-      <img class="brand-mark" src="assets/mark.svg" alt="" width="38" height="38">
-      <span><span class="brand-name">Meridian</span><span class="brand-sub">RESEARCH INSTITUTE</span></span>
+      <img src="assets/logo.svg" width="42" height="42" alt="" aria-hidden="true">
+      <span><strong>Meridian</strong><em>Research Institute</em></span>
     </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <nav id="site-nav" class="nav-links" aria-label="Primary navigation">
-      <a href="index.html" class="">Home</a>
-<a href="publications.html" class="">Publications</a>
-<a href="programmes.html" class="">Programmes</a>
-<a href="observatory.html" class="">Observatory</a>
-<a href="methodology.html" class="is-active">Method</a>
-<a href="about.html" class="">About</a>
-      <a class="nav-cta " href="contact.html">Contact</a>
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav">
+      <span>Menu</span>
+      <i aria-hidden="true"></i>
+    </button>
+    <nav class="primary-nav" id="primary-nav" data-nav aria-label="Primary navigation">
+      <a class="nav-link " href="index.html">Home</a>
+<a class="nav-link " href="publications.html">Briefings</a>
+<a class="nav-link " href="programmes.html">Programmes</a>
+<a class="nav-link " href="observatory.html">Observatory</a>
+<a class="nav-link is-active" href="methodology.html">Method</a>
+<a class="nav-link " href="about.html">About</a>
+      <a class="nav-link nav-link--boxed" href="contact.html">Contact</a>
     </nav>
   </div>
 </header>
-<main id="content" class="page">
+<main id="main">
 
-<section class="page-hero compact"><div class="container"><p class="breadcrumbs"><a href="index.html">Home</a> / Methodology</p><p class="kicker">Method</p><h1>Transparent by default, restrained by design.</h1><p class="lead">Readers should understand how confident a claim is, what evidence supports it, and where judgement begins. Meridian separates source quality, triangulation, recency, and model sensitivity.</p></div></section>
-<section class="section"><div class="container"><div class="method-grid"><div class="method-step"><div class="num">01</div><div class="copy"><h3>Evidence grading</h3><p>Findings are classified by source quality, triangulation strength, recency, and sensitivity to model assumptions.</p></div></div><div class="method-step"><div class="num">02</div><div class="copy"><h3>Review trace</h3><p>Authoring, specialist review, editorial sign-off, and correction tracking are treated as separate stages.</p></div></div><div class="method-step"><div class="num">03</div><div class="copy"><h3>Decision relevance</h3><p>Each finding is linked to the practical institutional choices it may affect, not just the literature it summarizes.</p></div></div><div class="method-step"><div class="num">04</div><div class="copy"><h3>Uncertainty language</h3><p>Reports distinguish observed evidence, inference, plausible scenarios, expert judgement, and unresolved disagreement.</p></div></div></div></div></section>
-<section class="section"><div class="container two grid"><div><p class="kicker">Evidence grade scale</p><h2>A compact system for reading confidence quickly.</h2><p class="lead">The grade never replaces the argument. It is a reading aid that forces the publication to show its evidentiary posture.</p></div><div class="table-wrap"><table><thead><tr><th>Grade</th><th>Meaning</th></tr></thead><tbody><tr><td>High</td><td>Multiple strong sources, direct observations, stable assumptions, and low disagreement.</td></tr><tr><td>Moderate–high</td><td>Strong evidence base with some uncertainty around timing, scale, or transferability.</td></tr><tr><td>Moderate</td><td>Reasonable triangulation but meaningful dependence on model assumptions or incomplete data.</td></tr><tr><td>Developing</td><td>Useful early signal that requires further review before being treated as settled.</td></tr></tbody></table></div></div></section>
-<section class="section dark-section"><div class="container"><p class="kicker">Correction protocol</p><h2>Corrections are part of the product, not a reputational footnote.</h2><p class="lead muted">Every dossier can include release notes, errata, methodological changes, and source classification updates. Static pages make these records durable and easy to audit.</p></div></section>
+<section class="page-hero page-hero--compact">
+  <div class="wrap page-hero-grid">
+    <div><p class="eyebrow">Methodology</p><h1>How Meridian turns evidence into public-facing judgement.</h1></div>
+    <p>Every publication distinguishes observed fact, modelled inference, expert judgement, and editorial recommendation. Confidence is not decoration; it is part of the claim.</p>
+  </div>
+</section>
+<section class="section section--white" id="evidence-ladder">
+  <div class="wrap ladder-grid">
+    <div><p class="eyebrow">Evidence ladder</p><h2>Claims are graded before they are amplified.</h2><p class="section-lede">The ladder is intentionally conservative. It gives readers a visible way to inspect the strength of the underlying record.</p></div>
+    <ol class="evidence-ladder">
+      <li><span>A</span><div><strong>High</strong><p>Multiple independent sources, recent data, transparent method, low sensitivity to assumptions.</p></div></li>
+      <li><span>B</span><div><strong>Moderate–high</strong><p>Strong triangulation but incomplete coverage, contested definitions, or material uncertainty remains.</p></div></li>
+      <li><span>C</span><div><strong>Moderate</strong><p>Useful directional evidence with explicit caveats and visible assumptions.</p></div></li>
+      <li><span>D</span><div><strong>Watch only</strong><p>Early signal, insufficient source diversity, or high sensitivity to interpretation.</p></div></li>
+    </ol>
+  </div>
+</section>
+<section class="section section--panel">
+  <div class="wrap process-grid">
+    <div><p class="eyebrow">Review process</p><h2>Four gates before publication.</h2></div>
+    <div class="process-step"><span>01</span><h3>Scope</h3><p>Define decision relevance, audience, source classes, and explicit exclusions.</p></div>
+    <div class="process-step"><span>02</span><h3>Build record</h3><p>Collect sources, document assumptions, classify uncertainty, and produce data notes.</p></div>
+    <div class="process-step"><span>03</span><h3>Specialist review</h3><p>Challenge the technical claims, source strength, model choices, and policy interpretation.</p></div>
+    <div class="process-step"><span>04</span><h3>Editorial sign-off</h3><p>Separate evidence from judgement and publish corrections when material claims change.</p></div>
+  </div>
+</section>
+<section class="section" id="corrections">
+  <div class="wrap correction-panel">
+    <div><p class="eyebrow">Corrections</p><h2>Correction posture.</h2><p>Material updates are logged with date, affected section, reason, and whether the confidence grade changed. Minor typography fixes do not alter the record; evidence changes do.</p></div>
+    <table class="signal-table"><thead><tr><th>Change type</th><th>Logged?</th><th>Reader notice</th></tr></thead><tbody><tr><td>Evidence change</td><td>Yes</td><td>Visible note</td></tr><tr><td>Confidence grade change</td><td>Yes</td><td>Versioned update</td></tr><tr><td>Typographic correction</td><td>No</td><td>Not material</td></tr></tbody></table>
+  </div>
+</section>
 
 </main>
 <footer class="site-footer">
-  <div class="container footer-grid">
+  <div class="wrap footer-grid">
     <div>
-      <a class="brand" href="index.html" style="color:inherit">
-        <img class="brand-mark" src="assets/mark.svg" alt="" width="38" height="38">
-        <span><span class="brand-name">Meridian</span><span class="brand-sub">RESEARCH INSTITUTE</span></span>
-      </a>
-      <p class="small" style="margin-top:18px;max-width:460px">A static publication system for research teams that need the discipline of a journal, the speed of a briefing desk, and the clarity of an observatory.</p>
+      <a class="footer-brand" href="index.html"><img src="assets/logo-light.svg" width="38" height="38" alt=""><span>Meridian<br><em>Research Institute</em></span></a>
+      <p>Editorial research for leaders who need evidence, judgement, and uncertainty presented without spectacle.</p>
     </div>
-    <div class="footer-links">
-      <div><div class="footer-title">Sections</div><a href="publications.html">Publication archive</a><a href="programmes.html">Programmes</a><a href="observatory.html">Observatory</a></div>
-      <div><div class="footer-title">Institute</div><a href="methodology.html">Methodology</a><a href="about.html">Governance</a><a href="contact.html">Contact desk</a></div>
-      <div><div class="footer-title">Static system</div><a href="README.md">Implementation notes</a><a href="sitemap.xml">Sitemap</a><a href="404.html">404 page</a></div>
+    <div>
+      <h2>Explore</h2>
+      <a href="publications.html">Briefings</a>
+      <a href="programmes.html">Programmes</a>
+      <a href="observatory.html">Observatory</a>
+      <a href="methodology.html">Methodology</a>
+    </div>
+    <div>
+      <h2>Standards</h2>
+      <a href="methodology.html#evidence-ladder">Evidence ladder</a>
+      <a href="methodology.html#corrections">Corrections</a>
+      <a href="about.html#governance">Governance</a>
+      <a href="contact.html">Editorial contact</a>
+    </div>
+    <div class="footer-note">
+      <h2>Static by design</h2>
+      <p>No trackers, no build system, no runtime dependency. Drop these files into GitHub Pages and publish directly.</p>
     </div>
   </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Meridian Research Institute</span>
+    <span>Built for GitHub Pages</span>
+  </div>
 </footer>
-<script src="assets/main.js" defer></script>
+<script src="assets/main.js"></script>
 </body>
 </html>

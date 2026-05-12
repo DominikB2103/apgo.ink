@@ -1,31 +1,30 @@
-# Meridian Research Institute — static editorial website
+# Meridian Research Institute — static flagship website
 
-This is a zero-build static website designed for GitHub Pages.
+This is a zero-build static website. It is intended to be dragged directly into a GitHub Pages repository root.
 
 ## Deploy
 
-1. Unzip the package.
-2. Drag all files into the root of your GitHub repository.
+1. Delete the old site files from the repository.
+2. Copy every file and folder from this ZIP into the repository root.
 3. In GitHub, open **Settings → Pages**.
-4. Set the source to your main branch and root folder.
-5. Save.
+4. Set the source to your main branch and the root folder.
+5. Commit and push.
 
-There is no npm install, no Next.js build, no action required, and no server-side code.
+No npm install, no local build, no workflow, and no external assets are required.
 
 ## Files
 
-- `index.html` — homepage
-- `publications.html` — publication archive with local filtering
-- `programmes.html` — research programme portfolio
-- `observatory.html` — static dashboard surface
-- `methodology.html` — evidence and review protocol
-- `about.html` — institute model and governance surface
+- `index.html` — editorial homepage
+- `publications.html` — searchable/filterable archive
+- `programmes.html` — research programmes
+- `observatory.html` — static signal dashboard
+- `methodology.html` — evidence grading and correction process
+- `about.html` — institute and governance page
 - `contact.html` — static contact page
-- `dossier-infrastructure.html` — sample long-form dossier
-- `assets/styles.css` — complete editorial design system
-- `assets/main.js` — mobile navigation and archive filtering
+- `dossier-systems.html` — long-form flagship dossier template
+- `assets/styles.css` — complete visual system
+- `assets/main.js` — mobile menu and archive filters
 
-## Customize
+## Customization
 
-Replace placeholder text and the `mailto:research@example.org` form action with your real contact address.
-All graphics are original SVG/CSS assets in the package.
+Replace placeholder email addresses in `index.html` and `contact.html` before publishing. Update `sitemap.xml` with your final domain.

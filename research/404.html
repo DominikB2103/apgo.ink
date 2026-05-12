@@ -3,54 +3,84 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Page not found · Meridian Research Institute</title>
-  <meta name="description" content="A static editorial research website for serious institutional analysis.">
-  <meta name="theme-color" content="#efebe2">
-  <meta property="og:title" content="Page not found · Meridian Research Institute">
-  <meta property="og:description" content="A static editorial research website for serious institutional analysis.">
-  <meta property="og:image" content="assets/og.svg">
+  <title>Not Found · Meridian Research Institute</title>
+  <meta name="description" content="Page not found.">
+  <meta name="theme-color" content="#f3efe6">
+  <meta property="og:title" content="Not Found · Meridian Research Institute">
+  <meta property="og:description" content="Page not found.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/og-card.svg">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body>
-<a class="skip-link" href="#content">Skip to content</a>
-<header class="site-topbar" data-site-header>
-  <div class="nav-wrap">
+<body class="">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" data-header>
+  <div class="topline" aria-label="Edition information">
+    <div class="wrap topline-inner">
+      <span>Public Edition 2026</span>
+      <span>Independent systems intelligence</span>
+      <span>Updated 12 May</span>
+    </div>
+  </div>
+  <div class="wrap masthead">
     <a class="brand" href="index.html" aria-label="Meridian Research Institute home">
-      <img class="brand-mark" src="assets/mark.svg" alt="" width="38" height="38">
-      <span><span class="brand-name">Meridian</span><span class="brand-sub">RESEARCH INSTITUTE</span></span>
+      <img src="assets/logo.svg" width="42" height="42" alt="" aria-hidden="true">
+      <span><strong>Meridian</strong><em>Research Institute</em></span>
     </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <nav id="site-nav" class="nav-links" aria-label="Primary navigation">
-      <a href="index.html" class="">Home</a>
-<a href="publications.html" class="">Publications</a>
-<a href="programmes.html" class="">Programmes</a>
-<a href="observatory.html" class="">Observatory</a>
-<a href="methodology.html" class="">Method</a>
-<a href="about.html" class="">About</a>
-      <a class="nav-cta " href="contact.html">Contact</a>
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav">
+      <span>Menu</span>
+      <i aria-hidden="true"></i>
+    </button>
+    <nav class="primary-nav" id="primary-nav" data-nav aria-label="Primary navigation">
+      <a class="nav-link is-active" href="index.html">Home</a>
+<a class="nav-link " href="publications.html">Briefings</a>
+<a class="nav-link " href="programmes.html">Programmes</a>
+<a class="nav-link " href="observatory.html">Observatory</a>
+<a class="nav-link " href="methodology.html">Method</a>
+<a class="nav-link " href="about.html">About</a>
+      <a class="nav-link nav-link--boxed" href="contact.html">Contact</a>
     </nav>
   </div>
 </header>
-<main id="content" class="page">
-<section class="page-hero compact"><div class="container"><p class="kicker">404</p><h1>This page is outside the archive.</h1><p class="lead">The requested page could not be found. Return to the institute home or open the publication archive.</p><div class="actions"><a class="btn" href="index.html">Return home</a><a class="btn secondary" href="publications.html">Publication archive</a></div></div></section>
+<main id="main">
+
+<section class="page-hero page-hero--compact">
+  <div class="wrap page-hero-grid"><div><p class="eyebrow">404</p><h1>Page not found.</h1></div><p>The requested page is not in this static edition. Return to the Meridian home page or browse the publication archive.</p></div>
+</section>
+<section class="section"><div class="wrap"><a class="button button--dark" href="index.html">Return home</a></div></section>
+
 </main>
 <footer class="site-footer">
-  <div class="container footer-grid">
+  <div class="wrap footer-grid">
     <div>
-      <a class="brand" href="index.html" style="color:inherit">
-        <img class="brand-mark" src="assets/mark.svg" alt="" width="38" height="38">
-        <span><span class="brand-name">Meridian</span><span class="brand-sub">RESEARCH INSTITUTE</span></span>
-      </a>
-      <p class="small" style="margin-top:18px;max-width:460px">A static publication system for research teams that need the discipline of a journal, the speed of a briefing desk, and the clarity of an observatory.</p>
+      <a class="footer-brand" href="index.html"><img src="assets/logo-light.svg" width="38" height="38" alt=""><span>Meridian<br><em>Research Institute</em></span></a>
+      <p>Editorial research for leaders who need evidence, judgement, and uncertainty presented without spectacle.</p>
     </div>
-    <div class="footer-links">
-      <div><div class="footer-title">Sections</div><a href="publications.html">Publication archive</a><a href="programmes.html">Programmes</a><a href="observatory.html">Observatory</a></div>
-      <div><div class="footer-title">Institute</div><a href="methodology.html">Methodology</a><a href="about.html">Governance</a><a href="contact.html">Contact desk</a></div>
-      <div><div class="footer-title">Static system</div><a href="README.md">Implementation notes</a><a href="sitemap.xml">Sitemap</a><a href="404.html">404 page</a></div>
+    <div>
+      <h2>Explore</h2>
+      <a href="publications.html">Briefings</a>
+      <a href="programmes.html">Programmes</a>
+      <a href="observatory.html">Observatory</a>
+      <a href="methodology.html">Methodology</a>
+    </div>
+    <div>
+      <h2>Standards</h2>
+      <a href="methodology.html#evidence-ladder">Evidence ladder</a>
+      <a href="methodology.html#corrections">Corrections</a>
+      <a href="about.html#governance">Governance</a>
+      <a href="contact.html">Editorial contact</a>
+    </div>
+    <div class="footer-note">
+      <h2>Static by design</h2>
+      <p>No trackers, no build system, no runtime dependency. Drop these files into GitHub Pages and publish directly.</p>
     </div>
   </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Meridian Research Institute</span>
+    <span>Built for GitHub Pages</span>
+  </div>
 </footer>
-<script src="assets/main.js" defer></script>
+<script src="assets/main.js"></script>
 </body>
 </html>
