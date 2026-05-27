@@ -1,34 +1,34 @@
-# Wylo — Frontier Website
+# Wylo — GitHub Pages website
 
-A premium single-page React/Vite website for **Wylo**, designed as a high-end, motion-first digital experience for helping young entrepreneurs launch, organize, and scale.
+Static landing page for **Wylo**, built for GitHub Pages with no database and no package installation.
 
-## Stack
-- React
-- Vite
-- Framer Motion
-- Lucide React
-- Custom CSS
+## Files
 
-## Features
-- Cinematic hero with layered motion and orbit-style interface scene
-- Premium glassmorphism + gradient aesthetic
-- Motion-led service, process, showcase, pricing, and CTA sections
-- Magnetic buttons and cursor glow
-- Fully responsive layout
-- Production build tested with `npm run build`
+- `index.html` — main site
+- `styles.css` — full visual system and responsive styling
+- `script.js` — vanilla JavaScript interactions, animations, tabs, contact email composer
+- `404.html` — fallback page for GitHub Pages
+- `CNAME` — points the GitHub Pages custom domain to `apo.ink`
+- `assets/wylo-mark.svg` — Wylo logo mark
+- `assets/og-image.png` — social preview image
+- `asset-prompts.md` — optional prompts for future generated image assets
+- `robots.txt` and `sitemap.xml` — basic SEO files
 
-## Run locally
-```bash
-npm install
-npm run dev
+## Deploy on GitHub Pages
+
+1. Upload these files to the root of the GitHub repository.
+2. Go to repository **Settings → Pages**.
+3. Set the source to the branch and root folder you use for the site.
+4. The `CNAME` file already contains `apo.ink`.
+
+## Contact form
+
+The contact form uses `mailto:` because GitHub Pages has no backend/database. Change this line in `script.js` when the official inbox is ready:
+
+```js
+const CONTACT_EMAIL = "hello@apo.ink";
 ```
 
-## Production build
-```bash
-npm run build
-npm run preview
-```
+## Design direction
 
-## Notes
-- The site is intentionally art-directed around the inspiration you shared: smooth, floating, high-end motion and bold layered typography.
-- You can easily swap copy, pricing, tiers, and contact details in `src/App.jsx`.
+The site is intentionally premium and motion-rich without relying on immature trends like heavy glassmorphism, orbit/space visuals, cyberpunk neon, or generic startup gradients. It uses custom static components, cinematic motion, responsive layouts, and vanilla JavaScript.
