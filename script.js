@@ -1,331 +1,258 @@
-(() => {
-  "use strict";
+const states = [
+  {
+    word: "LAUNCH",
+    details: ["Domain", "Contact", "Mobile", "Launch"],
+    exits: ["-30px", "-44px", "8deg"],
+  },
+  {
+    word: "ORGANIZE",
+    details: ["Booking", "Payments", "Email", "Links"],
+    exits: ["24px", "-40px", "-7deg"],
+  },
+  {
+    word: "GROW",
+    details: ["Leads", "Content", "Traffic", "Tasks"],
+    exits: ["-18px", "38px", "5deg"],
+  },
+  {
+    word: "SCALE",
+    details: ["Ready", "Live", "Connected", "Clean"],
+    exits: ["34px", "24px", "-6deg"],
+  },
+];
 
-  const CONTACT_EMAIL = "hello@apo.ink"; // Change this when the official Wylo inbox is ready.
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-  const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+const packageData = {
+  starter: {
+    kicker: "Simple website",
+    title: "Website Starter",
+    desc: "For entrepreneurs who need a clean website and a simple way for people to contact them.",
+    price: "Custom quote",
+    items: [
+      "One-page website",
+      "Mobile-friendly layout",
+      "Contact or booking link",
+      "Basic copy cleanup",
+      "Domain/GitHub Pages setup",
+      "Launch support",
+    ],
+    button: "Ask about Website Starter",
+    subject: "Wylo Website Starter inquiry",
+    mode: "starter",
+  },
+  setup: {
+    kicker: "Most common",
+    title: "Business Setup",
+    desc: "For entrepreneurs who need the website plus the basic tools around it connected.",
+    price: "Custom quote",
+    items: [
+      "Multi-section website",
+      "Booking or contact setup",
+      "Payment link setup",
+      "Social/link cleanup",
+      "Email/domain help",
+      "Basic organization setup",
+    ],
+    button: "Ask about Business Setup",
+    subject: "Wylo Business Setup inquiry",
+    mode: "setup",
+  },
+  launch: {
+    kicker: "Full setup",
+    title: "Full Launch",
+    desc: "For entrepreneurs who want the full setup handled before they launch or relaunch.",
+    price: "Custom quote",
+    items: [
+      "Custom website",
+      "Brand direction",
+      "Booking/contact/payment setup",
+      "Content structure",
+      "Client workflow organization",
+      "Launch checklist",
+      "Post-launch support",
+    ],
+    button: "Ask about Full Launch",
+    subject: "Wylo Full Launch inquiry",
+    mode: "launch",
+  },
+};
 
-  document.documentElement.classList.add("js");
+const root = document.body;
+const header = document.querySelector(".site-header");
+const menuToggle = document.querySelector(".menu-toggle");
+const wordTrack = document.querySelector(".word-track");
+const details = [
+  document.getElementById("detailA"),
+  document.getElementById("detailB"),
+  document.getElementById("detailC"),
+  document.getElementById("detailD"),
+];
+const detailShells = Array.from(document.querySelectorAll(".detail"));
+const stateButtons = Array.from(document.querySelectorAll("[data-state-button]"));
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const preloader = document.getElementById("preloader");
-  const finishPreloader = () => {
-    if (!preloader) return;
-    preloader.classList.add("is-done");
-    window.setTimeout(() => preloader.remove(), 900);
-  };
-  window.addEventListener("load", () => window.setTimeout(finishPreloader, 420), { once: true });
-  window.setTimeout(finishPreloader, 1800);
+let heroIndex = 0;
+let heroTimer = null;
+let pauseUntil = 0;
 
-  const year = document.getElementById("year");
-  if (year) year.textContent = String(new Date().getFullYear());
+function setHeroState(nextIndex, userTriggered = false) {
+  if (nextIndex === heroIndex && !userTriggered) return;
+  heroIndex = nextIndex;
+  const state = states[heroIndex];
+  root.dataset.heroState = String(heroIndex);
 
-  const navToggle = document.getElementById("navToggle");
-  const navLinks = document.getElementById("navLinks");
-  if (navToggle && navLinks) {
-    navToggle.addEventListener("click", () => {
-      const isOpen = navToggle.getAttribute("aria-expanded") === "true";
-      navToggle.setAttribute("aria-expanded", String(!isOpen));
-      navLinks.classList.toggle("is-open", !isOpen);
-    });
-
-    navLinks.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navToggle.setAttribute("aria-expanded", "false");
-        navLinks.classList.remove("is-open");
-      });
-    });
-  }
-
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", (event) => {
-      const href = anchor.getAttribute("href");
-      if (!href || href === "#") return;
-      const target = document.querySelector(href);
-      if (!target) return;
-      event.preventDefault();
-      target.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" });
-      history.pushState(null, "", href);
-    });
+  stateButtons.forEach((button, index) => {
+    button.classList.toggle("is-active", index === heroIndex);
   });
 
-  const revealItems = Array.from(document.querySelectorAll(".reveal"));
-  if (revealItems.length) {
-    if (reducedMotion || !("IntersectionObserver" in window)) {
-      revealItems.forEach((item) => item.classList.add("is-visible"));
-    } else {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
-      );
-      revealItems.forEach((item) => observer.observe(item));
-    }
-  }
-
-  if (canHover && !reducedMotion) {
-    const cursor = document.getElementById("cursor");
-    if (cursor) {
-      document.body.classList.add("has-custom-cursor");
-      let mouseX = window.innerWidth / 2;
-      let mouseY = window.innerHeight / 2;
-      let cursorX = mouseX;
-      let cursorY = mouseY;
-
-      window.addEventListener("pointermove", (event) => {
-        mouseX = event.clientX;
-        mouseY = event.clientY;
-        cursor.classList.add("is-visible");
-      });
-
-      window.addEventListener("pointerleave", () => cursor.classList.remove("is-visible"));
-
-      const cursorTick = () => {
-        cursorX += (mouseX - cursorX) * 0.18;
-        cursorY += (mouseY - cursorY) * 0.18;
-        cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
-        requestAnimationFrame(cursorTick);
-      };
-      cursorTick();
-
-      document.querySelectorAll("a, button, input, textarea, select, summary").forEach((el) => {
-        el.addEventListener("pointerenter", () => cursor.classList.add("is-active"));
-        el.addEventListener("pointerleave", () => cursor.classList.remove("is-active"));
-      });
-    }
-
-    document.querySelectorAll(".magnetic").forEach((el) => {
-      el.addEventListener("pointermove", (event) => {
-        const rect = el.getBoundingClientRect();
-        const x = event.clientX - rect.left - rect.width / 2;
-        const y = event.clientY - rect.top - rect.height / 2;
-        el.style.transform = `translate(${x * 0.08}px, ${y * 0.14}px)`;
-      });
-      el.addEventListener("pointerleave", () => {
-        el.style.transform = "";
-      });
-    });
-
-    document.querySelectorAll("[data-tilt]").forEach((container) => {
-      const stage = container.querySelector(".kinetic-stage") || container;
-      container.addEventListener("pointermove", (event) => {
-        const rect = container.getBoundingClientRect();
-        const x = (event.clientX - rect.left) / rect.width - 0.5;
-        const y = (event.clientY - rect.top) / rect.height - 0.5;
-        stage.style.setProperty("--ry", `${x * 7}deg`);
-        stage.style.setProperty("--rx", `${-y * 7}deg`);
-        stage.style.setProperty("--mx", `${x * 36}px`);
-        stage.style.setProperty("--my", `${y * 36}px`);
-      });
-      container.addEventListener("pointerleave", () => {
-        stage.style.setProperty("--ry", "0deg");
-        stage.style.setProperty("--rx", "0deg");
-        stage.style.setProperty("--mx", "0px");
-        stage.style.setProperty("--my", "0px");
-      });
-    });
-
-    document.querySelectorAll("[data-card-tilt]").forEach((card) => {
-      card.addEventListener("pointermove", (event) => {
-        const rect = card.getBoundingClientRect();
-        const px = ((event.clientX - rect.left) / rect.width) * 100;
-        const py = ((event.clientY - rect.top) / rect.height) * 100;
-        const rx = ((event.clientY - rect.top) / rect.height - 0.5) * -4;
-        const ry = ((event.clientX - rect.left) / rect.width - 0.5) * 5;
-        card.style.setProperty("--px", `${px}%`);
-        card.style.setProperty("--py", `${py}%`);
-        card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-3px)`;
-      });
-      card.addEventListener("pointerleave", () => {
-        card.style.transform = "";
-        card.style.setProperty("--px", "50%");
-        card.style.setProperty("--py", "0%");
-      });
-    });
-  }
-
-  const methodSteps = Array.from(document.querySelectorAll(".method-step"));
-  const methodCards = Array.from(document.querySelectorAll("[data-method-card]"));
-  const methodSection = document.getElementById("method");
-  let activeMethod = 0;
-  let manualMethodUntil = 0;
-
-  const setMethod = (index, manual = false) => {
-    const safeIndex = clamp(index, 0, methodSteps.length - 1);
-    if (safeIndex === activeMethod && !manual) return;
-    activeMethod = safeIndex;
-    methodSteps.forEach((step, stepIndex) => step.classList.toggle("is-active", stepIndex === safeIndex));
-    methodCards.forEach((card, cardIndex) => card.classList.toggle("is-active", cardIndex === safeIndex));
-    if (manual) manualMethodUntil = performance.now() + 3600;
-  };
-
-  methodSteps.forEach((step) => {
-    step.addEventListener("click", () => setMethod(Number(step.dataset.step || 0), true));
+  wordTrack.classList.add("is-swapping");
+  detailShells.forEach((shell, index) => {
+    shell.style.setProperty("--out-x", `${index % 2 === 0 ? "-" : ""}${28 + index * 8}px`);
+    shell.style.setProperty("--out-y", `${index < 2 ? "-" : ""}${26 + index * 6}px`);
+    shell.style.setProperty("--out-r", `${index % 2 === 0 ? "-" : ""}${5 + index}deg`);
+    shell.classList.add("is-changing");
   });
 
-  const updateMethodByScroll = () => {
-    if (!methodSection || !methodSteps.length || reducedMotion) return;
-    if (performance.now() < manualMethodUntil) return;
-    const rect = methodSection.getBoundingClientRect();
-    const viewport = window.innerHeight || 1;
-    const start = viewport * 0.62;
-    const end = -rect.height * 0.38;
-    const progress = clamp((start - rect.top) / (start - end), 0, 0.999);
-    const index = Math.floor(progress * methodSteps.length);
-    setMethod(index);
-  };
-
-  const tabs = Array.from(document.querySelectorAll("[role='tab'][data-tab]"));
-  const panels = Array.from(document.querySelectorAll("[data-panel]"));
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      const name = tab.dataset.tab;
-      tabs.forEach((item) => item.setAttribute("aria-selected", String(item === tab)));
-      panels.forEach((panel) => panel.classList.toggle("is-active", panel.dataset.panel === name));
+  window.setTimeout(() => {
+    wordTrack.textContent = state.word;
+    wordTrack.dataset.word = state.word;
+    details.forEach((item, index) => {
+      item.textContent = state.details[index];
     });
+    wordTrack.classList.remove("is-swapping");
+    detailShells.forEach((shell) => shell.classList.remove("is-changing"));
+  }, prefersReducedMotion ? 0 : 300);
+
+  if (userTriggered) pauseUntil = Date.now() + 9000;
+}
+
+function startHeroTimer() {
+  if (prefersReducedMotion) return;
+  heroTimer = window.setInterval(() => {
+    if (Date.now() < pauseUntil) return;
+    setHeroState((heroIndex + 1) % states.length);
+  }, 4200);
+}
+
+stateButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    setHeroState(Number(button.dataset.stateButton), true);
+  });
+});
+
+window.addEventListener("scroll", () => {
+  header.classList.toggle("is-scrolled", window.scrollY > 20);
+}, { passive: true });
+
+menuToggle?.addEventListener("click", () => {
+  const open = !root.classList.contains("menu-open");
+  root.classList.toggle("menu-open", open);
+  menuToggle.setAttribute("aria-expanded", String(open));
+});
+
+document.querySelectorAll(".nav a, .footer a").forEach((link) => {
+  link.addEventListener("click", () => {
+    root.classList.remove("menu-open");
+    menuToggle?.setAttribute("aria-expanded", "false");
+  });
+});
+
+const revealTargets = document.querySelectorAll("[data-reveal]:not([data-reveal='load']):not([data-reveal='instant'])");
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.16, rootMargin: "0px 0px -8% 0px" });
+  revealTargets.forEach((target) => revealObserver.observe(target));
+} else {
+  revealTargets.forEach((target) => target.classList.add("is-visible"));
+}
+
+const packageTabs = Array.from(document.querySelectorAll(".package-tab"));
+const packagePanel = document.getElementById("packagePanel");
+const packageKicker = document.getElementById("packageKicker");
+const packageTitle = document.getElementById("packageTitle");
+const packageDesc = document.getElementById("packageDesc");
+const packagePrice = document.getElementById("packagePrice");
+const packageList = document.getElementById("packageList");
+const packageButton = document.getElementById("packageButton");
+const packageVisual = document.getElementById("packageVisual");
+
+function selectPackage(key) {
+  const data = packageData[key];
+  if (!data) return;
+
+  packageTabs.forEach((tab) => {
+    const active = tab.dataset.package === key;
+    tab.classList.toggle("is-active", active);
+    tab.setAttribute("aria-selected", String(active));
   });
 
-  const accordion = document.getElementById("accordion");
-  if (accordion) {
-    const detailItems = Array.from(accordion.querySelectorAll("details"));
-    detailItems.forEach((details) => {
-      details.addEventListener("toggle", () => {
-        if (!details.open) return;
-        detailItems.forEach((other) => {
-          if (other !== details) other.open = false;
-        });
-      });
-    });
+  packagePanel.classList.remove("is-entering");
+  packagePanel.classList.add("is-swapping");
+
+  window.setTimeout(() => {
+    packageKicker.textContent = data.kicker;
+    packageTitle.textContent = data.title;
+    packageDesc.textContent = data.desc;
+    packagePrice.textContent = data.price;
+    packageList.innerHTML = data.items.map((item) => `<li>${item}</li>`).join("");
+    packageButton.innerHTML = `${data.button} <span aria-hidden="true">→</span>`;
+    packageButton.href = `mailto:fortheasset3@gmail.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent("Hi Wylo,\n\nI'm building:\n\nI need help with:\n\nPackage interest: " + data.title + "\n")}`;
+    packageVisual.dataset.mode = data.mode;
+    packagePanel.setAttribute("aria-labelledby", `tab-${key === "setup" ? "setup" : key}`);
+    packagePanel.classList.remove("is-swapping");
+    packagePanel.classList.add("is-entering");
+    window.setTimeout(() => packagePanel.classList.remove("is-entering"), 650);
+  }, prefersReducedMotion ? 0 : 210);
+}
+
+packageTabs.forEach((tab) => {
+  tab.addEventListener("click", () => selectPackage(tab.dataset.package));
+});
+
+const motionField = document.getElementById("motionField");
+let targetX = 0;
+let targetY = 0;
+let currentX = 0;
+let currentY = 0;
+let rafId = null;
+
+function animateMouseParallax() {
+  currentX += (targetX - currentX) * 0.18;
+  currentY += (targetY - currentY) * 0.18;
+  if (motionField) {
+    motionField.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
   }
-
-  const contactForm = document.getElementById("contactForm");
-  const formNote = document.getElementById("formNote");
-  if (contactForm) {
-    contactForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      if (!contactForm.reportValidity()) return;
-      const data = new FormData(contactForm);
-      const name = String(data.get("name") || "").trim();
-      const email = String(data.get("email") || "").trim();
-      const stage = String(data.get("stage") || "").trim();
-      const packageInterest = String(data.get("package") || "").trim();
-      const message = String(data.get("message") || "").trim();
-
-      const subject = `Wylo Build Brief — ${name || "New founder"}`;
-      const body = [
-        "Wylo build brief",
-        "",
-        `Name: ${name}`,
-        `Email: ${email}`,
-        `Business stage: ${stage}`,
-        `Package interest: ${packageInterest}`,
-        "",
-        "What I am trying to build:",
-        message,
-        "",
-        "Sent from the Wylo static website."
-      ].join("\n");
-
-      if (formNote) formNote.textContent = "Opening your email client with the brief ready.";
-      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    });
+  if (Math.abs(targetX - currentX) > 0.08 || Math.abs(targetY - currentY) > 0.08) {
+    rafId = requestAnimationFrame(animateMouseParallax);
+  } else {
+    currentX = targetX;
+    currentY = targetY;
+    if (motionField) motionField.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+    rafId = null;
   }
+}
 
-  const canvas = document.getElementById("fieldCanvas");
-  if (canvas && !reducedMotion) {
-    const ctx = canvas.getContext("2d");
-    let width = 0;
-    let height = 0;
-    let dpr = 1;
-    let points = [];
-    let mouse = { x: -9999, y: -9999 };
+const hero = document.querySelector(".hero");
+if (!prefersReducedMotion && window.matchMedia("(pointer: fine)").matches) {
+  hero?.addEventListener("pointermove", (event) => {
+    const rect = hero.getBoundingClientRect();
+    const nx = ((event.clientX - rect.left) / rect.width - 0.5);
+    const ny = ((event.clientY - rect.top) / rect.height - 0.5);
+    targetX = Math.max(-10, Math.min(10, nx * 18));
+    targetY = Math.max(-8, Math.min(8, ny * 14));
+    if (!rafId) rafId = requestAnimationFrame(animateMouseParallax);
+  }, { passive: true });
+  hero?.addEventListener("pointerleave", () => {
+    targetX = 0;
+    targetY = 0;
+    if (!rafId) rafId = requestAnimationFrame(animateMouseParallax);
+  });
+}
 
-    const resize = () => {
-      dpr = clamp(window.devicePixelRatio || 1, 1, 2);
-      width = window.innerWidth;
-      height = window.innerHeight;
-      canvas.width = Math.floor(width * dpr);
-      canvas.height = Math.floor(height * dpr);
-      canvas.style.width = `${width}px`;
-      canvas.style.height = `${height}px`;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const count = clamp(Math.round(width / 28), 26, 58);
-      points = Array.from({ length: count }, (_, index) => ({
-        x: (index / count) * width + Math.random() * 80,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.18,
-        vy: 0.14 + Math.random() * 0.22,
-        life: Math.random() * Math.PI * 2,
-        length: 28 + Math.random() * 54
-      }));
-    };
-
-    window.addEventListener("resize", resize);
-    window.addEventListener("pointermove", (event) => {
-      mouse.x = event.clientX;
-      mouse.y = event.clientY;
-    });
-    window.addEventListener("pointerleave", () => {
-      mouse.x = -9999;
-      mouse.y = -9999;
-    });
-
-    const draw = () => {
-      ctx.clearRect(0, 0, width, height);
-      ctx.lineWidth = 1;
-      points.forEach((point) => {
-        const dx = mouse.x - point.x;
-        const dy = mouse.y - point.y;
-        const distance = Math.hypot(dx, dy);
-        if (distance < 180) {
-          point.x -= dx * 0.0025;
-          point.y -= dy * 0.0025;
-        }
-
-        point.life += 0.008;
-        point.x += point.vx + Math.sin(point.life) * 0.08;
-        point.y += point.vy;
-
-        if (point.y > height + 80) {
-          point.y = -80;
-          point.x = Math.random() * width;
-        }
-        if (point.x < -80) point.x = width + 80;
-        if (point.x > width + 80) point.x = -80;
-
-        const alpha = 0.05 + Math.sin(point.life) * 0.025;
-        const gradient = ctx.createLinearGradient(point.x, point.y, point.x + point.length, point.y + point.length * 0.25);
-        gradient.addColorStop(0, `rgba(244,239,229,0)`);
-        gradient.addColorStop(0.45, `rgba(244,239,229,${alpha})`);
-        gradient.addColorStop(1, `rgba(213,255,100,${alpha * 0.7})`);
-        ctx.strokeStyle = gradient;
-        ctx.beginPath();
-        ctx.moveTo(point.x, point.y);
-        ctx.lineTo(point.x + point.length, point.y + point.length * 0.18);
-        ctx.stroke();
-      });
-      requestAnimationFrame(draw);
-    };
-
-    resize();
-    draw();
-  }
-
-  let ticking = false;
-  const onScroll = () => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      updateMethodByScroll();
-      ticking = false;
-    });
-  };
-  window.addEventListener("scroll", onScroll, { passive: true });
-  updateMethodByScroll();
-})();
+startHeroTimer();
+selectPackage("setup");
