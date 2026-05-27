@@ -1,8 +1,0 @@
-@import '../assets/css/reset.css';
-@import '../assets/css/tokens.css';
-@import '../assets/css/base.css';
-@import '../assets/css/layout.css';
-@import '../assets/css/components.css';
-@import '../assets/css/motion.css';
-@import '../assets/css/responsive.css';
-.scene-canvas{position:absolute;inset:auto 0 0 auto;width:min(48vw,720px);height:min(58vh,640px);opacity:.7;pointer-events:none;z-index:-1;filter:blur(.1px)}

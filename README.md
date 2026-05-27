@@ -1,15 +1,34 @@
-# APTO.INK complete replacement package
+# Wylo — Frontier Website
 
-This zip is a full drop-in site. Delete the old files in your GitHub Pages repository and upload **everything** from this folder.
+A premium single-page React/Vite website for **Wylo**, designed as a high-end, motion-first digital experience for helping young entrepreneurs launch, organize, and scale.
 
-## Included
-- Root `index.html`
-- `CNAME` set to `apgo.ink`
-- Four unique demo sites under `/demos/`
-- Local raster image assets in `/assets/img/`
-- CSS split by base, home and each demo theme
-- JS modules in `/assets/js/components/`
-- Layout/component reference folders
-- Legal placeholders, 404, robots, sitemap, manifest
+## Stack
+- React
+- Vite
+- Framer Motion
+- Lucide React
+- Custom CSS
 
-No npm install. No server. No build step.
+## Features
+- Cinematic hero with layered motion and orbit-style interface scene
+- Premium glassmorphism + gradient aesthetic
+- Motion-led service, process, showcase, pricing, and CTA sections
+- Magnetic buttons and cursor glow
+- Fully responsive layout
+- Production build tested with `npm run build`
+
+## Run locally
+```bash
+npm install
+npm run dev
+```
+
+## Production build
+```bash
+npm run build
+npm run preview
+```
+
+## Notes
+- The site is intentionally art-directed around the inspiration you shared: smooth, floating, high-end motion and bold layered typography.
+- You can easily swap copy, pricing, tiers, and contact details in `src/App.jsx`.

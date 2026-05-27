@@ -1,2 +1,0 @@
-import Link from 'next/link';
-export default function ImpressumPage() { return <main className="legal-page"><div className="legal-shell"><Link className="link-line" href="/">Back to APTO.INK</Link><h1>Impressum</h1><div className="legal-card"><p><strong>APTO.INK</strong><br />Replace with legal name and address before publishing.</p><p>Email: <a href="mailto:hello@apto.ink">hello@apto.ink</a></p></div></div></main>; }
