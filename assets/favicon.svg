@@ -1,10 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="FounderScale favicon">
-  <defs>
-    <linearGradient id="g" x1="8" x2="56" y1="8" y2="56" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#2563eb"/>
-      <stop offset="1" stop-color="#7c3aed"/>
-    </linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="18" fill="url(#g)"/>
-  <path fill="#fff" d="M18 18h28v8H27v7h16v8H27v15h-9V18Zm32 0h-5v38h5V18Z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="18" fill="#090d08"/>
+  <path d="M15 20h7l4.4 20.2L31.6 20h5.8l5.3 20.2L47 20h7L47.2 46h-7.5l-5.2-18.5L29.3 46h-7.5L15 20Z" fill="#b8ff3d"/>
 </svg>

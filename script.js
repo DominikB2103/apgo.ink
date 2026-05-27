@@ -1,23 +1,21 @@
-const navToggle = document.querySelector('.nav-toggle');
-const navMenu = document.querySelector('#nav-menu');
-const yearEl = document.querySelector('#year');
+const toggle = document.querySelector('.menu-toggle');
+const links = document.querySelector('#nav-links');
+const year = document.querySelector('#year');
 
-if (yearEl) {
-  yearEl.textContent = new Date().getFullYear();
-}
+if (year) year.textContent = new Date().getFullYear();
 
-if (navToggle && navMenu) {
-  navToggle.addEventListener('click', () => {
-    const isOpen = navMenu.classList.toggle('is-open');
-    navToggle.setAttribute('aria-expanded', String(isOpen));
-    navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+if (toggle && links) {
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
   });
 
-  navMenu.querySelectorAll('a').forEach((link) => {
+  links.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
-      navMenu.classList.remove('is-open');
-      navToggle.setAttribute('aria-expanded', 'false');
-      navToggle.setAttribute('aria-label', 'Open navigation');
+      links.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open navigation');
     });
   });
 }
