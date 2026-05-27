@@ -1,40 +1,26 @@
-# Pulseberry
+# FounderScale Studio Website
 
-A React single-page website that works on GitHub Pages immediately.
+A professional, static website for a growth studio helping young entrepreneurs with websites, scaling, advertising, and infrastructure.
 
-## Fastest GitHub Pages setup
+## Files
 
-1. Upload everything in this folder to a GitHub repo.
-2. Go to **Settings → Pages**.
-3. Set **Source** to **Deploy from a branch**.
-4. Choose your branch and `/root`.
-5. Save.
+- `index.html` — main website page
+- `styles.css` — responsive styling
+- `script.js` — mobile navigation, year, and basic form validation
+- `assets/favicon.svg` — browser favicon
 
-The root `index.html` is already GitHub Pages-safe.
+## Deploy on GitHub Pages
 
-## Editable React source
+1. Create a new GitHub repository.
+2. Upload the contents of this folder to the root of the repository.
+3. Commit and push the files.
+4. In GitHub, open **Settings → Pages**.
+5. Under **Build and deployment**, choose **Deploy from a branch**.
+6. Select the `main` branch and `/root`, then save.
+7. Your site will be available at your GitHub Pages URL after GitHub finishes deploying.
 
-The live page uses React from CDN so it can run directly on GitHub Pages without a build step. The main editable files are:
+## Customization
 
-- `app.jsx` — React components
-- `styles.css` — all visuals and animation
-- `index.html` — page shell
+Search for `FounderScale` in `index.html` to replace the brand name. Update the contact email by replacing `hello@founderscale.studio` with your real email.
 
-## Components included
-
-- Nav
-- Hero
-- Can/Product visual
-- FlavorRail
-- Split feature section
-- Footer
-
-## Later additions
-
-Good next components to add:
-
-- horizontal carousel
-- dark editorial stats section
-- animated page transition
-- product flavor switcher
-- mobile menu
+The contact form uses `mailto:` because GitHub Pages is static hosting. For real form submissions, connect the form to a service such as Formspree, Basin, Netlify Forms, or your CRM endpoint.

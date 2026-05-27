@@ -1,0 +1,37 @@
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.querySelector('#nav-menu');
+const yearEl = document.querySelector('#year');
+
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
+
+if (navToggle && navMenu) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navMenu.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+    navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+  });
+
+  navMenu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Open navigation');
+    });
+  });
+}
+
+const form = document.querySelector('.contact-form');
+
+if (form) {
+  form.addEventListener('submit', (event) => {
+    const requiredFields = form.querySelectorAll('[required]');
+    const hasEmptyField = Array.from(requiredFields).some((field) => !field.value.trim());
+
+    if (hasEmptyField) {
+      event.preventDefault();
+      alert('Please fill in all required fields before sending your inquiry.');
+    }
+  });
+}
