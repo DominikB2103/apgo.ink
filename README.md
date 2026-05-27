@@ -1,26 +1,36 @@
-# FounderScale Studio Website
+# FounderScale Website
 
-A professional, static website for a growth studio helping young entrepreneurs with websites, scaling, advertising, and infrastructure.
+A static one-page website built for **GitHub Pages**.
 
 ## Files
 
-- `index.html` — main website page
-- `styles.css` — responsive styling
-- `script.js` — mobile navigation, year, and basic form validation
-- `assets/favicon.svg` — browser favicon
+- `index.html` – page structure
+- `styles.css` – all styling
+- `script.js` – mobile navigation behavior
+- `assets/favicon.svg` – favicon
 
 ## Deploy on GitHub Pages
 
-1. Create a new GitHub repository.
-2. Upload the contents of this folder to the root of the repository.
-3. Commit and push the files.
-4. In GitHub, open **Settings → Pages**.
-5. Under **Build and deployment**, choose **Deploy from a branch**.
-6. Select the `main` branch and `/root`, then save.
-7. Your site will be available at your GitHub Pages URL after GitHub finishes deploying.
+1. Create a GitHub repository.
+2. Upload **all files in this folder** to the repository root.
+3. In GitHub, go to **Settings → Pages**.
+4. Under **Build and deployment**, choose:
+   - **Source:** `Deploy from a branch`
+   - **Branch:** `main` (or `master`)
+   - **Folder:** `/root`
+5. Save.
+6. Wait a minute and GitHub will publish the website.
 
-## Customization
+## Quick customization
 
-Search for `FounderScale` in `index.html` to replace the brand name. Update the contact email by replacing `hello@founderscale.studio` with your real email.
+Edit the following directly in `index.html`:
 
-The contact form uses `mailto:` because GitHub Pages is static hosting. For real form submissions, connect the form to a service such as Formspree, Basin, Netlify Forms, or your CRM endpoint.
+- Brand name: search for `FounderScale`
+- Contact email: search for `hello@founderscale.studio`
+- Button text and copy: update any text sections as needed
+
+## Notes
+
+- Fully static: works on GitHub Pages without a backend
+- No canvas element used
+- Lightweight and performance-friendly
