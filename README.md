@@ -1,21 +1,20 @@
 # Wylo static website
 
-Static single-page website for Wylo. It uses plain HTML, CSS, and JavaScript, so it works on GitHub Pages without npm, build tools, or a backend.
+Static GitHub Pages-ready website.
 
 ## Files
 
-- `index.html` — page markup
-- `styles.css` — full responsive styling
-- `script.js` — mobile menu, carousel, reveal animations, and mailto contact form
-- `assets/` — generated decorative assets and Wylo mark
+- `index.html`
+- `styles.css`
+- `script.js`
+- `assets/wylo-mark.svg`
+- `assets/decor/` optimized transparent decorative PNG assets used by the website
+- `assets/decor-4k/` full 4K transparent decorative PNG source assets
 
-## GitHub Pages setup
+## Deploy
 
-1. Upload all files in this folder to a GitHub repository.
-2. Go to **Settings → Pages**.
-3. Set the source to the repository branch and root folder.
-4. Save. GitHub Pages will serve `index.html` directly.
+Upload the full contents of this folder to the root of a GitHub Pages repository. No npm install or build step is required.
 
-## Contact form
+## Contact email
 
-The form opens a mail draft to `hello@wylo.studio`. Change that address in `script.js` if needed.
+The contact form uses a `mailto:` link and currently sends to `hello@wylo.studio`. Change that email in `script.js` when needed.

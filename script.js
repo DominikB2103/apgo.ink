@@ -20,23 +20,24 @@
   const carousel = document.querySelector('[data-carousel]');
   if (carousel) {
     const track = carousel.querySelector('[data-carousel-track]');
-    const slides = Array.from(track.children);
+    const slides = track ? Array.from(track.children) : [];
     const prev = carousel.querySelector('[data-carousel-prev]');
     const next = carousel.querySelector('[data-carousel-next]');
     const dotsWrap = carousel.querySelector('[data-carousel-dots]');
     let index = 0;
-    let autoTimer;
+    let autoTimer = null;
 
-    const dots = slides.map((slide, dotIndex) => {
+    const dots = slides.map((_, dotIndex) => {
       const dot = document.createElement('button');
       dot.type = 'button';
-      dot.setAttribute('aria-label', `Show project ${dotIndex + 1}`);
+      dot.setAttribute('aria-label', `Show example ${dotIndex + 1}`);
       dot.addEventListener('click', () => setIndex(dotIndex));
-      dotsWrap.appendChild(dot);
+      if (dotsWrap) dotsWrap.appendChild(dot);
       return dot;
     });
 
     function setIndex(nextIndex) {
+      if (!track || slides.length === 0) return;
       index = (nextIndex + slides.length) % slides.length;
       track.style.transform = `translateX(${-index * 100}%)`;
       dots.forEach((dot, dotIndex) => {
@@ -47,11 +48,11 @@
 
     function restartAuto() {
       window.clearInterval(autoTimer);
-      autoTimer = window.setInterval(() => setIndex(index + 1), 6500);
+      autoTimer = window.setInterval(() => setIndex(index + 1), 6800);
     }
 
-    prev.addEventListener('click', () => setIndex(index - 1));
-    next.addEventListener('click', () => setIndex(index + 1));
+    if (prev) prev.addEventListener('click', () => setIndex(index - 1));
+    if (next) next.addEventListener('click', () => setIndex(index + 1));
 
     carousel.addEventListener('keydown', (event) => {
       if (event.key === 'ArrowLeft') setIndex(index - 1);
@@ -81,7 +82,7 @@
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.14 });
+    }, { threshold: 0.12 });
     revealItems.forEach((item) => revealObserver.observe(item));
   } else {
     revealItems.forEach((item) => item.classList.add('is-visible'));
@@ -101,13 +102,18 @@
       const selectedPackage = String(data.get('package') || '').trim();
       const message = String(data.get('message') || '').trim();
 
-      const subject = encodeURIComponent(`Wylo project request — ${selectedPackage}`);
-      const body = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\nPackage: ${selectedPackage}\n\nProject notes:\n${message}`
-      );
+      const subject = encodeURIComponent(`Wylo request — ${selectedPackage}`);
+      const bodyText = [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Selected package: ${selectedPackage}`,
+        '',
+        'Project notes:',
+        message
+      ].join('\n');
 
-      window.location.href = `mailto:hello@wylo.studio?subject=${subject}&body=${body}`;
-      if (note) note.textContent = 'Email draft created. Change the address in index.html if Wylo uses a different inbox.';
+      window.location.href = `mailto:hello@wylo.studio?subject=${subject}&body=${encodeURIComponent(bodyText)}`;
+      if (note) note.textContent = 'Your request is ready to send. We’ll review the details and reply with the next step.';
     });
   }
 })();

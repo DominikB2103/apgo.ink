@@ -4,13 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Wylo — Websites, Ads & Infrastructure for Growing Businesses</title>
-  <meta name="description" content="Wylo helps entrepreneurs, online shops, and mobile app developers grow with high-converting websites, ads, infrastructure, and long-term digital systems." />
+  <meta name="description" content="Wylo helps entrepreneurs, online shops, and mobile app developers scale with websites, ads, infrastructure, and long-term digital systems." />
   <meta name="theme-color" content="#8bd545" />
   <meta property="og:title" content="Wylo — Grow your online business" />
   <meta property="og:description" content="Websites, ads, infrastructure, and growth systems for online shops and app developers." />
   <meta property="og:type" content="website" />
   <link rel="icon" href="assets/wylo-mark.svg" type="image/svg+xml" />
-  <link rel="preload" href="assets/plant-corner.webp" as="image" />
+  <link rel="preload" href="assets/decor/glass-botanical-corner.png" as="image" />
+  <link rel="preload" href="assets/decor/green-gel-blob.png" as="image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@500;700;800;900;1000&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -32,48 +36,39 @@
 
       <div class="nav-links" id="main-menu">
         <a href="#home">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#plans">Plans</a>
+        <a href="#work">Work</a>
+        <a href="#packages">Packages</a>
         <a href="#contact">Contact</a>
-        <a class="nav-cta" href="#plans">Start Growing</a>
+        <a class="nav-cta" href="#contact">Contact us</a>
       </div>
     </nav>
   </header>
 
   <main id="main">
     <section class="hero section" id="home" aria-labelledby="hero-title">
-      <img class="decor decor-plant-left" src="assets/plant-corner.webp" alt="" aria-hidden="true" />
-      <img class="decor decor-vines" src="assets/hanging-vines.webp" alt="" aria-hidden="true" />
-      <img class="decor decor-blob" src="assets/green-glass-blob.webp" alt="" aria-hidden="true" />
-      <img class="decor decor-sparkles" src="assets/sparkles.webp" alt="" aria-hidden="true" />
+      <img class="decor hero-corner" src="assets/decor/glass-botanical-corner.png" alt="" aria-hidden="true" />
+      <img class="decor hero-vines" src="assets/decor/glass-hanging-vines.png" alt="" aria-hidden="true" />
+      <img class="decor hero-sparkles" src="assets/decor/glass-sparkles.png" alt="" aria-hidden="true" />
+      <img class="decor hero-orb" src="assets/decor/pink-glass-orb.png" alt="" aria-hidden="true" />
 
       <div class="hero-grid container">
         <div class="hero-copy reveal">
-          <p class="eyebrow"><span class="pulse-dot"></span>For online shops & app builders</p>
           <h1 id="hero-title">We grow small businesses into serious online brands.</h1>
           <p class="hero-text">Wylo helps entrepreneurs, online shops, and mobile app developers scale with websites, ads, infrastructure, and long-term digital systems.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#plans">View Plans <span aria-hidden="true">→</span></a>
-            <a class="btn btn-secondary" href="#projects">See Projects</a>
-          </div>
-          <div class="quick-stack" aria-label="Wylo services">
-            <span>Websites</span>
-            <span>Ads</span>
-            <span>Infrastructure</span>
-            <span>App Support</span>
+            <a class="btn btn-primary" href="#packages">Select a package</a>
+            <a class="btn btn-secondary" href="#work">View work</a>
           </div>
         </div>
 
         <div class="hero-visual reveal" aria-label="Wylo growth dashboard preview">
-          <img class="visual-orb" src="assets/pink-glass-sphere.webp" alt="" aria-hidden="true" />
-          <img class="visual-arrow" src="assets/growth-arrow.webp" alt="" aria-hidden="true" />
+          <img class="visual-blob" src="assets/decor/green-gel-blob.png" alt="" aria-hidden="true" />
           <div class="growth-card main-dashboard">
             <div class="dashboard-top">
-              <span class="window-dot"></span>
-              <span class="window-dot"></span>
-              <span class="window-dot"></span>
+              <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
               <strong>Growth Overview</strong>
             </div>
+
             <div class="metric-row">
               <div>
                 <span class="metric-label">Revenue Lift</span>
@@ -81,22 +76,24 @@
               </div>
               <div class="mini-badge">Live</div>
             </div>
-            <svg class="growth-chart" viewBox="0 0 380 170" role="img" aria-label="Upward growth chart">
+
+            <svg class="growth-chart" viewBox="0 0 420 178" role="img" aria-label="Upward growth chart">
               <defs>
                 <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stop-color="#94d945" stop-opacity="0.38" />
+                  <stop offset="0" stop-color="#94d945" stop-opacity="0.42" />
                   <stop offset="1" stop-color="#94d945" stop-opacity="0" />
                 </linearGradient>
               </defs>
-              <path class="chart-area" d="M18 128 C54 100 73 122 100 96 C130 67 160 92 189 68 C226 37 244 57 272 44 C309 25 335 35 362 18 L362 150 L18 150 Z" />
-              <path class="chart-line" d="M18 128 C54 100 73 122 100 96 C130 67 160 92 189 68 C226 37 244 57 272 44 C309 25 335 35 362 18" />
-              <circle cx="362" cy="18" r="8" />
+              <path class="chart-area" d="M18 139 C58 111 80 128 116 98 C150 69 181 92 213 67 C252 34 275 55 308 43 C350 26 376 36 401 18 L401 158 L18 158 Z" />
+              <path class="chart-line" d="M18 139 C58 111 80 128 116 98 C150 69 181 92 213 67 C252 34 275 55 308 43 C350 26 376 36 401 18" />
+              <circle cx="401" cy="18" r="9" />
             </svg>
+
             <div class="dashboard-list">
-              <div class="dash-item"><span class="icon-chip">↗</span><span>Ads & Growth</span></div>
-              <div class="dash-item"><span class="icon-chip">⌁</span><span>Website Build</span></div>
-              <div class="dash-item"><span class="icon-chip">◆</span><span>Infrastructure</span></div>
-              <div class="dash-item"><span class="icon-chip">▣</span><span>App Support</span></div>
+              <div class="dash-item"><span class="icon-chip">↗</span><span>Growth ads</span></div>
+              <div class="dash-item"><span class="icon-chip">⌁</span><span>Storefront build</span></div>
+              <div class="dash-item"><span class="icon-chip">◆</span><span>Checkout systems</span></div>
+              <div class="dash-item"><span class="icon-chip">▣</span><span>App launch support</span></div>
             </div>
           </div>
 
@@ -112,13 +109,16 @@
           </div>
         </div>
       </div>
+
+      <div class="hero-divider" aria-hidden="true">
+        <img src="assets/decor/glass-wave-divider.png" alt="" />
+      </div>
     </section>
 
     <section class="section services" aria-labelledby="services-title">
-      <img class="decor decor-dots" src="assets/green-dots.webp" alt="" aria-hidden="true" />
+      <img class="decor service-bubbles" src="assets/decor/green-bubbles.png" alt="" aria-hidden="true" loading="lazy" />
       <div class="container">
         <div class="section-heading reveal">
-          <p class="eyebrow">What Wylo builds</p>
           <h2 id="services-title">Growth systems, not random assets.</h2>
           <p>Each piece connects: your website, ads, analytics, payments, app support, and infrastructure should work like one system.</p>
         </div>
@@ -142,15 +142,11 @@
       </div>
     </section>
 
-    <section class="section projects" id="projects" aria-labelledby="projects-title">
-      <img class="decor decor-ribbon" src="assets/flowing-ribbon.webp" alt="" aria-hidden="true" />
+    <section class="section work" id="work" aria-labelledby="work-title">
+      <img class="decor work-ribbon" src="assets/decor/leaf-ribbon-sprout.png" alt="" aria-hidden="true" loading="lazy" />
       <div class="container">
         <div class="section-heading split-heading reveal">
-          <div>
-            <p class="eyebrow">Previous projects</p>
-            <h2 id="projects-title">Examples made for shops, brands, and digital products.</h2>
-          </div>
-          <p>Explore sample experiences that show the direction Wylo can build toward: clean shops, organic brand pages, and warm local business websites.</p>
+          <h2 id="work-title">Examples made for shops, brands, and digital products.</h2>
         </div>
 
         <div class="carousel reveal" data-carousel>
@@ -171,7 +167,7 @@
                     <span class="project-tag">E-commerce</span>
                     <h3>Online Shop Example</h3>
                     <p>A clean e-commerce concept built for selling products online with a smooth, modern shopping flow.</p>
-                    <span class="project-link">View Project <span aria-hidden="true">→</span></span>
+                    <span class="project-link">Open example</span>
                   </div>
                 </a>
               </article>
@@ -190,7 +186,7 @@
                     <span class="project-tag">Brand system</span>
                     <h3>Forest Brand Example</h3>
                     <p>A calm, nature-inspired website direction for service brands that need trust and atmosphere.</p>
-                    <span class="project-link">View Project <span aria-hidden="true">→</span></span>
+                    <span class="project-link">Open example</span>
                   </div>
                 </a>
               </article>
@@ -209,37 +205,36 @@
                     <span class="project-tag">Local business</span>
                     <h3>Bakery Example</h3>
                     <p>A warm business website concept for local shops that want to feel polished and approachable.</p>
-                    <span class="project-link">View Project <span aria-hidden="true">→</span></span>
+                    <span class="project-link">Open example</span>
                   </div>
                 </a>
               </article>
             </div>
           </div>
 
-          <div class="carousel-controls" aria-label="Project carousel controls">
-            <button class="circle-btn" type="button" data-carousel-prev aria-label="Previous project">←</button>
-            <div class="carousel-dots" data-carousel-dots aria-label="Choose project"></div>
-            <button class="circle-btn active" type="button" data-carousel-next aria-label="Next project">→</button>
+          <div class="carousel-controls" aria-label="Work carousel controls">
+            <button class="circle-btn" type="button" data-carousel-prev aria-label="Previous example">←</button>
+            <div class="carousel-dots" data-carousel-dots aria-label="Choose example"></div>
+            <button class="circle-btn active" type="button" data-carousel-next aria-label="Next example">→</button>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section plans" id="plans" aria-labelledby="plans-title">
-      <img class="decor decor-orb" src="assets/botanical-orb.webp" alt="" aria-hidden="true" />
+    <section class="section packages" id="packages" aria-labelledby="packages-title">
+      <img class="decor packages-flower" src="assets/decor/pink-glass-flower.png" alt="" aria-hidden="true" loading="lazy" />
       <div class="container">
         <div class="section-heading reveal">
-          <p class="eyebrow">Plans</p>
-          <h2 id="plans-title">Choose how Wylo can help you grow.</h2>
+          <h2 id="packages-title">Choose how Wylo can help you grow.</h2>
           <p>Start with your first website, build your full digital infrastructure, or work with Wylo long term.</p>
         </div>
 
-        <div class="plans-grid">
-          <article class="plan-card reveal">
-            <div class="plan-icon" aria-hidden="true">⌁</div>
-            <p class="plan-kicker">Plan 1</p>
+        <div class="packages-grid">
+          <article class="package-card reveal">
+            <div class="package-icon" aria-hidden="true">⌁</div>
+            <p class="package-kicker">Package 1</p>
             <h3>Website Package</h3>
-            <p class="plan-description">Best for entrepreneurs and small businesses that need a strong online presence.</p>
+            <p class="package-description">Best for entrepreneurs and small businesses that need a strong online presence.</p>
             <ul class="check-list">
               <li>Custom website design</li>
               <li>Responsive mobile layout</li>
@@ -249,15 +244,15 @@
               <li>Online shop setup option</li>
               <li>Launch support</li>
             </ul>
-            <a class="btn btn-plan" href="#contact">Start with a Website</a>
+            <a class="btn btn-package" href="#contact">Select</a>
           </article>
 
-          <article class="plan-card featured reveal">
+          <article class="package-card featured reveal">
             <span class="floating-label">Most Popular</span>
-            <div class="plan-icon" aria-hidden="true">▦</div>
-            <p class="plan-kicker">Plan 2</p>
+            <div class="package-icon" aria-hidden="true">▦</div>
+            <p class="package-kicker">Package 2</p>
             <h3>Full Infrastructure Package</h3>
-            <p class="plan-description">Best for businesses that need the complete digital foundation behind the brand.</p>
+            <p class="package-description">Best for businesses that need the complete digital foundation behind the brand.</p>
             <ul class="check-list">
               <li>Website development</li>
               <li>Hosting setup</li>
@@ -268,15 +263,15 @@
               <li>Shop/app support systems</li>
               <li>Maintenance setup</li>
             </ul>
-            <a class="btn btn-primary" href="#contact">Build My Infrastructure <span aria-hidden="true">→</span></a>
+            <a class="btn btn-primary" href="#contact">Select</a>
           </article>
 
-          <article class="plan-card enterprise reveal">
+          <article class="package-card enterprise reveal">
             <span class="floating-label dark-label">Long-Term Partner</span>
-            <div class="plan-icon" aria-hidden="true">♛</div>
-            <p class="plan-kicker">Plan 3</p>
+            <div class="package-icon" aria-hidden="true">♛</div>
+            <p class="package-kicker">Enterprise</p>
             <h3>Enterprise / Long-Term</h3>
-            <p class="plan-description">Best for scaling businesses that want ongoing technical and growth support.</p>
+            <p class="package-description">Best for scaling businesses that want ongoing technical and growth support.</p>
             <ul class="check-list">
               <li>Long-term website management</li>
               <li>Ad campaign support</li>
@@ -287,19 +282,18 @@
               <li>Growth strategy</li>
               <li>Custom integrations</li>
             </ul>
-            <a class="btn btn-gold" href="#contact">Talk to Wylo</a>
+            <a class="btn btn-gold" href="#contact">Select</a>
           </article>
         </div>
       </div>
     </section>
 
     <section class="section contact" id="contact" aria-labelledby="contact-title">
-      <img class="decor decor-sprout" src="assets/sprout.webp" alt="" aria-hidden="true" />
+      <img class="decor contact-corner" src="assets/decor/soft-botanical-corner.png" alt="" aria-hidden="true" loading="lazy" />
       <div class="container contact-card reveal">
         <div class="contact-copy">
-          <p class="eyebrow">Start growing</p>
           <h2 id="contact-title">Tell Wylo what you want to build.</h2>
-          <p>Use the quick form to draft your request. It creates a ready-to-send email with your project details, so it works on GitHub Pages with no backend.</p>
+          <p>Share the shop, app, or business you want to grow. We’ll review the details and come back with a clean next step.</p>
         </div>
         <form class="contact-form" id="contact-form">
           <label>
@@ -323,15 +317,15 @@
             <span>Project notes</span>
             <textarea name="message" rows="4" placeholder="Tell us about your shop, app, idea, or growth problem..." required></textarea>
           </label>
-          <button class="btn btn-primary full-field" type="submit">Create Email <span aria-hidden="true">→</span></button>
-          <p class="form-note" id="form-note" aria-live="polite">No backend needed. The button opens your email app.</p>
+          <button class="btn btn-primary full-field" type="submit">Send request</button>
+          <p class="form-note" id="form-note" aria-live="polite">You can also email us directly at hello@wylo.studio.</p>
         </form>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <img class="footer-glow" src="assets/green-glass-blob.webp" alt="" aria-hidden="true" />
+    <img class="footer-glow" src="assets/decor/green-gel-blob.png" alt="" aria-hidden="true" loading="lazy" />
     <div class="container footer-grid">
       <div>
         <a class="brand footer-brand" href="#home" aria-label="Wylo home">
@@ -343,20 +337,20 @@
       <div class="footer-links">
         <h2>Navigate</h2>
         <a href="#home">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#plans">Plans</a>
+        <a href="#work">Work</a>
+        <a href="#packages">Packages</a>
         <a href="#contact">Contact</a>
       </div>
       <div class="footer-links">
         <h2>Focus</h2>
-        <a href="#plans">Websites</a>
-        <a href="#plans">Infrastructure</a>
-        <a href="#plans">Long-term growth</a>
+        <a href="#packages">Websites</a>
+        <a href="#packages">Infrastructure</a>
+        <a href="#packages">Long-term growth</a>
       </div>
       <div class="footer-cta">
         <h2>Ready?</h2>
         <p>Pick a package and turn the idea into a working system.</p>
-        <a class="btn btn-gold" href="#plans">View Plans</a>
+        <a class="btn btn-gold" href="#contact">Contact us</a>
       </div>
     </div>
     <div class="container footer-bottom">
