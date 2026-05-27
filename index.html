@@ -3,219 +3,365 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Wylo builds websites, growth systems, advertising setups, and infrastructure for young entrepreneurs." />
-  <meta name="theme-color" content="#090d08" />
-  <title>Wylo | Websites and Growth Systems</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <title>Wylo — Websites, Ads & Infrastructure for Growing Businesses</title>
+  <meta name="description" content="Wylo helps entrepreneurs, online shops, and mobile app developers grow with high-converting websites, ads, infrastructure, and long-term digital systems." />
+  <meta name="theme-color" content="#8bd545" />
+  <meta property="og:title" content="Wylo — Grow your online business" />
+  <meta property="og:description" content="Websites, ads, infrastructure, and growth systems for online shops and app developers." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="assets/wylo-mark.svg" type="image/svg+xml" />
+  <link rel="preload" href="assets/plant-corner.webp" as="image" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" id="top">
-    <nav class="nav" aria-label="Main navigation">
-      <a class="logo" href="#top" aria-label="Wylo home">
-        <span class="logo-mark">W</span>
+    <nav class="nav-shell" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Wylo home">
+        <img src="assets/wylo-mark.svg" alt="" class="brand-mark" />
         <span>Wylo</span>
       </a>
 
-      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
-        <span></span><span></span><span></span>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+        <span class="sr-only">Open menu</span>
       </button>
 
-      <div class="nav-links" id="nav-links">
-        <a href="#work">Work</a>
-        <a href="#services">Services</a>
-        <a href="#process">Process</a>
+      <div class="nav-links" id="main-menu">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#plans">Plans</a>
         <a href="#contact">Contact</a>
-        <a class="nav-button" href="#contact">Start</a>
+        <a class="nav-cta" href="#plans">Start Growing</a>
       </div>
     </nav>
   </header>
 
   <main id="main">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="kicker">Websites · ads · systems</p>
-          <h1>Build the company behind your idea.</h1>
-          <p class="lead">Wylo helps young entrepreneurs turn early-stage projects into sharper brands with strong websites, growth structure, advertising setup, and reliable backend systems.</p>
+    <section class="hero section" id="home" aria-labelledby="hero-title">
+      <img class="decor decor-plant-left" src="assets/plant-corner.webp" alt="" aria-hidden="true" />
+      <img class="decor decor-vines" src="assets/hanging-vines.webp" alt="" aria-hidden="true" />
+      <img class="decor decor-blob" src="assets/green-glass-blob.webp" alt="" aria-hidden="true" />
+      <img class="decor decor-sparkles" src="assets/sparkles.webp" alt="" aria-hidden="true" />
+
+      <div class="hero-grid container">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="pulse-dot"></span>For online shops & app builders</p>
+          <h1 id="hero-title">We grow small businesses into serious online brands.</h1>
+          <p class="hero-text">Wylo helps entrepreneurs, online shops, and mobile app developers scale with websites, ads, infrastructure, and long-term digital systems.</p>
           <div class="hero-actions">
-            <a class="button primary" href="#contact">Start a project</a>
-            <a class="button secondary" href="#services">View services</a>
+            <a class="btn btn-primary" href="#plans">View Plans <span aria-hidden="true">→</span></a>
+            <a class="btn btn-secondary" href="#projects">See Projects</a>
+          </div>
+          <div class="quick-stack" aria-label="Wylo services">
+            <span>Websites</span>
+            <span>Ads</span>
+            <span>Infrastructure</span>
+            <span>App Support</span>
           </div>
         </div>
 
-        <div class="hero-visual" aria-label="Wylo launch system preview">
-          <div class="visual-header">
-            <span></span><span></span><span></span>
+        <div class="hero-visual reveal" aria-label="Wylo growth dashboard preview">
+          <img class="visual-orb" src="assets/pink-glass-sphere.webp" alt="" aria-hidden="true" />
+          <img class="visual-arrow" src="assets/growth-arrow.webp" alt="" aria-hidden="true" />
+          <div class="growth-card main-dashboard">
+            <div class="dashboard-top">
+              <span class="window-dot"></span>
+              <span class="window-dot"></span>
+              <span class="window-dot"></span>
+              <strong>Growth Overview</strong>
+            </div>
+            <div class="metric-row">
+              <div>
+                <span class="metric-label">Revenue Lift</span>
+                <strong class="metric-number">128%</strong>
+              </div>
+              <div class="mini-badge">Live</div>
+            </div>
+            <svg class="growth-chart" viewBox="0 0 380 170" role="img" aria-label="Upward growth chart">
+              <defs>
+                <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#94d945" stop-opacity="0.38" />
+                  <stop offset="1" stop-color="#94d945" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+              <path class="chart-area" d="M18 128 C54 100 73 122 100 96 C130 67 160 92 189 68 C226 37 244 57 272 44 C309 25 335 35 362 18 L362 150 L18 150 Z" />
+              <path class="chart-line" d="M18 128 C54 100 73 122 100 96 C130 67 160 92 189 68 C226 37 244 57 272 44 C309 25 335 35 362 18" />
+              <circle cx="362" cy="18" r="8" />
+            </svg>
+            <div class="dashboard-list">
+              <div class="dash-item"><span class="icon-chip">↗</span><span>Ads & Growth</span></div>
+              <div class="dash-item"><span class="icon-chip">⌁</span><span>Website Build</span></div>
+              <div class="dash-item"><span class="icon-chip">◆</span><span>Infrastructure</span></div>
+              <div class="dash-item"><span class="icon-chip">▣</span><span>App Support</span></div>
+            </div>
           </div>
-          <div class="visual-body">
-            <div class="visual-score">
-              <small>Launch stack</small>
-              <strong>Ready</strong>
-            </div>
-            <div class="visual-list">
-              <p><span></span> Website structure</p>
-              <p><span></span> Funnel and tracking</p>
-              <p><span></span> Ads foundation</p>
-              <p><span></span> Operations setup</p>
-            </div>
-            <div class="visual-bars" aria-hidden="true">
-              <i></i><i></i><i></i><i></i><i></i>
-            </div>
+
+          <div class="floating-card float-one">
+            <span class="tiny-icon">🛒</span>
+            <strong>Shop-ready</strong>
+            <small>Landing pages + payments</small>
+          </div>
+          <div class="floating-card float-two">
+            <span class="tiny-icon">⚡</span>
+            <strong>Fast launch</strong>
+            <small>Clean setup, no chaos</small>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="ticker" aria-label="Wylo focus areas">
-      <div class="container ticker-inner">
-        <span>Sites</span>
-        <span>Funnels</span>
-        <span>Ads</span>
-        <span>Analytics</span>
-        <span>Automation</span>
-        <span>CRM</span>
-      </div>
-    </section>
-
-    <section class="section" id="work">
-      <div class="container intro-grid">
-        <div>
-          <p class="kicker">Work</p>
-          <h2>Digital setup for young businesses.</h2>
-        </div>
-        <p>We work on the parts people see and the systems they do not: the site, the message, the traffic path, the tools, and the structure needed to operate cleanly.</p>
-      </div>
-    </section>
-
-    <section class="section services" id="services">
+    <section class="section services" aria-labelledby="services-title">
+      <img class="decor decor-dots" src="assets/green-dots.webp" alt="" aria-hidden="true" />
       <div class="container">
-        <div class="section-title">
-          <p class="kicker">Services</p>
-          <h2>What Wylo builds</h2>
+        <div class="section-heading reveal">
+          <p class="eyebrow">What Wylo builds</p>
+          <h2 id="services-title">Growth systems, not random assets.</h2>
+          <p>Each piece connects: your website, ads, analytics, payments, app support, and infrastructure should work like one system.</p>
         </div>
-
-        <div class="service-list">
-          <article class="service-item">
-            <span>01</span>
-            <h3>Websites</h3>
-            <p>Responsive websites with clear structure, strong copy, fast loading, and a professional first impression.</p>
-            <ul>
-              <li>Landing pages</li>
-              <li>Full websites</li>
-              <li>Conversion sections</li>
-            </ul>
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">✦</span>
+            <h3>Conversion Websites</h3>
+            <p>Sharp landing pages, responsive layouts, shop flows, and launch-ready pages for new or growing brands.</p>
           </article>
-
-          <article class="service-item">
-            <span>02</span>
-            <h3>Growth systems</h3>
-            <p>Positioning, offers, lead paths, booking flows, and launch structure that make the business easier to sell.</p>
-            <ul>
-              <li>Offer clarity</li>
-              <li>Funnels</li>
-              <li>Launch planning</li>
-            </ul>
+          <article class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">↗</span>
+            <h3>Ads & Growth</h3>
+            <p>Campaign setup, tracking, creative direction, and the systems needed to turn clicks into customers.</p>
           </article>
-
-          <article class="service-item">
-            <span>03</span>
-            <h3>Advertising</h3>
-            <p>Ad account basics, landing pages, retargeting structure, creative direction, and reporting foundations.</p>
-            <ul>
-              <li>Paid traffic setup</li>
-              <li>Tracking</li>
-              <li>Campaign structure</li>
-            </ul>
-          </article>
-
-          <article class="service-item">
-            <span>04</span>
+          <article class="service-card reveal">
+            <span class="service-icon" aria-hidden="true">▦</span>
             <h3>Infrastructure</h3>
-            <p>Domains, email, analytics, CRM, automations, forms, booking, and backend tools connected properly.</p>
-            <ul>
-              <li>CRM</li>
-              <li>Automations</li>
-              <li>Operations</li>
+            <p>Domains, hosting, analytics, payments, email, maintenance, and the technical foundation behind the business.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects" aria-labelledby="projects-title">
+      <img class="decor decor-ribbon" src="assets/flowing-ribbon.webp" alt="" aria-hidden="true" />
+      <div class="container">
+        <div class="section-heading split-heading reveal">
+          <div>
+            <p class="eyebrow">Previous projects</p>
+            <h2 id="projects-title">Examples made for shops, brands, and digital products.</h2>
+          </div>
+          <p>Explore sample experiences that show the direction Wylo can build toward: clean shops, organic brand pages, and warm local business websites.</p>
+        </div>
+
+        <div class="carousel reveal" data-carousel>
+          <div class="carousel-window">
+            <div class="carousel-track" data-carousel-track>
+              <article class="project-slide" data-project="shop">
+                <a class="project-card" href="https://apgo.ink/examples/shop" target="_blank" rel="noopener noreferrer" aria-label="Open Online Shop Example">
+                  <div class="project-visual shop-visual" aria-hidden="true">
+                    <div class="mock-browser">
+                      <div class="mock-bar"><span></span><span></span><span></span></div>
+                      <div class="shop-grid-mini">
+                        <span></span><span></span><span></span><span></span>
+                      </div>
+                      <div class="mock-product-card"></div>
+                    </div>
+                  </div>
+                  <div class="project-content">
+                    <span class="project-tag">E-commerce</span>
+                    <h3>Online Shop Example</h3>
+                    <p>A clean e-commerce concept built for selling products online with a smooth, modern shopping flow.</p>
+                    <span class="project-link">View Project <span aria-hidden="true">→</span></span>
+                  </div>
+                </a>
+              </article>
+
+              <article class="project-slide" data-project="forest">
+                <a class="project-card" href="https://apgo.ink/examples/forest" target="_blank" rel="noopener noreferrer" aria-label="Open Forest Brand Example">
+                  <div class="project-visual forest-visual" aria-hidden="true">
+                    <div class="forest-card-mini">
+                      <span class="tree tree-one"></span>
+                      <span class="tree tree-two"></span>
+                      <span class="tree tree-three"></span>
+                      <span class="forest-line"></span>
+                    </div>
+                  </div>
+                  <div class="project-content">
+                    <span class="project-tag">Brand system</span>
+                    <h3>Forest Brand Example</h3>
+                    <p>A calm, nature-inspired website direction for service brands that need trust and atmosphere.</p>
+                    <span class="project-link">View Project <span aria-hidden="true">→</span></span>
+                  </div>
+                </a>
+              </article>
+
+              <article class="project-slide" data-project="bakery">
+                <a class="project-card" href="https://apgo.ink/examples/bakery" target="_blank" rel="noopener noreferrer" aria-label="Open Bakery Example">
+                  <div class="project-visual bakery-visual" aria-hidden="true">
+                    <div class="bakery-mini">
+                      <span class="bun bun-one"></span>
+                      <span class="bun bun-two"></span>
+                      <span class="bun bun-three"></span>
+                      <span class="bakery-card-line"></span>
+                    </div>
+                  </div>
+                  <div class="project-content">
+                    <span class="project-tag">Local business</span>
+                    <h3>Bakery Example</h3>
+                    <p>A warm business website concept for local shops that want to feel polished and approachable.</p>
+                    <span class="project-link">View Project <span aria-hidden="true">→</span></span>
+                  </div>
+                </a>
+              </article>
+            </div>
+          </div>
+
+          <div class="carousel-controls" aria-label="Project carousel controls">
+            <button class="circle-btn" type="button" data-carousel-prev aria-label="Previous project">←</button>
+            <div class="carousel-dots" data-carousel-dots aria-label="Choose project"></div>
+            <button class="circle-btn active" type="button" data-carousel-next aria-label="Next project">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section plans" id="plans" aria-labelledby="plans-title">
+      <img class="decor decor-orb" src="assets/botanical-orb.webp" alt="" aria-hidden="true" />
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Plans</p>
+          <h2 id="plans-title">Choose how Wylo can help you grow.</h2>
+          <p>Start with your first website, build your full digital infrastructure, or work with Wylo long term.</p>
+        </div>
+
+        <div class="plans-grid">
+          <article class="plan-card reveal">
+            <div class="plan-icon" aria-hidden="true">⌁</div>
+            <p class="plan-kicker">Plan 1</p>
+            <h3>Website Package</h3>
+            <p class="plan-description">Best for entrepreneurs and small businesses that need a strong online presence.</p>
+            <ul class="check-list">
+              <li>Custom website design</li>
+              <li>Responsive mobile layout</li>
+              <li>Landing pages</li>
+              <li>Basic SEO setup</li>
+              <li>Contact forms</li>
+              <li>Online shop setup option</li>
+              <li>Launch support</li>
             </ul>
+            <a class="btn btn-plan" href="#contact">Start with a Website</a>
+          </article>
+
+          <article class="plan-card featured reveal">
+            <span class="floating-label">Most Popular</span>
+            <div class="plan-icon" aria-hidden="true">▦</div>
+            <p class="plan-kicker">Plan 2</p>
+            <h3>Full Infrastructure Package</h3>
+            <p class="plan-description">Best for businesses that need the complete digital foundation behind the brand.</p>
+            <ul class="check-list">
+              <li>Website development</li>
+              <li>Hosting setup</li>
+              <li>Domain setup</li>
+              <li>Business email setup</li>
+              <li>Analytics and ad tracking</li>
+              <li>Payment integrations</li>
+              <li>Shop/app support systems</li>
+              <li>Maintenance setup</li>
+            </ul>
+            <a class="btn btn-primary" href="#contact">Build My Infrastructure <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="plan-card enterprise reveal">
+            <span class="floating-label dark-label">Long-Term Partner</span>
+            <div class="plan-icon" aria-hidden="true">♛</div>
+            <p class="plan-kicker">Plan 3</p>
+            <h3>Enterprise / Long-Term</h3>
+            <p class="plan-description">Best for scaling businesses that want ongoing technical and growth support.</p>
+            <ul class="check-list">
+              <li>Long-term website management</li>
+              <li>Ad campaign support</li>
+              <li>Infrastructure management</li>
+              <li>Conversion optimization</li>
+              <li>Ongoing updates</li>
+              <li>Technical support</li>
+              <li>Growth strategy</li>
+              <li>Custom integrations</li>
+            </ul>
+            <a class="btn btn-gold" href="#contact">Talk to Wylo</a>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section dark" id="process">
-      <div class="container process-grid">
-        <div>
-          <p class="kicker muted-light">Process</p>
-          <h2>Plan. Build. Launch. Improve.</h2>
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <img class="decor decor-sprout" src="assets/sprout.webp" alt="" aria-hidden="true" />
+      <div class="container contact-card reveal">
+        <div class="contact-copy">
+          <p class="eyebrow">Start growing</p>
+          <h2 id="contact-title">Tell Wylo what you want to build.</h2>
+          <p>Use the quick form to draft your request. It creates a ready-to-send email with your project details, so it works on GitHub Pages with no backend.</p>
         </div>
-        <div class="steps">
-          <article>
-            <span>01</span>
-            <h3>Audit</h3>
-            <p>We review the idea, current assets, audience, offer, tools, and weak points.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Structure</h3>
-            <p>We map the site, funnel, tracking, ads foundation, and backend setup.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Build</h3>
-            <p>We create the website, connect the tools, polish the message, and prepare launch assets.</p>
-          </article>
-          <article>
-            <span>04</span>
-            <h3>Scale</h3>
-            <p>We refine pages, campaigns, reporting, and operations as the business grows.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section results">
-      <div class="container results-grid">
-        <div>
-          <p class="kicker">Outcome</p>
-          <h2>A cleaner business foundation.</h2>
-        </div>
-        <div class="outcome-lines">
-          <p><strong>Sharper presence</strong><span>A site and message that feel established.</span></p>
-          <p><strong>Better conversion path</strong><span>Clear routes from visitor to lead, booking, or sale.</span></p>
-          <p><strong>Less backend mess</strong><span>Tools connected in a way that is easier to run.</span></p>
-          <p><strong>More room to grow</strong><span>Structure that can support traffic, ads, and scale.</span></p>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="container contact-inner">
-        <div>
-          <p class="kicker muted-light">Contact</p>
-          <h2>Start with Wylo.</h2>
-          <p>Send a project inquiry and we’ll map what needs to be built first.</p>
-        </div>
-        <a class="button light" href="mailto:hello@wylo.studio?subject=Wylo%20Project%20Inquiry">hello@wylo.studio</a>
+        <form class="contact-form" id="contact-form">
+          <label>
+            <span>Your name</span>
+            <input name="name" autocomplete="name" placeholder="Founder name" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" autocomplete="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            <span>What do you need?</span>
+            <select name="package" required>
+              <option value="Website Package">Website Package</option>
+              <option value="Full Infrastructure Package">Full Infrastructure Package</option>
+              <option value="Enterprise / Long-Term">Enterprise / Long-Term</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </label>
+          <label class="full-field">
+            <span>Project notes</span>
+            <textarea name="message" rows="4" placeholder="Tell us about your shop, app, idea, or growth problem..." required></textarea>
+          </label>
+          <button class="btn btn-primary full-field" type="submit">Create Email <span aria-hidden="true">→</span></button>
+          <p class="form-note" id="form-note" aria-live="polite">No backend needed. The button opens your email app.</p>
+        </form>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer-inner">
-      <a class="logo" href="#top" aria-label="Wylo home">
-        <span class="logo-mark">W</span>
-        <span>Wylo</span>
-      </a>
+    <img class="footer-glow" src="assets/green-glass-blob.webp" alt="" aria-hidden="true" />
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#home" aria-label="Wylo home">
+          <img src="assets/wylo-mark.svg" alt="" class="brand-mark" />
+          <span>Wylo</span>
+        </a>
+        <p>Helping entrepreneurs, online shops, and app developers build, launch, and grow online.</p>
+      </div>
       <div class="footer-links">
-        <a href="#work">Work</a>
-        <a href="#services">Services</a>
-        <a href="#process">Process</a>
+        <h2>Navigate</h2>
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#plans">Plans</a>
         <a href="#contact">Contact</a>
       </div>
-      <p>© <span id="year"></span> Wylo</p>
+      <div class="footer-links">
+        <h2>Focus</h2>
+        <a href="#plans">Websites</a>
+        <a href="#plans">Infrastructure</a>
+        <a href="#plans">Long-term growth</a>
+      </div>
+      <div class="footer-cta">
+        <h2>Ready?</h2>
+        <p>Pick a package and turn the idea into a working system.</p>
+        <a class="btn btn-gold" href="#plans">View Plans</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year">2026</span> Wylo. All rights reserved.</span>
+      <a href="#top">Back to top ↑</a>
     </div>
   </footer>
 
