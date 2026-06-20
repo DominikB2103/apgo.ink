@@ -98,7 +98,20 @@
         run();
       });
     });
-    run();
+
+    // Activate a category from ?cat=… in the URL (category nav links point here).
+    function applyCatFromUrl() {
+      var requested = "";
+      try { requested = (new URLSearchParams(location.search).get("cat") || "").toLowerCase(); } catch (e) {}
+      var match = null;
+      chips.forEach(function (c) { if (c.getAttribute("data-filter") === requested) match = c; });
+      if (match) {
+        cat = requested;
+        chips.forEach(function (c) { c.setAttribute("aria-pressed", c === match ? "true" : "false"); });
+      }
+      run();
+    }
+    applyCatFromUrl();
   }
 
   /* ----------------------------------------------------- date + year ------ */
