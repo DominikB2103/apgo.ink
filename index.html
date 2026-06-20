@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apgo — The whole story, on the record.</title>
+  <meta name="description" content="Apgo is an independent, reader-funded global newsroom. Measured, sourced reporting — including the stories others won't touch.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvUDQ.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="https://fonts.gstatic.com/s/sourceserif4/v8/vEFy2_tTDB4M7-auWDN0ahZJW1ge6NSDA.woff2">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================ UTILITY BAR ============================ -->
+  <div class="utility-bar"><div class="container utility-bar__inner">
+    <span class="utility-bar__clock" data-utc>SATURDAY, JUNE 20, 2026 · 14:30 UTC</span>
+    <span class="utility-bar__spacer"></span>
+    <div class="edition-switcher">
+      <select aria-label="Edition">
+        <option>Global</option>
+        <option>Americas</option>
+        <option>Europe</option>
+        <option>Africa</option>
+        <option>Asia-Pacific</option>
+      </select>
+    </div>
+    <a class="utility-bar__secure" href="#tips">Secure tips</a>
+    <a href="#subscribe">Subscribe</a>
+  </div></div>
+
+  <!-- ============================ MASTHEAD ============================ -->
+  <header class="masthead">
+    <div class="container">
+      <div class="masthead__nameplate">
+        <a class="masthead__brand" href="/" aria-label="Apgo home">
+          <img class="wordmark__svg" src="assets/logo.svg" alt="Apgo" width="360" height="96">
+        </a>
+        <div class="masthead__dateline">SATURDAY, JUNE 20, 2026 · GLOBAL EDITION · 14:30 UTC</div>
+        <div class="masthead__tools">
+          <form class="search" role="search">
+            <label class="visually-hidden" for="q">Search stories</label>
+            <input id="q" type="search" placeholder="Search stories" aria-label="Search stories" autocomplete="off">
+          </form>
+          <button id="theme-toggle" aria-pressed="false" aria-label="Toggle dark mode">
+            <span class="theme-toggle__light">Dark</span>
+            <span class="theme-toggle__dark">Light</span>
+          </button>
+          <a class="btn btn--primary btn--sm" href="#subscribe">Subscribe</a>
+        </div>
+      </div>
+      <p class="masthead__independence">Reader-funded · No owner, no party, no agenda</p>
+    </div>
+    <hr class="masthead__rule">
+  </header>
+
+  <!-- ============================ PRIMARY NAV ============================ -->
+  <div class="nav-wrap"><div class="container nav-wrap__inner">
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav-toggle__bars"></span> Menu
+    </button>
+    <nav id="primary-nav" class="primary-nav" aria-label="Sections">
+      <ul>
+        <li><a href="#world" data-filter="world">World</a></li>
+        <li><a href="#politics" data-filter="politics">Politics</a></li>
+        <li><a href="#investigations" data-filter="investigations">Investigations</a></li>
+        <li><a href="#business" data-filter="business">Business</a></li>
+        <li><a href="#tech" data-filter="tech">Tech</a></li>
+        <li><a href="#science" data-filter="science">Science</a></li>
+        <li><a href="#culture" data-filter="culture">Culture</a></li>
+        <li><a href="#opinion" data-filter="opinion">Opinion</a></li>
+      </ul>
+    </nav>
+  </div></div>
+
+  <!-- ============================ BREAKING TICKER ============================ -->
+  <div id="ticker" class="ticker"><div class="ticker__inner">
+    <span class="ticker__label"><span class="live-dot"></span>BREAKING /</span>
+    <div class="ticker__viewport">
+      <div class="ticker__track">
+        <a href="article.html">Ceasefire holds along the border as monitors confirm both sides have pulled back heavy weapons <span class="ticker__time">14:12 UTC</span></a>
+        <a href="article.html">Leaked filings show offshore network routed an estimated $4.1bn past export controls <span class="ticker__time">13:48 UTC</span></a>
+        <a href="article.html">City council confirms face-recognition contract signed without a public vote <span class="ticker__time">12:30 UTC</span></a>
+        <a href="article.html">Independent labs report they could not reproduce the disputed landmark study <span class="ticker__time">11:05 UTC</span></a>
+      </div>
+    </div>
+  </div></div>
+
+  <main id="main">
+
+    <!-- ============================ HERO / LEAD ============================ -->
+    <section class="hero" aria-label="Lead story"><div class="container">
+      <div class="hero__grid">
+
+        <article class="hero__lead story reveal" data-cat="investigations"
+                 data-title="The Ledger They Buried: Inside an Offshore Network Moving Billions Past Sanctions">
+          <figure class="hero__figure">
+            <img src="https://picsum.photos/seed/apgo-ledger/1200/800" alt="Stacks of shipping containers in a dimly lit port at dusk" width="1200" height="800">
+            <figcaption class="hero__caption">A transshipment hub named in the leaked filings — Apgo / Field Bureau</figcaption>
+          </figure>
+          <span class="story__kicker"><span class="mark">&#9632;</span> Investigations</span>
+          <h1 class="hero__headline"><a href="article.html">The Ledger They Buried: Inside an Offshore Network Moving Billions Past Sanctions</a></h1>
+          <p class="hero__deck">A six-month review of leaked filings maps how shell entities quietly route money around export controls.</p>
+          <div class="byline-block hero__byline">
+            <p class="byline-block__line">BY MARA OKAFOR · <span class="muted">GENEVA — 20 JUN 2026 · 14:30 UTC · 14 MIN</span></p>
+          </div>
+
+          <!-- Sourcing Badge — above the fold -->
+          <aside class="sourcing" aria-label="Sourcing and transparency">
+            <div class="sourcing__head">
+              <span class="sourcing__dot"></span>
+              <span class="sourcing__title">On the record</span>
+              <span class="sourcing__counts">· 14 sources · 6 docs · 3 on record</span>
+            </div>
+            <p class="sourcing__funding">Funding: reader-supported, no ads</p>
+            <button class="sourcing__toggle" aria-expanded="false" aria-controls="ledger-hero">
+              <span class="sourcing__chev">&#9656;</span> View sourcing
+            </button>
+            <ol class="sourcing__ledger" id="ledger-hero">
+              <li class="ledger__item">
+                <div class="ledger__row">
+                  <span class="ledger__type">DOC</span>
+                  <span class="chip-confidence chip-confidence--verified">Verified</span>
+                  <a class="ledger__link" href="#documents">Corporate registry filings</a>
+                </div>
+                <span class="ledger__desc">2,300 incorporation and transfer records cross-checked against three public registries.</span>
+              </li>
+              <li class="ledger__item">
+                <div class="ledger__row">
+                  <span class="ledger__type">INTERVIEW</span>
+                  <span class="chip-confidence chip-confidence--reported">Reported</span>
+                </div>
+                <span class="ledger__desc">Two former compliance officers, speaking on the record about internal escalation memos.</span>
+              </li>
+              <li class="ledger__item">
+                <div class="ledger__row">
+                  <span class="ledger__type">DATA</span>
+                  <span class="chip-confidence chip-confidence--verified">Verified</span>
+                </div>
+                <span class="ledger__desc">Shipping-manifest dataset reconciled with customs declarations across four jurisdictions.</span>
+              </li>
+            </ol>
+          </aside>
+        </article>
+
+        <div class="hero__secondary">
+          <article class="story story--sm story--bare reveal" data-cat="world"
+                   data-title="Ceasefire Holds for Now, but the Border Towns Are Already Counting the Missing">
+            <span class="story__kicker">World</span>
+            <h2 class="story__headline"><a href="article.html">Ceasefire Holds for Now, but the Border Towns Are Already Counting the Missing</a></h2>
+            <p class="story__deck">On-the-ground reporting from a region most outlets have left.</p>
+            <p class="story__dateline">Border region — 20 Jun 2026</p>
+            <p class="story__byline">By Daniel Reyes · 9 min</p>
+          </article>
+
+          <article class="story story--sm story--bare reveal" data-cat="tech"
+                   data-title="Your City Bought Face-Recognition It Was Told Didn't Exist">
+            <span class="story__kicker">Tech</span>
+            <h2 class="story__headline"><a href="article.html">Your City Bought Face-Recognition It Was Told Didn't Exist</a></h2>
+            <p class="story__deck">Procurement records reveal surveillance tools deployed without public votes.</p>
+            <p class="story__dateline">Capital desk — 20 Jun 2026</p>
+            <p class="story__byline">By Lena Völker · 11 min</p>
+          </article>
+        </div>
+
+      </div>
+    </div></section>
+
+    <!-- ============================ FILTER CHIPS + SEARCH STATE ============================ -->
+    <section class="container" aria-label="Filter and browse">
+      <div class="chips" role="group" aria-label="Filter by section">
+        <button class="chip" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" data-filter="world" aria-pressed="false">World</button>
+        <button class="chip" data-filter="politics" aria-pressed="false">Politics</button>
+        <button class="chip" data-filter="investigations" aria-pressed="false">Investigations</button>
+        <button class="chip" data-filter="business" aria-pressed="false">Business</button>
+        <button class="chip" data-filter="tech" aria-pressed="false">Tech</button>
+        <button class="chip" data-filter="science" aria-pressed="false">Science</button>
+        <button class="chip" data-filter="culture" aria-pressed="false">Culture</button>
+      </div>
+      <div id="no-results" hidden>No stories match your search.</div>
+    </section>
+
+    <!-- ============================ LATEST GRID ============================ -->
+    <section class="section" aria-labelledby="latest-title"><div class="container">
+      <div class="section__header">
+        <h2 class="section__title" id="latest-title">The Front Page</h2>
+        <a class="section__viewall" href="news/">View all &#9656;</a>
+      </div>
+
+      <div class="grid-cols grid-cols--3 grid-cols--ruled">
+
+        <article class="story reveal" data-cat="politics"
+                 data-title="The Lobbyists Writing the Bill That Regulates Them">
+          <figure class="story__media"><img src="https://picsum.photos/seed/apgo-lobby/1200/800" alt="Empty committee hearing room with rows of microphones" loading="lazy" width="1200" height="800"></figure>
+          <span class="story__kicker"><span class="mark">&#9632;</span> Politics</span>
+          <h3 class="story__headline"><a href="article.html">The Lobbyists Writing the Bill That Regulates Them</a></h3>
+          <p class="story__deck">Draft amendments trace back to the industries they govern.</p>
+          <p class="story__dateline">Washington — 20 Jun 2026</p>
+          <p class="story__byline">By Sam Whitfield · 7 min</p>
+        </article>
+
+        <article class="story reveal" data-cat="business"
+                 data-title="Pharma's Quiet Price Ladder, Decoded">
+          <figure class="story__media"><img src="https://picsum.photos/seed/apgo-pharma/1200/800" alt="Pharmacy shelves lined with unbranded medicine boxes" loading="lazy" width="1200" height="800"></figure>
+          <span class="story__kicker"><span class="mark">&#9632;</span> Business</span>
+          <h3 class="story__headline"><a href="article.html">Pharma's Quiet Price Ladder, Decoded</a></h3>
+          <p class="story__deck">How list prices climb while the reason stays hidden.</p>
+          <p class="story__dateline">New York — 20 Jun 2026</p>
+          <p class="story__byline">By Priya Nair · 8 min</p>
+        </article>
+
+        <article class="story reveal" data-cat="science"
+                 data-title="The Study Funders Didn't Want Retracted">
+          <figure class="story__media"><img src="https://picsum.photos/seed/apgo-study/1200/800" alt="Researcher reviewing data on a screen in a laboratory" loading="lazy" width="1200" height="800"></figure>
+          <span class="story__kicker"><span class="mark">&#9632;</span> Science</span>
+          <h3 class="story__headline"><a href="article.html">The Study Funders Didn't Want Retracted</a></h3>
+          <p class="story__deck">Independent labs couldn't reproduce a landmark result.</p>
+          <p class="story__dateline">Cambridge — 20 Jun 2026</p>
+          <p class="story__byline">By Tomas Halloran · 10 min</p>
+        </article>
+
+        <article class="story reveal" data-cat="world"
+                 data-title="Inside the Camps the Aid Reports Don't Mention">
+          <figure class="story__media"><img src="https://picsum.photos/seed/apgo-camps/1200/800" alt="Aerial view of temporary shelters on open ground" loading="lazy" width="1200" height="800"></figure>
+          <span class="story__kicker"><span class="mark">&#9632;</span> World</span>
+          <h3 class="story__headline"><a href="article.html">Inside the Camps the Aid Reports Don't Mention</a></h3>
+          <p class="story__deck">Satellite data versus official statements.</p>
+          <p class="story__dateline">Regional bureau — 20 Jun 2026</p>
+          <p class="story__byline">By Aisha Bello · 12 min</p>
+        </article>
+
+        <article class="story reveal" data-cat="tech"
+                 data-title="The Algorithm Deciding Who Sees Your Speech">
+          <figure class="story__media"><img src="https://picsum.photos/seed/apgo-algorithm/1200/800" alt="Abstract grid of glowing network nodes" loading="lazy" width="1200" height="800"></figure>
+          <span class="story__kicker"><span class="mark">&#9632;</span> Tech</span>
+          <h3 class="story__headline"><a href="article.html">The Algorithm Deciding Who Sees Your Speech</a></h3>
+          <p class="story__deck">A look at moderation systems built without appeal.</p>
+          <p class="story__dateline">San Francisco — 20 Jun 2026</p>
+          <p class="story__byline">By Jonah Pierce · 6 min</p>
+        </article>
+
+        <article class="story reveal" data-cat="culture"
+                 data-title="Banned, Quietly: The Books Pulled From Shelves This Year">
+          <figure class="story__media"><img src="https://picsum.photos/seed/apgo-books/1200/800" alt="Partially emptied library bookshelf" loading="lazy" width="1200" height="800"></figure>
+          <span class="story__kicker"><span class="mark">&#9632;</span> Culture</span>
+          <h3 class="story__headline"><a href="article.html">Banned, Quietly: The Books Pulled From Shelves This Year</a></h3>
+          <p class="story__deck">A nationwide tally nobody compiled — until now.</p>
+          <p class="story__dateline">National desk — 20 Jun 2026</p>
+          <p class="story__byline">By Rosa Méndez · 5 min</p>
+        </article>
+
+        <article class="story reveal" data-cat="politics"
+                 data-title="Who Owns the Water Now">
+          <figure class="story__media"><img src="https://picsum.photos/seed/apgo-water/1200/800" alt="Industrial water reservoir behind a chain-link fence" loading="lazy" width="1200" height="800"></figure>
+          <span class="story__kicker"><span class="mark">&#9632;</span> Politics</span>
+          <h3 class="story__headline"><a href="article.html">Who Owns the Water Now</a></h3>
+          <p class="story__deck">Public utilities sold off in the fine print.</p>
+          <p class="story__dateline">Stockholm — 20 Jun 2026</p>
+          <p class="story__byline">By Marcus Lindqvist · 9 min</p>
+        </article>
+
+        <article class="story reveal" data-cat="tech"
+                 data-title="Your City Bought Face-Recognition It Was Told Didn't Exist">
+          <figure class="story__media"><img src="https://picsum.photos/seed/apgo-face/1200/800" alt="Street camera mounted on a pole against an overcast sky" loading="lazy" width="1200" height="800"></figure>
+          <span class="story__kicker"><span class="mark">&#9632;</span> Tech</span>
+          <h3 class="story__headline"><a href="article.html">Your City Bought Face-Recognition It Was Told Didn't Exist</a></h3>
+          <p class="story__deck">Procurement records reveal surveillance tools deployed without public votes.</p>
+          <p class="story__dateline">Capital desk — 20 Jun 2026</p>
+          <p class="story__byline">By Lena Völker · 11 min</p>
+        </article>
+
+        <article class="story reveal" data-cat="world"
+                 data-title="Ceasefire Holds for Now, but the Border Towns Are Already Counting the Missing">
+          <figure class="story__media"><img src="https://picsum.photos/seed/apgo-border/1200/800" alt="Quiet street in a town near a contested border" loading="lazy" width="1200" height="800"></figure>
+          <span class="story__kicker"><span class="mark">&#9632;</span> World</span>
+          <h3 class="story__headline"><a href="article.html">Ceasefire Holds for Now, but the Border Towns Are Already Counting the Missing</a></h3>
+          <p class="story__deck">On-the-ground reporting from a region most outlets have left.</p>
+          <p class="story__dateline">Border region — 20 Jun 2026</p>
+          <p class="story__byline">By Daniel Reyes · 9 min</p>
+        </article>
+
+      </div>
+    </div></section>
+
+    <!-- ============================ TRENDING / THE RECORD ============================ -->
+    <section class="record" aria-labelledby="record-title"><div class="container">
+      <div class="section__header"><h2 class="section__title" id="record-title">The Record</h2></div>
+      <ol class="record__list">
+        <li class="record__row">
+          <span class="record__rank">01 · 14:30 UTC</span>
+          <h3 class="record__headline"><a href="article.html">The Ledger They Buried: Inside an Offshore Network Moving Billions Past Sanctions</a></h3>
+          <p class="record__dateline">Geneva — 20 Jun 2026</p>
+        </li>
+        <li class="record__row">
+          <span class="record__rank">02 · 13:48 UTC</span>
+          <h3 class="record__headline"><a href="article.html">Your City Bought Face-Recognition It Was Told Didn't Exist</a></h3>
+          <p class="record__dateline">Capital desk — 20 Jun 2026</p>
+        </li>
+        <li class="record__row">
+          <span class="record__rank">03 · 13:05 UTC</span>
+          <h3 class="record__headline"><a href="article.html">The Lobbyists Writing the Bill That Regulates Them</a></h3>
+          <p class="record__dateline">Washington — 20 Jun 2026</p>
+        </li>
+        <li class="record__row">
+          <span class="record__rank">04 · 12:30 UTC</span>
+          <h3 class="record__headline"><a href="article.html">Ceasefire Holds for Now, but the Border Towns Are Already Counting the Missing</a></h3>
+          <p class="record__dateline">Border region — 20 Jun 2026</p>
+        </li>
+        <li class="record__row">
+          <span class="record__rank">05 · 11:05 UTC</span>
+          <h3 class="record__headline"><a href="article.html">The Study Funders Didn't Want Retracted</a></h3>
+          <p class="record__dateline">Cambridge — 20 Jun 2026</p>
+        </li>
+        <li class="record__row">
+          <span class="record__rank">06 · 09:40 UTC</span>
+          <h3 class="record__headline"><a href="article.html">Pharma's Quiet Price Ladder, Decoded</a></h3>
+          <p class="record__dateline">New York — 20 Jun 2026</p>
+        </li>
+      </ol>
+    </div></section>
+
+    <!-- ============================ INVESTIGATIONS: STORIES OTHERS WON'T TOUCH ============================ -->
+    <section class="section" id="investigations" data-cat="investigations" aria-labelledby="invest-title"><div class="container">
+      <div class="section__header">
+        <h2 class="section__title" id="invest-title">Stories Others Won't Touch</h2>
+        <a class="section__viewall" href="news/">View all &#9656;</a>
+      </div>
+      <p class="section__lead">Reporting we pursue precisely because it is inconvenient. Each carries its receipts — sources counted, documents logged, methods shown.</p>
+
+      <div class="grid-cols grid-cols--3 grid-cols--ruled">
+
+        <article class="story reveal" data-cat="investigations"
+                 data-title="The Ledger They Buried: Inside an Offshore Network Moving Billions Past Sanctions">
+          <span class="story__kicker"><span class="mark">&#9632;</span> Investigations</span>
+          <h3 class="story__headline"><a href="article.html">The Ledger They Buried: Inside an Offshore Network Moving Billions Past Sanctions</a></h3>
+          <p class="story__deck">A six-month review of leaked filings maps how shell entities quietly route money around export controls.</p>
+          <p class="story__dateline">Geneva — 20 Jun 2026</p>
+          <p class="story__byline">By Mara Okafor · 14 min</p>
+          <aside class="why-note">
+            <p class="why-note__label">Why this story</p>
+            <p class="why-note__body">Sanctions only matter if they are enforced. When billions move past them unnoticed, the public has a right to see how — and who looked away.</p>
+            <p class="why-note__sign">— H. Adeyemi, Investigations Editor</p>
+          </aside>
+        </article>
+
+        <article class="story reveal" data-cat="investigations"
+                 data-title="Your City Bought Face-Recognition It Was Told Didn't Exist">
+          <span class="story__kicker"><span class="mark">&#9632;</span> Investigations</span>
+          <h3 class="story__headline"><a href="article.html">Your City Bought Face-Recognition It Was Told Didn't Exist</a></h3>
+          <p class="story__deck">Procurement records reveal surveillance tools deployed without public votes.</p>
+          <p class="story__dateline">Capital desk — 20 Jun 2026</p>
+          <p class="story__byline">By Lena Völker · 11 min</p>
+          <aside class="why-note">
+            <p class="why-note__label">Why this story</p>
+            <p class="why-note__body">Surveillance bought in silence is surveillance no one consented to. We requested the contracts so residents could read them too.</p>
+            <p class="why-note__sign">— H. Adeyemi, Investigations Editor</p>
+          </aside>
+        </article>
+
+        <article class="story reveal" data-cat="investigations"
+                 data-title="The Study Funders Didn't Want Retracted">
+          <span class="story__kicker"><span class="mark">&#9632;</span> Investigations</span>
+          <h3 class="story__headline"><a href="article.html">The Study Funders Didn't Want Retracted</a></h3>
+          <p class="story__deck">Independent labs couldn't reproduce a landmark result that shaped policy and funding.</p>
+          <p class="story__dateline">Cambridge — 20 Jun 2026</p>
+          <p class="story__byline">By Tomas Halloran · 10 min</p>
+          <aside class="why-note">
+            <p class="why-note__label">Why this story</p>
+            <p class="why-note__body">Findings that cannot be reproduced should not quietly steer billions in spending. We followed the replication record, not the headlines.</p>
+            <p class="why-note__sign">— H. Adeyemi, Investigations Editor</p>
+          </aside>
+        </article>
+
+      </div>
+    </div></section>
+
+    <!-- ============================ STANDARDS / TRANSPARENCY STRIP ============================ -->
+    <section class="data-block" aria-labelledby="standards-title"><div class="container">
+      <div class="section__header"><h2 class="section__title" id="standards-title">On the Record</h2></div>
+      <p class="section__lead">Every Apgo story is held to one standard: we show our work. No claim runs without sourcing, no figure without its origin, no agenda behind the byline.</p>
+      <aside class="sourcing reveal" aria-label="Editorial standards and sourcing promise">
+        <div class="sourcing__head">
+          <span class="sourcing__dot"></span>
+          <span class="sourcing__title">Our promise</span>
+          <span class="sourcing__counts">· sourced · unbiased · reader-funded</span>
+        </div>
+        <p class="sourcing__funding">Funding: reader-supported, no ads, no owner</p>
+        <button class="sourcing__toggle" aria-expanded="false" aria-controls="ledger-standards">
+          <span class="sourcing__chev">&#9656;</span> How we report
+        </button>
+        <ol class="sourcing__ledger" id="ledger-standards">
+          <li class="ledger__item">
+            <div class="ledger__row">
+              <span class="ledger__type">PUBLIC RECORD</span>
+              <span class="chip-confidence chip-confidence--verified">Verified</span>
+            </div>
+            <span class="ledger__desc">Documents are filed, logged and — where the law allows — published in full alongside the story.</span>
+          </li>
+          <li class="ledger__item">
+            <div class="ledger__row">
+              <span class="ledger__type">DATA</span>
+              <span class="chip-confidence chip-confidence--verified">Verified</span>
+            </div>
+            <span class="ledger__desc">Datasets are reconciled against an independent source before any number is published.</span>
+          </li>
+          <li class="ledger__item">
+            <div class="ledger__row">
+              <span class="ledger__type">INTERVIEW</span>
+              <span class="chip-confidence chip-confidence--reported">Reported</span>
+            </div>
+            <span class="ledger__desc">Sources are weighted by what they can verify; confidence is labelled, never assumed.</span>
+          </li>
+        </ol>
+      </aside>
+    </div></section>
+
+    <!-- ============================ DATA & DOCUMENTS ============================ -->
+    <section class="data-block" id="documents" aria-labelledby="data-title"><div class="container">
+      <div class="section__header"><h2 class="section__title" id="data-title">Data &amp; Documents</h2></div>
+      <figure class="figure-card reveal">
+        <p class="figure-card__label">FIGURE 1 · ESTIMATED FLOWS THROUGH NAMED SHELL ENTITIES, 2021–2026 (USD BN)</p>
+        <img src="https://picsum.photos/seed/apgo-figure-flows/1200/675" alt="Bar chart showing rising estimated financial flows from 2021 to 2026" loading="lazy" width="1200" height="675">
+        <p class="figure-card__source">Source: leaked corporate filings, customs declarations · Apgo analysis</p>
+      </figure>
+    </div></section>
+
+    <!-- ============================ OPINION (walled off) ============================ -->
+    <section class="opinion" id="opinion" aria-labelledby="opinion-title"><div class="container">
+      <span class="opinion__flag">Opinion</span>
+      <h2 class="visually-hidden" id="opinion-title">Opinion</h2>
+      <article class="opinion__item">
+        <img class="opinion__avatar" src="https://picsum.photos/seed/apgo-col-1/200/200" alt="" loading="lazy" width="200" height="200">
+        <div>
+          <h3 class="opinion__headline"><a href="article.html">Transparency is not a feature you add later — it is the whole product</a></h3>
+          <p class="opinion__author">By Eleanor Voss</p>
+        </div>
+      </article>
+      <article class="opinion__item">
+        <img class="opinion__avatar" src="https://picsum.photos/seed/apgo-col-2/200/200" alt="" loading="lazy" width="200" height="200">
+        <div>
+          <h3 class="opinion__headline"><a href="article.html">When a registry is sealed, the public pays the interest</a></h3>
+          <p class="opinion__author">By Idris Karim</p>
+        </div>
+      </article>
+    </div></section>
+
+    <!-- ============================ NEWSLETTER ============================ -->
+    <section class="container" id="subscribe"><div class="newsletter">
+      <h3 class="newsletter__title">The Daily Record</h3>
+      <p class="newsletter__value">One email each morning — the whole story, on the record.</p>
+      <form class="newsletter__form newsletter" novalidate>
+        <label class="visually-hidden" for="nl-email">Email address</label>
+        <input id="nl-email" class="newsletter__input" type="email" name="email" required
+               placeholder="you@example.com" aria-label="Email address">
+        <button class="newsletter__submit" type="submit">Subscribe</button>
+        <p class="newsletter__status" aria-live="polite"></p>
+      </form>
+      <p class="newsletter__privacy">No spam. Unsubscribe anytime. We never sell your data.</p>
+    </div></section>
+
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer"><div class="container">
+    <div class="site-footer__top">
+      <div class="footer-col site-footer__brand">
+        <img class="wordmark__svg" src="assets/logo.svg" alt="Apgo" width="360" height="96">
+        <p class="site-footer__statement">Apgo is an independent, reader-funded newsroom. We have no proprietor, no shareholders and no political affiliation. Our reporting is funded by readers and is free of advertising influence.</p>
+        <p class="site-footer__independence">Independent. Global. Including the stories others won't touch.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__title">Sections</p>
+        <ul>
+          <li><a href="#world">World</a></li>
+          <li><a href="#politics">Politics</a></li>
+          <li><a href="#investigations">Investigations</a></li>
+          <li><a href="#business">Business</a></li>
+          <li><a href="#tech">Tech</a></li>
+          <li><a href="#science">Science</a></li>
+          <li><a href="#culture">Culture</a></li>
+          <li><a href="#opinion">Opinion</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__title">About</p>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Editorial Standards</a></li>
+          <li><a href="#">Corrections</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__title">Connect</p>
+        <ul>
+          <li><a class="site-footer__secure" href="#tips">Secure tips</a></li>
+          <li><a href="#subscribe">Newsletter</a></li>
+          <li><a href="#" aria-label="Apgo on Mastodon">Mastodon</a></li>
+          <li><a href="#" aria-label="Apgo on Bluesky">Bluesky</a></li>
+        </ul>
+        <button id="theme-toggle-footer" class="btn btn--quiet btn--sm" aria-pressed="false" aria-label="Toggle dark mode">
+          <span class="theme-toggle__light">Dark</span>
+          <span class="theme-toggle__dark">Light</span>
+        </button>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p class="site-footer__legal">© <span data-year></span> Apgo · apgo.ink</p>
+      <p class="site-footer__independence">Reader-funded · No owner, no party, no agenda</p>
+    </div>
+  </div></footer>
+
+  <button id="to-top" aria-label="Back to top" hidden>&#8593;</button>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
