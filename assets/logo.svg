@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 96" role="img" aria-label="Apgo" fill="none">
+  <title>Apgo</title>
+  <!-- Wordmark: Playfair-style serif small-caps, drawn as paths so it renders
+       identically without web fonts. Uses currentColor so it themes automatically. -->
+  <style>
+    .ink { fill: currentColor; }
+    .rule { stroke: currentColor; }
+  </style>
+
+  <!-- top hairline of the nameplate sandwich -->
+  <rect class="ink" x="0" y="6" width="360" height="1.5"/>
+
+  <!-- Wordmark "Apgo" -->
+  <g class="ink" aria-hidden="true">
+    <!-- A -->
+    <path d="M14 74 L36 26 L46 26 L68 74 L56 74 L50.5 61 L31.2 61 L25.8 74 Z M34.6 52.4 L47.1 52.4 L40.9 37.6 Z"/>
+    <!-- p (descender) -->
+    <path d="M82 38 L93 38 L93 44.2 C96.1 39.4 100.8 37 107 37 C117.6 37 125 45.8 125 58 C125 70.2 117.6 79 107 79 C101.2 79 96.7 76.8 93.6 72.4 L93.6 92 L82 92 Z M93.4 58 C93.4 65 96.8 69.8 102.6 69.8 C108.4 69.8 112 65 112 58 C112 51 108.4 46.2 102.6 46.2 C96.8 46.2 93.4 51 93.4 58 Z"/>
+    <!-- g (descender, with story-bowl) -->
+    <path d="M170 38 L170 75.5 C170 86.6 162.2 93.5 149.4 93.5 C138.5 93.5 131 88.6 130 80.6 L141.6 80.6 C142.4 83.8 145.3 85.4 149.5 85.4 C155 85.4 158.4 82.2 158.4 76.8 L158.4 71.4 C155.4 75.6 150.9 77.8 145.2 77.8 C134.8 77.8 127.6 69.4 127.6 57.6 C127.6 45.8 134.8 37.2 145.2 37.2 C151.2 37.2 155.9 39.6 158.9 44.4 L158.9 38 Z M139.2 57.5 C139.2 64 142.6 68.4 148.2 68.4 C153.8 68.4 157.4 64 157.4 57.5 C157.4 51 153.8 46.6 148.2 46.6 C142.6 46.6 139.2 51 139.2 57.5 Z"/>
+    <!-- o -->
+    <path d="M196 37 C208.6 37 217 45.4 217 58 C217 70.6 208.6 79 196 79 C183.4 79 175 70.6 175 58 C175 45.4 183.4 37 196 37 Z M196 46.4 C189.6 46.4 186.4 51 186.4 58 C186.4 65 189.6 69.6 196 69.6 C202.4 69.6 205.6 65 205.6 58 C205.6 51 202.4 46.4 196 46.4 Z"/>
+  </g>
+
+  <!-- accent period: the "on the record" mark, in the brand red -->
+  <circle cx="231" cy="73.5" r="5" fill="#A6192E"/>
+
+  <!-- signature 4px masthead rule below -->
+  <rect class="ink" x="0" y="84" width="360" height="4"/>
+</svg>

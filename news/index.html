@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Latest — Apgo</title>
+  <meta name="description" content="Every story from Apgo, in reverse chronological order. The whole story, on the record. Independent, global reporting — including the stories others won't touch.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDYbtXK-F2qO0g.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="https://fonts.gstatic.com/s/sourceserif4/v13/vEFy2_tTDB4M7-auWDN0ahZJW3IX2ih5nk3AucvUHf6OAVIJmeUDygwjihdqrhxXD-wGvjU.woff2">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- D. UTILITY BAR -->
+  <div class="utility-bar"><div class="container utility-bar__inner">
+    <span class="utility-bar__clock" data-utc>SATURDAY, JUNE 20, 2026 · 14:30 UTC</span>
+    <span class="utility-bar__spacer"></span>
+    <div class="edition-switcher">
+      <select aria-label="Edition">
+        <option>Global</option>
+        <option>Americas</option>
+        <option>Europe</option>
+        <option>Asia-Pacific</option>
+        <option>Africa</option>
+      </select>
+    </div>
+    <a class="utility-bar__secure" href="../#tips">Secure tips</a>
+    <a href="../#subscribe">Subscribe</a>
+  </div></div>
+
+  <!-- E. MASTHEAD / NAMEPLATE -->
+  <header class="masthead">
+    <div class="container">
+      <div class="masthead__nameplate">
+        <a class="masthead__brand" href="../" aria-label="Apgo home">
+          <img class="wordmark__svg" src="../assets/logo.svg" alt="Apgo" width="180" height="48">
+        </a>
+        <div class="masthead__dateline">SATURDAY, JUNE 20, 2026 · GLOBAL EDITION · 14:30 UTC</div>
+        <div class="masthead__tools">
+          <form class="search" role="search">
+            <label class="visually-hidden" for="q">Search stories</label>
+            <svg class="search__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+              <circle cx="11" cy="11" r="7"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input id="q" type="search" placeholder="Search stories" aria-label="Search stories" autocomplete="off">
+          </form>
+          <button id="theme-toggle" aria-pressed="false" aria-label="Toggle dark mode">
+            <span class="theme-toggle__light">Dark</span>
+            <span class="theme-toggle__dark">Light</span>
+          </button>
+          <a class="btn btn--primary btn--sm" href="../#subscribe">Subscribe</a>
+        </div>
+      </div>
+      <p class="masthead__independence">Reader-funded · No owner, no party, no agenda</p>
+    </div>
+    <hr class="masthead__rule">
+  </header>
+
+  <!-- F. PRIMARY NAV -->
+  <div class="nav-wrap"><div class="container nav-wrap__inner">
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav-toggle__bars"></span> Menu
+    </button>
+    <nav id="primary-nav" class="primary-nav" aria-label="Sections">
+      <ul>
+        <li><a href="../#world" data-filter="world">World</a></li>
+        <li><a href="../#politics" data-filter="politics">Politics</a></li>
+        <li><a href="../#investigations" data-filter="investigations">Investigations</a></li>
+        <li><a href="../#business" data-filter="business">Business</a></li>
+        <li><a href="../#tech" data-filter="tech">Tech</a></li>
+        <li><a href="../#science" data-filter="science">Science</a></li>
+        <li><a href="../#culture" data-filter="culture">Culture</a></li>
+        <li><a href="../#opinion" data-filter="opinion">Opinion</a></li>
+      </ul>
+    </nav>
+  </div></div>
+
+  <main id="main">
+
+    <!-- PAGE HEADER: Latest + unbiased promise -->
+    <section class="section" aria-labelledby="latest-title">
+      <div class="container">
+        <div class="section__header">
+          <h1 class="section__title" id="latest-title">Latest</h1>
+          <a class="section__viewall" href="../">Back to front page &#9656;</a>
+        </div>
+        <p class="section__lead">
+          Every story we have published, newest first. We report what we can verify and show our
+          work — independent, reader-funded, and beholden to no owner, party, or agenda. The whole
+          story, on the record, including the stories others won't touch.
+        </p>
+
+        <!-- H. CATEGORY FILTER CHIPS -->
+        <div class="chips" role="group" aria-label="Filter by section">
+          <button class="chip" data-filter="all" aria-pressed="true">All</button>
+          <button class="chip" data-filter="world" aria-pressed="false">World</button>
+          <button class="chip" data-filter="politics" aria-pressed="false">Politics</button>
+          <button class="chip" data-filter="investigations" aria-pressed="false">Investigations</button>
+          <button class="chip" data-filter="business" aria-pressed="false">Business</button>
+          <button class="chip" data-filter="tech" aria-pressed="false">Tech</button>
+          <button class="chip" data-filter="science" aria-pressed="false">Science</button>
+          <button class="chip" data-filter="culture" aria-pressed="false">Culture</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALL STORIES — chronological grid of every story in the editorial dataset -->
+    <section class="section" aria-label="All stories">
+      <div class="container">
+        <div class="grid-cols grid-cols--3 grid-cols--ruled">
+
+          <!-- 1. LEAD / hero story (investigations) -->
+          <article class="story reveal" data-cat="investigations" data-title="The Ledger They Buried: Inside an Offshore Network Moving Billions Past Sanctions">
+            <figure class="story__media">
+              <img src="https://picsum.photos/seed/apgo-ledger-buried/1200/800" alt="Stacks of printed financial filings on a desk under low light" width="1200" height="800" loading="lazy">
+            </figure>
+            <span class="story__kicker"><span class="mark">&#9632;</span> Investigations</span>
+            <h2 class="story__headline"><a href="../article.html">The Ledger They Buried: Inside an Offshore Network Moving Billions Past Sanctions</a></h2>
+            <p class="story__deck">A six-month review of leaked filings maps how shell entities quietly route money around export controls.</p>
+            <p class="story__dateline">Geneva — 20 Jun 2026</p>
+            <p class="story__byline">By Mara Okafor · 14 min</p>
+          </article>
+
+          <!-- 2. SECONDARY (world) -->
+          <article class="story reveal" data-cat="world" data-title="Ceasefire Holds for Now, but the Border Towns Are Already Counting the Missing">
+            <figure class="story__media">
+              <img src="https://picsum.photos/seed/apgo-ceasefire-border/1200/800" alt="An empty road leading into a quiet border town at dawn" width="1200" height="800" loading="lazy">
+            </figure>
+            <span class="story__kicker">World</span>
+            <h2 class="story__headline"><a href="../article.html">Ceasefire Holds for Now, but the Border Towns Are Already Counting the Missing</a></h2>
+            <p class="story__deck">On-the-ground reporting from a region most outlets have left.</p>
+            <p class="story__dateline">Border Region — 20 Jun 2026</p>
+            <p class="story__byline">By Daniel Reyes · 9 min</p>
+          </article>
+
+          <!-- 3. SECONDARY (tech) -->
+          <article class="story reveal" data-cat="tech" data-title="Your City Bought Face-Recognition It Was Told Didn't Exist">
+            <figure class="story__media">
+              <img src="https://picsum.photos/seed/apgo-face-recognition/1200/800" alt="A street-level surveillance camera mounted against a grey sky" width="1200" height="800" loading="lazy">
+            </figure>
+            <span class="story__kicker">Tech</span>
+            <h2 class="story__headline"><a href="../article.html">Your City Bought Face-Recognition It Was Told Didn't Exist</a></h2>
+            <p class="story__deck">Procurement records reveal surveillance tools deployed without public votes.</p>
+            <p class="story__dateline">City Hall — 19 Jun 2026</p>
+            <p class="story__byline">By Lena Völker · 11 min</p>
+          </article>
+
+          <!-- 4. GRID (politics) -->
+          <article class="story reveal" data-cat="politics" data-title="The Lobbyists Writing the Bill That Regulates Them">
+            <figure class="story__media">
+              <img src="https://picsum.photos/seed/apgo-lobbyists-bill/1200/800" alt="A marked-up legislative draft on a committee-room table" width="1200" height="800" loading="lazy">
+            </figure>
+            <span class="story__kicker">Politics</span>
+            <h2 class="story__headline"><a href="../article.html">The Lobbyists Writing the Bill That Regulates Them</a></h2>
+            <p class="story__deck">Draft amendments trace back to the industries they govern.</p>
+            <p class="story__dateline">Washington — 19 Jun 2026</p>
+            <p class="story__byline">By Sam Whitfield · 7 min</p>
+          </article>
+
+          <!-- 5. GRID (business) -->
+          <article class="story reveal" data-cat="business" data-title="Pharma's Quiet Price Ladder, Decoded">
+            <figure class="story__media">
+              <img src="https://picsum.photos/seed/apgo-price-ladder/1200/800" alt="Rows of pharmaceutical packaging on a warehouse shelf" width="1200" height="800" loading="lazy">
+            </figure>
+            <span class="story__kicker">Business</span>
+            <h2 class="story__headline"><a href="../article.html">Pharma's Quiet Price Ladder, Decoded</a></h2>
+            <p class="story__deck">How list prices climb while the reason stays hidden.</p>
+            <p class="story__dateline">New York — 18 Jun 2026</p>
+            <p class="story__byline">By Priya Nair · 8 min</p>
+          </article>
+
+          <!-- 6. GRID (science) -->
+          <article class="story reveal" data-cat="science" data-title="The Study Funders Didn't Want Retracted">
+            <figure class="story__media">
+              <img src="https://picsum.photos/seed/apgo-study-retracted/1200/800" alt="A laboratory bench with sample vials and a notebook" width="1200" height="800" loading="lazy">
+            </figure>
+            <span class="story__kicker">Science</span>
+            <h2 class="story__headline"><a href="../article.html">The Study Funders Didn't Want Retracted</a></h2>
+            <p class="story__deck">Independent labs couldn't reproduce a landmark result.</p>
+            <p class="story__dateline">Boston — 18 Jun 2026</p>
+            <p class="story__byline">By Tomas Halloran · 10 min</p>
+          </article>
+
+          <!-- 7. GRID (world) -->
+          <article class="story reveal" data-cat="world" data-title="Inside the Camps the Aid Reports Don't Mention">
+            <figure class="story__media">
+              <img src="https://picsum.photos/seed/apgo-aid-camps/1200/800" alt="An overhead view of a temporary settlement on open ground" width="1200" height="800" loading="lazy">
+            </figure>
+            <span class="story__kicker">World</span>
+            <h2 class="story__headline"><a href="../article.html">Inside the Camps the Aid Reports Don't Mention</a></h2>
+            <p class="story__deck">Satellite data versus official statements.</p>
+            <p class="story__dateline">Nairobi — 17 Jun 2026</p>
+            <p class="story__byline">By Aisha Bello · 12 min</p>
+          </article>
+
+          <!-- 8. GRID (tech) -->
+          <article class="story reveal" data-cat="tech" data-title="The Algorithm Deciding Who Sees Your Speech">
+            <figure class="story__media">
+              <img src="https://picsum.photos/seed/apgo-moderation-algorithm/1200/800" alt="A wall of server racks with status lights" width="1200" height="800" loading="lazy">
+            </figure>
+            <span class="story__kicker">Tech</span>
+            <h2 class="story__headline"><a href="../article.html">The Algorithm Deciding Who Sees Your Speech</a></h2>
+            <p class="story__deck">A look at moderation systems built without appeal.</p>
+            <p class="story__dateline">San Francisco — 17 Jun 2026</p>
+            <p class="story__byline">By Jonah Pierce · 6 min</p>
+          </article>
+
+          <!-- 9. GRID (culture) -->
+          <article class="story reveal" data-cat="culture" data-title="Banned, Quietly: The Books Pulled From Shelves This Year">
+            <figure class="story__media">
+              <img src="https://picsum.photos/seed/apgo-banned-books/1200/800" alt="A library shelf with a conspicuous gap between books" width="1200" height="800" loading="lazy">
+            </figure>
+            <span class="story__kicker">Culture</span>
+            <h2 class="story__headline"><a href="../article.html">Banned, Quietly: The Books Pulled From Shelves This Year</a></h2>
+            <p class="story__deck">A nationwide tally nobody compiled — until now.</p>
+            <p class="story__dateline">Chicago — 16 Jun 2026</p>
+            <p class="story__byline">By Rosa Méndez · 5 min</p>
+          </article>
+
+          <!-- 10. GRID (politics) -->
+          <article class="story reveal" data-cat="politics" data-title="Who Owns the Water Now">
+            <figure class="story__media">
+              <img src="https://picsum.photos/seed/apgo-water-utilities/1200/800" alt="Water treatment basins seen from above" width="1200" height="800" loading="lazy">
+            </figure>
+            <span class="story__kicker">Politics</span>
+            <h2 class="story__headline"><a href="../article.html">Who Owns the Water Now</a></h2>
+            <p class="story__deck">Public utilities sold off in the fine print.</p>
+            <p class="story__dateline">Stockholm — 16 Jun 2026</p>
+            <p class="story__byline">By Marcus Lindqvist · 9 min</p>
+          </article>
+
+        </div>
+
+        <!-- I. NO-RESULTS -->
+        <div id="no-results" hidden>No stories match your search.</div>
+      </div>
+    </section>
+
+    <!-- P. NEWSLETTER -->
+    <section class="container"><div class="newsletter">
+      <h2 class="newsletter__title">The Daily Record</h2>
+      <p class="newsletter__value">One email each morning — the whole story, on the record.</p>
+      <form class="newsletter__form newsletter" novalidate>
+        <label class="visually-hidden" for="nl-email">Email address</label>
+        <input class="newsletter__input" id="nl-email" type="email" name="email" required
+               placeholder="you@example.com" aria-label="Email address" autocomplete="email">
+        <button class="newsletter__submit" type="submit">Subscribe</button>
+        <p class="newsletter__status" aria-live="polite"></p>
+      </form>
+      <p class="newsletter__privacy">No spam. Unsubscribe anytime. We never sell your data.</p>
+    </div></section>
+
+  </main>
+
+  <!-- S. SITE FOOTER -->
+  <footer class="site-footer"><div class="container">
+    <div class="site-footer__top">
+      <div class="footer-col site-footer__brand">
+        <img class="wordmark__svg" src="../assets/logo.svg" alt="Apgo" width="180" height="48">
+        <p class="site-footer__statement">
+          Apgo is reader-funded and independently owned. We take no advertising, accept no
+          shareholders with editorial influence, and disclose our funding in full.
+        </p>
+        <p class="site-footer__independence">Independent. Global. Including the stories others won't touch.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__title">Sections</p>
+        <ul>
+          <li><a href="../#world">World</a></li>
+          <li><a href="../#politics">Politics</a></li>
+          <li><a href="../#investigations">Investigations</a></li>
+          <li><a href="../#business">Business</a></li>
+          <li><a href="../#tech">Tech</a></li>
+          <li><a href="../#science">Science</a></li>
+          <li><a href="../#culture">Culture</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__title">About</p>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Editorial Standards</a></li>
+          <li><a href="#">Corrections</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__title">Connect</p>
+        <ul>
+          <li><a class="site-footer__secure" href="../#tips">Secure tips</a></li>
+          <li><a href="../#subscribe">Newsletter</a></li>
+          <li><a href="#" aria-label="Apgo on Mastodon">Mastodon</a></li>
+          <li><a href="#" aria-label="Apgo on Bluesky">Bluesky</a></li>
+        </ul>
+        <button id="theme-toggle-footer" class="btn btn--quiet btn--sm" aria-pressed="false" aria-label="Toggle dark mode">
+          <span class="theme-toggle__light">Dark</span>
+          <span class="theme-toggle__dark">Light</span>
+        </button>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p class="site-footer__legal">© <span data-year></span> Apgo · apgo.ink</p>
+      <p class="site-footer__independence">Reader-funded · No owner, no party, no agenda</p>
+    </div>
+  </div></footer>
+
+  <button id="to-top" aria-label="Back to top" hidden>&#8593;</button>
+
+  <script src="../script.js" defer></script>
+</body>
+</html>

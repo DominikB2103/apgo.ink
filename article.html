@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<!--
+  =============================================================================
+  Apgo — REUSABLE ARTICLE TEMPLATE  (/article.html)
+  -----------------------------------------------------------------------------
+  HOW TO DUPLICATE THIS FILE PER ARTICLE (for non-experts):
+    1. Copy this file to a new name (e.g. /story-slug.html).
+    2. Edit ONLY the content between the "EDIT: <name>" and "/EDIT" marker
+       comments. Everything outside those markers is shared chrome
+       (masthead, nav, footer, scripts) and should stay identical across
+       every article so navigation and trust signals are consistent.
+    3. The editable regions are, in order:
+         kicker · category · headline · dek · author · date ·
+         hero image+caption · why-note · body · tags ·
+         sourcing list · author bio · related stories · corrections
+    4. Do NOT hand-number the source ledger or the table of contents —
+       CSS counters and JS build those automatically. Just give each
+       <h2> in the body a real id and add ledger <li> items.
+    5. Keep the path rules: this file is at the repo root, so it links
+       assets as "assets/...", "styles.css", "script.js".
+  =============================================================================
+-->
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- EDIT: meta (per-article title + description) -->
+  <title>The Ledger They Buried: Inside an Offshore Network Moving Billions Past Sanctions — Apgo</title>
+  <meta name="description" content="A six-month review of leaked filings maps how shell entities quietly route money around export controls.">
+  <!-- /EDIT -->
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts: preconnect + preload masthead faces, then the full stylesheet link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtY.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="https://fonts.gstatic.com/s/sourceserif4/v8/vEFy2_tTDB4M7-auWDN0ahZJW3IX2ih5nk3AucvUHf6OAVIJmeUDygwjihdqrhxXD-wGvjU.woff2">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===========================================================================
+       READING-PROGRESS BAR (article-only) — JS sets inner span width %
+       =========================================================================== -->
+  <div id="read-progress" aria-hidden="true"><span></span></div>
+
+  <!-- ===========================================================================
+       UTILITY BAR  (identical across the site)
+       =========================================================================== -->
+  <div class="utility-bar"><div class="container utility-bar__inner">
+    <span class="utility-bar__clock" data-utc>SATURDAY, JUNE 20, 2026 · 14:30 UTC</span>
+    <span class="utility-bar__spacer"></span>
+    <div class="edition-switcher">
+      <select aria-label="Edition">
+        <option>Global</option>
+        <option>Europe</option>
+        <option>Americas</option>
+        <option>Africa</option>
+        <option>Asia-Pacific</option>
+      </select>
+    </div>
+    <a class="utility-bar__secure" href="index.html#tips">Secure tips</a>
+    <a href="index.html#subscribe">Subscribe</a>
+  </div></div>
+
+  <!-- ===========================================================================
+       MASTHEAD / NAMEPLATE  (identical to homepage — sticky, condenses on scroll)
+       =========================================================================== -->
+  <header class="masthead">
+    <div class="container">
+      <div class="masthead__nameplate">
+        <a class="masthead__brand" href="index.html" aria-label="Apgo home">
+          <img class="wordmark__svg" src="assets/logo.svg" alt="Apgo" width="180" height="48">
+        </a>
+        <div class="masthead__dateline">SATURDAY, JUNE 20, 2026 · GLOBAL EDITION · 14:30 UTC</div>
+        <div class="masthead__tools">
+          <form class="search" role="search">
+            <label class="visually-hidden" for="q">Search stories</label>
+            <svg class="search__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input id="q" type="search" placeholder="Search stories" aria-label="Search stories">
+          </form>
+          <button id="theme-toggle" aria-pressed="false" aria-label="Toggle dark mode">
+            <span class="theme-toggle__light">Dark</span>
+            <span class="theme-toggle__dark">Light</span>
+          </button>
+          <a class="btn btn--primary btn--sm" href="index.html#subscribe">Subscribe</a>
+        </div>
+      </div>
+      <p class="masthead__independence">Reader-funded · No owner, no party, no agenda</p>
+    </div>
+    <hr class="masthead__rule">
+  </header>
+
+  <!-- ===========================================================================
+       PRIMARY NAV  (identical across the site — sticky-condensing)
+       =========================================================================== -->
+  <div class="nav-wrap"><div class="container nav-wrap__inner">
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav-toggle__bars"></span> Menu
+    </button>
+    <nav id="primary-nav" class="primary-nav" aria-label="Sections">
+      <ul>
+        <li><a href="index.html#world" data-filter="world">World</a></li>
+        <li><a href="index.html#politics" data-filter="politics">Politics</a></li>
+        <!-- Active section for THIS article (Investigations). Update per article. -->
+        <li><a href="index.html#investigations" data-filter="investigations" aria-current="page">Investigations</a></li>
+        <li><a href="index.html#business" data-filter="business">Business</a></li>
+        <li><a href="index.html#tech" data-filter="tech">Tech</a></li>
+        <li><a href="index.html#science" data-filter="science">Science</a></li>
+        <li><a href="index.html#culture" data-filter="culture">Culture</a></li>
+        <li><a href="index.html#opinion" data-filter="opinion">Opinion</a></li>
+      </ul>
+    </nav>
+  </div></div>
+
+  <main id="main">
+    <!-- =========================================================================
+         ARTICLE — data-cat drives the category hue (kicker/top-rule/datelines/tags).
+         EDIT: change the data-cat value below to one of:
+           world | politics | investigations | business | tech | science | culture | opinion
+         ========================================================================= -->
+    <!-- EDIT: category -->
+    <article class="article" data-cat="investigations">
+    <!-- /EDIT category -->
+      <div class="container">
+        <div class="article__inner">
+
+          <!-- Auto-built TOC: JS fills this from .article__body h2[id]. Leave empty. -->
+          <nav id="toc" class="toc" aria-label="On this page"></nav>
+
+          <div class="article__main">
+
+            <!-- Breadcrumb rule -->
+            <p class="breadcrumb"><a href="index.html#investigations">Investigations</a> · The Sanctions Files</p>
+
+            <!-- EDIT: kicker -->
+            <span class="article__kicker"><span class="mark">&#9632;</span> Investigations</span>
+            <!-- /EDIT -->
+
+            <!-- EDIT: headline (declarative, sentence case, &le;20ch wrap) -->
+            <h1 class="article__headline">The ledger they buried</h1>
+            <!-- /EDIT -->
+
+            <!-- EDIT: dek (italic standfirst) -->
+            <p class="article__deck">Inside an offshore network moving billions past sanctions — and the six-month paper trail that maps how shell entities quietly route money around export controls.</p>
+            <!-- /EDIT -->
+
+            <!-- BYLINE + DATELINE BLOCK -->
+            <div class="byline-block">
+              <p class="byline-block__line">
+                <!-- EDIT: author -->BY MARA OKAFOR, SENIOR INVESTIGATIONS CORRESPONDENT<!-- /EDIT -->
+                · <span class="muted"><!-- EDIT: date -->GENEVA — 20 JUN 2026 · 14:30 UTC · 14 MIN READ<!-- /EDIT --></span>
+                <!-- The UPDATED token below is shown only when a story is live; remove otherwise. -->
+                <!-- <span class="byline-block__updated">UPDATED</span> -->
+              </p>
+              <div class="byline-block__author">
+                <img class="byline-block__avatar" src="https://picsum.photos/seed/mara-okafor/120/120" alt="" width="44" height="44" loading="lazy">
+              </div>
+            </div>
+
+            <!-- =================================================================
+                 SOURCING / TRANSPARENCY BADGE (KEYSTONE) — directly under byline.
+                 Required on every article. Counts must match the ledger length.
+                 EDIT: sourcing list (the <ol> items below)
+                 ================================================================= -->
+            <aside class="sourcing" aria-label="Sourcing and transparency">
+              <div class="sourcing__head">
+                <span class="sourcing__dot"></span>
+                <span class="sourcing__title">On the record</span>
+                <span class="sourcing__counts">· 14 sources · 6 docs · 3 on record</span>
+              </div>
+              <p class="sourcing__funding">Funding: reader-supported, no ads</p>
+              <button class="sourcing__toggle" aria-expanded="false" aria-controls="ledger-1">
+                <span class="sourcing__chev">&#9656;</span> View sourcing
+              </button>
+              <!-- EDIT: sourcing list -->
+              <ol class="sourcing__ledger" id="ledger-1">
+                <li class="ledger__item">
+                  <div class="ledger__row">
+                    <span class="ledger__type">DOC</span>
+                    <span class="chip-confidence chip-confidence--verified">Verified</span>
+                    <a class="ledger__link" href="#">Filing registry extract</a>
+                  </div>
+                  <span class="ledger__desc">Incorporation filings for 41 entities across three registries, cross-checked against the leaked ledger.</span>
+                </li>
+                <li class="ledger__item">
+                  <div class="ledger__row">
+                    <span class="ledger__type">DATA</span>
+                    <span class="chip-confidence chip-confidence--verified">Verified</span>
+                  </div>
+                  <span class="ledger__desc">2.1 million rows of wire-transfer metadata; Apgo reconstructed routing chains independently.</span>
+                </li>
+                <li class="ledger__item">
+                  <div class="ledger__row">
+                    <span class="ledger__type">INTERVIEW</span>
+                    <span class="chip-confidence chip-confidence--verified">Verified</span>
+                  </div>
+                  <span class="ledger__desc">Former compliance officer at one correspondent bank, speaking on the record (see byline note).</span>
+                </li>
+                <li class="ledger__item">
+                  <div class="ledger__row">
+                    <span class="ledger__type">PUBLIC RECORD</span>
+                    <span class="chip-confidence chip-confidence--verified">Verified</span>
+                    <a class="ledger__link" href="#">Sanctions list, June 2026</a>
+                  </div>
+                  <span class="ledger__desc">Consolidated export-control designations used to match counterparties to restricted goods.</span>
+                </li>
+                <li class="ledger__item">
+                  <div class="ledger__row">
+                    <span class="ledger__type">INTERVIEW</span>
+                    <span class="chip-confidence chip-confidence--reported">Reported</span>
+                  </div>
+                  <span class="ledger__desc">Two trade-finance brokers describing how nominee directors are sourced; account not independently corroborated.</span>
+                </li>
+                <li class="ledger__item">
+                  <div class="ledger__row">
+                    <span class="ledger__type">ON-SITE</span>
+                    <span class="chip-confidence chip-confidence--verified">Verified</span>
+                  </div>
+                  <span class="ledger__desc">Reporting visit to a registered-agent address servicing 1,200 companies from a single mailbox.</span>
+                </li>
+                <li class="ledger__item">
+                  <div class="ledger__row">
+                    <span class="ledger__type">DOC</span>
+                    <span class="chip-confidence chip-confidence--disputed">Disputed</span>
+                  </div>
+                  <span class="ledger__desc">An internal memo whose authenticity one named firm contests; Apgo flags the dispute and excludes it from core findings.</span>
+                </li>
+              </ol>
+              <!-- /EDIT -->
+            </aside>
+
+            <!-- =================================================================
+                 "WHY WE'RE COVERING THIS" NOTE — investigations/sensitive stories.
+                 EDIT: why-note
+                 ================================================================= -->
+            <!-- EDIT: why-note -->
+            <aside class="why-note">
+              <p class="why-note__label">Why this story</p>
+              <p class="why-note__body">Sanctions only work if the money cannot move. When that money moves anyway, the public deserves to see exactly how — calmly, and with the documents in hand. We are publishing because the mechanism is verifiable, not because it is sensational.</p>
+              <p class="why-note__sign">— H. Adeyemi, Investigations Editor</p>
+            </aside>
+            <!-- /EDIT -->
+
+            <!-- =================================================================
+                 HERO FIGURE — full reading-well width, mono caption + credit.
+                 EDIT: hero image+caption
+                 ================================================================= -->
+            <!-- EDIT: hero image+caption -->
+            <figure class="article__figure">
+              <img src="https://picsum.photos/seed/ledger-buried/1200/800" alt="Stacks of paper filings and a ledger book photographed on a desk under a desk lamp." width="1200" height="800" loading="lazy">
+              <figcaption>Pages from the leaked corporate ledger, reconstructed and re-indexed by Apgo over six months. — Apgo / Document analysis</figcaption>
+            </figure>
+            <!-- /EDIT -->
+
+            <!-- =================================================================
+                 ARTICLE BODY
+                 Rules baked into the CSS: body prose is justified + hyphenated,
+                 66ch measure. Mono is NOT allowed in prose. Give every <h2> a
+                 real id — the TOC and in-page jumps depend on it.
+                 Inline source markers: <sup class="src-marker"><a href="#ledger-1">[1]</a></sup>
+                 Add class "has-dropcap" to .article__body for a feature drop-cap.
+                 EDIT: body
+                 ================================================================= -->
+            <!-- EDIT: body -->
+            <div class="article__body has-dropcap">
+
+              <p><span class="dateline-open">GENEVA —</span> The ledger arrived as a single encrypted file, 3.4 gigabytes of scanned filings and spreadsheet exports with no covering note. It took six months to turn it into something defensible: a map of how at least 4.7&nbsp;billion dollars in restricted trade was routed through companies that, on paper, did almost nothing at all.<sup class="src-marker"><a href="#ledger-1">[1]</a></sup> This is an account of what the documents show, what they do not, and how we checked.</p>
+
+              <p>Apgo did not take the file at its word. Every entity named here was traced back to a public registry; every payment chain was rebuilt from transfer metadata before any conclusion was drawn.<sup class="src-marker"><a href="#ledger-1">[2]</a></sup> Where a claim could not be stood up, we say so plainly.</p>
+
+              <h2 id="the-mailbox">A mailbox that holds twelve hundred companies</h2>
+
+              <p>The network begins, improbably, at a single street address — a registered-agent office on a quiet commercial road where 1,200 companies share one mailbox and one phone line.<sup class="src-marker"><a href="#ledger-1">[6]</a></sup> None of them keep staff there. A reporter who visited found a reception desk, a wall of pigeonholes, and a manager who declined to discuss individual clients but confirmed the volume.</p>
+
+              <p>Shell companies are not, in themselves, illegal. They become a problem when their only function is to put distance between a regulated transaction and the people who profit from it. The filings show entities formed in batches of ten or twelve on the same day, with the same nominee director, the same template constitution, and bank accounts opened within a fortnight of incorporation.<sup class="src-marker"><a href="#ledger-1">[1]</a></sup></p>
+
+              <ul>
+                <li>41 companies traced to a single corporate-services provider.</li>
+                <li>17 shared at least one nominee director with another entity in the chain.</li>
+                <li>9 listed a residential apartment as their principal place of business.</li>
+                <li>0 filed audited accounts in the period reviewed.</li>
+              </ul>
+
+              <h2 id="how-the-money-moved">How the money actually moved</h2>
+
+              <p>The mechanism is less a conspiracy than a routine. A buyer subject to export controls cannot pay a manufacturer directly, so the payment is broken into legs. An intermediary in a third country places the order; a second intermediary takes delivery and re-invoices; the goods are re-labelled as a permitted category somewhere between the two.<sup class="src-marker"><a href="#ledger-1">[2]</a></sup> Each leg, viewed alone, looks unremarkable. Stacked together, they defeat the control.</p>
+
+              <blockquote>
+                You do not need to break a rule if you can break the transaction into pieces small enough that no single piece looks like the rule.
+                <cite>Former bank compliance officer, on the record</cite>
+              </blockquote>
+
+              <p>That former compliance officer, who agreed to be named in our records but asked that the bank not be, walked us through three chains line by line.<sup class="src-marker"><a href="#ledger-1">[3]</a></sup> In each, the final counterparty appeared on a consolidated export-control list under a different corporate identity than the one that placed the first order.<sup class="src-marker"><a href="#ledger-1">[4]</a></sup></p>
+
+              <div class="doc-callout">
+                <p class="doc-callout__label">Document</p>
+                <p>Invoice #GE-2291, dated 14 March 2026, bills "industrial valves, assorted" at 1.2&nbsp;million dollars. The matching shipping manifest, filed the same week, lists controlled flow-control components destined for a designated end user. The price, weight, and container number match exactly.</p>
+              </div>
+
+              <h2 id="the-paper-trail">Following the paper, not the rumour</h2>
+
+              <p>Investigations of this kind drown in plausible-sounding rumour. We held to a simple rule: a claim entered the published story only when a document or a reproducible data trail supported it. The leaked ledger was the starting point, never the proof.</p>
+
+              <figure class="data-figure">
+                <img src="https://picsum.photos/seed/sanctions-flow/1200/520" alt="Bar chart showing the share of transfers passing through one, two, three or four intermediary entities." width="1200" height="520" loading="lazy">
+                <figcaption>Figure 1 · Share of reconstructed payment chains by number of intermediaries. Source: leaked ledger, transfer metadata · Apgo analysis</figcaption>
+              </figure>
+
+              <p>The pattern in the data is consistent: the longer the chain, the harder it is to see the controlled end. Roughly two-thirds of the flows we rebuilt passed through three or more intermediaries before reaching a counterparty of interest.<sup class="src-marker"><a href="#ledger-1">[2]</a></sup></p>
+
+              <table class="data-table">
+                <caption class="visually-hidden">Reconstructed flows by route length and value.</caption>
+                <thead>
+                  <tr><th scope="col">Chain length</th><th scope="col">Chains</th><th scope="col">Value routed (USD)</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>1 intermediary</td><td>38</td><td>0.4 billion</td></tr>
+                  <tr><td>2 intermediaries</td><td>61</td><td>1.1 billion</td></tr>
+                  <tr><td>3 intermediaries</td><td>74</td><td>1.9 billion</td></tr>
+                  <tr><td>4+ intermediaries</td><td>29</td><td>1.3 billion</td></tr>
+                </tbody>
+              </table>
+
+              <h2 id="what-the-firms-say">What the firms say</h2>
+
+              <p>Apgo put detailed findings to every named entity ten days before publication. Most did not respond. One corporate-services provider said it complied with all applicable law and conducted standard due diligence on its clients. A trade-finance broker disputed the authenticity of an internal memo in our possession; we have set that document aside and it does not support any finding in this story.<sup class="src-marker"><a href="#ledger-1">[7]</a></sup></p>
+
+              <p class="pullquote">When a system is designed so that no one person ever sees the whole transaction, "we followed our procedures" can be true and beside the point at the same time.</p>
+
+              <p>That tension runs through the entire network. Each actor handled one leg, documented it, and passed it on. The control was never broken in any single office. It was dissolved across dozens of them.</p>
+
+              <h2 id="who-it-touches">Who it touches, and why it matters</h2>
+
+              <p>Sanctions are blunt instruments, and reasonable people argue about whether they work. But the public bargain behind them is simple: a government tells its citizens that certain goods will not reach certain buyers. When the filings show that bargain quietly failing, the failure is itself the story — regardless of where one stands on the policy.</p>
+
+              <p>The 4.7&nbsp;billion-dollar figure is conservative. It counts only chains we could rebuild end to end from the metadata; partial chains, and transfers we could not match to a controlled end user, were excluded.<sup class="src-marker"><a href="#ledger-1">[2]</a></sup> The true volume is almost certainly larger. We publish the smaller, defensible number.</p>
+
+              <h2 id="what-comes-next">What we are still chasing</h2>
+
+              <p>Several threads remain open. We have not established who commissioned the original incorporations, and we are continuing to request records from two registries that have not yet responded.<sup class="src-marker"><a href="#ledger-1">[4]</a></sup> We will update this story as those records arrive, and we will log every change below.</p>
+
+              <p>If you have worked inside one of these structures — as a director, an agent, a banker, or a clerk — and can help us understand the parts the documents do not show, there is a secure way to reach us at the foot of this page.</p>
+
+            </div>
+            <!-- /EDIT body -->
+
+            <!-- TAGS — mono pills, category-hued. data-cat tints the border. -->
+            <!-- EDIT: tags -->
+            <div class="tags">
+              <a class="tag" href="index.html#investigations" data-cat="investigations">Sanctions</a>
+              <a class="tag" href="index.html#investigations" data-cat="investigations">Shell companies</a>
+              <a class="tag" href="index.html#investigations" data-cat="investigations">Export controls</a>
+              <a class="tag" href="index.html#business" data-cat="business">Trade finance</a>
+              <a class="tag" href="index.html#world" data-cat="world">Geneva</a>
+            </div>
+            <!-- /EDIT -->
+
+            <!-- =================================================================
+                 FOOTNOTED SOURCE LEDGER — ties to the §M counts above.
+                 This is the same ledger markup, rendered open. Keep it in sync
+                 with the sourcing badge list. Numbering is automatic.
+                 ================================================================= -->
+            <h2 class="related__title" id="sources">Sources</h2>
+            <ol class="sourcing__ledger is-open" aria-label="Numbered source ledger">
+              <li class="ledger__item">
+                <div class="ledger__row">
+                  <span class="ledger__type">DOC</span>
+                  <span class="chip-confidence chip-confidence--verified">Verified</span>
+                  <a class="ledger__link" href="#">Filing registry extract</a>
+                </div>
+                <span class="ledger__desc">Incorporation filings for 41 entities across three registries, cross-checked against the leaked ledger.</span>
+              </li>
+              <li class="ledger__item">
+                <div class="ledger__row">
+                  <span class="ledger__type">DATA</span>
+                  <span class="chip-confidence chip-confidence--verified">Verified</span>
+                </div>
+                <span class="ledger__desc">2.1 million rows of wire-transfer metadata; routing chains reconstructed independently by Apgo.</span>
+              </li>
+              <li class="ledger__item">
+                <div class="ledger__row">
+                  <span class="ledger__type">INTERVIEW</span>
+                  <span class="chip-confidence chip-confidence--verified">Verified</span>
+                </div>
+                <span class="ledger__desc">Former compliance officer at one correspondent bank, on the record.</span>
+              </li>
+              <li class="ledger__item">
+                <div class="ledger__row">
+                  <span class="ledger__type">PUBLIC RECORD</span>
+                  <span class="chip-confidence chip-confidence--verified">Verified</span>
+                  <a class="ledger__link" href="#">Sanctions list, June 2026</a>
+                </div>
+                <span class="ledger__desc">Consolidated export-control designations used to match counterparties to restricted goods.</span>
+              </li>
+              <li class="ledger__item">
+                <div class="ledger__row">
+                  <span class="ledger__type">INTERVIEW</span>
+                  <span class="chip-confidence chip-confidence--reported">Reported</span>
+                </div>
+                <span class="ledger__desc">Two trade-finance brokers on nominee directors; not independently corroborated.</span>
+              </li>
+              <li class="ledger__item">
+                <div class="ledger__row">
+                  <span class="ledger__type">ON-SITE</span>
+                  <span class="chip-confidence chip-confidence--verified">Verified</span>
+                </div>
+                <span class="ledger__desc">Reporting visit to a registered-agent address servicing 1,200 companies from one mailbox.</span>
+              </li>
+              <li class="ledger__item">
+                <div class="ledger__row">
+                  <span class="ledger__type">DOC</span>
+                  <span class="chip-confidence chip-confidence--disputed">Disputed</span>
+                </div>
+                <span class="ledger__desc">Internal memo contested by a named firm; flagged and excluded from core findings.</span>
+              </li>
+            </ol>
+
+            <!-- METHODOLOGY DRAWER — "How we reported this" -->
+            <details class="drawer">
+              <summary>How we reported this</summary>
+              <div class="drawer__body">
+                <h4>Data sources</h4>
+                <p>A leaked 3.4&nbsp;GB archive of filings and spreadsheet exports; 2.1&nbsp;million rows of wire-transfer metadata; three public corporate registries; and the consolidated export-control designations current to June 2026.</p>
+                <h4>Records requested</h4>
+                <p>Apgo filed nine records requests across four jurisdictions. Seven were answered; two registries had not responded by publication. Every named entity received detailed findings ten days in advance and was given the opportunity to comment.</p>
+                <h4>What we verified — and did not</h4>
+                <p>We published a claim only when a document or a reproducible data trail supported it. We could not establish who commissioned the original incorporations. One disputed memo was set aside entirely.</p>
+                <h4>Limitations</h4>
+                <p>The 4.7&nbsp;billion-dollar figure counts only chains rebuilt end to end; partial chains were excluded, so the true volume is likely higher. Metadata can show that money moved, not always why.</p>
+              </div>
+            </details>
+
+            <!-- =================================================================
+                 CORRECTIONS & TRANSPARENCY FOOTER — always rendered.
+                 EDIT: corrections (the log entries)
+                 ================================================================= -->
+            <section class="corrections" aria-label="Corrections and transparency">
+              <p class="corrections__label">Corrections</p>
+              <div class="corrections__log">
+                <!-- EDIT: corrections -->
+                <p class="corrections__entry"><time datetime="2026-06-20">20 Jun 2026</time> — Corrected the spelling of a registered-agent firm's name in the seventh paragraph.</p>
+                <!-- When there are no corrections, replace the entries above with:
+                     <p class="corrections__empty">No corrections to date.</p> -->
+                <!-- /EDIT -->
+              </div>
+              <p class="corrections__disclosure">Apgo is reader-funded and carries no advertising. No staff member holds a financial interest in any entity named in this report. <a href="#">Standards</a> · <a href="#">Spotted an error?</a></p>
+            </section>
+
+            <!-- SHARE — mono labels, no third-party trackers -->
+            <div class="share">
+              <span class="share__label">Share</span>
+              <button data-share="copy">Copy link</button>
+              <a data-share="x" href="#">X</a>
+              <a data-share="bluesky" href="#">Bluesky</a>
+              <a href="mailto:?subject=The%20ledger%20they%20buried%20%E2%80%94%20Apgo">Email</a>
+              <a href="#">Secure share</a>
+              <span class="share__status" aria-live="polite"></span>
+            </div>
+
+            <!-- =================================================================
+                 AUTHOR BIO
+                 EDIT: author bio
+                 ================================================================= -->
+            <!-- EDIT: author bio -->
+            <section class="author-bio">
+              <img class="author-bio__avatar" src="https://picsum.photos/seed/mara-okafor/200/200" alt="" width="72" height="72" loading="lazy">
+              <div>
+                <h3 class="author-bio__name">Mara Okafor</h3>
+                <p class="author-bio__role">Senior Investigations Correspondent</p>
+                <p class="author-bio__text">Mara reports on financial crime, sanctions evasion and corporate opacity. She has spent a decade turning leaked documents into verifiable public records. <a href="#">Standards</a></p>
+              </div>
+            </section>
+            <!-- /EDIT -->
+
+            <!-- =================================================================
+                 RELATED STORIES — 3 cards/rows from the shared dataset.
+                 EDIT: related stories
+                 ================================================================= -->
+            <!-- EDIT: related stories -->
+            <section class="related">
+              <h2 class="related__title">More on this story</h2>
+              <ol class="related__list">
+                <li class="related__row">
+                  <span class="dateline">Washington — 18 Jun 2026</span>
+                  <h3><a href="article.html">The lobbyists writing the bill that regulates them</a></h3>
+                </li>
+                <li class="related__row">
+                  <span class="dateline">Brussels — 16 Jun 2026</span>
+                  <h3><a href="article.html">Pharma's quiet price ladder, decoded</a></h3>
+                </li>
+                <li class="related__row">
+                  <span class="dateline">Stockholm — 12 Jun 2026</span>
+                  <h3><a href="article.html">Who owns the water now</a></h3>
+                </li>
+              </ol>
+            </section>
+            <!-- /EDIT -->
+
+            <!-- SECURE TIP CTA -->
+            <aside class="secure-tip">
+              <p class="secure-tip__text">Have a story others won't touch?</p>
+              <a class="secure-tip__link" href="#">Contact us securely</a>
+            </aside>
+
+          </div><!-- /.article__main -->
+        </div><!-- /.article__inner -->
+      </div><!-- /.container -->
+    </article>
+
+    <!-- =========================================================================
+         NEWSLETTER  (identical across the site)
+         ========================================================================= -->
+    <section class="container"><div class="newsletter">
+      <h3 class="newsletter__title">The Daily Record</h3>
+      <p class="newsletter__value">One email each morning — the whole story, on the record.</p>
+      <form class="newsletter__form newsletter" novalidate>
+        <label class="visually-hidden" for="nl-email">Email address</label>
+        <input id="nl-email" class="newsletter__input" type="email" name="email" required
+               placeholder="you@example.com" aria-label="Email address">
+        <button class="newsletter__submit" type="submit">Subscribe</button>
+        <p class="newsletter__status" aria-live="polite"></p>
+      </form>
+      <p class="newsletter__privacy">No spam. Unsubscribe anytime. We never sell your data.</p>
+    </div></section>
+  </main>
+
+  <!-- =========================================================================
+       STICKY-MINI SOURCING BADGE  (article only — JS pins on scroll)
+       ========================================================================= -->
+  <aside class="sourcing sourcing--mini" aria-hidden="true">
+    <div class="sourcing__head">
+      <span class="sourcing__dot"></span>
+      <span class="sourcing__title">On the record</span>
+      <span class="sourcing__counts">· 14 sources · 6 docs · 3 on record</span>
+    </div>
+    <p class="sourcing__funding">Funding: reader-supported, no ads</p>
+    <button class="sourcing__toggle" aria-expanded="false" aria-controls="ledger-mini" tabindex="-1">
+      <span class="sourcing__chev">&#9656;</span> View sourcing
+    </button>
+    <ol class="sourcing__ledger" id="ledger-mini" aria-hidden="true"></ol>
+  </aside>
+
+  <!-- =========================================================================
+       SITE FOOTER  (identical to homepage)
+       ========================================================================= -->
+  <footer class="site-footer"><div class="container">
+    <div class="site-footer__top">
+      <div class="footer-col site-footer__brand">
+        <img class="wordmark__svg" src="assets/logo.svg" alt="Apgo" width="180" height="48">
+        <p class="site-footer__statement">Apgo is reader-funded and independent. No single owner, no political party, and no advertiser shapes our coverage. We publish our sourcing and correct our mistakes in the open.</p>
+        <p class="site-footer__independence">Independent. Global. Including the stories others won't touch.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__title">Sections</p>
+        <ul>
+          <li><a href="index.html#world">World</a></li>
+          <li><a href="index.html#politics">Politics</a></li>
+          <li><a href="index.html#investigations">Investigations</a></li>
+          <li><a href="index.html#business">Business</a></li>
+          <li><a href="index.html#tech">Tech</a></li>
+          <li><a href="index.html#science">Science</a></li>
+          <li><a href="index.html#culture">Culture</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__title">About</p>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Editorial Standards</a></li>
+          <li><a href="#">Corrections</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__title">Connect</p>
+        <ul>
+          <li><a class="site-footer__secure" href="index.html#tips">Secure tips</a></li>
+          <li><a href="index.html#subscribe">Newsletter</a></li>
+          <li><a href="#" aria-label="Apgo on Mastodon">Mastodon</a></li>
+          <li><a href="#" aria-label="Apgo on Bluesky">Bluesky</a></li>
+        </ul>
+        <button id="theme-toggle-footer" class="btn btn--quiet btn--sm" aria-pressed="false" aria-label="Toggle dark mode">
+          <span class="theme-toggle__light">Dark</span>
+          <span class="theme-toggle__dark">Light</span>
+        </button>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p class="site-footer__legal">© <span data-year></span> Apgo · apgo.ink</p>
+      <p class="site-footer__independence">Reader-funded · No owner, no party, no agenda</p>
+    </div>
+  </div></footer>
+
+  <!-- Back-to-top (JS reveals after scroll) -->
+  <button id="to-top" aria-label="Back to top" hidden>&#8593;</button>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
