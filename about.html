@@ -1,78 +1,187 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="APGO covers power, markets, technology, history and football with a clear line between verified fact and analysis.">
-  <meta name="theme-color" content="#ffffff">
-  <title>A publication built around evidence, not posture. — APGO</title>
-  <link rel="canonical" href="https://apgo.ink/about.html">
-  <link rel="alternate" type="application/rss+xml" title="APGO Journal" href="/feed.xml">
-  <meta property="og:title" content="A publication built around evidence, not posture. — APGO">
-  <meta property="og:description" content="APGO covers power, markets, technology, history and football with a clear line between verified fact and analysis.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://apgo.ink/about.html">
-  <meta property="og:image" content="https://apgo.ink/assets/images/social-card.webp">
-  <meta name="twitter:card" content="summary_large_image">
+  <title>Who we are — Meridian</title>
+  <meta name="description" content="Who we are — Meridian, independent world journalism.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script>document.documentElement.classList.add('js')</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/site.css">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body data-product="journal">
+<body>
   <a class="skip-link" href="#main">Skip to content</a>
-
   <div class="utility">
-    <div class="utility__inner shell">
-      <time datetime="2026-07-20">Monday, 20 July 2026</time>
-      <span>Global edition · Edition 002</span>
-      <a href="/standards.html">Standards &amp; corrections</a>
+    <div class="container utility__inner">
+      <span class="utility__date" data-date>Saturday, 20 June 2026</span>
+      <select class="utility__edition" aria-label="Edition">
+        <option>Global edition</option><option>Americas</option><option>Europe</option><option>Africa</option><option>Asia-Pacific</option>
+      </select>
+      <span class="utility__spacer"></span>
+      <a href="tips.html">Secure tips</a>
+      <a href="subscribe.html">Subscribe</a>
+      <a href="subscribe.html">Sign in</a>
     </div>
   </div>
+
   <header class="masthead">
-    <div class="masthead__inner shell">
-      <p class="masthead__tagline">World affairs, economics and ideas</p>
-      <a class="brand" href="/" aria-label="APGO home">
-        <span class="brand__name">APGO</span><span class="brand__mark" aria-hidden="true"></span><span class="brand__descriptor">Journal</span>
-      </a>
-      <div class="masthead__actions">
-        <button class="icon-button" type="button" data-theme-toggle aria-pressed="false"><span>Dark</span></button>
-        <a class="button button--primary" href="/support.html">Support APGO</a>
+    <div class="container masthead__inner">
+      <div class="masthead__left">
+        <form class="search" role="search" aria-label="Search Meridian">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.7" y2="16.7"/></svg>
+          <input id="q" type="search" placeholder="Search" aria-label="Search stories" autocomplete="off">
+        </form>
+      </div>
+      <a class="wordmark" href="index.html" aria-label="Meridian — home">Meridian<span class="wordmark__dot">.</span></a>
+      <p class="masthead__tagline">Independent world journalism</p>
+      <div class="masthead__right">
+        <button id="theme-toggle" class="iconbtn" aria-pressed="false" aria-label="Switch to dark theme">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5.6 5.6 4.2 4.2M19.8 19.8l-1.4-1.4M18.4 5.6l1.4-1.4M4.2 19.8l1.4-1.4"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8Z"/></svg>
+        </button>
+        <a class="btn btn--primary btn--sm" href="subscribe.html">Subscribe</a>
       </div>
     </div>
   </header>
-  <nav class="nav" aria-label="Primary navigation">
-    <div class="nav__inner shell">
-      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav">Sections</button>
-      <ul class="nav__list" id="primary-nav" data-primary-nav>
-        <li><a href="/journal/">Latest</a></li>
-        <li><a href="/journal/?section=world">World</a></li>
-        <li><a href="/journal/?section=economics">Economics</a></li>
-        <li><a href="/journal/?section=technology">Technology</a></li>
-        <li><a href="/journal/?section=history-and-memory">History</a></li>
-        <li><a href="/journal/?section=books-and-ideas">Books &amp; Ideas</a></li>
+
+  <nav class="nav" aria-label="Sections">
+    <div class="container nav__inner">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        Sections
+      </button>
+      <ul class="nav__list" id="nav-list">
+        <li><a href="news/?cat=world">World</a></li>
+        <li><a href="news/?cat=politics">Politics</a></li>
+        <li><a href="news/?cat=investigations">Investigations</a></li>
+        <li><a href="news/?cat=business">Business</a></li>
+        <li><a href="news/?cat=tech">Technology</a></li>
+        <li><a href="news/?cat=science">Science</a></li>
+        <li><a href="news/?cat=culture">Culture</a></li>
       </ul>
-      <a class="nav__football" href="/football/">APGO Football →</a>
+      <a class="nav__more meta" href="news/">All stories →</a>
     </div>
   </nav>
 
   <main id="main">
-    <header class="page-head shell"><span class="kicker page-head__eyebrow">About APGO</span><h1>A publication built around evidence, not posture.</h1><p>APGO covers power, markets, technology, history and football with a clear line between verified fact and analysis.</p></header>
-    <div class="policy-layout shell"><article class="policy-copy"><p>APGO is an independent, early-stage publication. The Journal covers world affairs, economics, technology, history and ideas. APGO Football is a separate product for tournament analysis, player evaluation and a transparent ranking model.</p><h2>What we publish</h2><p>Edition 002 contains eight sourced articles. We prioritize primary documents, official statistics, archival material and research papers. Analysis is labelled and uncertainty remains visible.</p><h2>What we do not claim</h2><p>APGO is not yet a full newsroom. It does not operate subscriber accounts, a confidential tip system or a live player ranking. Those services will only be announced after they actually exist and have been tested.</p><h2>Funding</h2><p>Reader support pays for research, data, design and infrastructure. It does not buy coverage, removal, access to drafts or a preferred ranking.</p></article><aside class="policy-rail"><h2>APGO</h2><a href="/about.html">About</a><a href="/standards.html">Editorial standards</a><a href="/corrections.html">Corrections</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/support.html">Support</a></aside></div>
+<section class="section" style="border-top:0">
+  <div class="container">
+    <span class="kicker">About Meridian</span>
+    <h1 class="article__headline" style="text-align:left">Who we are</h1>
+    <p class="article__dek" style="text-align:left">An independent, reader-funded newsroom reporting the world from a fixed point — with no proprietor, no shareholders, no advertising and no party.</p>
+
+    <div class="prose">
+      <p>Meridian exists to do one thing well: report what is happening in the world accurately, in plain language, and without fear or favour. We were founded on a simple conviction — that the people who pay for journalism should be the same people it serves. Our readers fund us, and only our readers. That single fact shapes everything else about us.</p>
+
+      <p>We are global by design. Our correspondents file from the places a story actually happens, not from a comfortable distance, and we go on covering regions long after the rest of the press has moved on. We are not the loudest newsroom, and we have no wish to be. We would rather be the one you trust when it matters.</p>
+
+      <h2 id="mission">Our mission</h2>
+      <p>We report rigorously, source everything, and show our work. Where we can verify a claim, we publish the evidence alongside it; where we cannot, we say so plainly. We do not run on speculation, anonymous insinuation, or the manufactured urgency that passes for news elsewhere. A Meridian story earns your attention by being true and useful, not by being alarming.</p>
+
+      <p>We are especially committed to the stories others avoid — the ones that are expensive to report, legally fraught, slow to develop, or simply unfashionable. Independence is worth little if it is not spent on work that needs doing. In practice that means we hold to a few principles:</p>
+      <ul>
+        <li><strong>Accuracy before speed.</strong> We would rather be right and second than first and wrong. When we get something wrong, we correct it openly.</li>
+        <li><strong>Sourcing you can check.</strong> We cite documents, data and named voices wherever possible, and explain why when we cannot.</li>
+        <li><strong>Fairness without false balance.</strong> We give people a genuine chance to respond, but we do not split the difference between truth and falsehood.</li>
+        <li><strong>Distance from power.</strong> No subject is too powerful to scrutinise, and none is too unpopular to treat fairly.</li>
+      </ul>
+
+      <div class="callout">
+        <p>Everything we publish is governed by our <a href="standards.html">editorial standards</a>, and every error we find is logged in our public <a href="corrections.html">corrections</a> record. We treat both as commitments to you, not formalities.</p>
+      </div>
+
+      <h2 id="how-we-are-funded">How we are funded</h2>
+      <p>Meridian is paid for by the people who read it. We take no advertising, run no sponsored content, and accept no money that comes with conditions on what we may report. Members and subscribers cover the cost of our journalism directly, which means our only obligation is to them — to be accurate, independent and worth the price.</p>
+
+      <p>This model is slower to build than one funded by advertisers or a wealthy owner, and we prefer it that way. When readers are the business, there is no incentive to chase clicks, inflate outrage, or soften a story to keep a sponsor comfortable. The work answers to no one but the people it is written for.</p>
+
+      <h2 id="how-we-stay-independent">How we stay independent</h2>
+      <p>Independence is not a slogan for us; it is a structure. Meridian has no proprietor who can lean on an editor, no shareholders who expect a return, and no political affiliation, declared or quiet. No funder, member or institution is permitted to see, shape or suppress a story before publication. Editorial decisions rest with the newsroom alone.</p>
+
+      <p>We keep that wall standing in concrete ways: we disclose conflicts of interest, decline gifts and paid trips, and separate the people who raise revenue from the people who decide what we cover. If a member ever tries to influence our reporting, the answer is the same as it would be from anyone else — no.</p>
+
+      <blockquote>
+        We answer to our readers and to the facts. That is the whole arrangement, and we intend to keep it that simple.
+        <cite>The editorial principle Meridian was founded on</cite>
+      </blockquote>
+
+      <h2 id="our-team">Our team</h2>
+      <p>Meridian is a small, deliberately international newsroom of reporters, editors, researchers and fact-checkers spread across the regions we cover. We hire for judgement and persistence as much as for talent, and we give correspondents the time a serious story needs rather than the time a schedule allows.</p>
+
+      <p>The newsroom is led by our editor, who holds final responsibility for what we publish and answers for it publicly. Bylines on every story name the people who reported it, and our standards page sets out who we are accountable to and how. If you believe we have got something wrong, we want to hear from you — that is what the <a href="corrections.html">corrections</a> page is for.</p>
+
+      <h2 id="get-involved">How to get involved</h2>
+      <p>There are a few ways to be part of this. The most important is the simplest: become a member, and help fund journalism that belongs to its readers.</p>
+    </div>
+
+    <div class="grid grid--3 grid--ruled">
+      <article class="card">
+        <span class="kicker">Support</span>
+        <h3 class="card__title"><a href="subscribe.html">Become a member</a></h3>
+        <p class="card__dek">Fund independent reporting directly. Membership keeps Meridian free of advertisers and owners, and gives you the full newsroom.</p>
+      </article>
+      <article class="card">
+        <span class="kicker">Tips</span>
+        <h3 class="card__title"><a href="tips.html">Share a tip securely</a></h3>
+        <p class="card__dek">Seen something that should be reported? Send documents or leads through our confidential, encrypted channels.</p>
+      </article>
+      <article class="card">
+        <span class="kicker">Contact</span>
+        <h3 class="card__title"><a href="contact.html">Get in touch</a></h3>
+        <p class="card__dek">Questions, corrections, story ideas or feedback — reach the newsroom directly and we will read it.</p>
+      </article>
+    </div>
+
+    <div class="prose">
+      <p>You can also read how we work in our <a href="standards.html">editorial standards</a>, see how we handle your data in our <a href="privacy.html">privacy notice</a>, or simply start with the <a href="index.html">latest reporting</a>. However you arrived here, thank you for caring where your news comes from. It is the reason we exist.</p>
+    </div>
+  </div>
+</section>
+    <section class="section">
+      <div class="container">
+        <div class="newsletter">
+          <div>
+            <h2 class="newsletter__title">The Morning Meridian</h2>
+            <p class="newsletter__value">One email at dawn — the whole story, on the record. Free, and no noise.</p>
+          </div>
+          <form class="newsletter__form" novalidate>
+            <label class="visually-hidden" for="nl">Email address</label>
+            <input id="nl" class="newsletter__input" type="email" name="email" placeholder="you@example.com" required>
+            <button class="btn btn--primary" type="submit">Subscribe</button>
+            <p class="newsletter__status" aria-live="polite"></p>
+            <p class="newsletter__fine">No spam. Unsubscribe anytime. We never sell your data.</p>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
-    <div class="shell">
-      <div class="footer__grid">
-        <div class="footer__brand-wrap"><div class="footer__brand">APGO</div><p class="footer__description">Independent analysis of power, markets, technology, history and football. Facts first; methods visible.</p></div>
-        <div class="footer__column"><strong>Sections</strong><a href="/journal/?section=world">World</a><a href="/journal/?section=economics">Economics</a><a href="/journal/?section=technology">Technology</a><a href="/journal/?section=history-and-memory">History</a><a href="/journal/?section=books-and-ideas">Books &amp; Ideas</a></div>
-        <div class="footer__column"><strong>Products</strong><a href="/journal/">APGO Journal</a><a href="/football/">APGO Football</a><a href="/feed.xml">RSS feed</a><a href="/support.html">Support</a></div>
-        <div class="footer__column"><strong>Institution</strong><a href="/about.html">About</a><a href="/standards.html">Editorial standards</a><a href="/corrections.html">Corrections</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a></div>
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="wordmark">Meridian<span class="wordmark__dot">.</span></span>
+          <p class="footer__statement">Independent, reader-funded world journalism. No proprietor, no shareholders, no political affiliation — and no advertising influence over what we publish.</p>
+          <p class="footer__promise">Reporting the world from a fixed point — including the stories others avoid.</p>
+        </div>
+        <div class="footer__col"><h4>Sections</h4><a href="news/?cat=world">World</a><a href="news/?cat=politics">Politics</a><a href="news/?cat=investigations">Investigations</a><a href="news/?cat=business">Business</a><a href="news/?cat=tech">Technology</a><a href="news/?cat=science">Science</a><a href="news/?cat=culture">Culture</a></div>
+        <div class="footer__col"><h4>About</h4><a href="about.html">Who we are</a><a href="standards.html">Editorial standards</a><a href="corrections.html">Corrections</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a></div>
+        <div class="footer__col"><h4>Connect</h4><a href="tips.html">Secure tips</a><a href="subscribe.html">Newsletter</a><a href="#">Mastodon</a><a href="#">Bluesky</a></div>
       </div>
-      <div class="footer__bottom"><span>© <span data-current-year>2026</span> APGO.</span><span>Edition 002 · Published 20 July 2026</span></div>
+      <div class="footer__bottom">
+        <span>© <span data-year></span> Meridian · apgo.ink</span>
+        <span>Reader-funded · No owner, no party, no agenda</span>
+      </div>
     </div>
   </footer>
 
-  <script src="/assets/js/site.js" defer></script>
+  <button class="to-top" id="to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="6 11 12 5 18 11"/></svg>
+  </button>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
