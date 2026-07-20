@@ -16,6 +16,8 @@ python3 -m http.server 4173
 
 Then open `http://localhost:4173`.
 
+Edition number and publication dates live in `content/site.json`. The committed GitHub Actions workflow rebuilds and validates the site on every pull request and on every push to `main`.
+
 ## Publishing an article
 
 1. Add the article body as semantic HTML in `content/articles/`.
@@ -42,7 +44,7 @@ The player index is intentionally marked as in development. Before launch it nee
 
 ```text
 assets/          CSS, JavaScript and editorial images
-content/         Article metadata, sources and article bodies
+content/         Site settings, article metadata, sources and article bodies
 templates/       Reusable page templates
 scripts/         Build and validation scripts
 articles/        Generated Journal article pages

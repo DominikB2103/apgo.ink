@@ -5,6 +5,11 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs --out .",
-    "check": "node --check assets/js/site.js && node scripts/check.mjs"
+    "check": "node --check assets/js/site.js && node scripts/check.mjs",
+    "validate:markup": "node scripts/validate-markup.mjs"
+  },
+  "devDependencies": {
+    "html-validate": "10.17.0",
+    "saxes": "6.0.0"
   }
 }

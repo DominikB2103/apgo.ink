@@ -1,0 +1,47 @@
+name: Validate APGO
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Rebuild site
+        run: npm run build
+
+      - name: Validate pages and editorial data
+        run: npm run check
+
+      - name: Validate generated HTML and XML
+        run: npm run validate:markup
+
+      - name: Confirm generated files are committed
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "The build changed generated files. Run npm run build and commit the result."
+            git status --short
+            exit 1
+          fi
