@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>APGO Journal</title>
+    <link>https://apgo.ink/journal/</link>
+    <description>Independent analysis of world affairs, football, books and public systems.</description>
+    <language>en</language>
+    <lastBuildDate>Mon, 20 Jul 2026 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://apgo.ink/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>The New Geography of Power Runs Through the Sea</title>
+      <link>https://apgo.ink/journal/stories/geography-of-power/</link>
+      <guid isPermaLink="true">https://apgo.ink/journal/stories/geography-of-power/</guid>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
+      <category>World affairs</category>
+      <description>Shipping lanes, undersea cables, chokepoints and sovereignty are redrawing the map of global influence.</description>
+    </item>
+    <item>
+      <title>Football’s Bigger Calendar Has a Smaller Margin for Rest</title>
+      <link>https://apgo.ink/journal/stories/football-without-rest/</link>
+      <guid isPermaLink="true">https://apgo.ink/journal/stories/football-without-rest/</guid>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
+      <category>Football</category>
+      <description>The expanded game promises more global competition while the recovery burden falls on players.</description>
+    </item>
+    <item>
+      <title>Dostoevsky’s Underground Man Was Built for the Feed</title>
+      <link>https://apgo.ink/journal/stories/underground-man-and-the-feed/</link>
+      <guid isPermaLink="true">https://apgo.ink/journal/stories/underground-man-and-the-feed/</guid>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
+      <category>Books and ideas</category>
+      <description>A spiteful, self-conscious narrator from 1864 explains the inner machinery of posting.</description>
+    </item>
+  </channel>
+</rss>
