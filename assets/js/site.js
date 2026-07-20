@@ -117,7 +117,7 @@
   const globalSearch = document.querySelector("[data-global-search]");
   const globalResults = document.querySelector("[data-search-results]");
   const globalStatus = document.querySelector("[data-search-status]");
-  const searchResultLimit = 12;
+  const searchResultLimit = 8;
   let searchIndex = null;
   let searchIndexPromise = null;
 
@@ -145,8 +145,14 @@
   function renderSearchResults() {
     if (!globalResults || !searchIndex) return;
     const query = globalSearch ? globalSearch.value.trim().toLowerCase() : "";
+
+    if (query.length < 2) {
+      globalResults.replaceChildren();
+      setSearchStatus(query ? "Enter at least two characters." : "Search Journal and Football by topic, person or headline.");
+      return;
+    }
+
     const matches = searchIndex.filter(function (item) {
-      if (!query) return true;
       return [item.section, item.type, item.headline, item.dek].join(" ").toLowerCase().includes(query);
     });
     const visibleMatches = matches.slice(0, searchResultLimit);
@@ -163,7 +169,7 @@
       return Promise.resolve(searchIndex);
     }
     if (!searchIndexPromise) {
-      setSearchStatus("Loading the archive…");
+      setSearchStatus("Loading search…");
       searchIndexPromise = fetch("/search-index.json", { headers: { Accept: "application/json" } })
         .then(function (response) {
           if (!response.ok) throw new Error("Search index request failed");

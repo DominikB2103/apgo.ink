@@ -159,3 +159,26 @@ test.describe("short laptop", () => {
     expect(boxes.rail.x).toBeGreaterThan(boxes.body.x + boxes.body.width);
   });
 });
+
+test.describe("search and Journal semantics", () => {
+  test("global search opens as a quiet utility and waits for a query", async ({ page }) => {
+    await page.goto("/", { waitUntil: "domcontentloaded" });
+    await page.locator("[data-search-open]").click();
+
+    await expect(page.locator("[data-search-dialog]")).toBeVisible();
+    await expect(page.locator("[data-search-dialog] .kicker")).toHaveText("Site search");
+    await expect(page.locator("[data-search-results] a")).toHaveCount(0);
+    await expect(page.locator("[data-search-status]")).toContainText("Search Journal and Football");
+
+    await page.locator("[data-global-search]").fill("world");
+    await expect(page.locator("[data-search-results] a").first()).toBeVisible();
+    expect(await page.locator("[data-search-results] a").count()).toBeLessThanOrEqual(8);
+  });
+
+  test("Journal distinguishes edition filtering from site search", async ({ page }) => {
+    await page.goto("/journal/", { waitUntil: "domcontentloaded" });
+    await expect(page.getByRole("heading", { name: "All stories" })).toBeVisible();
+    await expect(page.locator("[data-story-filter]")).toHaveAttribute("placeholder", "Filter headlines and topics");
+    await expect(page.getByText("APGO archive", { exact: true })).toHaveCount(0);
+  });
+});

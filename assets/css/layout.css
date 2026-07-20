@@ -117,6 +117,10 @@
   align-items: start;
 }
 
+.page-head--journal {
+  padding-block: clamp(2rem, 3vw, 2.75rem);
+}
+
 .page-head--journal .page-head__aside > p,
 .page-head--support > p {
   margin-top: 0;
@@ -125,11 +129,15 @@
 }
 
 .page-head__aside dl {
-  margin-top: 1rem;
+  margin-top: 0.75rem;
 }
 
 .archive-intro {
   align-items: start;
+}
+
+.page-head--journal + .section {
+  padding-top: clamp(2rem, 3vw, 2.75rem);
 }
 
 .projects-hero__grid {

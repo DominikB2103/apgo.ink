@@ -175,9 +175,9 @@ function documentPage(meta, body, product) {
 
 function searchDialog() {
   return '<dialog class="search-dialog" id="search-dialog" data-search-dialog aria-labelledby="search-title">' +
-    '<div class="search-dialog__panel"><div class="search-dialog__head"><div><span class="kicker">APGO archive</span><h2 id="search-title">Search APGO</h2></div><button class="search-dialog__close" type="button" data-search-close aria-label="Close search">Close</button></div>' +
-    '<label class="search-dialog__field"><span class="visually-hidden">Search articles</span><input type="search" placeholder="Search by topic, section or headline" autocomplete="off" aria-controls="search-results" aria-describedby="search-status" data-global-search></label>' +
-    '<div class="search-dialog__results" id="search-results" data-search-results></div><p class="filter-empty" id="search-status" role="status" aria-live="polite" data-search-status>Loading the archive…</p></div></dialog>';
+    '<div class="search-dialog__panel"><div class="search-dialog__head"><div><span class="kicker">Site search</span><h2 id="search-title">Search APGO</h2></div><button class="search-dialog__close" type="button" data-search-close aria-label="Close search">Close</button></div>' +
+    '<label class="search-dialog__field"><span class="visually-hidden">Search APGO</span><input type="search" placeholder="Search APGO" autocomplete="off" aria-controls="search-results" aria-describedby="search-status" data-global-search></label>' +
+    '<p class="search-dialog__status" id="search-status" role="status" aria-live="polite" data-search-status>Search Journal and Football by topic, person or headline.</p><div class="search-dialog__results" id="search-results" data-search-results></div></div></dialog>';
 }
 
 function sourceList(article) {
