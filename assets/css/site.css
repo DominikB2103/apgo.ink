@@ -613,6 +613,12 @@ body {
   background: color-mix(in srgb, var(--surface) 96%, transparent);
 }
 
+.football-nav {
+  color: #edf2ef;
+  background: #0d1713;
+  border-bottom-color: #25352e;
+}
+
 .nav__inner,
 .nav__list a {
   min-height: 46px;
@@ -829,7 +835,10 @@ body {
 .reporting-basis span {
   color: var(--ink-soft);
   font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: normal;
   line-height: 1.5;
+  text-transform: none;
 }
 
 .article-hero { max-width: 72rem; }
@@ -919,6 +928,7 @@ body {
 }
 .football-hero__copy > p { font-size: 1.12rem; line-height: 1.5; }
 .football-hero figure::before { inset: -0.45rem 0.45rem 0.45rem -0.45rem; }
+.football-hero figcaption { font-size: 0.68rem; }
 
 .ranking-preview { grid-template-columns: minmax(18rem, 0.85fr) minmax(0, 1.15fr); gap: clamp(2rem, 5vw, 5rem); }
 .ranking-preview__copy h2 {
@@ -1019,6 +1029,11 @@ body {
   }
   .nav__list[data-open="true"] { display: flex; }
   .nav__list a { min-height: 44px; border-bottom: 1px solid var(--rule); }
+  .football-nav .nav__list {
+    background: #0d1713;
+    border-bottom-color: #25352e;
+  }
+  .football-nav .nav__list a { border-bottom-color: #25352e; }
   .nav__football { margin-left: auto; }
   .top-stack { grid-template-columns: 1fr; gap: 0; }
   .top-stack .story-card { padding: 1rem 0; }
