@@ -1055,6 +1055,17 @@ body {
 }
 
 @media (max-width: 720px) {
+  .shell,
+  .top-grid,
+  .lead-story,
+  .top-stack,
+  .football-hero__grid,
+  .football-hero__copy {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .top-grid,
+  .football-hero__grid { grid-template-columns: minmax(0, 1fr); }
   .section { padding-block: 2.25rem; }
   .section-head { align-items: flex-start; }
   .section-note { display: none; }
@@ -1067,7 +1078,12 @@ body {
     margin-bottom: 1rem;
     aspect-ratio: 16 / 9;
   }
-  .lead-story__headline { font-size: clamp(2.2rem, 9vw, 2.65rem); line-height: 1; }
+  .lead-story__headline {
+    max-width: 100%;
+    font-size: clamp(2.2rem, 9vw, 2.65rem);
+    line-height: 1;
+    text-wrap: wrap;
+  }
   .lead-story__dek { font-size: 1.04rem; }
   .story-grid,
   .football-story-grid { grid-template-columns: 1fr; }
@@ -1092,7 +1108,12 @@ body {
   .article-standard > div:last-child { grid-column: auto; }
   .football-panel__visual { min-height: 0; aspect-ratio: 16 / 10; }
   .football-panel__content h2 { font-size: clamp(2.3rem, 10vw, 2.8rem); }
-  .football-hero__copy h1 { font-size: clamp(2.45rem, 10vw, 2.9rem); }
+  .football-hero__copy h1 {
+    max-width: 100%;
+    font-size: clamp(2.25rem, 9.5vw, 2.65rem);
+    line-height: 1.02;
+    text-wrap: wrap;
+  }
   .method-sequence,
   .method-sequence--projects { grid-template-columns: 1fr; }
   .method-sequence article { min-height: 0; }
@@ -1106,6 +1127,26 @@ body {
   .project-teaser h3 { margin-top: 1.25rem; }
   .project-teaser:hover { padding-inline: 0; }
   .support-strip__inner { min-height: 0; }
+}
+
+@media (max-width: 480px) {
+  .masthead__inner,
+  .football-header .masthead__inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.5rem;
+  }
+  .brand,
+  .football-brand,
+  .masthead__actions { min-width: 0; }
+  .brand__name { font-size: 2.05rem; }
+  .football-brand { gap: 0.35rem; }
+  .football-brand__name { font-size: 2rem; }
+  .masthead__actions { gap: 0.25rem; }
+  .masthead__actions [data-theme-toggle] { display: none; }
+  .masthead__actions .icon-button {
+    min-width: 0;
+    padding-inline: 0.55rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
