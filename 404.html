@@ -1,18 +1,75 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#163126">
+  <meta name="description" content="The requested page was not found.">
+  <meta name="theme-color" content="#ffffff">
   <title>Page not found — APGO</title>
-  <link rel="stylesheet" href="/assets/css/apgo.css">
+  <link rel="canonical" href="https://apgo.ink/404.html">
+  <link rel="alternate" type="application/rss+xml" title="APGO Journal" href="/feed.xml">
+  <meta property="og:title" content="Page not found — APGO">
+  <meta property="og:description" content="The requested page was not found.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://apgo.ink/404.html">
+  <meta property="og:image" content="https://apgo.ink/assets/images/social-card.webp">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
 </head>
-<body>
-  <header class="home-header"><div class="home-header__inner page-shell"><a class="home-brand" href="/">APGO</a><nav class="home-nav" aria-label="Primary navigation"><a href="/journal/">Journal</a><a href="/football/">Football Index</a><a href="/about.html">About</a></nav></div></header>
-  <main class="page-shell" style="padding-block:14vh"><span class="eyebrow">Error 404</span><h1 style="font-family:var(--serif);font-size:clamp(4rem,10vw,9rem);font-weight:450;line-height:.9;margin:.2em 0">This page moved—or never existed.</h1><p style="max-width:680px;font-family:var(--body-serif);font-size:1.3rem">Return to APGO’s front page or continue into the Journal.</p><p><a class="button" href="/">APGO home</a> <a class="button button--outline" href="/journal/">Open the Journal</a></p></main>
+<body data-product="journal">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="utility">
+    <div class="utility__inner shell">
+      <time datetime="2026-07-20">Monday, 20 July 2026</time>
+      <span>Global edition · Edition 002</span>
+      <a href="/standards.html">Standards &amp; corrections</a>
+    </div>
+  </div>
+  <header class="masthead">
+    <div class="masthead__inner shell">
+      <p class="masthead__tagline">World affairs, economics and ideas</p>
+      <a class="brand" href="/" aria-label="APGO home">
+        <span class="brand__name">APGO</span><span class="brand__mark" aria-hidden="true"></span><span class="brand__descriptor">Journal</span>
+      </a>
+      <div class="masthead__actions">
+        <button class="icon-button" type="button" data-theme-toggle aria-pressed="false"><span>Dark</span></button>
+        <a class="button button--primary" href="/support.html">Support APGO</a>
+      </div>
+    </div>
+  </header>
+  <nav class="nav" aria-label="Primary navigation">
+    <div class="nav__inner shell">
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav">Sections</button>
+      <ul class="nav__list" id="primary-nav" data-primary-nav>
+        <li><a href="/journal/">Latest</a></li>
+        <li><a href="/journal/?section=world">World</a></li>
+        <li><a href="/journal/?section=economics">Economics</a></li>
+        <li><a href="/journal/?section=technology">Technology</a></li>
+        <li><a href="/journal/?section=history-and-memory">History</a></li>
+        <li><a href="/journal/?section=books-and-ideas">Books &amp; Ideas</a></li>
+      </ul>
+      <a class="nav__football" href="/football/">APGO Football →</a>
+    </div>
+  </nav>
+
+  <main id="main" class="page-head shell"><span class="kicker page-head__eyebrow">Error 404</span><h1>This page is not in the edition.</h1><p>Return to the front page, browse the Journal or open APGO Football.</p><p style="margin-top:1.5rem"><a class="button button--primary" href="/">Front page</a> <a class="button" href="/journal/">Journal</a> <a class="button" href="/football/">Football</a></p></main>
+
+  <footer class="footer">
+    <div class="shell">
+      <div class="footer__grid">
+        <div class="footer__brand-wrap"><div class="footer__brand">APGO</div><p class="footer__description">Independent analysis of power, markets, technology, history and football. Facts first; methods visible.</p></div>
+        <div class="footer__column"><strong>Sections</strong><a href="/journal/?section=world">World</a><a href="/journal/?section=economics">Economics</a><a href="/journal/?section=technology">Technology</a><a href="/journal/?section=history-and-memory">History</a><a href="/journal/?section=books-and-ideas">Books &amp; Ideas</a></div>
+        <div class="footer__column"><strong>Products</strong><a href="/journal/">APGO Journal</a><a href="/football/">APGO Football</a><a href="/feed.xml">RSS feed</a><a href="/support.html">Support</a></div>
+        <div class="footer__column"><strong>Institution</strong><a href="/about.html">About</a><a href="/standards.html">Editorial standards</a><a href="/corrections.html">Corrections</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a></div>
+      </div>
+      <div class="footer__bottom"><span>© <span data-current-year>2026</span> APGO.</span><span>Edition 002 · Published 20 July 2026</span></div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/site.js" defer></script>
 </body>
 </html>
