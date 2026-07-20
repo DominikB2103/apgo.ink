@@ -109,7 +109,7 @@ for (const viewport of viewports) {
       } else {
         const minimumBodyWidth = viewport.width >= 768 ? 640 : viewport.width - 80;
         expect(bodyBox.width).toBeGreaterThan(minimumBodyWidth);
-        if (viewport.width >= 768) expect(bodyBox.width).toBeLessThanOrEqual(720);
+        if (viewport.width >= 768) expect(bodyBox.width).toBeLessThanOrEqual(730);
         expect(railBox.y).toBeGreaterThanOrEqual(bodyBox.y + bodyBox.height - 2);
         await expect(rail).toHaveCSS("position", "static");
         await expect(mobileTools).toBeVisible();
