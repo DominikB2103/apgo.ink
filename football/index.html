@@ -1,116 +1,76 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The APGO Football Index is an open, position-aware framework for ranking the world's best footballers without mystery votes or reputation points.">
-  <meta name="theme-color" content="#163126">
-  <meta property="og:title" content="APGO Football Index — A ranking that shows its work">
-  <meta property="og:description" content="An independent, transparent and position-aware player ranking now in development.">
-  <meta property="og:image" content="https://apgo.ink/assets/images/football-calendar.webp">
-  <title>APGO Football Index — A player ranking that shows its work</title>
+  <meta name="description" content="A separate APGO product for World Cup analysis, player evaluation and a transparent global player ranking model.">
+  <meta name="theme-color" content="#0d1713">
+  <title>APGO Football — World Cup analysis and transparent player rankings</title>
   <link rel="canonical" href="https://apgo.ink/football/">
+  <link rel="alternate" type="application/rss+xml" title="APGO Journal" href="/feed.xml">
+  <meta property="og:title" content="APGO Football — World Cup analysis and transparent player rankings">
+  <meta property="og:description" content="A separate APGO product for World Cup analysis, player evaluation and a transparent global player ranking model.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://apgo.ink/football/">
+  <meta property="og:image" content="https://apgo.ink/assets/images/spain-argentina-final.webp">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/apgo.css">
-  <script src="/assets/js/apgo.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
 </head>
-<body>
+<body data-product="football">
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="reader-strip"><div class="reader-strip__inner page-shell"><span>APGO Lab · Methodology v0.1</span><a href="#support">Help build the index</a></div></div>
-  <header class="home-header">
-    <div class="home-header__inner page-shell">
-      <a class="home-brand" href="/">APGO</a>
-      <nav class="home-nav" aria-label="Primary navigation">
-        <a href="/journal/">Journal</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html">Contact</a>
-        <a class="button button--outline" href="#support">Support</a>
-      </nav>
+
+  <div class="utility">
+    <div class="utility__inner shell">
+      <time datetime="2026-07-20">Monday, 20 July 2026</time>
+      <span>World Cup 2026 · Analysis desk</span>
+      <a href="/journal/">Return to APGO Journal</a>
+    </div>
+  </div>
+  <header class="masthead football-header">
+    <div class="masthead__inner shell">
+      <span></span>
+      <a class="football-brand" href="/football/" aria-label="APGO Football home"><span class="football-brand__apgo">APGO</span><span class="football-brand__divider">/</span><span class="football-brand__name">Football</span></a>
+      <div class="masthead__actions">
+        <button class="icon-button" type="button" data-theme-toggle aria-pressed="false"><span>Dark</span></button>
+        <a class="button button--football" href="/football/#ranking">Ranking project</a>
+      </div>
     </div>
   </header>
+  <nav class="nav football-nav" aria-label="Football navigation">
+    <div class="nav__inner shell">
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav">Sections</button>
+      <ul class="nav__list" id="primary-nav" data-primary-nav>
+        <li><a href="/football/">Football home</a></li>
+        <li><a href="/football/#world-cup">World Cup 2026</a></li>
+        <li><a href="/football/#ranking">Player rankings</a></li>
+        <li><a href="/football/#method">Method</a></li>
+      </ul>
+      <a class="nav__football" href="/journal/">Journal →</a>
+    </div>
+  </nav>
 
   <main id="main">
-    <section class="product-hero">
-      <div class="page-shell">
-        <span class="eyebrow" style="color:#e8bcc3">In development · Football</span>
-        <h1>A ranking that shows its work.</h1>
-        <p>The APGO Football Index will be an independent, position-aware ranking of elite players. No mystery panel. No reputation bonus. Every score will ship with its method, data window and uncertainty.</p>
-        <div class="home-hero__actions" style="margin-top:34px">
-          <a class="button button--paper" href="#method">Read the proposed method</a>
-          <a class="button" href="/journal/stories/football-without-rest/">Read the calendar analysis</a>
-        </div>
-      </div>
-    </section>
-
-    <figure class="article-hero">
-      <img src="/assets/images/football-calendar.webp" width="1536" height="1024" alt="Top-down football pitch with an abstract network of match and workload lines">
-      <figcaption class="image-credit">Original illustration · APGO</figcaption>
-    </figure>
-
-    <section class="section page-shell" aria-labelledby="why-heading">
-      <div class="section-heading">
-        <div><span class="eyebrow">The problem</span><h2 id="why-heading">Player lists exist. A common standard does not.</h2></div>
-        <p>Awards mix team success, memory, visibility and taste. Data models often hide their weights. The APGO Index is designed to make judgment inspectable.</p>
-      </div>
-      <div class="principles-grid">
-        <article class="principle"><span class="principle__number">01</span><h3>Position aware</h3><p>Goalkeepers, centre-backs, creators and finishers are judged against the responsibilities of their role before being compared across roles.</p></article>
-        <article class="principle"><span class="principle__number">02</span><h3>Context adjusted</h3><p>Opponent quality, competition level, possession environment and match state change what a raw action means.</p></article>
-        <article class="principle"><span class="principle__number">03</span><h3>Auditable</h3><p>Each release will publish definitions, weights, minimum minutes, data coverage, revisions and known blind spots.</p></article>
-      </div>
-    </section>
-
-    <section class="section page-shell" id="method" aria-labelledby="method-heading">
-      <div class="methodology-layout">
-        <div>
-          <span class="eyebrow">Proposed methodology · v0.1</span>
-          <h2 id="method-heading">Five layers, one visible score.</h2>
-          <p>The first model will use a rolling 365-day window and position-specific baselines. The published ranking should not begin until data coverage, corrections and reproducibility are strong enough to defend.</p>
-          <p><strong>Important:</strong> these weights are a public proposal, not a live ranking. APGO will test them against historical seasons and publish changes before release.</p>
-        </div>
-        <div>
-          <table class="score-table">
-            <thead><tr><th>Layer</th><th>What it asks</th><th>Examples</th><th>Weight</th></tr></thead>
-            <tbody>
-              <tr><td>Match impact</td><td>Did the player change outcomes?</td><td>Shot value, chance creation, prevention, progression</td><td>35%</td></tr>
-              <tr><td>Role execution</td><td>Did they perform the job their position requires?</td><td>Position-specific actions and error costs</td><td>20%</td></tr>
-              <tr><td>Opponent strength</td><td>How difficult was the environment?</td><td>Competition, opponent and team-strength adjustment</td><td>20%</td></tr>
-              <tr><td>Availability</td><td>How much reliable value was delivered?</td><td>Minutes, starts, continuity and load</td><td>15%</td></tr>
-              <tr><td>High leverage</td><td>What happened when stakes rose?</td><td>Knockouts, title races and close match states</td><td>10%</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section class="section page-shell" aria-labelledby="rules-heading">
-      <div class="section-heading"><div><span class="eyebrow">Publication rules</span><h2 id="rules-heading">What makes the index credible</h2></div><p>The method is not finished when the formula runs. Governance, corrections and clear limits are part of the product.</p></div>
-      <div class="project-grid">
-        <article class="project-card"><span class="project-card__status">Rule 01</span><h3>No unexplained movement</h3><p>Every release will explain major rises and falls, including changes caused by model revisions rather than new performance.</p></article>
-        <article class="project-card"><span class="project-card__status">Rule 02</span><h3>Separate model from editorial list</h3><p>A data score and an editor’s judgment are different products. APGO will label each instead of blending them invisibly.</p></article>
-        <article class="project-card"><span class="project-card__status">Rule 03</span><h3>Publish uncertainty</h3><p>Low minutes, weak league coverage and role ambiguity reduce confidence. The interface will show that instead of pretending every decimal is equal.</p></article>
-        <article class="project-card"><span class="project-card__status">Rule 04</span><h3>Archive every edition</h3><p>Previous rankings, weights and corrections will remain available so readers can see how the system and its conclusions changed.</p></article>
-      </div>
-    </section>
-
-    <section class="section page-shell" aria-labelledby="roadmap-heading">
-      <div class="section-heading"><div><span class="eyebrow">Build sequence</span><h2 id="roadmap-heading">From idea to public reference</h2></div><p>Calling a ranking “official” would require authority from a governing body. APGO’s achievable goal is different: become the most transparent independent reference.</p></div>
-      <div class="principles-grid">
-        <article class="principle"><span class="principle__number">Phase 1</span><h3>Data and backtesting</h3><p>Choose licensed or genuinely open data, normalize competitions, define roles and test several past seasons for obvious bias.</p></article>
-        <article class="principle"><span class="principle__number">Phase 2</span><h3>Pilot publication</h3><p>Release a limited top 25 with confidence bands, a complete methods paper and a public correction channel.</p></article>
-        <article class="principle"><span class="principle__number">Phase 3</span><h3>Quarterly index</h3><p>Expand coverage only after reliability is proven. Add player pages, trend histories and model-change notes.</p></article>
-      </div>
-    </section>
-
-    <section class="section section--compact page-shell" id="support" aria-labelledby="support-heading">
-      <div class="funding-panel">
-        <div class="funding-panel__intro"><span class="eyebrow" style="color:#f1c4ca">Build with us</span><h2 id="support-heading">Fund an open football standard.</h2><p>Support will go toward data access, research, engineering and independent editorial review—not toward buying a preferred result.</p></div>
-        <div class="funding-panel__action"><span class="wallet-label">Bitcoin · BTC network</span><code class="wallet-address">bc1q2wqpdzhgc90jn0r797yxv62pcnr06d2s0nlv8h</code><div class="copy-row"><button class="button button--paper" type="button" data-copy="bc1q2wqpdzhgc90jn0r797yxv62pcnr06d2s0nlv8h" aria-describedby="copy-status">Copy address</button><a class="button button--outline" style="color:#fff;border-color:#fff" href="/contact.html">Contribute expertise</a><span class="copy-status" id="copy-status" role="status" aria-live="polite"></span></div></div>
-      </div>
-    </section>
+    <header class="page-head shell"><span class="kicker kicker--football page-head__eyebrow">APGO Football</span><h1>Performance, context and rankings that show their work.</h1><p>A separate football publication for tournament analysis, player evaluation and a versioned global ranking model.</p></header>
+    <section class="section shell" id="world-cup" aria-labelledby="world-cup-title"><div class="section-head"><h2 class="section-title" id="world-cup-title">World Cup 2026</h2></div><div class="story-grid"><article class="story-card" data-story-card data-section="world-cup-2026"><a class="story-card__image" href="/football/articles/spain-argentina-world-cup-final/" tabindex="-1" aria-hidden="true"><img src="/assets/images/spain-argentina-final.webp" width="768" height="432" loading="lazy" alt=""></a><span class="kicker kicker--football">World Cup 2026 · Match analysis</span><h3 class="headline story-card__headline"><a href="/football/articles/spain-argentina-world-cup-final/">One Goal, Two Stars: Spain Outlast Argentina to Reclaim the World Cup</a></h3><p class="dek story-card__dek">Ferran Torres’s 106th-minute finish settled a final built on Spanish pressure and Argentine resistance. The 1–0 victory gave Spain a second men’s title—and completed an unusually concentrated run of international success.</p><p class="meta story-card__meta">APGO Football Desk · 6 min read</p></article><article class="story-card" data-story-card data-section="world-cup-2026"><a class="story-card__image" href="/football/articles/world-cup-48-team-audit/" tabindex="-1" aria-hidden="true"><img src="/assets/images/world-cup-scale.webp" width="768" height="432" loading="lazy" alt=""></a><span class="kicker kicker--football">World Cup 2026 · Tournament audit</span><h3 class="headline story-card__headline"><a href="/football/articles/world-cup-48-team-audit/">The 48-Team World Cup Is Over. Its Scale Was the Story.</a></h3><p class="dek story-card__dek">More countries reached the stage, more people entered the grounds and the scoring rate rose. The first expanded World Cup answered the simplest sporting objection—but left harder questions about format, travel and workload for a calmer audit.</p><p class="meta story-card__meta">APGO Football Desk · 7 min read</p></article></div></section>
+    <section class="section shell" id="ranking" aria-labelledby="ranking-title"><div class="ranking-preview"><div class="ranking-preview__copy"><span class="kicker kicker--football">Ranking project</span><h2 id="ranking-title">No mystery ballot. No reputation points.</h2><p>The APGO Player Index will publish its inputs, positional baselines, competition adjustments and uncertainty. It is not live yet; the model will ship only after backtesting and a public methods review.</p><p style="margin-top:1.2rem"><a class="button button--football" href="#method">Read the development method</a></p></div><div><table class="ranking-table"><thead><tr><th>#</th><th>Component</th><th>Status</th><th>Proposed weight</th></tr></thead><tbody><tr><td>01</td><td>Match impact</td><td><span class="ranking-status">Testing</span></td><td>35%</td></tr><tr><td>02</td><td>Role execution</td><td><span class="ranking-status">Testing</span></td><td>20%</td></tr><tr><td>03</td><td>Opponent strength</td><td><span class="ranking-status">Research</span></td><td>20%</td></tr><tr><td>04</td><td>Availability</td><td><span class="ranking-status">Defined</span></td><td>15%</td></tr><tr><td>05</td><td>High-leverage matches</td><td><span class="ranking-status">Research</span></td><td>10%</td></tr></tbody></table></div></div></section>
+    <section class="section shell" id="method" aria-labelledby="method-title"><div class="section-head"><h2 class="section-title" id="method-title">Development rules</h2></div><div class="story-grid"><article class="story-card"><span class="kicker kicker--football">01</span><h3 class="headline story-card__headline">Position first</h3><p class="dek story-card__dek">Players are evaluated against the responsibilities of their role before comparison across positions.</p></article><article class="story-card"><span class="kicker kicker--football">02</span><h3 class="headline story-card__headline">Context adjusted</h3><p class="dek story-card__dek">Opponent quality, competition, team strength and game state change what a raw action means.</p></article><article class="story-card"><span class="kicker kicker--football">03</span><h3 class="headline story-card__headline">Every version archived</h3><p class="dek story-card__dek">Weights, data windows, model changes and corrections remain visible after every release.</p></article></div></section>
   </main>
 
-  <footer class="site-footer"><div class="page-shell"><div class="footer-grid"><div class="footer-brand"><strong>APGO Football Index</strong><p>An independent player ranking in development, built to show its work.</p></div><div class="footer-column"><strong>Read</strong><a href="/journal/">Journal</a><a href="/journal/stories/football-without-rest/">Football analysis</a></div><div class="footer-column"><strong>Projects</strong><a href="/about.html">About</a><a href="/">APGO home</a></div><div class="footer-column"><strong>Organization</strong><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/standards.html">Standards</a></div></div><div class="footer-bottom"><span>© <span data-current-year>2026</span> APGO.</span><span>Methodology proposal v0.1 · No live ranking yet.</span></div></div></footer>
+  <footer class="footer">
+    <div class="shell">
+      <div class="footer__grid">
+        <div class="footer__brand-wrap"><div class="footer__brand">APGO</div><p class="footer__description">Independent analysis of power, markets, technology, history and football. Facts first; methods visible.</p></div>
+        <div class="footer__column"><strong>Sections</strong><a href="/journal/?section=world">World</a><a href="/journal/?section=economics">Economics</a><a href="/journal/?section=technology">Technology</a><a href="/journal/?section=history-and-memory">History</a><a href="/journal/?section=books-and-ideas">Books &amp; Ideas</a></div>
+        <div class="footer__column"><strong>Products</strong><a href="/journal/">APGO Journal</a><a href="/football/">APGO Football</a><a href="/feed.xml">RSS feed</a><a href="/support.html">Support</a></div>
+        <div class="footer__column"><strong>Institution</strong><a href="/about.html">About</a><a href="/standards.html">Editorial standards</a><a href="/corrections.html">Corrections</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a></div>
+      </div>
+      <div class="footer__bottom"><span>© <span data-current-year>2026</span> APGO.</span><span>Edition 002 · Published 20 July 2026</span></div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/site.js" defer></script>
 </body>
 </html>
