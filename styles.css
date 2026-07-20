@@ -465,8 +465,8 @@ ul, ol { list-style: none; padding: 0; }
 .to-top svg { width: 18px; height: 18px; }
 
 /* ============================================================== reveal ==== */
-/* Gated behind .js so content is always visible if scripts fail to load. */
-.js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+/* Keep editorial content visible even when an edge optimizer delays scripts. */
+.js .reveal { opacity: 1; transform: none; }
 .js .reveal.is-in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; transition: none; } }
 
