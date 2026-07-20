@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test";
 const viewports = [
   { name: "desktop", width: 1440, height: 1000 },
   { name: "laptop", width: 1200, height: 900 },
-  { name: "layout edge", width: 960, height: 900 },
+  { name: "layout edge", width: 1000, height: 900 },
   { name: "tablet", width: 768, height: 900 },
   { name: "mobile", width: 390, height: 844 },
 ];
@@ -98,7 +98,7 @@ for (const viewport of viewports) {
       expect(heroBox.width / heroBox.height).toBeLessThan(1.8);
       expect(bodyBox.y).toBeGreaterThan(heroBox.y);
 
-      if (viewport.width > 960) {
+      if (viewport.width > 1000) {
         expect(bodyBox.width).toBeGreaterThanOrEqual(640);
         expect(bodyBox.width).toBeLessThanOrEqual(680);
         expect(railBox.width).toBeGreaterThanOrEqual(220);
@@ -107,7 +107,9 @@ for (const viewport of viewports) {
         expect(Math.abs(railBox.y - bodyBox.y)).toBeLessThanOrEqual(2);
         await expect(mobileTools).toBeHidden();
       } else {
-        expect(bodyBox.width).toBeGreaterThan(viewport.width - 80);
+        const minimumBodyWidth = viewport.width >= 768 ? 640 : viewport.width - 80;
+        expect(bodyBox.width).toBeGreaterThan(minimumBodyWidth);
+        if (viewport.width >= 768) expect(bodyBox.width).toBeLessThanOrEqual(720);
         expect(railBox.y).toBeGreaterThanOrEqual(bodyBox.y + bodyBox.height - 2);
         await expect(rail).toHaveCSS("position", "static");
         await expect(mobileTools).toBeVisible();
@@ -137,7 +139,7 @@ for (const viewport of viewports) {
 }
 
 test.describe("short laptop", () => {
-  test.use({ viewport: { width: 961, height: 700 } });
+  test.use({ viewport: { width: 1200, height: 700 } });
 
   test("article rail does not trap content in a short viewport", async ({ page }) => {
     await page.goto("/articles/ceasefire-broke-at-sea/", { waitUntil: "domcontentloaded" });

@@ -176,6 +176,14 @@
   word-break: break-word;
 }
 
+.ranking-preview > * {
+  min-width: 0;
+}
+
+.ranking-table {
+  max-width: 100%;
+}
+
 /* Safe article geometry if the article-specific enhancement fails to load. */
 .article-head {
   width: min(100%, 64rem);
@@ -205,7 +213,7 @@
   grid-area: rail;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1000px) {
   .article-layout {
     grid-template-areas:
       "body"
@@ -219,6 +227,10 @@
 }
 
 @media (max-width: 1000px) {
+  .ranking-preview {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .top-grid {
     grid-template-columns: minmax(0, 1fr);
   }

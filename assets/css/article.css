@@ -264,7 +264,7 @@
   width: min(100%, 64rem);
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1000px) {
   .article-mobile-tools {
     display: flex;
     width: min(100%, 48rem);
@@ -317,7 +317,7 @@
   }
 }
 
-@media (min-width: 961px) and (max-height: 48rem) {
+@media (min-width: 1001px) and (max-height: 48rem) {
   .article-aside {
     position: static;
   }
