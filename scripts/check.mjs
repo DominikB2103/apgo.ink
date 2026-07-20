@@ -58,6 +58,12 @@ for (const file of htmlFiles) {
   if (!/<link rel="canonical" href="https:\/\/apgo\.ink\/[^"]*">/.test(html)) fail(file, "missing or invalid canonical URL");
   if (!/<main id="main"/.test(html)) fail(file, "missing main landmark");
   if (!/<h1(?:\s|>)/.test(html)) fail(file, "missing h1");
+  if (!/\/assets\/css\/site\.css\?v=[a-f0-9]{12}/.test(html)) fail(file, "shared stylesheet is not content-versioned");
+  if (!/\/assets\/css\/layout\.css\?v=[a-f0-9]{12}/.test(html)) fail(file, "layout stylesheet is missing or not content-versioned");
+  if (!/\/assets\/js\/site\.js\?v=[a-f0-9]{12}/.test(html)) fail(file, "site script is not content-versioned");
+  if ((file.includes(`${path.sep}articles${path.sep}`)) && !/\/assets\/css\/article\.css\?v=[a-f0-9]{12}/.test(html)) fail(file, "article stylesheet is missing or not content-versioned");
+  const assetVersions = [...html.matchAll(/\/assets\/(?:css\/(?:site|layout|article)\.css|js\/site\.js)\?v=([a-f0-9]{12})/g)].map((match) => match[1]);
+  if (new Set(assetVersions).size > 1) fail(file, "versioned CSS and JavaScript assets do not share one build fingerprint");
   if (/\{\{[A-Z0-9_]+\}\}/.test(html)) fail(file, "contains an unresolved template token");
 
   const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
@@ -267,7 +273,7 @@ const support = await readFile(path.join(root, "support.html"), "utf8");
 const bitcoin = "bc1q2wqpdzhgc90jn0r797yxv62pcnr06d2s0nlv8h";
 if ((support.match(new RegExp(bitcoin, "g")) || []).length < 2) failures.push("support.html: Bitcoin address missing from visible or copyable UI");
 
-for (const required of ["CNAME", ".nojekyll", "feed.xml", "search-index.json", "sitemap.xml", "robots.txt", "404.html", "projects/index.html", "assets/favicon.svg", "assets/images/bitcoin-donation-qr.svg"]) {
+for (const required of ["CNAME", ".nojekyll", "feed.xml", "search-index.json", "sitemap.xml", "robots.txt", "404.html", "projects/index.html", "assets/css/layout.css", "assets/css/article.css", "assets/favicon.svg", "assets/images/bitcoin-donation-qr.svg"]) {
   try { await access(path.join(root, required)); } catch { failures.push(`${required}: missing required deployment file`); }
 }
 

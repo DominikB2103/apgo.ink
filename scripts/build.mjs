@@ -1,4 +1,5 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import process from "node:process";
 
@@ -10,6 +11,14 @@ const bitcoin = "bc1q2wqpdzhgc90jn0r797yxv62pcnr06d2s0nlv8h";
 const site = JSON.parse(await readFile(path.join(projectRoot, "content", "site.json"), "utf8"));
 const publishedDate = site.publishedDate;
 const displayDate = site.displayDate;
+const assetFiles = ["assets/css/site.css", "assets/css/layout.css", "assets/css/article.css", "assets/js/site.js"];
+const assetContents = await Promise.all(assetFiles.map(function (file) {
+  return readFile(path.join(projectRoot, file));
+}));
+const assetVersion = createHash("sha256")
+  .update(Buffer.concat(assetContents))
+  .digest("hex")
+  .slice(0, 12);
 
 const templateNames = [
   "document",
@@ -51,6 +60,7 @@ const globalValues = {
   PUBLISHED_DATE: site.publishedDate,
   DISPLAY_DATE: site.displayDate,
   COPYRIGHT_YEAR: site.copyrightYear,
+  ASSET_VERSION: assetVersion,
   ARTICLE_COUNT: currentEditionArticles.length,
   JOURNAL_COUNT: journalArticleCount,
   FOOTBALL_COUNT: footballArticleCount
@@ -119,10 +129,12 @@ function head(meta) {
     '  <link rel="preconnect" href="https://fonts.googleapis.com">',
     '  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
     '  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&display=swap" rel="stylesheet">',
-    '  <link rel="stylesheet" href="/assets/css/site.css">'
+    '  <link rel="stylesheet" href="/assets/css/site.css?v=' + assetVersion + '">',
+    '  <link rel="stylesheet" href="/assets/css/layout.css?v=' + assetVersion + '">',
   ];
 
   if (meta.article) {
+    lines.push('  <link rel="stylesheet" href="/assets/css/article.css?v=' + assetVersion + '">');
     lines.push('  <meta name="author" content="' + escapeHtml(meta.article.author) + '">');
     lines.push('  <meta property="article:published_time" content="' + meta.article.date + '">');
     lines.push('  <meta property="article:modified_time" content="' + (meta.article.updatedDate || meta.article.date) + '">');
@@ -192,11 +204,11 @@ function card(article, options = {}) {
 
 function lead(article) {
   return '<article class="lead-story">' +
+    '<div class="lead-story__image"><img src="' + article.image + '" width="1536" height="864" alt="' + escapeHtml(article.imageAlt) + '" fetchpriority="high"></div>' +
     '<span class="kicker">' + escapeHtml(article.section) + " · " + escapeHtml(article.type) + "</span>" +
     '<h1 class="headline lead-story__headline"><a href="' + routeFor(article) + '">' + escapeHtml(article.headline) + "</a></h1>" +
     '<p class="dek lead-story__dek">' + escapeHtml(article.dek) + "</p>" +
     '<p class="meta lead-story__meta">' + escapeHtml(article.author) + " · " + escapeHtml(article.readTime) + " · " + displayDate + "</p>" +
-    '<div class="lead-story__image"><img src="' + article.image + '" width="1536" height="864" alt="' + escapeHtml(article.imageAlt) + '" fetchpriority="high"></div>' +
     "</article>";
 }
 

@@ -6,9 +6,11 @@
   "scripts": {
     "build": "node scripts/build.mjs --out .",
     "check": "node --check assets/js/site.js && node scripts/check.mjs",
-    "validate:markup": "node scripts/validate-markup.mjs"
+    "validate:markup": "node scripts/validate-markup.mjs",
+    "test:layout": "playwright test"
   },
   "devDependencies": {
+    "@playwright/test": "1.61.1",
     "html-validate": "10.17.0",
     "saxes": "6.0.0"
   }
