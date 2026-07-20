@@ -4,19 +4,21 @@
         <span class="kicker {{KICKER_CLASS}}">{{SECTION}} · {{TYPE}}</span>
         <h1 class="article-head__headline">{{HEADLINE}}</h1>
         <p class="article-head__dek">{{DEK}}</p>
-        <div class="article-head__meta"><strong>{{AUTHOR}}</strong><time datetime="{{DATE}}">{{DISPLAY_DATE}}</time><span>{{READ_TIME}}</span>{{UPDATED_META}}</div>
-        <p class="reporting-basis"><strong>Source note</strong><span>{{REPORTING_BASIS}}</span></p>
+        <div class="article-head__meta"><span>By&nbsp;<strong>{{AUTHOR}}</strong></span><span>Published&nbsp;<time datetime="{{DATE}}">{{DISPLAY_DATE}}</time></span><span>{{READ_TIME}}</span>{{UPDATED_META}}</div>
       </div>
     </header>
     <figure class="article-hero">
       <div class="article-hero__frame"><img src="{{IMAGE}}" width="1536" height="864" alt="{{IMAGE_ALT}}" fetchpriority="high"></div>
       <figcaption class="image-caption"><span>{{IMAGE_CAPTION}}</span><span>{{IMAGE_CREDIT}}</span></figcaption>
     </figure>
+    <div class="article-mobile-tools shell"><strong class="article-mobile-tools__label">Article tools</strong><button type="button" data-copy-link aria-live="polite">Copy link</button><button type="button" data-print>Print</button></div>
     <div class="article-layout">
       <article class="article-body" data-article-body>{{ARTICLE_BODY}}</article>
       <aside class="article-aside" aria-label="Article navigation and tools">
-        <div class="article-nav"><span class="article-aside__label">Contents</span><nav class="article-toc" data-article-toc aria-label="Article sections"></nav></div>
-        <div class="article-actions"><span class="article-aside__label">Article tools</span><button type="button" data-copy-link aria-live="polite">Copy link</button><button type="button" data-print>Print article</button><div class="text-size" role="group" aria-label="Article text size"><button type="button" data-text-size="small" aria-label="Smaller article text">A−</button><button type="button" data-text-size="default" aria-label="Default article text" aria-pressed="true">A</button><button type="button" data-text-size="large" aria-label="Larger article text">A+</button></div></div>
+        <section class="article-details"><h2 class="article-aside__label">Article details</h2><dl><div><dt>Section</dt><dd>{{SECTION}}</dd></div><div><dt>Format</dt><dd>{{TYPE}}</dd></div><div><dt>Published</dt><dd><time datetime="{{DATE}}">{{DISPLAY_DATE}}</time></dd></div><div><dt>Reading</dt><dd>{{READ_TIME}}</dd></div></dl></section>
+        <section class="article-nav"><h2 class="article-aside__label">In this article</h2><nav class="article-toc" data-article-toc aria-label="Article sections"></nav></section>
+        <section class="article-source-note"><h2 class="article-aside__label">Reporting basis</h2><p>{{REPORTING_BASIS}}</p></section>
+        <section class="article-actions"><h2 class="article-aside__label">Tools</h2><button type="button" data-copy-link aria-live="polite">Copy link</button><button type="button" data-print>Print article</button><div class="text-size" role="group" aria-label="Article text size"><button type="button" data-text-size="small" aria-label="Smaller article text">A−</button><button type="button" data-text-size="default" aria-label="Default article text" aria-pressed="true">A</button><button type="button" data-text-size="large" aria-label="Larger article text">A+</button></div></section>
       </aside>
     </div>
     <section class="source-register shell" aria-labelledby="sources-title"><div class="source-register__head"><h2 id="sources-title">Sources and documents</h2><p>Links used for this article. Official statements are identified by their publisher.</p></div><ol>{{SOURCES}}</ol></section>

@@ -6,11 +6,13 @@ The site is deliberately static: it is fast, inexpensive to host, easy to audit 
 
 ## Local development
 
-No packages are required beyond Node.js 20 or newer.
+Use Node.js 20 or newer. Install the locked development dependencies before running the build and layout checks.
 
 ```sh
+npm ci
 npm run build
 npm run check
+npm run test:layout
 python3 -m http.server 4173
 ```
 
@@ -23,7 +25,7 @@ Edition number and publication dates live in `content/site.json`. The committed 
 1. Add the article body as semantic HTML in `content/articles/`.
 2. Add its metadata and primary sources to `content/articles.json`.
 3. Add a 16:9 WebP hero image to `assets/images/` and write accurate alt text and a provenance caption.
-4. Run `npm run build && npm run check`.
+4. Run `npm run build && npm run check && npm run test:layout`.
 5. Review the article at desktop and mobile widths before merging.
 
 The generator creates the article page, front page and section cards, RSS entry, sitemap entry, canonical metadata and structured data.
@@ -53,6 +55,8 @@ projects/        Public product roadmap
 ```
 
 Generated HTML is committed because GitHub Pages serves the repository directly. Edit the source files, then rebuild; do not hand-edit generated pages.
+
+The build gives shared CSS and JavaScript a content fingerprint in every generated URL. That prevents a browser from pairing newly deployed HTML with an older cached layout. The Playwright suite checks the critical pages at desktop, laptop, tablet and phone widths and fails on horizontal overflow or broken article geometry.
 
 ## Image policy
 

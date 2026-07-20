@@ -15,7 +15,7 @@ concurrency:
 jobs:
   build-and-check:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -29,6 +29,9 @@ jobs:
       - name: Install locked dependencies
         run: npm ci
 
+      - name: Install layout-test browser
+        run: npx playwright install --with-deps chromium
+
       - name: Rebuild site
         run: npm run build
 
@@ -37,6 +40,9 @@ jobs:
 
       - name: Validate generated HTML and XML
         run: npm run validate:markup
+
+      - name: Test critical layouts
+        run: npm run test:layout
 
       - name: Confirm generated files are committed
         run: |
