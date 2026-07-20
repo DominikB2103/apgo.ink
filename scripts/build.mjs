@@ -71,7 +71,7 @@ function head(meta) {
     '  <title>' + escapeHtml(meta.title) + '</title>',
     '  <link rel="canonical" href="' + meta.canonical + '">',
     '  <link rel="alternate" type="application/rss+xml" title="APGO Journal" href="/feed.xml">',
-    '  <meta property="og:title" content="' + escapeHtml(meta.title) + '">',
+    '  <meta property="og:title" content="' + escapeHtml(meta.socialTitle || meta.title) + '">',
     '  <meta property="og:description" content="' + escapeHtml(meta.description) + '">',
     '  <meta property="og:type" content="' + (meta.article ? "article" : "website") + '">',
     '  <meta property="og:url" content="' + meta.canonical + '">',
@@ -225,7 +225,8 @@ for (const article of articles) {
   const outputPath = route.replace(/^\//, "") + "index.html";
   const canonical = "https://apgo.ink" + route;
   await write(outputPath, documentPage({
-    title: article.headline + " — APGO",
+    title: (article.seoTitle || article.headline) + " — APGO",
+    socialTitle: article.headline,
     description: article.dek,
     canonical,
     image: "https://apgo.ink" + article.image,
@@ -358,7 +359,7 @@ await write("404.html", documentPage({
   canonical: "https://apgo.ink/404.html"
 }, templates["404"], "journal"));
 
-const redirectHead = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=/journal/"><link rel="canonical" href="https://apgo.ink/journal/"><title>Moved to APGO Journal</title></head><body><main id="main"><h1>This page has moved</h1><p><a href="/journal/">Continue to APGO Journal</a>.</p></main></body></html>\n';
+const redirectHead = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=/journal/"><link rel="canonical" href="https://apgo.ink/journal/"><title>Moved to APGO Journal</title></head><body><main id="main"><h1>This page has moved</h1><p><a href="/journal/">Continue to APGO Journal</a>.</p></main></body></html>\n';
 await write("news/index.html", redirectHead);
 for (const legacy of ["ledger-they-buried.html", "ceasefire-border-towns.html", "face-recognition-no-vote.html", "lobbyists-writing-the-bill.html", "pharma-price-ladder.html", "study-funders-retraction.html", "aid-camps-satellite.html", "moderation-algorithm.html", "banned-books-tally.html", "who-owns-the-water.html", "subscribe.html", "tips.html"]) {
   await write(legacy, redirectHead);

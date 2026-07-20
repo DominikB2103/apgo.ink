@@ -208,6 +208,7 @@ ul, ol { margin: 0; padding: 0; }
 
 .page-head { padding-block: clamp(2.5rem, 7vw, 6rem); border-bottom: 1px solid var(--rule); }
 .page-head__eyebrow { margin-bottom: 0.55rem; }
+.page-head__actions { margin-top: 1.5rem; }
 .page-head h1 { max-width: 65rem; font-family: var(--serif); font-size: clamp(2.8rem, 7vw, 6.2rem); font-weight: 650; letter-spacing: -0.045em; line-height: 0.95; }
 .page-head p { max-width: 48rem; margin-top: 1rem; color: var(--ink-soft); font-family: var(--serif); font-size: 1.2rem; }
 
