@@ -1,95 +1,84 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="APGO is an independent journal and public-interest project studio covering world affairs, football, books and systems.">
-  <meta name="theme-color" content="#163126">
-  <meta property="og:title" content="APGO — Independent journalism and public-interest projects">
-  <meta property="og:description" content="A home for the APGO Journal, Football Index, open reference work and experiments built in public.">
-  <meta property="og:image" content="https://apgo.ink/assets/images/maritime-power.webp">
-  <meta property="og:type" content="website">
-  <title>APGO — Journalism, rankings and public-interest projects</title>
+  <meta name="description" content="APGO is an independent modern journal covering geopolitics, economics, technology, history and ideas, with a separate football analysis and rankings product.">
+  <meta name="theme-color" content="#ffffff">
+  <title>APGO — World affairs, economics, technology and ideas</title>
   <link rel="canonical" href="https://apgo.ink/">
   <link rel="alternate" type="application/rss+xml" title="APGO Journal" href="/feed.xml">
+  <meta property="og:title" content="APGO — World affairs, economics, technology and ideas">
+  <meta property="og:description" content="APGO is an independent modern journal covering geopolitics, economics, technology, history and ideas, with a separate football analysis and rankings product.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://apgo.ink/">
+  <meta property="og:image" content="https://apgo.ink/assets/images/hormuz-ceasefire.webp">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/apgo.css">
-  <script src="/assets/js/apgo.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
 </head>
-<body>
+<body data-product="journal">
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="reader-strip"><div class="reader-strip__inner page-shell"><span>APGO · Independent by design</span><a href="#support">Support APGO</a></div></div>
-  <header class="home-header">
-    <div class="home-header__inner page-shell">
-      <a class="home-brand" href="/">APGO</a>
-      <nav class="home-nav" aria-label="Primary navigation">
-        <a href="/journal/">Journal</a>
-        <a href="/football/">Football Index</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html">Contact</a>
-        <a class="button button--outline" href="#support">Support</a>
-      </nav>
+
+  <div class="utility">
+    <div class="utility__inner shell">
+      <time datetime="2026-07-20">Monday, 20 July 2026</time>
+      <span>Global edition · Edition 002</span>
+      <a href="/standards.html">Standards &amp; corrections</a>
+    </div>
+  </div>
+  <header class="masthead">
+    <div class="masthead__inner shell">
+      <p class="masthead__tagline">World affairs, economics and ideas</p>
+      <a class="brand" href="/" aria-label="APGO home">
+        <span class="brand__name">APGO</span><span class="brand__mark" aria-hidden="true"></span><span class="brand__descriptor">Journal</span>
+      </a>
+      <div class="masthead__actions">
+        <button class="icon-button" type="button" data-theme-toggle aria-pressed="false"><span>Dark</span></button>
+        <a class="button button--primary" href="/support.html">Support APGO</a>
+      </div>
     </div>
   </header>
+  <nav class="nav" aria-label="Primary navigation">
+    <div class="nav__inner shell">
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav">Sections</button>
+      <ul class="nav__list" id="primary-nav" data-primary-nav>
+        <li><a href="/journal/">Latest</a></li>
+        <li><a href="/journal/?section=world">World</a></li>
+        <li><a href="/journal/?section=economics">Economics</a></li>
+        <li><a href="/journal/?section=technology">Technology</a></li>
+        <li><a href="/journal/?section=history-and-memory">History</a></li>
+        <li><a href="/journal/?section=books-and-ideas">Books &amp; Ideas</a></li>
+      </ul>
+      <a class="nav__football" href="/football/">APGO Football →</a>
+    </div>
+  </nav>
 
+  <div class="edition-line"><div class="edition-line__inner shell"><span class="edition-line__label">Latest</span><p class="edition-line__text"><a href="/articles/ceasefire-broke-at-sea/">The Ceasefire Broke at Sea</a></p></div></div>
   <main id="main">
-    <section class="home-hero page-shell" aria-labelledby="home-title">
-      <div>
-        <span class="eyebrow">Journalism · Research · Public tools</span>
-        <h1 id="home-title">Make important things legible.</h1>
-        <p class="home-hero__intro">APGO is an independent journal and project studio for world affairs, football, books and the systems that shape public life. We publish the evidence, show the method and keep the work open.</p>
-        <div class="home-hero__actions">
-          <a class="button" href="/journal/">Read APGO Journal</a>
-          <a class="button button--outline" href="#projects">Explore the projects</a>
-        </div>
-      </div>
-      <figure class="home-hero__feature">
-        <img src="/assets/images/maritime-power.webp" width="1536" height="1024" alt="Engraved maritime map illustrating APGO's lead story">
-        <figcaption><span>Journal · Lead story</span><strong>The New Geography of Power Runs Through the Sea</strong></figcaption>
-      </figure>
+    <section class="top-grid shell" aria-label="Top stories">
+      <article class="lead-story"><a class="lead-story__image" href="/articles/ceasefire-broke-at-sea/"><img src="/assets/images/hormuz-ceasefire.webp" width="1536" height="864" alt="Commercial ships moving through a narrow, hazy maritime channel." fetchpriority="high"></a><span class="kicker">World · Analysis</span><h1 class="headline lead-story__headline"><a href="/articles/ceasefire-broke-at-sea/">The Ceasefire Broke at Sea</a></h1><p class="dek lead-story__dek">Nine consecutive nights of renewed U.S. strikes, fresh damage to merchant vessels and thousands of stranded seafarers show why the Strait of Hormuz is now both a battlefield and a test of the maritime order.</p><p class="meta lead-story__meta">APGO World Desk · 7 min read · 20 July 2026</p></article>
+      <div class="top-stack"><article class="story-card"><span class="kicker">World</span><h2 class="headline story-card__headline"><a href="/articles/ankara-long-war-commitment/">Ankara’s Long-War Commitment</a></h2><p class="dek story-card__dek">NATO has turned support for Ukraine into a two-year industrial pledge while expanding its eastern defences. The strategy is becoming more durable just as UN monitors record the worst monthly civilian toll since spring 2022.</p><p class="meta story-card__meta">7 min read</p></article><article class="story-card"><span class="kicker">Economics</span><h2 class="headline story-card__headline"><a href="/articles/debt-problem-calendar/">The Debt Problem Is Now a Calendar</a></h2><p class="dek story-card__dek">The world’s borrowing debate usually begins with how much is owed. In 2026, the sharper risk is when that debt matures, what rate replaces it and how much public policy gets crowded out during the rollover.</p><p class="meta story-card__meta">6 min read</p></article><article class="story-card"><span class="kicker">Technology</span><h2 class="headline story-card__headline"><a href="/articles/ai-boom-substation/">The AI Boom Has Reached the Substation</a></h2><p class="dek story-card__dek">Data-center demand is growing faster than the power system built to serve it. The decisive questions are no longer confined to chips and models: they are about transformers, transmission, credible forecasts and who pays when a promised load fails to arrive.</p><p class="meta story-card__meta">7 min read</p></article></div>
     </section>
-
-    <section class="section page-shell" id="projects" aria-labelledby="projects-heading">
-      <div class="section-heading">
-        <div><span class="eyebrow">The APGO system</span><h2 id="projects-heading">One organization, several serious products.</h2></div>
-        <p>The journal is the editorial core. Rankings and reference projects turn the same standards—context, transparency and revision—into useful public tools.</p>
-      </div>
-      <div class="project-grid">
-        <a class="project-card" href="/journal/"><span class="project-card__status">Live · Edition 001</span><h3>APGO Journal</h3><p>World affairs, football, books and ideas in a calm, source-visible publication built for reading rather than scrolling.</p></a>
-        <a class="project-card" href="/football/"><span class="project-card__status">In development · Method v0.1</span><h3>Football Index</h3><p>An independent, position-aware ranking of elite players with public weights, uncertainty and an archive of every revision.</p></a>
-        <article class="project-card"><span class="project-card__status">Roadmap · Editorial design</span><h3>Open Reference</h3><p>A future reference desk for compact, sourced explainers that connect public language, culture and institutions.</p></article>
-        <article class="project-card"><span class="project-card__status">Roadmap · Research phase</span><h3>Culture &amp; Systems Atlas</h3><p>Future explainers, maps and structured guides to institutions, cuisines, cultures and the infrastructure behind everyday life.</p></article>
-      </div>
-    </section>
-
-    <section class="section page-shell" aria-labelledby="journal-preview-heading">
-      <div class="section-heading"><div><span class="eyebrow">From the journal</span><h2 id="journal-preview-heading">Three doors into the world.</h2></div><a class="text-link" href="/journal/">Open the journal</a></div>
-      <div class="stories-grid">
-        <article class="story-card"><a class="story-card__image" href="/journal/stories/geography-of-power/"><img src="/assets/images/maritime-power.webp" width="1536" height="1024" loading="lazy" alt="Engraved map of Indian Ocean routes"></a><span class="eyebrow">World</span><h3><a href="/journal/stories/geography-of-power/">The New Geography of Power Runs Through the Sea</a></h3><p>Shipping lanes and undersea cables form a single strategic map.</p><div class="story-meta"><span>9 min read</span><span>Analysis</span></div></article>
-        <article class="story-card"><a class="story-card__image" href="/journal/stories/football-without-rest/"><img src="/assets/images/football-calendar.webp" width="1536" height="1024" loading="lazy" alt="Football pitch covered in workload routes"></a><span class="eyebrow">Football</span><h3><a href="/journal/stories/football-without-rest/">Football’s Bigger Calendar Has a Smaller Margin for Rest</a></h3><p>More spectacle, less recovery and a design problem the sport can measure.</p><div class="story-meta"><span>7 min read</span><span>Evidence note</span></div></article>
-        <article class="story-card"><a class="story-card__image" href="/journal/stories/underground-man-and-the-feed/"><img src="/assets/images/literature-underground.webp" width="1536" height="1024" loading="lazy" alt="Book becoming stairs into an underground corridor"></a><span class="eyebrow">Books &amp; Ideas</span><h3><a href="/journal/stories/underground-man-and-the-feed/">Dostoevsky’s Underground Man Was Built for the Feed</a></h3><p>An 1864 narrator explains the inner machinery of posting.</p><div class="story-meta"><span>8 min read</span><span>Essay</span></div></article>
-      </div>
-    </section>
-
-    <section class="section page-shell" aria-labelledby="standard-heading">
-      <div class="section-heading"><div><span class="eyebrow">Working rules</span><h2 id="standard-heading">Build trust into the format.</h2></div><p>APGO’s projects can look different. Their underlying obligations should stay the same.</p></div>
-      <div class="principles-grid">
-        <article class="principle"><span class="principle__number">01</span><h3>Label the kind of claim</h3><p>News, analysis, opinion, methodology and experiment are not interchangeable. Readers should know which one they are entering.</p></article>
-        <article class="principle"><span class="principle__number">02</span><h3>Show the original material</h3><p>Whenever possible, facts link to the document, dataset or text that supports them—not a chain of recycled summaries.</p></article>
-        <article class="principle"><span class="principle__number">03</span><h3>Revise in public</h3><p>Corrections and model changes remain visible. A growing project earns authority by improving without rewriting its own history.</p></article>
-      </div>
-    </section>
-
-    <section class="section section--compact page-shell" id="support" aria-labelledby="support-heading">
-      <div class="funding-panel">
-        <div class="funding-panel__intro"><span class="eyebrow" style="color:#f1c4ca">Reader funded</span><h2 id="support-heading">Help make the next thing real.</h2><p>Support funds reporting, data access, design and infrastructure. It never purchases editorial influence or a preferred ranking.</p></div>
-        <div class="funding-panel__action"><span class="wallet-label">Bitcoin · BTC network</span><code class="wallet-address">bc1q2wqpdzhgc90jn0r797yxv62pcnr06d2s0nlv8h</code><div class="copy-row"><button class="button button--paper" type="button" data-copy="bc1q2wqpdzhgc90jn0r797yxv62pcnr06d2s0nlv8h" aria-describedby="copy-status">Copy address</button><a class="button button--outline" style="color:#fff;border-color:#fff" href="bitcoin:bc1q2wqpdzhgc90jn0r797yxv62pcnr06d2s0nlv8h">Open wallet</a><span class="copy-status" id="copy-status" role="status" aria-live="polite"></span></div></div>
-      </div>
-    </section>
+    <section class="section shell" aria-labelledby="edition-title"><div class="section-head"><h2 class="section-title" id="edition-title">Edition 002</h2><a class="section-link" href="/journal/">View all analysis →</a></div><div class="story-grid"><article class="story-card" data-story-card data-section="world"><a class="story-card__image" href="/articles/ankara-long-war-commitment/" tabindex="-1" aria-hidden="true"><img src="/assets/images/ankara-commitment.webp" width="768" height="432" loading="lazy" alt=""></a><span class="kicker">World · Analysis</span><h3 class="headline story-card__headline"><a href="/articles/ankara-long-war-commitment/">Ankara’s Long-War Commitment</a></h3><p class="dek story-card__dek">NATO has turned support for Ukraine into a two-year industrial pledge while expanding its eastern defences. The strategy is becoming more durable just as UN monitors record the worst monthly civilian toll since spring 2022.</p><p class="meta story-card__meta">APGO World Desk · 7 min read</p></article><article class="story-card" data-story-card data-section="economics"><a class="story-card__image" href="/articles/debt-problem-calendar/" tabindex="-1" aria-hidden="true"><img src="/assets/images/debt-calendar.webp" width="768" height="432" loading="lazy" alt=""></a><span class="kicker">Economics · Economic analysis</span><h3 class="headline story-card__headline"><a href="/articles/debt-problem-calendar/">The Debt Problem Is Now a Calendar</a></h3><p class="dek story-card__dek">The world’s borrowing debate usually begins with how much is owed. In 2026, the sharper risk is when that debt matures, what rate replaces it and how much public policy gets crowded out during the rollover.</p><p class="meta story-card__meta">APGO Economics Desk · 6 min read</p></article><article class="story-card" data-story-card data-section="technology"><a class="story-card__image" href="/articles/ai-boom-substation/" tabindex="-1" aria-hidden="true"><img src="/assets/images/ai-substation.webp" width="768" height="432" loading="lazy" alt=""></a><span class="kicker">Technology · Infrastructure analysis</span><h3 class="headline story-card__headline"><a href="/articles/ai-boom-substation/">The AI Boom Has Reached the Substation</a></h3><p class="dek story-card__dek">Data-center demand is growing faster than the power system built to serve it. The decisive questions are no longer confined to chips and models: they are about transformers, transmission, credible forecasts and who pays when a promised load fails to arrive.</p><p class="meta story-card__meta">APGO Technology Desk · 7 min read</p></article><article class="story-card" data-story-card data-section="history-and-memory"><a class="story-card__image" href="/articles/declaration-distribution-system/" tabindex="-1" aria-hidden="true"><img src="/assets/images/declaration-distribution.webp" width="768" height="432" loading="lazy" alt=""></a><span class="kicker">History &amp; Memory · History essay</span><h3 class="headline story-card__headline"><a href="/articles/declaration-distribution-system/">The Declaration Was a Distribution System Before It Was a Sacred Object</a></h3><p class="dek story-card__dek">Two hundred and fifty years after independence, the familiar parchment can obscure the more radical story: a text set in type overnight, carried by riders, reprinted by newspapers and made political by being read aloud.</p><p class="meta story-card__meta">APGO History Desk · 6 min read</p></article><article class="story-card" data-story-card data-section="books-and-ideas"><a class="story-card__image" href="/articles/sun-also-rises-centenary/" tabindex="-1" aria-hidden="true"><img src="/assets/images/hemingway-centenary.webp" width="768" height="432" loading="lazy" alt=""></a><span class="kicker">Books &amp; Ideas · Centenary review</span><h3 class="headline story-card__headline"><a href="/articles/sun-also-rises-centenary/">The Sun Also Rises Turned Exile Into an Export</a></h3><p class="dek story-card__dek">A century after publication, Hemingway’s first major novel still shapes how outsiders imagine Paris, Pamplona and expatriate life—even as the book itself is more wounded, exclusionary and skeptical than the lifestyle myth built around it.</p><p class="meta story-card__meta">APGO Books Desk · 6 min read</p></article></div></section>
+    <section class="section shell" aria-labelledby="briefing-title"><div class="section-head"><h2 class="section-title" id="briefing-title">Briefing</h2></div><div class="briefing-grid"><div class="briefing-list"><article class="briefing-item"><span class="briefing-item__section">World</span><h3 class="briefing-item__headline"><a href="/articles/ceasefire-broke-at-sea/">The Ceasefire Broke at Sea</a></h3></article><article class="briefing-item"><span class="briefing-item__section">World</span><h3 class="briefing-item__headline"><a href="/articles/ankara-long-war-commitment/">Ankara’s Long-War Commitment</a></h3></article><article class="briefing-item"><span class="briefing-item__section">Economics</span><h3 class="briefing-item__headline"><a href="/articles/debt-problem-calendar/">The Debt Problem Is Now a Calendar</a></h3></article><article class="briefing-item"><span class="briefing-item__section">Technology</span><h3 class="briefing-item__headline"><a href="/articles/ai-boom-substation/">The AI Boom Has Reached the Substation</a></h3></article><article class="briefing-item"><span class="briefing-item__section">History &amp; Memory</span><h3 class="briefing-item__headline"><a href="/articles/declaration-distribution-system/">The Declaration Was a Distribution System Before It Was a Sacred Object</a></h3></article><article class="briefing-item"><span class="briefing-item__section">Books &amp; Ideas</span><h3 class="briefing-item__headline"><a href="/articles/sun-also-rises-centenary/">The Sun Also Rises Turned Exile Into an Export</a></h3></article></div><aside class="rail"><h2 class="rail__title">Reading list</h2><ol class="rail-list"><li><a href="/articles/ceasefire-broke-at-sea/">The Ceasefire Broke at Sea</a></li><li><a href="/articles/ankara-long-war-commitment/">Ankara’s Long-War Commitment</a></li><li><a href="/articles/debt-problem-calendar/">The Debt Problem Is Now a Calendar</a></li><li><a href="/articles/ai-boom-substation/">The AI Boom Has Reached the Substation</a></li><li><a href="/articles/declaration-distribution-system/">The Declaration Was a Distribution System Before It Was a Sacred Object</a></li><li><a href="/articles/sun-also-rises-centenary/">The Sun Also Rises Turned Exile Into an Export</a></li></ol></aside></div></section>
+    <div class="football-panel"><section class="section shell" aria-labelledby="football-title"><div class="football-panel__head"><div><span class="kicker kicker--football">Separate product</span><h2 class="football-panel__brand" id="football-title">APGO Football</h2></div><div><p class="football-panel__intro">World Cup analysis, player profiles and a transparent ranking system—built as its own publication, not folded into the general journal.</p><p style="margin-top:1rem"><a class="button button--football" href="/football/">Open APGO Football</a></p></div></div><div class="story-grid" style="margin-top:2rem"><article class="story-card" data-story-card data-section="world-cup-2026"><a class="story-card__image" href="/football/articles/spain-argentina-world-cup-final/" tabindex="-1" aria-hidden="true"><img src="/assets/images/spain-argentina-final.webp" width="768" height="432" loading="lazy" alt=""></a><span class="kicker kicker--football">World Cup 2026 · Match analysis</span><h3 class="headline story-card__headline"><a href="/football/articles/spain-argentina-world-cup-final/">One Goal, Two Stars: Spain Outlast Argentina to Reclaim the World Cup</a></h3><p class="dek story-card__dek">Ferran Torres’s 106th-minute finish settled a final built on Spanish pressure and Argentine resistance. The 1–0 victory gave Spain a second men’s title—and completed an unusually concentrated run of international success.</p><p class="meta story-card__meta">APGO Football Desk · 6 min read</p></article><article class="story-card" data-story-card data-section="world-cup-2026"><a class="story-card__image" href="/football/articles/world-cup-48-team-audit/" tabindex="-1" aria-hidden="true"><img src="/assets/images/world-cup-scale.webp" width="768" height="432" loading="lazy" alt=""></a><span class="kicker kicker--football">World Cup 2026 · Tournament audit</span><h3 class="headline story-card__headline"><a href="/football/articles/world-cup-48-team-audit/">The 48-Team World Cup Is Over. Its Scale Was the Story.</a></h3><p class="dek story-card__dek">More countries reached the stage, more people entered the grounds and the scoring rate rose. The first expanded World Cup answered the simplest sporting objection—but left harder questions about format, travel and workload for a calmer audit.</p><p class="meta story-card__meta">APGO Football Desk · 7 min read</p></article></div></section></div>
   </main>
 
-  <footer class="site-footer"><div class="page-shell"><div class="footer-grid"><div class="footer-brand"><strong>APGO</strong><p>Independent journalism, open methods and public-interest projects. APGO is built deliberately and revised in public.</p></div><div class="footer-column"><strong>Explore</strong><a href="/journal/">Journal</a><a href="/football/">Football Index</a><a href="/about.html">About</a></div><div class="footer-column"><strong>Follow the work</strong><a href="/journal/#principles">Editorial standard</a><a href="/football/#method">Ranking method</a><a href="/contact.html">Contact</a></div><div class="footer-column"><strong>Support &amp; policies</strong><a href="/donation/">Reader funding</a><a href="/privacy.html">Privacy</a><a href="/standards.html">Standards</a></div></div><div class="footer-bottom"><span>© <span data-current-year>2026</span> APGO.</span><span>Independent by design.</span></div></div></footer>
+  <footer class="footer">
+    <div class="shell">
+      <div class="footer__grid">
+        <div class="footer__brand-wrap"><div class="footer__brand">APGO</div><p class="footer__description">Independent analysis of power, markets, technology, history and football. Facts first; methods visible.</p></div>
+        <div class="footer__column"><strong>Sections</strong><a href="/journal/?section=world">World</a><a href="/journal/?section=economics">Economics</a><a href="/journal/?section=technology">Technology</a><a href="/journal/?section=history-and-memory">History</a><a href="/journal/?section=books-and-ideas">Books &amp; Ideas</a></div>
+        <div class="footer__column"><strong>Products</strong><a href="/journal/">APGO Journal</a><a href="/football/">APGO Football</a><a href="/feed.xml">RSS feed</a><a href="/support.html">Support</a></div>
+        <div class="footer__column"><strong>Institution</strong><a href="/about.html">About</a><a href="/standards.html">Editorial standards</a><a href="/corrections.html">Corrections</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a></div>
+      </div>
+      <div class="footer__bottom"><span>© <span data-current-year>2026</span> APGO.</span><span>Edition 002 · Published 20 July 2026</span></div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/site.js" defer></script>
 </body>
 </html>
