@@ -1,209 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Privacy — Meridian</title>
-  <meta name="description" content="Privacy — Meridian, independent world journalism.">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <script>document.documentElement.classList.add('js')</script>
+  <meta name="description" content="APGO does not operate advertising, reader accounts, comments, payments or newsletter storage on this site.">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light dark">
+  <title>A static site with a limited data footprint. — APGO</title>
+  <link rel="canonical" href="https://apgo.ink/privacy.html">
+  <link rel="alternate" type="application/rss+xml" title="APGO Journal" href="/feed.xml">
+  <meta property="og:title" content="A static site with a limited data footprint. — APGO">
+  <meta property="og:description" content="APGO does not operate advertising, reader accounts, comments, payments or newsletter storage on this site.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://apgo.ink/privacy.html">
+  <meta property="og:image" content="https://apgo.ink/assets/images/social-card.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <script>(function(){try{var t=localStorage.getItem("apgo-theme");if(t){document.documentElement.dataset.theme=t}}catch(e){}}())</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
 </head>
-<body>
+<body data-product="journal">
   <a class="skip-link" href="#main">Skip to content</a>
+
   <div class="utility">
-    <div class="container utility__inner">
-      <span class="utility__date" data-date>Saturday, 20 June 2026</span>
-      <select class="utility__edition" aria-label="Edition">
-        <option>Global edition</option><option>Americas</option><option>Europe</option><option>Africa</option><option>Asia-Pacific</option>
-      </select>
-      <span class="utility__spacer"></span>
-      <a href="tips.html">Secure tips</a>
-      <a href="subscribe.html">Subscribe</a>
-      <a href="subscribe.html">Sign in</a>
+    <div class="utility__inner shell">
+      <time datetime="2026-07-20">Monday, 20 July 2026</time>
+      <span class="utility__edition">Global edition · Edition 002</span>
+      <nav class="utility__links" aria-label="Utility navigation"><a href="/about.html">About</a><a href="/standards.html">Standards</a><a href="/corrections.html">Corrections</a><a href="/feed.xml">RSS</a></nav>
     </div>
   </div>
-
   <header class="masthead">
-    <div class="container masthead__inner">
-      <div class="masthead__left">
-        <form class="search" role="search" aria-label="Search Meridian">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.7" y2="16.7"/></svg>
-          <input id="q" type="search" placeholder="Search" aria-label="Search stories" autocomplete="off">
-        </form>
-      </div>
-      <a class="wordmark" href="index.html" aria-label="Meridian — home">Meridian<span class="wordmark__dot">.</span></a>
-      <p class="masthead__tagline">Independent world journalism</p>
-      <div class="masthead__right">
-        <button id="theme-toggle" class="iconbtn" aria-pressed="false" aria-label="Switch to dark theme">
-          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5.6 5.6 4.2 4.2M19.8 19.8l-1.4-1.4M18.4 5.6l1.4-1.4M4.2 19.8l1.4-1.4"/></svg>
-          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8Z"/></svg>
-        </button>
-        <a class="btn btn--primary btn--sm" href="subscribe.html">Subscribe</a>
+    <div class="masthead__inner shell">
+      <p class="masthead__tagline">Independent journal<br><span>Facts first. Methods visible.</span></p>
+      <a class="brand" href="/" aria-label="APGO home">
+        <span class="brand__name">APGO</span><span class="brand__mark" aria-hidden="true"></span><span class="brand__descriptor">Journal</span>
+      </a>
+      <div class="masthead__actions">
+        <button class="icon-button" type="button" data-search-open><span>Search</span><kbd>/</kbd></button>
+        <button class="icon-button" type="button" data-theme-toggle aria-pressed="false"><span>Dark</span></button>
+        <a class="button button--primary" href="/support.html">Support APGO</a>
       </div>
     </div>
   </header>
-
-  <nav class="nav" aria-label="Sections">
-    <div class="container nav__inner">
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        Sections
-      </button>
-      <ul class="nav__list" id="nav-list">
-        <li><a href="news/?cat=world">World</a></li>
-        <li><a href="news/?cat=politics">Politics</a></li>
-        <li><a href="news/?cat=investigations">Investigations</a></li>
-        <li><a href="news/?cat=business">Business</a></li>
-        <li><a href="news/?cat=tech">Technology</a></li>
-        <li><a href="news/?cat=science">Science</a></li>
-        <li><a href="news/?cat=culture">Culture</a></li>
+  <nav class="nav" aria-label="Primary navigation">
+    <div class="nav__inner shell">
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav">Sections</button>
+      <ul class="nav__list" id="primary-nav" data-primary-nav>
+        <li><a href="/journal/">All stories</a></li>
+        <li><a href="/journal/?section=world">World</a></li>
+        <li><a href="/journal/?section=economics">Economics</a></li>
+        <li><a href="/journal/?section=technology">Technology</a></li>
+        <li><a href="/journal/?section=history-and-memory">History &amp; Memory</a></li>
+        <li><a href="/journal/?section=books-and-ideas">Books &amp; Culture</a></li>
+        <li><a href="/projects/">Projects</a></li>
       </ul>
-      <a class="nav__more meta" href="news/">All stories →</a>
+      <a class="nav__football" href="/football/">APGO Football →</a>
     </div>
   </nav>
 
   <main id="main">
-<section class="section" style="border-top:0">
-  <div class="container">
-    <h1 class="article__headline" style="text-align:left">Privacy</h1>
-    <p class="article__dek" style="text-align:left">What we collect, why, and the limits we set on ourselves — in plain English.</p>
-
-    <div class="prose">
-      <p>Meridian is reader-funded, which changes our relationship with your data. We do not sell advertising, so we have no commercial reason to build a profile of you, follow you across the web, or hand your details to anyone who would. We collect the little we need to send you what you asked for and to understand, in aggregate, how our journalism is read. That is the whole of it.</p>
-
-      <p>This policy covers <a href="index.html">apgo.ink</a> and the emails we send. It is written to be read, not to be survived. If anything here is unclear, <a href="contact.html">write to us</a> and we will explain it properly.</p>
-
-      <div class="callout">
-        <p class="callout__label">In short</p>
-        <p>We collect your email if you subscribe to a newsletter, and basic, privacy-respecting analytics about how pages are read. We never sell your data, never share it for marketing, and you can ask to see or delete it at any time.</p>
-      </div>
-
-      <h2 id="what-we-collect">What we collect</h2>
-      <p>We keep our collection deliberately narrow. In practice it falls into two categories.</p>
-      <ul>
-        <li><strong>Information you give us.</strong> When you subscribe to <em>The Morning Meridian</em> or another newsletter, we store the email address you provide. If you write to us, support our work, or send a <a href="tips.html">secure tip</a> through a named channel, we hold whatever you choose to send.</li>
-        <li><strong>Information collected automatically.</strong> When you read a page, our analytics record non-identifying details such as the page viewed, the referring link, your approximate country, and your browser type. These are measured in aggregate and are not used to identify you personally.</li>
-      </ul>
-      <p>We do not ask for your name, your date of birth, or any data we have no use for. We do not buy data about you from third parties to fill in the gaps.</p>
-
-      <h2 id="how-we-use-it">How we use it</h2>
-      <p>Every use below maps to something you would reasonably expect from a newsroom you read.</p>
-      <ul>
-        <li>To send the newsletters and updates you have asked to receive.</li>
-        <li>To understand, in aggregate, which stories are read and how people find them — so we can commission better journalism.</li>
-        <li>To keep the site secure, diagnose faults, and prevent abuse.</li>
-        <li>To respond when you contact us or submit a tip.</li>
-      </ul>
-      <p>We do not use your data to target advertising, because we carry none. We do not make automated decisions about you, and we do not profile your reading to change what you are shown.</p>
-
-      <h2 id="we-never-sell-your-data">We never sell your data</h2>
-      <p>This is a firm commitment, not a marketing line. We do not, and will not, sell, rent, or trade your personal information to anyone. We do not share it with advertisers, data brokers, or political organisations. Reader funding exists precisely so that we are never tempted to.</p>
-      <blockquote>
-        Our incentives are aligned with our readers because our readers pay for the work. That is the simplest privacy guarantee we can offer, and the most durable.
-        <cite>Meridian editorial board</cite>
-      </blockquote>
-
-      <h2 id="third-parties">Third parties</h2>
-      <p>A handful of trusted suppliers help us run the site. They process data only on our instructions, only for the purposes above, and under contracts that forbid using it for anything else. In broad terms they are:</p>
-
-      <div class="grid grid--3 grid--ruled">
-        <article class="card">
-          <span class="kicker">Hosting</span>
-          <h3 class="card__title">Site delivery</h3>
-          <p class="card__dek">A hosting and content-delivery provider serves our pages and keeps brief, security-related server logs.</p>
-        </article>
-        <article class="card">
-          <span class="kicker">Email</span>
-          <h3 class="card__title">Newsletter delivery</h3>
-          <p class="card__dek">An email provider stores your subscription address and sends the newsletters you have requested.</p>
-        </article>
-        <article class="card">
-          <span class="kicker">Analytics</span>
-          <h3 class="card__title">Readership measurement</h3>
-          <p class="card__dek">A privacy-respecting analytics tool counts page views in aggregate, without cross-site tracking or selling data.</p>
-        </article>
-      </div>
-
-      <p>We choose suppliers that take privacy seriously and we review them periodically. We may also disclose information where the law genuinely requires it — but we will resist over-broad demands, and where we are permitted to tell you, we will.</p>
-
-      <h2 id="cookies">Cookies</h2>
-      <p>We use as few cookies as we can. Some are strictly necessary — for example, to remember your light or dark theme preference, or to keep you signed in if you are a member. We do not use advertising cookies, and we do not allow third parties to track you across other sites from our pages.</p>
-      <p>Our analytics are configured to measure readership without storing identifiers that follow you around the web. You can block or delete cookies in your browser at any time; the site will still work, though your theme preference may not be remembered.</p>
-
-      <h2 id="how-long-we-keep-it">How long we keep it</h2>
-      <p>We hold data only for as long as it serves the purpose we collected it for.</p>
-      <ul>
-        <li><strong>Newsletter address:</strong> kept until you unsubscribe, after which it is removed from active lists promptly.</li>
-        <li><strong>Analytics:</strong> retained in aggregate; we do not keep raw, identifiable visit-level data beyond what is needed to produce the statistics.</li>
-        <li><strong>Correspondence:</strong> kept while a matter is open and for a reasonable period afterwards, then deleted.</li>
-        <li><strong>Server logs:</strong> retained briefly for security and then discarded.</li>
-      </ul>
-
-      <h2 id="your-rights">Your rights</h2>
-      <p>Wherever you live, we aim to honour the rights that strong privacy laws grant. You can:</p>
-      <ul>
-        <li>Ask what personal data we hold about you and request a copy.</li>
-        <li>Ask us to correct anything inaccurate.</li>
-        <li>Ask us to delete your data, or unsubscribe at any time using the link in every newsletter.</li>
-        <li>Object to a particular use, or ask us to restrict it.</li>
-      </ul>
-      <p>To exercise any of these, <a href="contact.html">contact us</a>. We will respond within a reasonable time and will not charge you for a routine request. If you are unhappy with how we have handled your data, you may also complain to your local data-protection authority.</p>
-
-      <div class="callout">
-        <p class="callout__label">Changes to this policy</p>
-        <p>If we update this policy we will revise it here and, for material changes, note it to newsletter subscribers. This version was last reviewed in June 2026.</p>
-      </div>
-
-      <p>For how we handle confidential sources and submissions, see our <a href="tips.html">secure tips</a> guidance. For who we are and how we are funded, see <a href="about.html">About Meridian</a> and our <a href="standards.html">editorial standards</a>.</p>
-    </div>
-  </div>
-</section>
-    <section class="section">
-      <div class="container">
-        <div class="newsletter">
-          <div>
-            <h2 class="newsletter__title">The Morning Meridian</h2>
-            <p class="newsletter__value">One email at dawn — the whole story, on the record. Free, and no noise.</p>
-          </div>
-          <form class="newsletter__form" novalidate>
-            <label class="visually-hidden" for="nl">Email address</label>
-            <input id="nl" class="newsletter__input" type="email" name="email" placeholder="you@example.com" required>
-            <button class="btn btn--primary" type="submit">Subscribe</button>
-            <p class="newsletter__status" aria-live="polite"></p>
-            <p class="newsletter__fine">No spam. Unsubscribe anytime. We never sell your data.</p>
-          </form>
-        </div>
-      </div>
-    </section>
+    <header class="page-head shell"><span class="kicker page-head__eyebrow">Privacy</span><h1>A static site with a limited data footprint.</h1><p>APGO does not operate advertising, reader accounts, comments, payments or newsletter storage on this site.</p></header>
+    <div class="policy-layout shell"><article class="policy-copy"><h2>Browser storage</h2><p>The theme control stores a light-or-dark preference in your browser using localStorage. Copy buttons use the clipboard only when activated.</p><h2>Hosting and fonts</h2><p>The site is delivered through GitHub Pages and related network infrastructure, which may process routine request logs under their own policies. Pages request typefaces from Google Fonts.</p><h2>Bitcoin</h2><p>Bitcoin transactions are public. APGO does not request donor identity here, but a transfer may be linkable through a wallet or exchange.</p><h2>Changes</h2><p>This notice will be updated before APGO launches any feature that collects personal information. Last reviewed 20 July 2026.</p></article><aside class="policy-rail"><h2>APGO</h2><a href="/about.html">About</a><a href="/standards.html">Editorial standards</a><a href="/corrections.html">Corrections</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/support.html">Support</a></aside></div>
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <span class="wordmark">Meridian<span class="wordmark__dot">.</span></span>
-          <p class="footer__statement">Independent, reader-funded world journalism. No proprietor, no shareholders, no political affiliation — and no advertising influence over what we publish.</p>
-          <p class="footer__promise">Reporting the world from a fixed point — including the stories others avoid.</p>
-        </div>
-        <div class="footer__col"><h4>Sections</h4><a href="news/?cat=world">World</a><a href="news/?cat=politics">Politics</a><a href="news/?cat=investigations">Investigations</a><a href="news/?cat=business">Business</a><a href="news/?cat=tech">Technology</a><a href="news/?cat=science">Science</a><a href="news/?cat=culture">Culture</a></div>
-        <div class="footer__col"><h4>About</h4><a href="about.html">Who we are</a><a href="standards.html">Editorial standards</a><a href="corrections.html">Corrections</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a></div>
-        <div class="footer__col"><h4>Connect</h4><a href="tips.html">Secure tips</a><a href="subscribe.html">Newsletter</a><a href="#">Mastodon</a><a href="#">Bluesky</a></div>
+    <div class="shell">
+      <div class="footer__grid">
+        <div class="footer__brand-wrap"><div class="footer__brand">APGO<span>.</span></div><p class="footer__description">Independent analysis of power, markets, technology, history and football. Facts first; methods visible.</p><p class="footer__edition">Zurich · Global edition</p></div>
+        <div class="footer__column"><strong>Sections</strong><a href="/journal/?section=world">World</a><a href="/journal/?section=economics">Economics</a><a href="/journal/?section=technology">Technology</a><a href="/journal/?section=history-and-memory">History</a><a href="/journal/?section=books-and-ideas">Books &amp; Ideas</a></div>
+        <div class="footer__column"><strong>Products</strong><a href="/journal/">APGO Journal</a><a href="/football/">APGO Football</a><a href="/projects/">Projects roadmap</a><a href="/feed.xml">RSS feed</a></div>
+        <div class="footer__column"><strong>Institution</strong><a href="/about.html">About</a><a href="/standards.html">Editorial standards</a><a href="/corrections.html">Corrections</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a></div>
       </div>
-      <div class="footer__bottom">
-        <span>© <span data-year></span> Meridian · apgo.ink</span>
-        <span>Reader-funded · No owner, no party, no agenda</span>
-      </div>
+      <div class="footer__bottom"><span>© <span data-current-year>2026</span> APGO.</span><span>Edition 002 · Published 20 July 2026</span><a href="/support.html">Reader funded</a></div>
     </div>
   </footer>
 
-  <button class="to-top" id="to-top" aria-label="Back to top">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="6 11 12 5 18 11"/></svg>
-  </button>
-
-  <script src="script.js" defer></script>
+<dialog class="search-dialog" data-search-dialog aria-labelledby="search-title"><div class="search-dialog__panel"><div class="search-dialog__head"><div><span class="kicker">APGO archive</span><h2 id="search-title">Search the journal</h2></div><button class="search-dialog__close" type="button" data-search-close aria-label="Close search">Close</button></div><label class="search-dialog__field"><span class="visually-hidden">Search articles</span><input type="search" placeholder="Search by topic, section or headline" autocomplete="off" data-global-search></label><div class="search-dialog__results"><a class="search-result" href="/articles/ceasefire-broke-at-sea/" data-search-result><span>World · Analysis</span><strong>The Ceasefire Broke at Sea</strong><small>Nine consecutive nights of renewed U.S. strikes, fresh damage to merchant vessels and thousands of stranded seafarers show why the Strait of Hormuz is now both a battlefield and a test of the maritime order.</small></a><a class="search-result" href="/articles/ankara-long-war-commitment/" data-search-result><span>World · Analysis</span><strong>Ankara’s Long-War Commitment</strong><small>NATO has turned support for Ukraine into a two-year industrial pledge while expanding its eastern defences. The strategy is becoming more durable just as UN monitors record the worst monthly civilian toll since spring 2022.</small></a><a class="search-result" href="/articles/debt-problem-calendar/" data-search-result><span>Economics · Economic analysis</span><strong>The Debt Problem Is Now a Calendar</strong><small>The world’s borrowing debate usually begins with how much is owed. In 2026, the sharper risk is when that debt matures, what rate replaces it and how much public policy gets crowded out during the rollover.</small></a><a class="search-result" href="/articles/ai-boom-substation/" data-search-result><span>Technology · Infrastructure analysis</span><strong>The AI Boom Has Reached the Substation</strong><small>Data-center demand is growing faster than the power system built to serve it. The decisive questions are no longer confined to chips and models: they are about transformers, transmission, credible forecasts and who pays when a promised load fails to arrive.</small></a><a class="search-result" href="/articles/declaration-distribution-system/" data-search-result><span>History &amp; Memory · History essay</span><strong>The Declaration Was a Distribution System Before It Was a Sacred Object</strong><small>Two hundred and fifty years after independence, the familiar parchment can obscure the more radical story: a text set in type overnight, carried by riders, reprinted by newspapers and made political by being read aloud.</small></a><a class="search-result" href="/articles/sun-also-rises-centenary/" data-search-result><span>Books &amp; Ideas · Centenary review</span><strong>The Sun Also Rises Turned Exile Into an Export</strong><small>A century after publication, Hemingway’s first major novel still shapes how outsiders imagine Paris, Pamplona and expatriate life—even as the book itself is more wounded, exclusionary and skeptical than the lifestyle myth built around it.</small></a><a class="search-result" href="/football/articles/spain-argentina-world-cup-final/" data-search-result><span>World Cup 2026 · Match analysis</span><strong>One Goal, Two Stars: Spain Outlast Argentina to Reclaim the World Cup</strong><small>Ferran Torres’s 106th-minute finish settled a final built on Spanish pressure and Argentine resistance. The 1–0 victory gave Spain a second men’s title—and completed an unusually concentrated run of international success.</small></a><a class="search-result" href="/articles/underground-man-and-the-feed/" data-search-result><span>Books &amp; Ideas · Literary essay</span><strong>Dostoevsky’s Underground Man Was Built for the Feed</strong><small>A spiteful, self-conscious narrator from 1864 explains the inner machinery of posting: imaginary audiences, rehearsed humiliation and the freedom to choose what harms us.</small></a><a class="search-result" href="/football/articles/world-cup-48-team-audit/" data-search-result><span>World Cup 2026 · Tournament audit</span><strong>The 48-Team World Cup Is Over. Its Scale Was the Story.</strong><small>More countries reached the stage, more people entered the grounds and the scoring rate rose. The first expanded World Cup answered the simplest sporting objection—but left harder questions about format, travel and workload for a calmer audit.</small></a></div><p class="filter-empty" data-search-empty hidden>No article matches that search.</p></div></dialog>
+  <script src="/assets/js/site.js" defer></script>
 </body>
 </html>
