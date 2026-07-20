@@ -1,0 +1,25 @@
+  <main id="main">
+    <header class="article-head shell">
+      <div class="article-head__inner">
+        <span class="kicker {{KICKER_CLASS}}">{{SECTION}} · {{TYPE}}</span>
+        <h1 class="article-head__headline">{{HEADLINE}}</h1>
+        <p class="article-head__dek">{{DEK}}</p>
+        <div class="article-head__meta"><strong>{{AUTHOR}}</strong><time datetime="{{DATE}}">{{DISPLAY_DATE}}</time><span>{{READ_TIME}}</span><span>Updated {{UPDATED}}</span></div>
+        <div class="reporting-basis"><span>Reporting basis</span><p>{{REPORTING_BASIS}}</p></div>
+      </div>
+    </header>
+    <figure class="article-hero">
+      <div class="article-hero__frame"><img src="{{IMAGE}}" width="1536" height="864" alt="{{IMAGE_ALT}}" fetchpriority="high"></div>
+      <figcaption class="image-caption"><span>{{IMAGE_CAPTION}}</span><span>{{IMAGE_CREDIT}}</span></figcaption>
+    </figure>
+    <div class="article-layout">
+      <aside class="article-aside" aria-label="Article navigation"><span class="article-aside__label">In this article</span><nav class="article-toc" data-article-toc aria-label="Article sections"></nav></aside>
+      <article class="article-body" data-article-body>{{ARTICLE_BODY}}</article>
+      <aside class="article-aside article-aside--tools" aria-label="Article tools and sources">
+        <div class="article-actions"><span class="article-aside__label">Article tools</span><button type="button" data-copy-link>Copy link</button><button type="button" data-print>Print article</button><div class="text-size" role="group" aria-label="Article text size"><button type="button" data-text-size="small" aria-label="Smaller article text">A−</button><button type="button" data-text-size="default" aria-label="Default article text">A</button><button type="button" data-text-size="large" aria-label="Larger article text">A+</button></div></div>
+        <div class="source-box"><h2>Primary sources</h2><ol>{{SOURCES}}</ol></div>
+      </aside>
+    </div>
+    <section class="article-standard shell"><div><span class="kicker">Open record</span><h2>Read the evidence. Challenge the conclusion.</h2></div><p>Material corrections are logged, not quietly erased. If a fact is wrong, send the article URL and your strongest source.</p><div><a class="button" href="/corrections.html">Corrections policy</a><a class="button button--primary" href="/support.html">Support this work</a></div></section>
+    <section class="section shell" aria-labelledby="related-title"><div class="section-head"><h2 class="section-title" id="related-title">Continue reading</h2></div><div class="related-grid">{{RELATED}}</div></section>
+  </main>

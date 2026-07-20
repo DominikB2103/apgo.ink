@@ -1,11 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Meridian">
-  <title>Meridian</title>
-  <rect width="64" height="64" rx="12" fill="#1a1916"/>
-  <g fill="none" stroke="#fbfaf6" stroke-width="2">
-    <circle cx="32" cy="32" r="19"/>
-    <ellipse cx="32" cy="32" rx="7" ry="19"/>
-    <line x1="32" y1="13" x2="32" y2="51"/>
-    <line x1="13" y1="32" x2="51" y2="32"/>
-  </g>
-  <circle cx="32" cy="32" r="2.6" fill="#9e1b14"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="APGO">
+  <rect width="64" height="64" rx="10" fill="#111317"/>
+  <path d="M13 46 27.5 15h9L51 46h-9.5l-2.8-7H25.2l-2.8 7H13Zm15-14h8l-4-10-4 10Z" fill="#f7f4ed"/>
+  <circle cx="50" cy="15" r="5" fill="#b4232d"/>
 </svg>
