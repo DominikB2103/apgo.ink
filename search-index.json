@@ -1,0 +1,65 @@
+[
+  {
+    "url": "/articles/ceasefire-broke-at-sea/",
+    "section": "World",
+    "type": "Analysis",
+    "headline": "Renewed strikes put commercial shipping at risk in the Strait of Hormuz",
+    "dek": "The IMO had recorded 58 confirmed regional maritime incidents and 17 seafarer deaths by 17 July. Another 6,000 seafarers were stranded aboard vessels unable to leave the Gulf safely."
+  },
+  {
+    "url": "/articles/ankara-long-war-commitment/",
+    "section": "World",
+    "type": "Analysis",
+    "headline": "NATO commits to two years of Ukraine support at Ankara summit",
+    "dek": "Alliance leaders pledged €70 billion in military support for 2026 and at least the same level in 2027 as UN monitors recorded June’s highest monthly civilian toll since April 2022."
+  },
+  {
+    "url": "/articles/debt-problem-calendar/",
+    "section": "Economics",
+    "type": "Economic analysis",
+    "headline": "Governments face a costly wave of debt refinancing",
+    "dek": "The OECD expects governments and companies to borrow $29 trillion from bond markets in 2026. Refinancing accounts for 78 per cent of projected borrowing by OECD governments."
+  },
+  {
+    "url": "/articles/ai-boom-substation/",
+    "section": "Technology",
+    "type": "Infrastructure analysis",
+    "headline": "Data-centre demand is testing power grids and utility forecasts",
+    "dek": "The IEA projects global data-centre electricity use could nearly double by 2030. Utilities must decide who pays for new capacity when large customer forecasts prove wrong."
+  },
+  {
+    "url": "/articles/declaration-distribution-system/",
+    "section": "History & Memory",
+    "type": "History essay",
+    "headline": "How printers and riders carried the Declaration across the colonies",
+    "dek": "The Declaration reached the public through broadsides, newspapers and public readings. Its distribution in 1776 shows how a political text acquired force through circulation."
+  },
+  {
+    "url": "/articles/sun-also-rises-centenary/",
+    "section": "Books & Ideas",
+    "type": "Centenary review",
+    "headline": "The Sun Also Rises in its 100th year: expatriates, war and Pamplona",
+    "dek": "Published on 22 October 1926, Hemingway’s first novel will reach its centenary this autumn. Its routes through Paris and Pamplona still shape the expatriate myth."
+  },
+  {
+    "url": "/football/articles/spain-argentina-world-cup-final/",
+    "section": "World Cup 2026",
+    "type": "Match analysis",
+    "headline": "Spain beat Argentina in extra time to win the 2026 World Cup",
+    "dek": "Ferran Torres scored in the 106th minute of a 1–0 final. Spain conceded one goal in eight matches and won its second men’s World Cup."
+  },
+  {
+    "url": "/articles/underground-man-and-the-feed/",
+    "section": "Books & Ideas",
+    "type": "Literary essay",
+    "headline": "Dostoevsky’s Underground Man, resentment and the imagined audience",
+    "dek": "The 1864 narrator invents hostile readers, rehearses humiliation and uses self-knowledge without changing his conduct. The pattern gives the novel a precise connection to online argument."
+  },
+  {
+    "url": "/football/articles/world-cup-48-team-audit/",
+    "section": "World Cup 2026",
+    "type": "Tournament audit",
+    "headline": "The 48-team World Cup drew record crowds and raised workload questions",
+    "dek": "FIFA reported 6.8 million spectators and 308 goals across 104 matches. Independent data on travel, player recovery and public cost will determine the fuller case for expansion."
+  }
+]

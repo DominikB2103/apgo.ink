@@ -1,10 +1,10 @@
 # APGO editorial and product playbook
 
-APGO is organised as a publication system, not an endless feed. The Journal is the editorial core. Football and future public-reference projects are separate products that share the same obligations: label the work, show the evidence, disclose the limit and preserve revisions.
+APGO publishes a small, edited Journal and develops separate research products. Every product follows the same record-keeping rules: label the work, cite the evidence, state its limits and preserve revisions.
 
 ## A sustainable publishing rhythm
 
-Start with one coherent edition rather than pretending to operate a 24-hour newsroom.
+Publish one coherent edition on a schedule the organisation can sustain.
 
 - Monday: choose one lead analysis, one secondary analysis and one essay or review.
 - Tuesday: build a source packet from primary documents and write the claim outline.
@@ -12,7 +12,7 @@ Start with one coherent edition rather than pretending to operate a 24-hour news
 - Thursday: edit, verify numbers and dates, add the visual, metadata, links and reporting-basis note.
 - Friday: build, run checks, review desktop/mobile layouts and publish the edition.
 
-Three finished pieces readers trust are more valuable than twenty empty category pages.
+Reduce the edition size when verification or editing cannot be completed by the publication date.
 
 ## Publish an article
 
@@ -32,14 +32,20 @@ Every published piece includes:
 
 - section and content-type label;
 - specific headline and one-sentence deck;
-- accountable desk/byline, publication date, update date and reading time;
-- a plain reporting-basis note stating whether interviews or on-location reporting were conducted;
+- the APGO byline, publication date, a separate update date when needed and reading time;
+- a source note describing the documents, interviews or on-location work used for the article;
 - a useful visual with alt text, caption, provenance and AI disclosure when applicable;
 - primary sources or the original literary text;
 - article tools, corrections route and related work;
 - a quiet support prompt with the current funding disclosure.
 
 ## Editorial rules
+
+### House style
+
+- Use British English in APGO copy. Preserve the spelling in names, document titles and direct quotations.
+- Use exact dates in day–month–year order and identify the year when the context could be ambiguous.
+- Use numerals for measured quantities, money, percentages, scores and model weights. Attribute each consequential figure in the paragraph where it appears.
 
 ### Evidence
 
@@ -79,14 +85,14 @@ APGO can build a serious **independent** player ranking. It cannot call the rank
 
 ### Phase 2 — model and review
 
-- Create player-match scores from context-adjusted role metrics rather than raw per-90 totals.
+- Create context-adjusted player-match scores within each role group. Raw per-90 totals remain available as inputs and reference values.
 - Apply a public recency curve, opponent-strength factor and capped match-importance multiplier.
 - Shrink small samples toward the midpoint and publish confidence/coverage bands.
 - Ask independent football analysts and data specialists to challenge the definitions and results.
 
 ### Phase 3 — pilot
 
-- Release a top 25 rather than a top 100.
+- Begin with a 25-player pilot.
 - Publish the complete method, score components, eligible minutes, uncertainty and plain-language placement notes.
 - Show role tables alongside the overall list.
 - Preserve the first edition and provide a correction/challenge route.
@@ -105,4 +111,10 @@ Add a new project only when APGO can answer five questions in public:
 2. What evidence or data does it use?
 3. Who is accountable for the output?
 4. How is it corrected and versioned?
-5. What will APGO explicitly not claim?
+5. Which claims fall outside the project’s evidence and authority?
+
+## Prose review
+
+Before publication, an editor should be able to identify the actor, action, evidence and uncertainty in each section. Open with the newest or most consequential verified fact. Attribute projections, allegations and institutional assessments in the sentence where they appear.
+
+Delete ornamental contrasts, especially sentences built around “not X, but Y,” “not just,” “not merely” or “it is not.” Replace them with the positive claim and its evidence. Watch for repeated three-part lists, rhetorical questions, vague concluding claims and em-dash pivots. These checks are editorial prompts; necessary factual negation remains acceptable.

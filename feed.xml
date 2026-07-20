@@ -1,83 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>APGO Journal</title>
+    <title>APGO</title>
     <link>https://apgo.ink/</link>
     <description>World affairs, economics, technology, history, ideas and football analysis.</description>
     <language>en</language>
     <lastBuildDate>Mon, 20 Jul 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://apgo.ink/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>The Ceasefire Broke at Sea</title>
+      <title>Renewed strikes put commercial shipping at risk in the Strait of Hormuz</title>
       <link>https://apgo.ink/articles/ceasefire-broke-at-sea/</link>
       <guid isPermaLink="true">https://apgo.ink/articles/ceasefire-broke-at-sea/</guid>
       <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
       <category>World</category>
-      <description>Nine consecutive nights of renewed U.S. strikes, fresh damage to merchant vessels and thousands of stranded seafarers show why the Strait of Hormuz is now both a battlefield and a test of the maritime order.</description>
+      <description>The IMO had recorded 58 confirmed regional maritime incidents and 17 seafarer deaths by 17 July. Another 6,000 seafarers were stranded aboard vessels unable to leave the Gulf safely.</description>
     </item>
     <item>
-      <title>Ankara’s Long-War Commitment</title>
+      <title>NATO commits to two years of Ukraine support at Ankara summit</title>
       <link>https://apgo.ink/articles/ankara-long-war-commitment/</link>
       <guid isPermaLink="true">https://apgo.ink/articles/ankara-long-war-commitment/</guid>
       <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
       <category>World</category>
-      <description>NATO has turned support for Ukraine into a two-year industrial pledge while expanding its eastern defences. The strategy is becoming more durable just as UN monitors record the worst monthly civilian toll since spring 2022.</description>
+      <description>Alliance leaders pledged €70 billion in military support for 2026 and at least the same level in 2027 as UN monitors recorded June’s highest monthly civilian toll since April 2022.</description>
     </item>
     <item>
-      <title>The Debt Problem Is Now a Calendar</title>
+      <title>Governments face a costly wave of debt refinancing</title>
       <link>https://apgo.ink/articles/debt-problem-calendar/</link>
       <guid isPermaLink="true">https://apgo.ink/articles/debt-problem-calendar/</guid>
       <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
       <category>Economics</category>
-      <description>The world’s borrowing debate usually begins with how much is owed. In 2026, the sharper risk is when that debt matures, what rate replaces it and how much public policy gets crowded out during the rollover.</description>
+      <description>The OECD expects governments and companies to borrow $29 trillion from bond markets in 2026. Refinancing accounts for 78 per cent of projected borrowing by OECD governments.</description>
     </item>
     <item>
-      <title>The AI Boom Has Reached the Substation</title>
+      <title>Data-centre demand is testing power grids and utility forecasts</title>
       <link>https://apgo.ink/articles/ai-boom-substation/</link>
       <guid isPermaLink="true">https://apgo.ink/articles/ai-boom-substation/</guid>
       <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
       <category>Technology</category>
-      <description>Data-center demand is growing faster than the power system built to serve it. The decisive questions are no longer confined to chips and models: they are about transformers, transmission, credible forecasts and who pays when a promised load fails to arrive.</description>
+      <description>The IEA projects global data-centre electricity use could nearly double by 2030. Utilities must decide who pays for new capacity when large customer forecasts prove wrong.</description>
     </item>
     <item>
-      <title>The Declaration Was a Distribution System Before It Was a Sacred Object</title>
+      <title>How printers and riders carried the Declaration across the colonies</title>
       <link>https://apgo.ink/articles/declaration-distribution-system/</link>
       <guid isPermaLink="true">https://apgo.ink/articles/declaration-distribution-system/</guid>
       <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
       <category>History &amp; Memory</category>
-      <description>Two hundred and fifty years after independence, the familiar parchment can obscure the more radical story: a text set in type overnight, carried by riders, reprinted by newspapers and made political by being read aloud.</description>
+      <description>The Declaration reached the public through broadsides, newspapers and public readings. Its distribution in 1776 shows how a political text acquired force through circulation.</description>
     </item>
     <item>
-      <title>The Sun Also Rises Turned Exile Into an Export</title>
+      <title>The Sun Also Rises in its 100th year: expatriates, war and Pamplona</title>
       <link>https://apgo.ink/articles/sun-also-rises-centenary/</link>
       <guid isPermaLink="true">https://apgo.ink/articles/sun-also-rises-centenary/</guid>
       <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
       <category>Books &amp; Ideas</category>
-      <description>A century after publication, Hemingway’s first major novel still shapes how outsiders imagine Paris, Pamplona and expatriate life—even as the book itself is more wounded, exclusionary and skeptical than the lifestyle myth built around it.</description>
+      <description>Published on 22 October 1926, Hemingway’s first novel will reach its centenary this autumn. Its routes through Paris and Pamplona still shape the expatriate myth.</description>
     </item>
     <item>
-      <title>One Goal, Two Stars: Spain Outlast Argentina to Reclaim the World Cup</title>
+      <title>Spain beat Argentina in extra time to win the 2026 World Cup</title>
       <link>https://apgo.ink/football/articles/spain-argentina-world-cup-final/</link>
       <guid isPermaLink="true">https://apgo.ink/football/articles/spain-argentina-world-cup-final/</guid>
       <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
       <category>World Cup 2026</category>
-      <description>Ferran Torres’s 106th-minute finish settled a final built on Spanish pressure and Argentine resistance. The 1–0 victory gave Spain a second men’s title—and completed an unusually concentrated run of international success.</description>
+      <description>Ferran Torres scored in the 106th minute of a 1–0 final. Spain conceded one goal in eight matches and won its second men’s World Cup.</description>
     </item>
     <item>
-      <title>Dostoevsky’s Underground Man Was Built for the Feed</title>
+      <title>Dostoevsky’s Underground Man, resentment and the imagined audience</title>
       <link>https://apgo.ink/articles/underground-man-and-the-feed/</link>
       <guid isPermaLink="true">https://apgo.ink/articles/underground-man-and-the-feed/</guid>
       <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
       <category>Books &amp; Ideas</category>
-      <description>A spiteful, self-conscious narrator from 1864 explains the inner machinery of posting: imaginary audiences, rehearsed humiliation and the freedom to choose what harms us.</description>
+      <description>The 1864 narrator invents hostile readers, rehearses humiliation and uses self-knowledge without changing his conduct. The pattern gives the novel a precise connection to online argument.</description>
     </item>
     <item>
-      <title>The 48-Team World Cup Is Over. Its Scale Was the Story.</title>
+      <title>The 48-team World Cup drew record crowds and raised workload questions</title>
       <link>https://apgo.ink/football/articles/world-cup-48-team-audit/</link>
       <guid isPermaLink="true">https://apgo.ink/football/articles/world-cup-48-team-audit/</guid>
       <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
       <category>World Cup 2026</category>
-      <description>More countries reached the stage, more people entered the grounds and the scoring rate rose. The first expanded World Cup answered the simplest sporting objection—but left harder questions about format, travel and workload for a calmer audit.</description>
+      <description>FIFA reported 6.8 million spectators and 308 goals across 104 matches. Independent data on travel, player recovery and public cost will determine the fuller case for expansion.</description>
     </item>
   </channel>
 </rss>

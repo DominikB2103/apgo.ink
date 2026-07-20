@@ -47,6 +47,18 @@
     });
   }
 
+  document.querySelectorAll(".nav a, .utility a, .footer a").forEach(function (link) {
+    const target = new URL(link.href, window.location.origin);
+    const currentPath = window.location.pathname.replace(/index\.html$/, "");
+    const targetPath = target.pathname.replace(/index\.html$/, "");
+    const samePath = currentPath === targetPath;
+    const requestedSection = new URLSearchParams(window.location.search).get("section");
+    const targetSection = target.searchParams.get("section");
+    const sameSection = targetSection ? requestedSection === targetSection : !requestedSection;
+    const sameHash = target.hash ? window.location.hash === target.hash : !window.location.hash;
+    if (samePath && sameSection && sameHash) link.setAttribute("aria-current", "page");
+  });
+
   const filterInput = document.querySelector("[data-story-filter]");
   const filterButtons = document.querySelectorAll("[data-section-filter]");
   const storyCards = document.querySelectorAll("[data-story-card]");
@@ -103,13 +115,84 @@
   const searchOpeners = document.querySelectorAll("[data-search-open]");
   const searchCloser = document.querySelector("[data-search-close]");
   const globalSearch = document.querySelector("[data-global-search]");
-  const globalResults = document.querySelectorAll("[data-search-result]");
-  const globalEmpty = document.querySelector("[data-search-empty]");
+  const globalResults = document.querySelector("[data-search-results]");
+  const globalStatus = document.querySelector("[data-search-status]");
+  const searchResultLimit = 12;
+  let searchIndex = null;
+  let searchIndexPromise = null;
+
+  function setSearchStatus(message) {
+    if (!globalStatus) return;
+    globalStatus.textContent = message;
+    globalStatus.hidden = !message;
+  }
+
+  function createSearchResult(item) {
+    const link = document.createElement("a");
+    const label = document.createElement("span");
+    const headline = document.createElement("strong");
+    const dek = document.createElement("small");
+
+    link.className = "search-result";
+    link.href = item.url;
+    label.textContent = item.section + " · " + item.type;
+    headline.textContent = item.headline;
+    dek.textContent = item.dek;
+    link.append(label, headline, dek);
+    return link;
+  }
+
+  function renderSearchResults() {
+    if (!globalResults || !searchIndex) return;
+    const query = globalSearch ? globalSearch.value.trim().toLowerCase() : "";
+    const matches = searchIndex.filter(function (item) {
+      if (!query) return true;
+      return [item.section, item.type, item.headline, item.dek].join(" ").toLowerCase().includes(query);
+    });
+    const visibleMatches = matches.slice(0, searchResultLimit);
+
+    globalResults.replaceChildren(...visibleMatches.map(createSearchResult));
+    if (!matches.length) setSearchStatus("No article matches that search.");
+    else if (matches.length > searchResultLimit) setSearchStatus("Showing the first " + searchResultLimit + " of " + matches.length + " matches. Refine the search to narrow the list.");
+    else setSearchStatus("");
+  }
+
+  function loadSearchIndex() {
+    if (searchIndex) {
+      renderSearchResults();
+      return Promise.resolve(searchIndex);
+    }
+    if (!searchIndexPromise) {
+      setSearchStatus("Loading the archive…");
+      searchIndexPromise = fetch("/search-index.json", { headers: { Accept: "application/json" } })
+        .then(function (response) {
+          if (!response.ok) throw new Error("Search index request failed");
+          return response.json();
+        })
+        .then(function (items) {
+          if (!Array.isArray(items)) throw new Error("Search index is invalid");
+          searchIndex = items.filter(function (item) {
+            return item && ["url", "section", "type", "headline", "dek"].every(function (field) {
+              return typeof item[field] === "string";
+            });
+          });
+          renderSearchResults();
+          return searchIndex;
+        })
+        .catch(function () {
+          searchIndexPromise = null;
+          setSearchStatus("Search is temporarily unavailable. Please try again.");
+          return null;
+        });
+    }
+    return searchIndexPromise;
+  }
 
   function openSearch() {
     if (!searchDialog) return;
     searchDialog.showModal();
     document.body.style.overflow = "hidden";
+    loadSearchIndex();
     window.setTimeout(function () { if (globalSearch) globalSearch.focus(); }, 20);
   }
 
@@ -138,14 +221,8 @@
 
   if (globalSearch) {
     globalSearch.addEventListener("input", function () {
-      const query = globalSearch.value.trim().toLowerCase();
-      let visible = 0;
-      globalResults.forEach(function (result) {
-        const show = !query || result.textContent.toLowerCase().includes(query);
-        result.hidden = !show;
-        if (show) visible += 1;
-      });
-      if (globalEmpty) globalEmpty.hidden = visible !== 0;
+      if (searchIndex) renderSearchResults();
+      else loadSearchIndex();
     });
   }
 

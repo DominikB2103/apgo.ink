@@ -7,8 +7,9 @@ const outIndex = args.indexOf("--out");
 const outputRoot = path.resolve(outIndex >= 0 ? args[outIndex + 1] : ".");
 const projectRoot = path.resolve(".");
 const bitcoin = "bc1q2wqpdzhgc90jn0r797yxv62pcnr06d2s0nlv8h";
-const publishedDate = "2026-07-20";
-const displayDate = "20 July 2026";
+const site = JSON.parse(await readFile(path.join(projectRoot, "content", "site.json"), "utf8"));
+const publishedDate = site.publishedDate;
+const displayDate = site.displayDate;
 
 const templateNames = [
   "document",
@@ -35,9 +36,32 @@ for (const article of articles) {
   article.body = await readFile(path.join(projectRoot, article.bodyFile), "utf8");
 }
 
-function render(template, values) {
+const publishedArticles = articles.filter(function (article) { return article.status === "published"; });
+const currentEditionArticles = publishedArticles.filter(function (article) { return article.edition === site.edition; });
+const journalArticleCount = currentEditionArticles.filter(function (article) { return article.product === "journal"; }).length;
+const footballArticleCount = currentEditionArticles.filter(function (article) { return article.product === "football"; }).length;
+
+if (!journalArticleCount) throw new Error("The current edition requires at least one published Journal article.");
+if (!publishedArticles.some(function (article) { return article.product === "football"; })) {
+  throw new Error("APGO Football requires at least one published article.");
+}
+
+const globalValues = {
+  EDITION: site.edition,
+  PUBLISHED_DATE: site.publishedDate,
+  DISPLAY_DATE: site.displayDate,
+  COPYRIGHT_YEAR: site.copyrightYear,
+  ARTICLE_COUNT: currentEditionArticles.length,
+  JOURNAL_COUNT: journalArticleCount,
+  FOOTBALL_COUNT: footballArticleCount
+};
+
+function render(template, values = {}) {
   let output = template;
   for (const [key, value] of Object.entries(values)) {
+    output = output.replaceAll("{{" + key + "}}", String(value));
+  }
+  for (const [key, value] of Object.entries(globalValues)) {
     output = output.replaceAll("{{" + key + "}}", String(value));
   }
   return output;
@@ -49,6 +73,17 @@ function escapeHtml(value) {
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;");
+}
+
+function normalizedHttpsUrl(value, label) {
+  let url;
+  try {
+    url = new URL(value);
+  } catch {
+    throw new Error(label + " must be a valid URL.");
+  }
+  if (url.protocol !== "https:") throw new Error(label + " must use HTTPS.");
+  return url.href;
 }
 
 function routeFor(article) {
@@ -66,14 +101,16 @@ function head(meta) {
     '  <meta charset="utf-8">',
     '  <meta name="viewport" content="width=device-width, initial-scale=1">',
     '  <meta name="description" content="' + escapeHtml(meta.description) + '">',
+    '  <meta name="robots" content="' + escapeHtml(meta.robots || "index,follow,max-image-preview:large") + '">',
     '  <meta name="theme-color" content="' + (meta.product === "football" ? "#0d1713" : "#ffffff") + '">',
     '  <meta name="color-scheme" content="light dark">',
     '  <title>' + escapeHtml(meta.title) + '</title>',
     '  <link rel="canonical" href="' + meta.canonical + '">',
-    '  <link rel="alternate" type="application/rss+xml" title="APGO Journal" href="/feed.xml">',
+    '  <link rel="alternate" type="application/rss+xml" title="APGO" href="/feed.xml">',
     '  <meta property="og:title" content="' + escapeHtml(meta.socialTitle || meta.title) + '">',
     '  <meta property="og:description" content="' + escapeHtml(meta.description) + '">',
     '  <meta property="og:type" content="' + (meta.article ? "article" : "website") + '">',
+    '  <meta property="og:locale" content="en_GB">',
     '  <meta property="og:url" content="' + meta.canonical + '">',
     '  <meta property="og:image" content="' + (meta.image || "https://apgo.ink/assets/images/social-card.webp") + '">',
     '  <meta name="twitter:card" content="summary_large_image">',
@@ -86,7 +123,9 @@ function head(meta) {
   ];
 
   if (meta.article) {
+    lines.push('  <meta name="author" content="' + escapeHtml(meta.article.author) + '">');
     lines.push('  <meta property="article:published_time" content="' + meta.article.date + '">');
+    lines.push('  <meta property="article:modified_time" content="' + (meta.article.updatedDate || meta.article.date) + '">');
     lines.push('  <meta property="article:section" content="' + escapeHtml(meta.article.section) + '">');
     const structured = {
       "@context": "https://schema.org",
@@ -123,26 +162,17 @@ function documentPage(meta, body, product) {
 }
 
 function searchDialog() {
-  const items = [...articles]
-    .sort(function (a, b) { return a.featureRank - b.featureRank; })
-    .map(function (article) {
-      return '<a class="search-result" href="' + routeFor(article) + '" data-search-result>' +
-        '<span>' + escapeHtml(article.section) + ' · ' + escapeHtml(article.type) + '</span>' +
-        '<strong>' + escapeHtml(article.headline) + '</strong>' +
-        '<small>' + escapeHtml(article.dek) + '</small>' +
-        '</a>';
-    }).join("");
-
-  return '<dialog class="search-dialog" data-search-dialog aria-labelledby="search-title">' +
-    '<div class="search-dialog__panel"><div class="search-dialog__head"><div><span class="kicker">APGO archive</span><h2 id="search-title">Search the journal</h2></div><button class="search-dialog__close" type="button" data-search-close aria-label="Close search">Close</button></div>' +
-    '<label class="search-dialog__field"><span class="visually-hidden">Search articles</span><input type="search" placeholder="Search by topic, section or headline" autocomplete="off" data-global-search></label>' +
-    '<div class="search-dialog__results">' + items + '</div><p class="filter-empty" data-search-empty hidden>No article matches that search.</p></div></dialog>';
+  return '<dialog class="search-dialog" id="search-dialog" data-search-dialog aria-labelledby="search-title">' +
+    '<div class="search-dialog__panel"><div class="search-dialog__head"><div><span class="kicker">APGO archive</span><h2 id="search-title">Search APGO</h2></div><button class="search-dialog__close" type="button" data-search-close aria-label="Close search">Close</button></div>' +
+    '<label class="search-dialog__field"><span class="visually-hidden">Search articles</span><input type="search" placeholder="Search by topic, section or headline" autocomplete="off" aria-controls="search-results" aria-describedby="search-status" data-global-search></label>' +
+    '<div class="search-dialog__results" id="search-results" data-search-results></div><p class="filter-empty" id="search-status" role="status" aria-live="polite" data-search-status>Loading the archive…</p></div></dialog>';
 }
 
 function sourceList(article) {
-  return article.sources.map(function (source) {
+  return article.sources.map(function (source, index) {
+    const href = normalizedHttpsUrl(source.url, article.slug + " source " + (index + 1));
     const note = source.note ? " — " + escapeHtml(source.note) : "";
-    return '<li><a href="' + source.url + '" rel="noopener">' + escapeHtml(source.name) + "</a>" + note + "</li>";
+    return '<li><a href="' + escapeHtml(href) + '" rel="noopener">' + escapeHtml(source.name) + "</a>" + note + "</li>";
   }).join("");
 }
 
@@ -162,11 +192,11 @@ function card(article, options = {}) {
 
 function lead(article) {
   return '<article class="lead-story">' +
-    '<a class="lead-story__image" href="' + routeFor(article) + '"><img src="' + article.image + '" width="1536" height="864" alt="' + escapeHtml(article.imageAlt) + '" fetchpriority="high"></a>' +
     '<span class="kicker">' + escapeHtml(article.section) + " · " + escapeHtml(article.type) + "</span>" +
     '<h1 class="headline lead-story__headline"><a href="' + routeFor(article) + '">' + escapeHtml(article.headline) + "</a></h1>" +
     '<p class="dek lead-story__dek">' + escapeHtml(article.dek) + "</p>" +
     '<p class="meta lead-story__meta">' + escapeHtml(article.author) + " · " + escapeHtml(article.readTime) + " · " + displayDate + "</p>" +
+    '<div class="lead-story__image"><img src="' + article.image + '" width="1536" height="864" alt="' + escapeHtml(article.imageAlt) + '" fetchpriority="high"></div>' +
     "</article>";
 }
 
@@ -178,18 +208,13 @@ function compactCard(article) {
     '<p class="meta story-card__meta">' + escapeHtml(article.readTime) + "</p></article>";
 }
 
-function briefingItem(article) {
-  return '<article class="briefing-item"><span class="briefing-item__section">' + escapeHtml(article.section) + '</span><h3 class="briefing-item__headline"><a href="' + routeFor(article) + '">' + escapeHtml(article.headline) + '</a></h3><span class="briefing-item__meta">' + escapeHtml(article.readTime) + '</span></article>';
-}
-
-function visualFeature(article) {
-  return '<article class="visual-feature"><a class="visual-feature__media" href="' + routeFor(article) + '"><img src="' + article.image + '" width="1600" height="900" loading="lazy" alt="' + escapeHtml(article.imageAlt) + '"></a>' +
-    '<div class="visual-feature__copy"><span class="kicker">' + escapeHtml(article.section) + ' · ' + escapeHtml(article.type) + '</span><h2 class="headline"><a href="' + routeFor(article) + '">' + escapeHtml(article.headline) + '</a></h2><p class="dek">' + escapeHtml(article.dek) + '</p><p class="meta">' + escapeHtml(article.author) + ' · ' + escapeHtml(article.readTime) + '</p></div></article>';
-}
-
 function relatedArticles(article) {
-  const pool = articles.filter(function (item) {
+  const pool = publishedArticles.filter(function (item) {
     return item.slug !== article.slug && item.product === article.product;
+  });
+  pool.sort(function (a, b) {
+    const sectionDifference = Number(b.section === article.section) - Number(a.section === article.section);
+    return sectionDifference || a.featureRank - b.featureRank;
   });
   return pool.slice(0, 3).map(function (item) { return card(item, { image: false }); }).join("");
 }
@@ -200,7 +225,7 @@ async function write(relativePath, content) {
   await writeFile(target, content);
 }
 
-for (const article of articles) {
+for (const article of publishedArticles) {
   const articleBody = render(templates.article, {
     KICKER_CLASS: article.product === "football" ? "kicker--football" : "",
     SECTION: escapeHtml(article.section),
@@ -211,8 +236,10 @@ for (const article of articles) {
     DATE: article.date,
     DISPLAY_DATE: escapeHtml(article.displayDate),
     READ_TIME: escapeHtml(article.readTime),
-    UPDATED: escapeHtml(article.updated),
-    REPORTING_BASIS: escapeHtml(article.basis || "Analysis of the primary sources listed on this page. No on-location reporting or original interviews were conducted for this edition."),
+    UPDATED_META: article.updatedDate && article.updatedDate !== article.date
+      ? '<span>Updated <time datetime="' + escapeHtml(article.updatedDate) + '">' + escapeHtml(article.updated || article.updatedDate) + "</time></span>"
+      : "",
+    REPORTING_BASIS: escapeHtml(article.basis || "The public sources and documents listed below form the basis of this article. APGO conducted no original interviews or on-location reporting."),
     IMAGE: article.image,
     IMAGE_ALT: escapeHtml(article.imageAlt),
     IMAGE_CAPTION: escapeHtml(article.imageCaption),
@@ -235,13 +262,20 @@ for (const article of articles) {
   }, articleBody, article.product));
 }
 
-const journalArticles = articles.filter(function (article) { return article.product === "journal"; });
-const footballArticles = articles.filter(function (article) { return article.product === "football"; });
-const ordered = [...articles].sort(function (a, b) { return a.featureRank - b.featureRank; });
+const journalArticles = currentEditionArticles.filter(function (article) { return article.product === "journal"; });
+const footballArticles = publishedArticles.filter(function (article) { return article.product === "football"; });
+const homepageFootballArticles = currentEditionArticles.filter(function (article) { return article.product === "football"; });
+const ordered = [...currentEditionArticles].sort(function (a, b) { return a.featureRank - b.featureRank; });
 const leadArticle = ordered.find(function (article) { return article.product === "journal"; });
 const topStack = ordered.filter(function (article) { return article.slug !== leadArticle.slug && article.product === "journal"; }).slice(0, 3);
-const editionGrid = ordered.filter(function (article) { return article.product === "journal" && article.slug !== leadArticle.slug; }).slice(0, 6);
-const booksFeature = ordered.find(function (article) { return article.slug === "underground-man-and-the-feed"; });
+const topStackSlugs = new Set(topStack.map(function (article) { return article.slug; }));
+const editionGrid = ordered.filter(function (article) {
+  return article.product === "journal" && article.slug !== leadArticle.slug && !topStackSlugs.has(article.slug);
+});
+const homepageJournalSlugs = [leadArticle, ...topStack, ...editionGrid].map(function (article) { return article.slug; });
+if (new Set(homepageJournalSlugs).size !== homepageJournalSlugs.length) {
+  throw new Error("Homepage Journal placements must be unique across lead, top stack and edition grid.");
+}
 
 const homeBody = render(templates.home, {
   LATEST_URL: routeFor(leadArticle),
@@ -249,15 +283,12 @@ const homeBody = render(templates.home, {
   LEAD: lead(leadArticle),
   TOP_STACK: topStack.map(compactCard).join(""),
   EDITION_GRID: editionGrid.map(card).join(""),
-  VISUAL_FEATURE: visualFeature(booksFeature),
-  BRIEFING: journalArticles.map(briefingItem).join(""),
-  RAIL: ordered.slice(0, 6).map(function (article) { return '<li><a href="' + routeFor(article) + '">' + escapeHtml(article.headline) + "</a></li>"; }).join(""),
-  FOOTBALL_GRID: footballArticles.map(card).join("")
+  FOOTBALL_GRID: homepageFootballArticles.map(card).join("")
 });
 
 await write("index.html", documentPage({
   title: "APGO — World affairs, economics, technology and ideas",
-  description: "APGO is an independent modern journal covering geopolitics, economics, technology, history and ideas, with a separate football analysis and rankings product.",
+  description: "APGO publishes source-linked analysis and essays on world affairs, economics, technology, history, books and football.",
   canonical: "https://apgo.ink/",
   image: "https://apgo.ink" + leadArticle.image
 }, homeBody, "journal"));
@@ -279,8 +310,8 @@ await write("journal/index.html", documentPage({
 }), "journal"));
 
 await write("football/index.html", documentPage({
-  title: "APGO Football — World Cup analysis and transparent player rankings",
-  description: "A separate APGO product for World Cup analysis, player evaluation and a transparent global player ranking model.",
+  title: "APGO Football — World Cup analysis and player-index research",
+  description: "APGO Football publishes World Cup analysis and documents the research plan for a position-aware global player index.",
   canonical: "https://apgo.ink/football/",
   image: "https://apgo.ink" + footballArticles[0].image,
   product: "football"
@@ -289,8 +320,8 @@ await write("football/index.html", documentPage({
 }), "football"));
 
 await write("projects/index.html", documentPage({
-  title: "APGO Projects — Public-interest products in development",
-  description: "APGO projects turn editorial standards into transparent tools, rankings and open reference work.",
+  title: "APGO Projects — Research products in development",
+  description: "Current status and release plans for the APGO World Player Index, Open Reference and Systems Atlas.",
   canonical: "https://apgo.ink/projects/",
   image: "https://apgo.ink/assets/images/player-index.webp"
 }, templates.projects, "journal"));
@@ -299,37 +330,37 @@ const policies = [
   {
     file: "about.html",
     eyebrow: "About APGO",
-    title: "A publication built around evidence, not posture.",
-    intro: "APGO covers power, markets, technology, history and football with a clear line between verified fact and analysis.",
-    body: '<p>APGO is an independent, early-stage publication and project studio. The Journal covers world affairs, economics, technology, history and ideas. APGO Football is a separate product for tournament analysis, player evaluation and a transparent ranking model.</p><h2>What we publish</h2><p>Edition 002 contains nine sourced articles. We prioritise primary documents, official statistics, archival material and research papers. Analysis is labelled and uncertainty remains visible.</p><h2>What we do not claim</h2><p>APGO is not yet a full newsroom. It does not operate subscriber accounts, a confidential tip system or a live player ranking. Those services will only be announced after they actually exist and have been tested.</p><h2>How the organisation grows</h2><p>The Journal remains the editorial core. Rankings and reference projects live as separate, clearly named products with their own methods, changelogs and correction routes. Explore the <a href="/projects/">project roadmap</a>.</p><h2>Funding</h2><p>Reader support pays for research, data, design and infrastructure. It does not buy coverage, removal, access to drafts or a preferred ranking.</p>'
+    title: "About APGO",
+    intro: "APGO publishes source-linked analysis and essays on world affairs, economics, technology, history, books and football.",
+    body: '<p>APGO is an independent publication and project studio based in Zurich. The Journal covers world affairs, economics, technology, history and books. APGO Football publishes tournament analysis and documents the development of a global player index.</p><h2>Current edition</h2><p>Edition {{EDITION}} includes {{ARTICLE_COUNT}} source-linked articles across the Journal and Football. Articles link to public documents, official statistics, archival material, research papers and original texts. Each article is labelled by form and carries a source note.</p><h2>Current status</h2><p>APGO is at an early stage. Subscriber accounts, confidential submissions and a live player ranking remain in development. Project pages record the status and next milestone for each proposed product.</p><h2>Organisation</h2><p>The Journal is the editorial core. Rankings and reference projects have their own methods, version histories and correction routes. The <a href="/projects/">project page</a> tracks this work.</p><h2>Funding</h2><p>Reader support pays for research, data, design and infrastructure. Contributors receive no role in coverage, drafts, corrections or ranking decisions.</p>'
   },
   {
     file: "standards.html",
     eyebrow: "Editorial standards",
-    title: "Facts first. Methods visible.",
-    intro: "Professionalism is a repeatable process: label the work, show the evidence, correct the record and disclose the limits.",
-    body: '<h2>Labels</h2><p>Reporting, analysis, evidence notes, essays and methodology are different forms. Every article states what kind of work it is. APGO does not present desk analysis as first-hand reporting.</p><h2>Sources</h2><p>APGO links directly to primary documents, official data, research papers and original texts whenever practical. Government, governing-body and belligerent claims are attributed as claims; they are not treated as independent verification.</p><h2>Corrections</h2><p>Material factual errors are corrected in the article and recorded on the <a href="/corrections.html">corrections page</a>. Method changes receive a new version and an explanation.</p><h2>Images and generative tools</h2><p>APGO may use art-directed visuals created or substantially assisted by generative tools. They are labelled as editorial illustrations, never presented as documentary photographs and never used as evidence of an event. Documentary imagery, when used, requires provenance, rights clearance and an accurate caption.</p><h2>Conflicts and funding</h2><p>Relevant financial or institutional conflicts are disclosed with the work. Reader funding creates no editorial right. Ranking sponsors, if ever accepted, will have no access to weights, inputs or publication decisions.</p><h2>Review dates</h2><p>Time-sensitive analysis carries a publication and update date. Readers should use the linked primary source for the newest operational information.</p>'
+    title: "Editorial standards",
+    intro: "These standards govern sourcing, article labels, corrections, images, conflicts and review dates.",
+    body: '<h2>Article labels</h2><p>Analysis, evidence notes, essays and methodology are distinct forms. Every article identifies its form and includes a source note describing the material used.</p><h2>Sources</h2><p>APGO links directly to public documents, official data, research papers and original texts whenever practical. Claims from governments, governing bodies and parties to a conflict retain clear attribution.</p><h2>Corrections</h2><p>Material factual errors are corrected in the article and recorded on the <a href="/corrections.html">corrections page</a>. Method changes receive a new version and an explanation.</p><h2>Images and generative tools</h2><p>Images created or substantially assisted by generative tools carry an editorial-illustration label. They provide visual interpretation; the cited material provides the evidence for an article. Documentary images require provenance, appropriate rights and an accurate caption.</p><h2>Conflicts and funding</h2><p>Relevant financial or institutional conflicts are disclosed with the work. Reader contributions confer no editorial role. Any future ranking sponsor will have no access to model weights, inputs or publication decisions.</p><h2>Publication and review dates</h2><p>Time-sensitive analysis carries a publication date. A separate update date appears after a substantive revision. Readers should consult the linked source for current operational information.</p>'
   },
   {
     file: "corrections.html",
     eyebrow: "Corrections",
-    title: "The record should show what changed.",
-    intro: "Material corrections remain visible. Silent fixes are reserved for typography and formatting.",
-    body: '<p>As of <time datetime="2026-07-20">20 July 2026</time>, Edition 002 has no logged material corrections.</p><h2>Report an error</h2><p>Open a public issue in the <a href="https://github.com/DominikB2103/apgo.ink/issues">APGO repository</a>. Include the article URL, disputed passage and strongest available source.</p><h2>Review process</h2><p>APGO distinguishes factual error from disagreement over interpretation, checks the original material and adds a dated note when a substantive change is required.</p>'
+    title: "Corrections",
+    intro: "This page records material corrections to APGO articles and project releases.",
+    body: '<p>As of <time datetime="{{PUBLISHED_DATE}}">{{DISPLAY_DATE}}</time>, Edition {{EDITION}} has no logged material corrections.</p><h2>Report an error</h2><p>Open a public issue in the <a href="https://github.com/DominikB2103/apgo.ink/issues">APGO repository</a>. Include the article URL, disputed passage and strongest available source.</p><h2>Review process</h2><p>APGO checks the cited material and records a dated note when a factual correction changes the published article. Typographic and formatting fixes may be made without a correction note.</p>'
   },
   {
     file: "contact.html",
     eyebrow: "Contact",
-    title: "Use a channel that actually exists.",
-    intro: "APGO currently handles corrections, technical reports and project contributions in public.",
-    body: '<h2>Corrections and site issues</h2><p>Use <a href="https://github.com/DominikB2103/apgo.ink/issues">GitHub Issues</a> and include the relevant URL and evidence.</p><h2>Football methodology</h2><p>Analysts, data specialists and researchers can use the same repository to critique the ranking proposal and its assumptions.</p><h2>No secure tip channel</h2><p>APGO does not currently operate a secure source channel. Do not submit confidential or identifying material through GitHub. A secure option will only be published after it is configured and tested.</p>'
+    title: "Contact APGO",
+    intro: "APGO accepts corrections, technical reports and project feedback through its public repository.",
+    body: '<h2>Corrections and site issues</h2><p>Use <a href="https://github.com/DominikB2103/apgo.ink/issues">GitHub Issues</a> and include the relevant URL and supporting evidence.</p><h2>Football methodology</h2><p>Analysts, data specialists and researchers can use the same repository to review the ranking proposal and its assumptions.</p><h2>Confidential material</h2><p>No secure source channel is currently available. GitHub is public and is unsuitable for confidential or identifying material. APGO will publish secure contact details after that system has been configured and tested.</p>'
   },
   {
     file: "privacy.html",
     eyebrow: "Privacy",
-    title: "A static site with a limited data footprint.",
-    intro: "APGO does not operate advertising, reader accounts, comments, payments or newsletter storage on this site.",
-    body: '<h2>Browser storage</h2><p>The theme control stores a light-or-dark preference in your browser using localStorage. Copy buttons use the clipboard only when activated.</p><h2>Hosting and fonts</h2><p>The site is delivered through GitHub Pages and related network infrastructure, which may process routine request logs under their own policies. Pages request typefaces from Google Fonts.</p><h2>Bitcoin</h2><p>Bitcoin transactions are public. APGO does not request donor identity here, but a transfer may be linkable through a wallet or exchange.</p><h2>Changes</h2><p>This notice will be updated before APGO launches any feature that collects personal information. Last reviewed 20 July 2026.</p>'
+    title: "Privacy",
+    intro: "This notice describes the limited data processing associated with the APGO website.",
+    body: '<h2>Services on this site</h2><p>The website currently has no advertising, reader accounts, comments, card payments or newsletter database.</p><h2>Browser storage</h2><p>The theme control stores a light-or-dark preference in the browser using localStorage. Copy buttons use the clipboard when activated.</p><h2>Hosting and fonts</h2><p>GitHub Pages and related network infrastructure deliver the site and may process routine request logs under their own policies. Pages request typefaces from Google Fonts.</p><h2>Bitcoin</h2><p>Bitcoin transactions are public. APGO requests no donor identity on this site, although a transfer may be linkable through a wallet or exchange.</p><h2>Changes</h2><p>This notice will be updated before APGO launches a feature that collects personal information. Last reviewed {{DISPLAY_DATE}}.</p>'
   }
 ];
 
@@ -341,7 +372,7 @@ for (const policy of policies) {
     POLICY_BODY: policy.body
   });
   await write(policy.file, documentPage({
-    title: policy.title + " — APGO",
+    title: policy.title.endsWith("APGO") ? policy.title : policy.title + " — APGO",
     description: policy.intro,
     canonical: "https://apgo.ink/" + policy.file
   }, body, "journal"));
@@ -349,14 +380,15 @@ for (const policy of policies) {
 
 await write("support.html", documentPage({
   title: "Support APGO — Reader funding",
-  description: "Support APGO's independent reporting, research and public-interest products with Bitcoin.",
+  description: "Support APGO research, publishing and public-interest projects with Bitcoin.",
   canonical: "https://apgo.ink/support.html"
 }, render(templates.support, { BITCOIN: bitcoin, BITCOIN_URI: "bitcoin:" + bitcoin }), "journal"));
 
 await write("404.html", documentPage({
   title: "Page not found — APGO",
   description: "The requested page was not found.",
-  canonical: "https://apgo.ink/404.html"
+  canonical: "https://apgo.ink/404.html",
+  robots: "noindex,follow"
 }, templates["404"], "journal"));
 
 const redirectHead = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=/journal/"><link rel="canonical" href="https://apgo.ink/journal/"><title>Moved to APGO Journal</title></head><body><main id="main"><h1>This page has moved</h1><p><a href="/journal/">Continue to APGO Journal</a>.</p></main></body></html>\n';
@@ -365,14 +397,34 @@ for (const legacy of ["ledger-they-buried.html", "ceasefire-border-towns.html", 
   await write(legacy, redirectHead);
 }
 
-const feedItems = articles.map(function (article) {
+const searchIndex = [...publishedArticles]
+  .sort(function (a, b) {
+    return b.date.localeCompare(a.date) || a.featureRank - b.featureRank;
+  })
+  .map(function (article) {
+    return {
+      url: routeFor(article),
+      section: article.section,
+      type: article.type,
+      headline: article.headline,
+      dek: article.dek
+    };
+  });
+await write("search-index.json", JSON.stringify(searchIndex, null, 2) + "\n");
+
+const feedArticles = [...publishedArticles]
+  .sort(function (a, b) { return b.date.localeCompare(a.date) || a.featureRank - b.featureRank; })
+  .slice(0, 50);
+
+const feedItems = feedArticles.map(function (article) {
   const url = "https://apgo.ink" + routeFor(article);
+  const publicationDate = new Date(article.date + "T00:00:00Z").toUTCString();
   return [
     "    <item>",
     "      <title>" + escapeHtml(article.headline) + "</title>",
     "      <link>" + url + "</link>",
     "      <guid isPermaLink=\"true\">" + url + "</guid>",
-    "      <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>",
+    "      <pubDate>" + publicationDate + "</pubDate>",
     "      <category>" + escapeHtml(article.section) + "</category>",
     "      <description>" + escapeHtml(article.dek) + "</description>",
     "    </item>"
@@ -383,11 +435,11 @@ const feed = [
   '<?xml version="1.0" encoding="UTF-8"?>',
   '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">',
   "  <channel>",
-  "    <title>APGO Journal</title>",
+  "    <title>APGO</title>",
   "    <link>https://apgo.ink/</link>",
   "    <description>World affairs, economics, technology, history, ideas and football analysis.</description>",
   "    <language>en</language>",
-  "    <lastBuildDate>Mon, 20 Jul 2026 00:00:00 GMT</lastBuildDate>",
+  "    <lastBuildDate>" + site.rssDate + "</lastBuildDate>",
   '    <atom:link href="https://apgo.ink/feed.xml" rel="self" type="application/rss+xml"/>',
   feedItems,
   "  </channel>",
@@ -407,7 +459,7 @@ const sitemapRoutes = [
   "/contact.html",
   "/privacy.html",
   "/support.html"
-].concat(articles.map(routeFor));
+].concat(publishedArticles.map(routeFor));
 
 const sitemap = [
   '<?xml version="1.0" encoding="UTF-8"?>',
@@ -423,4 +475,4 @@ await write("robots.txt", "User-agent: *\nAllow: /\n\nSitemap: https://apgo.ink/
 await write("CNAME", "apgo.ink\n");
 await write(".nojekyll", "");
 
-console.log("Built " + articles.length + " articles and core APGO pages in " + outputRoot);
+console.log("Built " + publishedArticles.length + " published articles and core APGO pages in " + outputRoot);
