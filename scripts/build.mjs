@@ -310,7 +310,7 @@ await write("journal/index.html", documentPage({
 }), "journal"));
 
 await write("football/index.html", documentPage({
-  title: "APGO Football — World Cup analysis and player-index research",
+  title: "APGO Football — World Cup analysis and player ranking research",
   description: "APGO Football publishes World Cup analysis and documents the research plan for a position-aware global player index.",
   canonical: "https://apgo.ink/football/",
   image: "https://apgo.ink" + footballArticles[0].image,
